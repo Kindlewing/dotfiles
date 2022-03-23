@@ -1,27 +1,42 @@
 #!/bin/bash
 
-
 linuxPackages=('stow' 'git' 'zathura' 'neovim')
 
 # Check OS Type
 function checkOSType() {
     if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-        linuxPackageInstall()
+        linuxPackageInstall
+    else 
+        macPackageInstall
+    fi
 }
+
 
 
 function linuxPackageInstall() {
     sudo apt update -y
-    echo "The following packages will be installed"
+    echo ""
+    echo ""
 
-    for package in ${linuxPackages}; do
+    echo "The following packages will be installed"
+    echo ""
+    echo ""
+
+    echo "============================================="
+    echo "============================================="   
+    
+    echo ""
+    echo ""
+     
+    for package in ${linuxPackages[@]}; do
         echo ${package}
     done
+    echo ""
+    read -p "Do you wish to continue with installation? (y/n):" shouldInstall
 
-    read "Do you wish to continue with installation? (y/n)" shouldInstall
 
-    if [ $shouldInstall == 'y' ]; then
-        for package in ${linuxPackages}; do
+    if [[ $shouldInstall == "y" ]]; then
+        for package in ${linuxPackages[@]}; do
             sudo apt install $package -y  
         done
     else 
@@ -30,4 +45,9 @@ function linuxPackageInstall() {
     fi
 }
 
-checkOSType()
+
+function macPackageInstall() {
+    echo "Mac"
+}
+
+checkOSType
