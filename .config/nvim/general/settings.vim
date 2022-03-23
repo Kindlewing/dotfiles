@@ -1,6 +1,8 @@
 set background=dark
 set completeopt+=menuone
 set completeopt+=noselect
+set relativenumber
+set termguicolors
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -13,7 +15,6 @@ set nowrap
 set cmdheight=2
 set encoding=utf-8
 set hidden
-set pumheight=10
 set noshowmode
 set number
 set nobackup 
