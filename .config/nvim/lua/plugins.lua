@@ -18,4 +18,5 @@ vim.call('plug#begin')
     Plug 'tpope/vim-surround'
     Plug ('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
     Plug 'nvim-lualine/lualine.nvim'
+    Plug 'mhinz/vim-startify'
 vim.call('plug#end')

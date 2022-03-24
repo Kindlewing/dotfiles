@@ -12,20 +12,21 @@ function checkOSType() {
 }
 
 
+function packageExists() {
+    return dpkg -l "$1" &> /dev/null
+}
+
+
 
 function linuxPackageInstall() {
-    sudo apt update -y
+    echo "Updating system repositories"
+    sudo apt update -y -qq
     echo ""
     echo ""
 
     echo "The following packages will be installed"
-    echo ""
-    echo ""
-
-    echo "============================================="
     echo "============================================="   
     
-    echo ""
     echo ""
      
     for package in ${linuxPackages[@]}; do
