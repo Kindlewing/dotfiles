@@ -13,6 +13,7 @@ end
 
 vim.call('plug#begin')
     Plug 'sainnhe/gruvbox-material'
+    Plug 'navarasu/onedark.nvim'
     Plug ('neoclide/coc.nvim', {['branch'] ='release'})
     Plug 'tmsvg/pear-tree'
     Plug 'tpope/vim-surround'

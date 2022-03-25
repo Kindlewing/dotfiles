@@ -2,5 +2,6 @@
     "sumneko-lua.enableNvimLuaDev": true,
     "Lua.diagnostics.globals": [
         "vim"
-    ]
+    ],
+    "Lua.telemetry.enable": true
 }
