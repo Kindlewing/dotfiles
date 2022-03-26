@@ -1,5 +1,9 @@
 # Dotfiles - Managed with GNU Stow
 
+## Dependencies
+- clang `sudo apt install clang`
+- neovim [Nightly](https://github.com/neovim/neovim/releases/nightly)
+
 ## Installation
 Note: SystemsCrafters has a fantastic resource on GNU Stow linked [here](https://systemcrafters.net/managing-your-dotfiles/using-gnu-stow/)
 - Make sure you have stow installed
@@ -10,3 +14,6 @@ Note: SystemsCrafters has a fantastic resource on GNU Stow linked [here](https:/
   - `cd ~/.dotfiles`
   - `stow .`
 
+## Neovim Setup
+`nvim +PackerSync` to install the plugins
+reload nvim 
