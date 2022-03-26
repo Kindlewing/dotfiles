@@ -13,7 +13,7 @@ function M.config()
     telescope.load_extension "notify"
   end
 
-  telescope.setup({
+  telescope.setup(require("core.utils").user_plugin_opts("plugins.telescope", {
     defaults = {
 
       prompt_prefix = " ",
@@ -100,7 +100,7 @@ function M.config()
     },
     pickers = {},
     extensions = {},
-  })
+  }))
 end
 
 return M
