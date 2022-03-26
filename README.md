@@ -16,4 +16,5 @@ Note: SystemsCrafters has a fantastic resource on GNU Stow linked [here](https:/
 
 ## Neovim Setup
 `nvim +PackerSync` to install the plugins
+
 reload nvim 
