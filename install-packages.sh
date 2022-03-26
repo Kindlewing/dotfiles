@@ -20,7 +20,7 @@ function packageExists() {
 
 function linuxPackageInstall() {
     echo "Updating system repositories"
-    sudo apt update -y -qq
+    sudo apt update -y && sudo apt upgrade -y
     echo ""
     echo ""
 
