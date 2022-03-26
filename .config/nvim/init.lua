@@ -8,7 +8,7 @@ require('plugins.treesitter')
 require('plugins.telescope').config()
 
 
-bindings.setCocBindings()
 bindings.setSplitNavigationBindings()
 bindings.setTelescopeBindings()
 bindings.setDashboardBindings()
+bindings.setCocBindings()
