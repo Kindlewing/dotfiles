@@ -1,6 +1,7 @@
 # Dotfiles - Managed with GNU Stow
 
 ## Dependencies
+This repository uses [AstroVim](https://github.com/kabinspace/AstroVim) as the Neovim configuration.
 - [Nerd Fonts](https://www.nerdfonts.com/font-downloads)
 - [Neovim 0.6+](https://github.com/neovim/neovim/releases/tag/v0.6.1)
 - clang `sudo apt install clang`
