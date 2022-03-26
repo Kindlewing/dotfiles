@@ -5,4 +5,6 @@ require('lualine').setup {
 }
 
 -- Setup color scheme
- vim.cmd [[colorscheme gruvbox-material]]
+vim.opt.termguicolors = true
+vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme gruvbox]])
