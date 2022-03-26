@@ -1,8 +1,9 @@
 # Dotfiles - Managed with GNU Stow
 
 ## Dependencies
+- [Nerd Fonts](https://www.nerdfonts.com/font-downloads)
+- [Neovim 0.6+](https://github.com/neovim/neovim/releases/tag/v0.6.1)
 - clang `sudo apt install clang`
-- neovim [Nightly](https://github.com/neovim/neovim/releases/nightly)
 
 ## Installation
 Note: SystemsCrafters has a fantastic resource on GNU Stow linked [here](https://systemcrafters.net/managing-your-dotfiles/using-gnu-stow/)
