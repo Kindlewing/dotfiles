@@ -4,7 +4,7 @@
 This repository uses [AstroVim](https://github.com/kabinspace/AstroVim) as the Neovim configuration.
 
 #### Note:
-    - The AstroVim config that this repository uses is NOT a submodule, so running :AstroUpdate as specified in the documentation above will not work 
+The AstroVim config that this repository uses is NOT a submodule, so running :AstroUpdate as specified in the documentation above will not work 
 ## Installation
 - Make sure you have stow installed
   - This package should be available on most unix based operating systems and can be installed with `sudo apt install stow`
