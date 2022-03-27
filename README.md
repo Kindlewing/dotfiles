@@ -3,7 +3,7 @@
 ## Dependencies
 This repository uses [AstroVim](https://github.com/kabinspace/AstroVim) as the Neovim configuration.
 
-Note:
+#### Note:
     - The AstroVim config that this repository uses is NOT a submodule, so running :AstroUpdate as specified in the documentation above will not work 
 ## Installation
 - Make sure you have stow installed
