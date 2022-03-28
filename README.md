@@ -1,7 +1,12 @@
 # Dotfiles - Managed with GNU Stow
 
-## Dependencies
-This repository uses [AstroVim](https://github.com/kabinspace/AstroVim) as the Neovim configuration.
+## Package dependencies
+- This repository uses [AstroVim](https://github.com/kabinspace/AstroVim) as the Neovim configuration.
+- Kitty terminal emulator `sudo apt install kitty`
+- Zathura PDF reader `sudo apt install zathura`
+- Fish shell `sudo apt install fish`
+- Neovim (Follow installation instructions in the AstroVim instructions)
+
 
 #### Note:
 The AstroVim config that this repository uses is NOT a submodule, so running :AstroUpdate as specified in the documentation above will not work 
