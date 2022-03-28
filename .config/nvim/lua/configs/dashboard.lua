@@ -41,7 +41,7 @@ function M.config()
 
   g.dashboard_custom_footer = {
     " ",
-    " AstroVim loaded " .. plugins_count .. " plugins ",
+    " Loaded " .. plugins_count .. " plugins ",
   }
 end
 
