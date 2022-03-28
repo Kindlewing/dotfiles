@@ -10,7 +10,6 @@ vim.cmd(string.format("colorscheme %s", colorscheme))
 set.fileencoding = "utf-8" -- File content encoding for the buffer
 set.spelllang = "en" -- Support US english
 set.clipboard = "unnamedplus" -- Connection to the system clipboard
-set.mouse = "a" -- Enable mouse support
 set.signcolumn = "yes" -- Always show the sign column
 set.foldmethod = "manual" -- Create folds manually
 set.completeopt = { "menuone", "noselect" } -- Options for insert mode completion
