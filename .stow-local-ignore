@@ -16,6 +16,7 @@ _darcs
 \.git
 \.gitmodules
 install-packages.sh    
+./.config/nvim/lua/packer_compiled.lua
 .+~          # emacs backup files
 \#.*\#       # emacs autosave files
 

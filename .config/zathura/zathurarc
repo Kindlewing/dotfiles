@@ -1,35 +1,59 @@
-set completion-group-bg         "#282828"
-set completion-group-fg         "#ebdbb2"
-set completion-bg               "#282828"
-set completion-fg               "#ebdbb2"
-set completion-highlight-bg     "#458588"
-set completion-highlight-fg     "#ebdbb2"
+set window-title-basename "true"
+set selection-clipboard "clipboard"
 
-set notification-error-bg       "#3c3836"
-set notification-error-fg       "#ebdbb2"
-set notification-warning-bg     "#3c3836"
-set notification-warning-fg     "#ebdbb2"
-set notification-bg             "#3c3836"
-set notification-fg             "#ebdbb2"
+# Dracula color theme for Zathura
+# Swaps Foreground for Background to get a light version if the user prefers
 
-set index-bg                    "#1d2021"
-set index-fg                    "#ebdbb2"
-set index-active-bg             "#282828"
-set index-active-fg             "#ebdbb2"
+#
+# Dracula color theme
+#
 
-set inputbar-bg                 "#3c3836"
-set inputbar-fg                 "#ebdbb2"
+set notification-error-bg       "#ff5555" # Red
+set notification-error-fg       "#f8f8f2" # Foreground
+set notification-warning-bg     "#ffb86c" # Orange
+set notification-warning-fg     "#44475a" # Selection
+set notification-bg             "#282a36" # Background
+set notification-fg             "#f8f8f2" # Foreground
 
-set statusbar-bg                "#282828"
-set statusbar-fg                "#ebdbb2"
+set completion-bg               "#282a36" # Background
+set completion-fg               "#6272a4" # Comment
+set completion-group-bg         "#282a36" # Background
+set completion-group-fg         "#6272a4" # Comment
+set completion-highlight-bg     "#44475a" # Selection
+set completion-highlight-fg     "#f8f8f2" # Foreground
 
-set highlight-color             "#458588"
-set highlight-active-color      "#458588"
+set index-bg                    "#282a36" # Background
+set index-fg                    "#f8f8f2" # Foreground
+set index-active-bg             "#44475a" # Current Line
+set index-active-fg             "#f8f8f2" # Foreground
 
-set default-bg                  "#1d2021"
-set default-fg                  "#001512"
-set recolor-lightcolor          "#282828"
-set recolor-darkcolor           "#ebdbb2"
+set inputbar-bg                 "#282a36" # Background
+set inputbar-fg                 "#f8f8f2" # Foreground
+set statusbar-bg                "#282a36" # Background
+set statusbar-fg                "#f8f8f2" # Foreground
+
+set highlight-color             "#ffb86c" # Orange
+set highlight-active-color      "#ff79c6" # Pink
+
+set default-bg                  "#282a36" # Background
+set default-fg                  "#f8f8f2" # Foreground
+
+set render-loading              true
+set render-loading-fg           "#282a36" # Background
+set render-loading-bg           "#f8f8f2" # Foreground
+
+#
+# Recolor mode settings
+#
+
+set recolor-lightcolor          "#282a36" # Background
+set recolor-darkcolor           "#f8f8f2" # Foreground
+
+#
+# Startup options
+#
+set adjust-open width
+
 
 set window-width                1000
 set window-height                800
@@ -48,5 +72,4 @@ map R rotate
 map K zoom in
 map J zoom out
 map i recolor
-set recolor                     true
 map p print

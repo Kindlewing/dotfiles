@@ -1,5 +1,4 @@
 local config = {
-
   -- Set colorscheme
   colorscheme = "default_theme",
 
@@ -47,7 +46,6 @@ local config = {
          config = function ()
            require('flutter-tools').setup{}
          end
-
      }
     },
     -- All other entries override the setup() call for default plugins
