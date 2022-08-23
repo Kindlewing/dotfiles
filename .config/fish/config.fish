@@ -10,3 +10,4 @@ starship init fish | source
 if [ -f '/home/hudson/google-cloud-sdk/path.fish.inc' ]; . '/home/hudson/google-cloud-sdk/path.fish.inc'; end
 # Sets environment variables
 set -x ANDROID_HOME /home/hudson/Android/Sdk
+set -x EDITOR /usr/bin/nvim
