@@ -1,6 +1,8 @@
 # Don't print a new line at the start of the prompt
 add_newline = false
 
+command_timeout = 100
+scan_timeout = 10
 # Make prompt a single line instead of two lines
 [line_break]
 disabled = false
@@ -14,6 +16,7 @@ format = """
 [┌───────────────────>](bold green)
 [│](bold green)$directory$rust$package
 [└─>](bold green) """
+
 
 # Disable the package module, hiding it from the prompt completely
 [package]
