@@ -143,30 +143,30 @@ font:
 #draw_bold_text_with_bright_colors: false
 # Colors (Tomorrow Night Bright)
 colors:
-  name: Atelierseaside (dark)
-  author: Chris Kempson
+  name: hund
+  author: hund
   primary:
-    background: "#131513"
-    foreground: "#8ca68c"
+    background: "#161616"
+    foreground: "#FFFFFF"
   cursor:
-    text: "#131513"
-    cursor: "#8ca68c"
+    text: "#161616"
+    cursor: "#FFFFFF"
   normal:
-    black: "#131513"
-    red: "#e6193c"
-    green: "#29a329"
-    yellow: "#c3c322"
-    blue: "#3d62f5"
-    magenta: "#ad2bee"
-    cyan: "#1999b3"
-    white: "#8ca68c"
+    black: "#222222"
+    red: "#E84F4F"
+    green: "#B7CE42"
+    yellow: "#FEA63C"
+    blue: "#66AABB"
+    magenta: "#B7416E"
+    cyan: "#6D878D"
+    white: "#DDDDDD"
   bright:
-    black: "#687d68"
-    red: "#e6193c"
-    green: "#29a329"
-    yellow: "#c3c322"
-    blue: "#3d62f5"
-    magenta: "#ad2bee"
-    cyan: "#1999b3"
-    white: "#f0fff0"
-theme: Atelierseaside.dark
+    black: "#666666"
+    red: "#D23D3D"
+    green: "#BDE077"
+    yellow: "#FFE863"
+    blue: "#AACCBB"
+    magenta: "#E16A98"
+    cyan: "#42717B"
+    white: "#CCCCCC"
+theme: Hund
