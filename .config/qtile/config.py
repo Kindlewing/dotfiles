@@ -37,7 +37,7 @@ from libqtile.config import Drag, Group, Key, Match, Screen
 
 # mod4 or mod = super key
 mod = "mod4"
-mod1 = "alt"
+mod1 = "mod4"
 mod2 = "control"
 home = os.path.expanduser('~')
 
@@ -185,11 +185,11 @@ keys.extend([
 groups = []
 
 # FOR QWERTY KEYBOARDS
-group_names = ["1", "2", "3", "4", "5",]
+group_names = ["1", "2", "3", "4", "5","6","7"]
 
 # FOR AZERTY KEYBOARDS
 #group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
-group_labels = ["", "", "", "", "",]
+group_labels = ["", "", "", "", "", "", "",]
 
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall",]
 #group_layouts = ["monadtall", "matrix", "monadtall", "bsp", "monadtall", "matrix", "monadtall", "bsp", "monadtall", "monadtall",]
