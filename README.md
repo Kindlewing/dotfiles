@@ -25,3 +25,5 @@ Run `./dotdrop.sh install -p <profile-name>` to install the dotfiles
 To manage your dotfiles in the future, `dotdrop import -p <profile-name> <dotfile-path>` is your friend.
 
 Note 📔: dotdrop comes with this repository as a submodule, so the actual dotdrop command will be `./dotdrop.sh install <dotfile-path>`
+
+More info: ℹ️ [Dotdrop Documentation](https://dotdrop.readthedocs.io/en/latest/)
