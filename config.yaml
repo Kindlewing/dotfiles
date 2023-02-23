@@ -10,7 +10,7 @@ dotfiles:
     src: .config/fish
     dst: ~/.config/fish
     link: absolute
-    chmod: '700'
+    chmod: "700"
   d_config_rofi:
     src: .config/rofi
     dst: ~/.config/rofi
@@ -40,13 +40,13 @@ dotfiles:
     dst: ~/.bashrc
     link: absolute
 profiles:
-  hudson-arco:
+  arch:
     dotfiles:
-    - d_config_fish
-    - d_config_rofi
-    - f_xinitrc
-    - f_config_starship.toml
-    - d_config_qtile
-    - d_config_zathura
-    - d_config_kitty
-    - f_bashrc
+      - d_config_fish
+      - d_config_rofi
+      - f_xinitrc
+      - f_config_starship.toml
+      - d_config_qtile
+      - d_config_zathura
+      - d_config_kitty
+      - f_bashrc
