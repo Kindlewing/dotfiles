@@ -53,8 +53,6 @@ dotfiles:
     src: .local/share/fonts
     dst: ~/.local/share/fonts
     link: absolute
-    actions:
-    - font-cache-refresh
   d_config_conky:
     src: .config/conky
     dst: ~/.config/conky
