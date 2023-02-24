@@ -373,6 +373,4 @@ alias personal='cp -Rf /personal/* ~'
 #cpufetch
 #colorscript random
 . "$HOME/.cargo/env"
-
-
 exec fish
