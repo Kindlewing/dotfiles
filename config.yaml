@@ -43,12 +43,6 @@ dotfiles:
     src: .bashrc
     dst: ~/.bashrc
     link: absolute
-  d_fonts:
-    src: .fonts
-    dst: ~/.fonts
-    link: absolute
-    actions:
-    - font-cache-refresh
   f_xresources:
     src: .Xresources
     dst: ~/.Xresources
@@ -58,6 +52,10 @@ dotfiles:
   d_config_conky:
     src: .config/conky
     dst: ~/.config/conky
+    link: absolute
+  d_local_share_fonts:
+    src: .local/share/fonts
+    dst: ~/.local/share/fonts
     link: absolute
 profiles:
   arch:
@@ -70,6 +68,6 @@ profiles:
     - d_config_zathura
     - d_config_kitty
     - f_bashrc
-    - d_fonts
     - f_xresources
     - d_config_conky
+    - d_local_share_fonts
