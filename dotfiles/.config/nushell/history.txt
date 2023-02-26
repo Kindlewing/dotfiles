@@ -1,0 +1,494 @@
+clear
+ls
+ls -a
+cd ~
+ls -a
+clear
+grep 
+grep --help
+man grep
+clear
+ls 0a
+ls -a
+cd Development/Rust/eigenvalue-project/
+ls
+cargo run
+clear
+cd ~
+exa
+ls
+vim
+cd .config/nushell/
+ls
+nvim config.nu
+pwd
+$env.PWD
+clear
+help commands
+man
+clear
+man man
+help man
+clear
+which shell
+shich nu
+vim $nu.config-path
+clear
+ls
+cd ~\
+cd ~
+cd 
+ls
+clear
+cd nerd-fonts/
+ls
+clear
+cd
+sl
+clear
+ls
+clear
+ls
+clear
+ls | tree
+clear
+help grep
+man grep
+clear
+alias grep = rg
+help grep
+grep 
+clear
+cd .config/nushell/
+ls
+ls -a
+cd .config/nushell/
+ls
+nvim env.nu
+which nu
+which nushell\
+which nushell
+clear
+ which nushell
+which nu
+nu --version
+clear
+vim
+nivim
+nvim
+clear
+cd .config/nushell/
+ls
+nvim
+clear
+cd .config/nushell/
+nvim
+vim
+nvim
+clear
+ls
+clear
+cd ~/.config/nushell/
+cargo install wiki-tui
+clear
+cd .dotfiles/
+./dotdrop.sh install -p arch
+nvim
+clear
+cd ~
+clear
+cd .config/nushell/
+ls
+rm wiki_tui.log
+ls
+describe 42
+42 | describe
+clear
+runcon 
+help rg
+clear
+cat config.nu
+open config.nu
+clear
+ (http get https://api.chucknorris.io/jokes/random).value
+ (http get https://api.chucknorris.io/jokes/random)
+clea
+clear
+curl
+wget
+clear
+$env
+echo $HOME
+env.$HOME
+env.HOME
+$env.HOME
+help
+clear
+help
+clear
+help commands
+clear
+help commands | first 10
+help commands | first 10 | drop column 2
+help commands | first 10 | drop column 3
+help commands | first 10 | drop column 2
+help bits
+bits not 00001
+clear
+kill
+cleaar
+clear
+sys
+sys | get host
+clear
+neofetch
+clear
+ls
+nvim config.nu
+ls
+cd ~/.config/nushell/
+nvim
+ls
+cd ~/.config/nushell/
+nvim
+vim
+help grep
+clear
+vim $nu.config-path
+clear
+vim $nu.config-path
+vim
+clear
+ls
+vim $nu.config-path
+clear
+vim $nu.config-path
+vim
+clear
+ls
+vim $nu.config-path
+clear
+vim $nu.config-path
+clear
+ls
+clear
+vim $nu.config-path
+clear
+vim $nu.config-path
+clear
+vim $nu.config-path
+clear
+systemctl
+clear
+$env.PATH
+clear
+cd .config/nushell/
+vim
+cd ~
+cd nerd-fonts/
+ls
+cd ..
+ls
+clear
+get-weather
+clear
+$nu.scope.aliases
+clear
+nvim $nu.config-path
+clear
+nvim $nu.config-path
+clear
+clea
+clear
+ls
+cd Music/
+ls
+open Il_Reste_Du_Temps__Lo_Mimieux_Piano_Solo.pdf
+ls -f
+clear
+ls
+clear
+ls | size 1kb
+ls | size 1k
+ls | size < 1k
+ls | size < 1kb
+ls | where size < 1kb
+ls | where size > 1kb
+ls | where size <= 1kb
+ls | where size <= 4kb
+ls | where size == 4kb
+ls | where size = 4kb
+ls | where size == 4kb
+ls
+clear
+ls
+clear
+ls
+cd /
+ls
+ls $HOME
+ls $HOME/
+ls HOME
+ls \$HOME
+ls
+cd $HOME
+cd ~
+ls
+clear
+ls /mnt/data-drive/
+cd /mnt/data-drive/
+ls
+clea
+clear
+http
+http get http://nushell.sh
+http get http://nushell.sh | save test.html
+vim test.html
+brave test.html
+rm test.html
+ls
+clear
+vim $nu.config-path
+vim $nu.env-path
+open Il_Reste_Du_Temps__Lo_Mimieux_Piano_Solo.pdf
+clear
+vim $nu.env-path
+vim $nu.config-path
+nu
+nu --version
+clear
+vim $nu.config-path
+cd .config/nushell/
+ls
+nu
+$env EDITOR
+$env $EDITOR
+$env.EDITOR
+sudoedit /etc/fstab
+cd ~
+cd Development/Rust/SparkEngine/
+ls
+ls -a
+ls -al
+ls 
+ls -al
+ls
+clear
+ls -l
+ls -p
+clear
+man ls
+exa
+clear
+exa | table
+exa -l
+exa -l | table
+exa -l | table | cat
+clear
+cllear
+cleaer
+clear
+vim $nu.config-path
+clear
+vim $nu.config-path
+cd .config/nushell/
+vim
+cled
+clear
+cd .config/nushell/
+vim
+cd .config/nushell/
+vim
+clear
+cd .config/nushell/
+cd ..~
+cd ~
+cd .config/nushell/
+vim
+clear
+cargo list
+clear
+cargo
+cargo --list
+clear
+cd ~/.config/nushell/
+clear
+ls
+vim config.nu
+^ls
+ls
+clear
+exa
+exa | table
+exa --color
+exa --color always
+exa config.nu
+clear
+ls config.nu
+ls config.nu  | get name
+clear
+cd ~
+shells
+clear
+enter Documents/
+shells
+g 0
+g 1
+clear
+exit
+shells
+clear
+vim $nu.config-path
+ls
+clear
+ git log --pretty="%h|%s|%aN|%aE|%aD" -n 25
+cd Development/Rust/SparkEngine/
+ git log --pretty="%h|%s|%aN|%aE|%aD" -n 25
+git log
+$env\
+clear
+$env
+$env | table
+$env.config
+cd ~
+clear
+help upsert
+cal
+clear
+cal | save test.txt
+cal | save test.xlx
+cal | save test
+cal | table
+cal | save test
+clear
+math
+math abs -40
+math abs 40
+clear
+math abs(40)
+math::abs(-40)
+math abs
+clear
+math
+math abs
+-40 math abs
+clear
+http get https://github.com/nushell/nushell/blob/main/crates/nu-utils/src/sample_config/default_env.nu
+http get https://github.com/nushell/nushell/blob/main/crates/nu-utils/src/sample_config/default_env.nu | table
+clear
+cd .config
+vim starship.toml
+cd Development/Rust/SparkEngine/
+cd ../Development/Rust/SparkEngine/
+ls
+clear
+git status
+git add .
+git commit -a
+cd ~/.config
+vim starship.toml
+clear
+vim starship.toml
+cd .config
+vim starship.toml
+nu
+clear
+cd .config/
+clear
+$env.env
+cd nushell/
+ls
+vim
+cd ../
+vim starship.toml
+clear
+ls
+cd Development/Rust/SparkEngine/
+clear
+gtit push
+git push
+cd ~/.config
+vim starship.toml
+nu
+cd Development/Rust/SparkEngine/
+vim starship.toml
+clear
+cd ~/.config
+vim starship.toml
+vim
+nu
+clear
+cd Development/Rust/SparkEngine/
+clear
+cd ~
+cd .config/
+vim starship.toml
+clear
+vim
+vim starship.toml
+clear
+vim starship.toml
+ls
+clear
+cd Development/Rust/SparkEngine/
+cd ~/Development/Rust/SparkEngine/
+clear
+cd ~
+l 
+clear
+cd .config/
+vim starship.toml
+clear
+cd .config
+vim starship.toml
+clear
+cd .dotfiles/
+ls
+git status
+git add .
+git commit -m "feat: change prompt colors"
+git push
+clear
+cd Development/Rust/
+cd ~/Development/Rust/
+git clone https://github.com/nushell/nushell
+cd nushell
+cargo build
+vim
+clear
+vim
+clear
+cargo ruin
+clear
+ls
+clear
+ls
+cat README.md
+open README.m
+open README.md
+clear
+bat
+bat README.md
+clear
+cd ~/.config/nushell/
+ls
+vim
+cargo run
+cat config.nu
+cd ~/.config/nushell/
+cat config.nu
+nu
+clear
+cd ~/.dotfiles/
+./dotdrop.sh import -p arch ~/.config/nushell/
+./dotdrop.sh import -p arch ~/.config/nushell
+cd ~/.config/nushell/
+ls
+cd ~/.dotfiles
+./dotdrop.sh import ~/.config/nushell -p arch
+./dotdrop.sh install -p arch
+git status
+git add .
+./dotdrop.sh import -p arch ~/.config/starship.toml
+./dotdrop.sh import -p arch /home/hudson/.config/starship.toml
+git status
