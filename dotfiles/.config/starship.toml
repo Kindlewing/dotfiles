@@ -7,12 +7,12 @@ $directory\
 [](fg:#66182a bg:#66182a)\
 $git_branch\
 $git_status\
-[](fg:#6D187D bg:#86BBD8)\
+[](fg:#6D187D bg:#66182a)\
 $nodejs\
+[](fg:#66182a bg:#66182a)\
 $nim\
 $rust\
-$scala\
-[](fg:#86BBD8 bg:#06969A)\
+[](fg:#66182a bg:#06969A)\
 $docker_context\
 [](fg:#06969A bg:#33658A)\
 $time\
@@ -88,7 +88,7 @@ format = '[$all_status$ahead_behind ]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:#86BBD8"
+style = "bg:#66182a"
 format = '[ $symbol ($version) ]($style)'
 
 [rust]
