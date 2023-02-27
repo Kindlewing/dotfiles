@@ -1,2 +1,4 @@
 .config/nvim/lua/packer_compiled.lua
 *.bak
+./~/.config/nushell/history.txt
+~/.config/nushell/history.txt
