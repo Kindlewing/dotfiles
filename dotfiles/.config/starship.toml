@@ -2,16 +2,16 @@ format = """
 [](#9A348E)\
 $os\
 $username\
-[](bg:#9A348E fg:#9A348E)\
+[](bg:#163832 fg:#9A348E)\
 $directory\
-[](fg:#66182a bg:#66182a)\
+[](bg:#6D187D fg:#163832)\
 $git_branch\
 $git_status\
-[](fg:#6D187D bg:#66182a)\
+[](bg:#151E3D fg:#6D187D)\
 $nodejs\
-[](fg:#66182a bg:#66182a)\
+[](bg:#6B1D09 fg:#151E3D)\
 $rust\
-[](fg:#6b1d09 bg:#06969A)\
+[](fg:#6B1D09 bg:#06969A)\
 $docker_context\
 [](fg:#06969A bg:#33658A)\
 $time\
@@ -37,7 +37,7 @@ style = "bg:#9A348E"
 disabled = true # Disabled by default
 
 [directory]
-style = "bg:#66182a"
+style = "bg:#163832"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -55,25 +55,11 @@ truncation_symbol = "…/"
 # So either put "Important Documents" before "Documents" or use the substituted version:
 # "Important  " = "  "
 
-[c]
-symbol = " "
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
 
 [docker_context]
 symbol = " "
 style = "bg:#06969A"
 format = '[ $symbol $context ]($style) $path'
-
-[elixir]
-symbol = " "
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
-
-[elm]
-symbol = " "
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
 
 [git_branch]
 symbol = ""
@@ -84,10 +70,9 @@ format = '[ $symbol $branch ]($style)'
 style = "bg:#6D187D"
 format = '[$all_status$ahead_behind ]($style)'
 
-
 [nodejs]
 symbol = ""
-style = "bg:#66182a"
+style = "bg:#151E3D"
 format = '[ $symbol ($version) ]($style)'
 
 [rust]
