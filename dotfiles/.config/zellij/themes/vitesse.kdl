@@ -1,6 +1,6 @@
 themes {
-    vitesse {
-        fg "#bebaab"
+	vitesse {
+		fg "#bebaab"
         bg "#121212"
         red "#cb7676"
         green "#4d9375"
@@ -11,5 +11,5 @@ themes {
         cyan "#5eaab5"
         black "#111111"
         white "#ffffff"
-    }
+	}
 }

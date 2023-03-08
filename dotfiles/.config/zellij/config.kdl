@@ -1,9 +1,7 @@
-layout_dir "$HOME/.config/zellij/layouts/"
-theme_dir "$HOME/.config/zellij/themes/"
-
 ui {
 	pane_frames {
 		rounded_corners true
 	}
 }
+
 theme "vitesse"
