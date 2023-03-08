@@ -60,6 +60,7 @@ dotfiles:
     d_config_zellij:
         src: .config/zellij
         dst: ~/.config/zellij
+        link: absolute
 profiles:
     home-pc:
         dotfiles:
