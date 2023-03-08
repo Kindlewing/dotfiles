@@ -1,13 +1,18 @@
 # Startup Commands #
 neofetch
 
+# Start Zellij #
+if set -q ZELLIJ
+else
+  zellij
+end
+
 alias clear='clear && neofetch'
 
 # Initialize Starship
 starship init fish | source
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/hudson/google-cloud-sdk/path.fish.inc' ]; . '/home/hudson/google-cloud-sdk/path.fish.inc'; end
+
 # Sets environment variables
 set -x ANDROID_HOME /home/hudson/Android/Sdk
 set -x SUDO_EDITOR /usr/bin/nvim
