@@ -1,82 +1,78 @@
 actions:
-  post:
-    font-cache-refresh: fc-cache
-    reload-xresources: xrdb -merge ~/.Xresources
+    post:
+        font-cache-refresh: fc-cache
+        reload-xresources: xrdb -merge ~/.Xresources
 config:
-  backup: true
-  create: true
-  keepdot: true
-  longkey: true
-  link_on_import: nolink
-  dotpath: dotfiles
+    backup: true
+    create: true
+    keepdot: true
+    longkey: true
+    link_on_import: nolink
+    dotpath: dotfiles
 dotfiles:
-  d_config_fish:
-    src: .config/fish
-    dst: ~/.config/fish
-    link: absolute
-    chmod: '700'
-  d_config_rofi:
-    src: .config/rofi
-    dst: ~/.config/rofi
-    link: absolute
-  f_xinitrc:
-    src: .xinitrc
-    dst: ~/.xinitrc
-    link: absolute
-  f_config_starship.toml:
-    src: .config/starship.toml
-    dst: ~/.config/starship.toml
-    link: absolute
-  d_config_qtile:
-    src: .config/qtile
-    dst: ~/.config/qtile
-    link: absolute
-  d_config_zathura:
-    src: .config/zathura
-    dst: ~/.config/zathura
-    link: absolute
-  d_config_kitty:
-    src: .config/kitty
-    dst: ~/.config/kitty
-    link: absolute
-  f_bashrc:
-    src: .bashrc
-    dst: ~/.bashrc
-    link: absolute
-  f_xresources:
-    src: .Xresources
-    dst: ~/.Xresources
-    link: absolute
-    actions:
-    - reload-xresources
-  d_local_share_fonts:
-    src: .local/share/fonts
-    dst: ~/.local/share/fonts
-    link: absolute
-  d_config_conky:
-    src: .config/conky
-    dst: ~/.config/conky
-    link: absolute
-  d_config_nushell:
-    src: .config/nushell
-    dst: ~/.config/nushell
-    link: link_children
-  d_config_zellij:
-    src: .config/zellij
-    dst: ~/.config/zellij
+    d_config_fish:
+        src: .config/fish
+        dst: ~/.config/fish
+        link: absolute
+        chmod: '700'
+    d_config_rofi:
+        src: .config/rofi
+        dst: ~/.config/rofi
+        link: absolute
+    f_xinitrc:
+        src: .xinitrc
+        dst: ~/.xinitrc
+        link: absolute
+    f_config_starship.toml:
+        src: .config/starship.toml
+        dst: ~/.config/starship.toml
+        link: absolute
+    d_config_qtile:
+        src: .config/qtile
+        dst: ~/.config/qtile
+        link: absolute
+    d_config_zathura:
+        src: .config/zathura
+        dst: ~/.config/zathura
+        link: absolute
+    d_config_kitty:
+        src: .config/kitty
+        dst: ~/.config/kitty
+        link: absolute
+    f_bashrc:
+        src: .bashrc
+        dst: ~/.bashrc
+        link: absolute
+    f_xresources:
+        src: .Xresources
+        dst: ~/.Xresources
+        link: absolute
+        actions:
+            - reload-xresources
+    d_local_share_fonts:
+        src: .local/share/fonts
+        dst: ~/.local/share/fonts
+        link: absolute
+    d_config_conky:
+        src: .config/conky
+        dst: ~/.config/conky
+        link: absolute
+    d_config_zellij:
+        src: .config/zellij
+        dst: ~/.config/zellij
 profiles:
-  arch:
-    dotfiles:
-    - d_config_fish
-    - d_config_rofi
-    - f_xinitrc
-    - f_config_starship.toml
-    - d_config_qtile
-    - d_config_zathura
-    - d_config_kitty
-    - f_bashrc
-    - f_xresources
-    - d_local_share_fonts
-    - d_config_conky
-    - d_config_nushell
-    - d_config_zellij
+    home-pc:
+        dotfiles:
+            - d_config_fish
+            - d_config_rofi
+            - f_xinitrc
+            - f_config_starship.toml
+            - d_config_qtile
+            - d_config_zathura
+            - d_config_kitty
+            - f_bashrc
+            - f_xresources
+            - d_local_share_fonts
+            - d_config_conky
+            - d_config_nushell
+            - d_config_zellij

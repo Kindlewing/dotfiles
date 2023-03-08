@@ -13,7 +13,7 @@ super + b
 
 #Code
 super + c
-    code-insiders
+    nvim
 
 #Zathura
 super + z
@@ -29,7 +29,7 @@ super + shift + d
 
 #kitty
 super + Return
-    kitty
+    alacritty
 
 
 #File-Manager
