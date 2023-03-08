@@ -74,5 +74,4 @@ profiles:
             - f_xresources
             - d_local_share_fonts
             - d_config_conky
-            - d_config_nushell
             - d_config_zellij
