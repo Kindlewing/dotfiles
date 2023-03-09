@@ -1,7 +1,7 @@
 # Startup Commands #
 neofetch
 
-# Zellij
+# ZelliJ
 
 alias clear='clear && neofetch'
 
