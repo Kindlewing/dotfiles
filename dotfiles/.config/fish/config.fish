@@ -3,9 +3,13 @@ neofetch
 
 # Aliases
 alias clear='clear && neofetch'
+alias zn='zellij'
+alias za=run_zellij_sessions
 alias zls='zellij ls'
-alias zak='zellij ka'
+alias zka='zellij ka'
 alias zr='zellij run -- $argv'
+alias zrf='zellij run -f -- $argv'
+alias ze='zellij edit $argv'
 # Define an alias for the Bash script
 
 # Initialize Starship
@@ -22,8 +26,5 @@ set -x BROWSER /usr/bin/brave
 function run_zellij_sessions
 	bash -c "~/.scripts/autostart-zellij.sh"
 end
-
-# Run the script
-run_zellij_sessions
 
 
