@@ -2,7 +2,7 @@
 neofetch
 
 # Zellij 
-
+exec ~/.scripts/zellij-start.sh
 
 alias clear='clear && neofetch'
 
