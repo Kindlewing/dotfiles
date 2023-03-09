@@ -65,6 +65,10 @@ dotfiles:
         src: .config/alacritty
         dst: ~/.config/alacritty
         link: absolute
+    d_scripts:
+        src: .scripts
+        dst: ~/.scripts
+        link: absolute
 profiles:
     home-pc:
         dotfiles:
@@ -81,3 +85,4 @@ profiles:
             - d_config_conky
             - d_config_zellij
             - d_config_alacritty
+            - d_scripts
