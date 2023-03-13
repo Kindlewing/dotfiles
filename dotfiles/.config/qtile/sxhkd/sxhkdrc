@@ -23,18 +23,18 @@ super + z
 super + s
     spotify
 
-#rofi
+#Rofi
 super + shift + d
     rofi -show drun
 
-#kitty
+#Terminal
 super + Return
     alacritty
 
 
 #File-Manager
 super + shift + Return
-	kitty ranger ~
+    ranger ~
 
 
 #################################################################
