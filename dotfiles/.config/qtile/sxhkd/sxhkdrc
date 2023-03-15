@@ -33,7 +33,7 @@ super + Return
 
 
 #File-Manager
-super + shift + Return
+super + shift + KP_Enter
     alacritty ranger
 
 
@@ -53,10 +53,6 @@ super + x
 super + r
     rofi-theme-selector
 
-#Urxvt
-super + t
-    urxvt
-
 #Pavucontrol
 super + v
     pavucontrol
@@ -68,11 +64,6 @@ super + m
 #Xkill
 super + Escape
     xkill
-
-#Keyboard dependent
-#alacritty
-super + KP_Enter
-	alacritty
 
 #################################################################
 # SUPER + SHIFT KEYS
