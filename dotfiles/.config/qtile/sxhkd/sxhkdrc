@@ -33,8 +33,8 @@ super + Return
 
 
 #File-Manager
-super + shift + KP_Enter
-    alacritty ranger
+super + shift + Return
+    alacritty ranger ~
 
 
 #################################################################
@@ -146,32 +146,6 @@ ctrl + alt + u
 #Rofi theme selector
 ctrl + alt + r
   rofi-theme-selector
-
-#Spotify
-ctrl + alt + s
-   spotify
-
-#alacritty
-ctrl + alt + Return
-    alacritty
-
-#alacritty
-ctrl + alt + t
-    alacritty
-
-#Vivaldi
-ctrl + alt + v
-    vivaldi-stable
-
-#Xfce4-appfinder
-ctrl + alt + a
-    xfce4-appfinder
-
-
-#Keyboard dependent
-#alacritty
-#ctrl + alt + KP_Enter
-#     alacritty
 
 
 #################################################################
