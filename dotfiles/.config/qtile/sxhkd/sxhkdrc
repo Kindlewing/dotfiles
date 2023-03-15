@@ -34,7 +34,7 @@ super + Return
 
 #File-Manager
 super + shift + Return
-    ranger
+    alacritty ranger
 
 
 #################################################################
