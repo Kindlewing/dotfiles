@@ -69,6 +69,11 @@ dotfiles:
         src: .scripts
         dst: ~/.scripts
         link: absolute
+    d_mozilla:
+        src: .mozilla
+        dst: ~/.mozilla
+        link: absolute
+        chmod: '700'
 profiles:
     home-pc:
         dotfiles:
@@ -86,3 +91,4 @@ profiles:
             - d_config_zellij
             - d_config_alacritty
             - d_scripts
+            - d_mozilla
