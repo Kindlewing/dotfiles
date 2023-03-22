@@ -69,9 +69,10 @@ dotfiles:
         src: .scripts
         dst: ~/.scripts
         link: absolute
-    f_config_nighttabconfiguration.json:
-        src: .config/NightTabConfiguration.json
-        dst: ~/.config/NightTabConfiguration.json
+    d_browserextensionsettings:
+        src: BrowserExtensionSettings
+        dst: ~/BrowserExtensionSettings
+        link: absolute
 profiles:
     home-pc:
         dotfiles:
@@ -89,5 +90,4 @@ profiles:
             - d_config_zellij
             - d_config_alacritty
             - d_scripts
-            - d_mozilla
-            - f_config_nighttabconfiguration.json
+            - d_browserextensionsettings
