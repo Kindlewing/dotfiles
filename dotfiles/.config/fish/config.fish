@@ -3,6 +3,11 @@ neofetch
 
 # Aliases
 alias clear='clear && neofetch'
+
+# Server
+alias home-server='ssh -p 589 pi@home-server'
+
+# Zellij
 alias zn='zellij'
 alias za=run_zellij_sessions
 alias zls='zellij ls'
