@@ -6,6 +6,7 @@ alias clear='clear && neofetch'
 
 # Server
 alias home-server='ssh -p 589 pi@home-server'
+alias home-git-server='ssh ssh://pi@home-server:23231'
 
 # Zellij
 alias zn='zellij'
