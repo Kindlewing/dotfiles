@@ -30,7 +30,7 @@ set -x SUDO_EDITOR /usr/bin/nvim
 set -x VISUAL /usr/bin/nvim
 set -x EDITOR /usr/bin/nvim
 set -x BROWSER /usr/bin/brave
-set -x CHARM_HOST home-server-charm
+set -x CHARM_HOST home-server/home-server-charm
 
 function run_zellij_sessions
 	bash -c "~/.scripts/autostart-zellij.sh"
