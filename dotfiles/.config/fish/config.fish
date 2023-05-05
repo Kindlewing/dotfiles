@@ -5,10 +5,8 @@ neofetch
 alias clear='clear && neofetch'
 
 # Server
-alias home-server='ssh -p 589 hudson@home-server'
-alias hs='ssh -p 589 hudson@home-server'
-alias hgs='ssh ssh://hudson@home-server:23231'
-alias home-git-server='ssh ssh://hudson@home-server:23231'
+alias home-server='ssh -p 589 hudson@homelab.lan'
+alias hs='ssh -p 589 hudson@homelab.lan'
 
 # Zellij
 alias zn='zellij'
