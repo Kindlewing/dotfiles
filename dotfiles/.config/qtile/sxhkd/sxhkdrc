@@ -34,7 +34,7 @@ super + Return
 
 #File-Manager
 super + shift + Return
-    ranger ~
+    alacritty -e ranger
 
 
 #################################################################
@@ -53,10 +53,6 @@ super + x
 super + r
     rofi-theme-selector
 
-#Urxvt
-super + t
-    urxvt
-
 #Pavucontrol
 super + v
     pavucontrol
@@ -68,11 +64,6 @@ super + m
 #Xkill
 super + Escape
     xkill
-
-#Keyboard dependent
-#alacritty
-super + KP_Enter
-	alacritty
 
 #################################################################
 # SUPER + SHIFT KEYS
@@ -155,32 +146,6 @@ ctrl + alt + u
 #Rofi theme selector
 ctrl + alt + r
   rofi-theme-selector
-
-#Spotify
-ctrl + alt + s
-   spotify
-
-#alacritty
-ctrl + alt + Return
-    alacritty
-
-#alacritty
-ctrl + alt + t
-    alacritty
-
-#Vivaldi
-ctrl + alt + v
-    vivaldi-stable
-
-#Xfce4-appfinder
-ctrl + alt + a
-    xfce4-appfinder
-
-
-#Keyboard dependent
-#alacritty
-#ctrl + alt + KP_Enter
-#     alacritty
 
 
 #################################################################
