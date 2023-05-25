@@ -15,10 +15,6 @@ dotfiles:
         dst: ~/.config/fish
         link: absolute
         chmod: '700'
-    d_config_rofi:
-        src: .config/rofi
-        dst: ~/.config/rofi
-        link: absolute
     f_xinitrc:
         src: .xinitrc
         dst: ~/.xinitrc

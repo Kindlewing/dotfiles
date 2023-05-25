@@ -25,7 +25,7 @@ super + s
 
 #Rofi
 super + shift + d
-    rofi -show drun
+    ./.config/rofi/launchers/type-3/./launcher.sh
 
 #Terminal
 super + Return
