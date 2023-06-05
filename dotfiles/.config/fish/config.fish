@@ -17,9 +17,9 @@ alias zka='zellij ka'
 alias zr='zellij run -- $argv'
 alias zrf='zellij run -f -- $argv'
 alias ze='zellij edit $argv'
-alias swagger-codegen='java -jar /opt/swagger-codegen/swagger-codegen-cli.jar'
-# Define an alias for the Bash script
 
+# dotdrop
+alias dotdrop='/home/hudson/.dotfiles/dotdrop.sh --cfg=/home/hudson/.dotfiles/config.yaml'
 # Initialize Starship
 starship init fish | source
 
