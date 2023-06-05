@@ -61,6 +61,10 @@ dotfiles:
         src: .config/alacritty
         dst: ~/.config/alacritty
         link: absolute
+    d_config_rofi:
+        src: .config/rofi
+        dst: ~/.config/rofi
+        link: absolute
     d_scripts:
         src: .scripts
         dst: ~/.scripts
