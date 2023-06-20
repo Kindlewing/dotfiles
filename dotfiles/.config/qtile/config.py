@@ -183,25 +183,13 @@ group_labels = [
     '',
 ]
 
-group_layouts = [
-    'monadtall',
-    'monadtall',
-    'monadtall',
-    'monadtall',
-    'monadtall',
-    'monadtall',
-    'monadtall',
-    'monadtall',
-    'monadtall',
-    'monadtall',
-]
 # group_layouts = ["monadtall", "matrix", "monadtall", "bsp", "monadtall", "matrix", "monadtall", "bsp", "monadtall", "monadtall",]
 
 for i in range(len(group_names)):
     groups.append(
         Group(
             name=group_names[i],
-            layout=group_layouts[i].lower(),
+            layout='monadtall',
             label=group_labels[i],
         )
     )
