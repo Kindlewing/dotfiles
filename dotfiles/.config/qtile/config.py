@@ -6,7 +6,8 @@ from libqtile.command import lazy
 from libqtile.config import Group, Key, Match
 
 from keys import initialize_keys, mod
-from screens import screens
+from screens import initialize_screens
+from groups import initialize_groups
 
 
 # import arcobattery
@@ -29,33 +30,8 @@ def window_to_next_group(qtile):
 
 
 keys = initialize_keys()
-groups = []
-
-# FOR QWERTY KEYBOARDS
-group_names = ['1', '2', '3', '4', '5', '6', '7']
-
-# FOR AZERTY KEYBOARDS
-# group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
-group_labels = [
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-]
-
-# group_layouts = ["monadtall", "matrix", "monadtall", "bsp", "monadtall", "matrix", "monadtall", "bsp", "monadtall", "monadtall",]
-
-for i in range(len(group_names)):
-    groups.append(
-        Group(
-            name=group_names[i],
-            layout='monadtall',
-            label=group_labels[i],
-        )
-    )
+groups = initialize_groups()
+screens = initialize_screens()
 
 
 for i in groups:
