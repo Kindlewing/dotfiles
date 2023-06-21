@@ -76,6 +76,10 @@ dotfiles:
   d_screenlayout:
     src: .screenlayout
     dst: ~/.screenlayout
+  d_icons:
+    src: .icons
+    dst: ~/.icons
+    chmod: '700'
 profiles:
   home-pc:
     dotfiles:
@@ -95,6 +99,7 @@ profiles:
     - d_scripts
     - d_browserextensionsettings
     - d_screenlayout
+    - d_icons
   hudson-arco:
     dotfiles:
     - d_screenlayout
