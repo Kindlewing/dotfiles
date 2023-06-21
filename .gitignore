@@ -1,4 +1,5 @@
 .config/nvim/lua/packer_compiled.lua
+.config/qtile/__pycache__/
 *.bak
 ./~/.config/nushell/history.txt
 ~/.config/nushell/history.txt
