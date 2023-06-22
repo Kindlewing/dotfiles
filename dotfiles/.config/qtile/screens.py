@@ -5,5 +5,4 @@ primary_screen = Screen(top=primary_bar)
 monitor_screen = Screen(top=monitor_bar)
 
 
-def initialize_screens():
-    return [primary_screen, monitor_screen]
+screens = [primary_screen, monitor_screen]
