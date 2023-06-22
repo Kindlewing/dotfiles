@@ -24,6 +24,12 @@ def start_always():
     subprocess.Popen(['xsetroot', '-cursor_name', 'left_ptr'])
 
 
+@hook.subscribe.startup
+def set_wallpaper():
+    path = '~/Documents/Wallpapers/Mist.png'
+    os.system('feh --bg-scale ' + path)
+
+
 dgroups_key_binder = None
 dgroups_app_rules = []
 
