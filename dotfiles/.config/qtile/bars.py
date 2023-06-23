@@ -35,21 +35,6 @@ monitor_bar = bar.Bar(
             foreground=colors[5],
             background=colors[1],
         ),
-        widget.Sep(
-            linewidth=0, padding=10, foreground=colors[2], background=colors[1]
-        ),
-        widget.Memory(
-            font='Noto Sans',
-            format='Used: {MemPercent: .2f}% ({MemUsed: .2f} G)   /   Total: {MemTotal: .1f} G',
-            measure_mem='G',
-            update_interval=1,
-            fontsize=10,
-            foreground=colors[5],
-            background=colors[1],
-        ),
-        widget.Sep(
-            linewidth=0, padding=10, foreground=colors[2], background=colors[1]
-        ),
         widget.TextBox(
             font='FontAwesome',
             text='  ',
@@ -104,21 +89,6 @@ primary_bar = bar.Bar(
             fontsize=12,
             foreground=colors[5],
             background=colors[1],
-        ),
-        widget.Sep(
-            linewidth=0, padding=10, foreground=colors[2], background=colors[1]
-        ),
-        widget.Memory(
-            font='Noto Sans',
-            format='Used: {MemPercent: .2f}% ({MemUsed: .2f} G)   /   Total: {MemTotal: .1f} G',
-            measure_mem='G',
-            update_interval=1,
-            fontsize=10,
-            foreground=colors[5],
-            background=colors[1],
-        ),
-        widget.Sep(
-            linewidth=0, padding=10, foreground=colors[2], background=colors[1]
         ),
         widget.TextBox(
             font='FontAwesome',
