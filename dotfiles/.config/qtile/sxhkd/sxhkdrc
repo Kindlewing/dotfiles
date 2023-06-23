@@ -25,8 +25,7 @@ super + s
 
 #Rofi
 super + shift + d
-    ./.config/rofi/launchers/type-3/./launcher.sh
-
+    rofi -show drun
 #Terminal
 super + Return
     alacritty
