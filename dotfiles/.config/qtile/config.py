@@ -26,7 +26,7 @@ def start_always():
 
 @hook.subscribe.startup
 def set_wallpaper():
-    path = '~./wallpapers/Mist.png'
+    path = '$HOME/.config/qtile/wallpapers/Mist.png'
     os.system('feh --bg-scale ' + path)
 
 
