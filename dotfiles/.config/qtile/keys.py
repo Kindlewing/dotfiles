@@ -1,9 +1,16 @@
+import subprocess
+import os
 from libqtile.config import Key
 from libqtile.command import lazy
 
 mod = 'mod4'
 mod1 = 'mod4'
 mod2 = 'control'
+
+
+def start_polybar():
+    home = os.path.expanduser('~/.config/qtile/scripts/start_polybar.sh')
+    subprocess.call([home])
 
 
 keys = [
@@ -13,12 +20,7 @@ keys = [
     Key([mod], 'q', lazy.window.kill()),
     # SUPER + SHIFT KEYS
     Key([mod, 'shift'], 'q', lazy.window.kill()),
-    Key(
-        [mod, 'shift'],
-        'r',
-        lazy.restart(),
-        lazy.spawn('~/.config/polybar/launch.sh &'),
-    ),
+    Key([mod, 'shift'], 'r', lazy.restart()),
     # QTILE LAYOUT KEYS
     Key([mod], 'n', lazy.layout.normalize()),
     Key([mod], 'space', lazy.next_layout()),

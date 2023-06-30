@@ -1,5 +1,4 @@
 import os
-from re import sub
 import subprocess
 from libqtile import hook
 

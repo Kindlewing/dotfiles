@@ -25,6 +25,7 @@ blueberry-tray &
 
 #starting user applications at boot time
 run volumeicon &
+run ~/.config/polybar/launch.sh &
 #run discord &
 #nitrogen --restore &
 #run caffeine -a &
