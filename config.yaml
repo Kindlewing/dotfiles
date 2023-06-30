@@ -83,6 +83,7 @@ dotfiles:
     d_config_polybar:
         src: .config/polybar
         dst: ~/.config/polybar
+        link: absolute
 profiles:
     home-pc:
         dotfiles:
