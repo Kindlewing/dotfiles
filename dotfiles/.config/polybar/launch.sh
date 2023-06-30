@@ -6,7 +6,7 @@
 
   while pgrep -u $UID -x polybar > /dev/null; do sleep 0.5; done
 
-  outputs=$(xrandr --query | grep " connected" | cut -d" " -f1)
+  outputs=$(polybar --list-monitors | cut -d":" -f1)
   tray_output=DP-2
 
   for m in $outputs; do
