@@ -1,5 +1,15 @@
 from libqtile import bar, widget
-from colors import colors
+from colors import colors, catppuccin
+
+
+default_font = 'JetBrainsMono Nerd Font'
+default_font_size = 18
+bar_spacing = 12
+bar_padding = 20
+part_padding = 22
+bar_top_height = 28
+bar_bottom_height = 28
+window_gap_size = 15
 
 monitor_bar = bar.Bar(
     [
@@ -61,8 +71,10 @@ monitor_bar = bar.Bar(
 
 primary_bar = bar.Bar(
     [
-        widget.Sep(
-            linewidth=0, padding=10, foreground=colors[2], background=colors[1]
+        widget.Spacer(
+            length=bar_spacing,
+            padding=bar_padding,
+            background=catppuccin['black'],
         ),
         widget.GroupBox(
             font='FontAwesome',

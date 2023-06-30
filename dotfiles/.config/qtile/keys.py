@@ -13,7 +13,12 @@ keys = [
     Key([mod], 'q', lazy.window.kill()),
     # SUPER + SHIFT KEYS
     Key([mod, 'shift'], 'q', lazy.window.kill()),
-    Key([mod, 'shift'], 'r', lazy.restart()),
+    Key(
+        [mod, 'shift'],
+        'r',
+        lazy.restart(),
+        lazy.spawn('~/.config/polybar/launch.sh &'),
+    ),
     # QTILE LAYOUT KEYS
     Key([mod], 'n', lazy.layout.normalize()),
     Key([mod], 'space', lazy.next_layout()),

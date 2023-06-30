@@ -1,4 +1,5 @@
 import os
+from re import sub
 import subprocess
 from libqtile import hook
 
@@ -14,8 +15,14 @@ home = os.path.expanduser('~')
 
 @hook.subscribe.startup_once
 def start_once():
-    home = os.path.expanduser('~')
-    subprocess.call([home + '/.config/qtile/scripts/autostart.sh'])
+    home = os.path.expanduser('~/.config/qtile/scripts/autostart.sh')
+    subprocess.call([home])
+
+
+@hook.subscribe.startup
+def start_polybar():
+    home = os.path.expanduser('~/.config/qtile/scripts/start_polybar.sh')
+    subprocess.call([home])
 
 
 @hook.subscribe.startup

@@ -5,4 +5,4 @@ primary_screen = Screen(top=primary_bar)
 monitor_screen = Screen(top=monitor_bar)
 
 
-screens = [primary_screen, monitor_screen]
+screens = [Screen()]
