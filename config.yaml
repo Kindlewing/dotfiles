@@ -1,105 +1,109 @@
 actions:
-  post:
-    font-cache-refresh: fc-cache
-    reload-xresources: xrdb -merge ~/.Xresources
+    post:
+        font-cache-refresh: fc-cache
+        reload-xresources: xrdb -merge ~/.Xresources
 config:
-  backup: true
-  create: true
-  keepdot: true
-  longkey: true
-  link_on_import: nolink
-  dotpath: dotfiles
+    backup: true
+    create: true
+    keepdot: true
+    longkey: true
+    link_on_import: nolink
+    dotpath: dotfiles
 dotfiles:
-  d_config_fish:
-    src: .config/fish
-    dst: ~/.config/fish
-    link: absolute
-    chmod: '700'
-  f_xinitrc:
-    src: .xinitrc
-    dst: ~/.xinitrc
-    link: absolute
-  f_config_starship.toml:
-    src: .config/starship.toml
-    dst: ~/.config/starship.toml
-    link: absolute
-  d_config_qtile:
-    src: .config/qtile
-    dst: ~/.config/qtile
-    link: absolute
-  d_config_zathura:
-    src: .config/zathura
-    dst: ~/.config/zathura
-    link: absolute
-  d_config_kitty:
-    src: .config/kitty
-    dst: ~/.config/kitty
-    link: absolute
-  f_bashrc:
-    src: .bashrc
-    dst: ~/.bashrc
-    link: absolute
-  f_xresources:
-    src: .Xresources
-    dst: ~/.Xresources
-    link: absolute
-    actions:
-    - reload-xresources
-  d_local_share_fonts:
-    src: .local/share/fonts
-    dst: ~/.local/share/fonts
-    link: absolute
-  d_config_conky:
-    src: .config/conky
-    dst: ~/.config/conky
-    link: absolute
-  d_config_zellij:
-    src: .config/zellij
-    dst: ~/.config/zellij
-    link: absolute
-  d_config_alacritty:
-    src: .config/alacritty
-    dst: ~/.config/alacritty
-    link: absolute
-  d_config_rofi:
-    src: .config/rofi
-    dst: ~/.config/rofi
-    link: absolute
-  d_scripts:
-    src: .scripts
-    dst: ~/.scripts
-    link: absolute
-  d_browserextensionsettings:
-    src: BrowserExtensionSettings
-    dst: ~/BrowserExtensionSettings
-    link: absolute
-  d_screenlayout:
-    src: .screenlayout
-    dst: ~/.screenlayout
-  d_icons:
-    src: .icons
-    dst: ~/.icons
-    chmod: '700'
+    d_config_fish:
+        src: .config/fish
+        dst: ~/.config/fish
+        link: absolute
+        chmod: '700'
+    f_xinitrc:
+        src: .xinitrc
+        dst: ~/.xinitrc
+        link: absolute
+    f_config_starship.toml:
+        src: .config/starship.toml
+        dst: ~/.config/starship.toml
+        link: absolute
+    d_config_qtile:
+        src: .config/qtile
+        dst: ~/.config/qtile
+        link: absolute
+    d_config_zathura:
+        src: .config/zathura
+        dst: ~/.config/zathura
+        link: absolute
+    d_config_kitty:
+        src: .config/kitty
+        dst: ~/.config/kitty
+        link: absolute
+    f_bashrc:
+        src: .bashrc
+        dst: ~/.bashrc
+        link: absolute
+    f_xresources:
+        src: .Xresources
+        dst: ~/.Xresources
+        link: absolute
+        actions:
+            - reload-xresources
+    d_local_share_fonts:
+        src: .local/share/fonts
+        dst: ~/.local/share/fonts
+        link: absolute
+    d_config_conky:
+        src: .config/conky
+        dst: ~/.config/conky
+        link: absolute
+    d_config_zellij:
+        src: .config/zellij
+        dst: ~/.config/zellij
+        link: absolute
+    d_config_alacritty:
+        src: .config/alacritty
+        dst: ~/.config/alacritty
+        link: absolute
+    d_config_rofi:
+        src: .config/rofi
+        dst: ~/.config/rofi
+        link: absolute
+    d_scripts:
+        src: .scripts
+        dst: ~/.scripts
+        link: absolute
+    d_browserextensionsettings:
+        src: BrowserExtensionSettings
+        dst: ~/BrowserExtensionSettings
+        link: absolute
+    d_screenlayout:
+        src: .screenlayout
+        dst: ~/.screenlayout
+    d_icons:
+        src: .icons
+        dst: ~/.icons
+        chmod: '700'
+    d_config_polybar:
+        src: .config/polybar
+        dst: ~/.config/polybar
 profiles:
-  home-pc:
-    dotfiles:
-    - d_config_fish
-    - d_config_rofi
-    - f_xinitrc
-    - f_config_starship.toml
-    - d_config_qtile
-    - d_config_zathura
-    - d_config_kitty
-    - f_bashrc
-    - f_xresources
-    - d_local_share_fonts
-    - d_config_conky
-    - d_config_zellij
-    - d_config_alacritty
-    - d_scripts
-    - d_browserextensionsettings
-    - d_screenlayout
-    - d_icons
-  hudson-arco:
-    dotfiles:
-    - d_screenlayout
+    home-pc:
+        dotfiles:
+            - d_config_fish
+            - d_config_rofi
+            - f_xinitrc
+            - f_config_starship.toml
+            - d_config_qtile
+            - d_config_zathura
+            - d_config_kitty
+            - f_bashrc
+            - f_xresources
+            - d_local_share_fonts
+            - d_config_conky
+            - d_config_zellij
+            - d_config_alacritty
+            - d_scripts
+            - d_browserextensionsettings
+            - d_screenlayout
+            - d_icons
+            - d_config_polybar
+    hudson-arco:
+        dotfiles:
+            - d_screenlayout
