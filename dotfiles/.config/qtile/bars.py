@@ -3,6 +3,9 @@ from colors import colors
 
 monitor_bar = bar.Bar(
     [
+        widget.Sep(
+            linewidth=0, padding=10, foreground=colors[2], background=colors[1]
+        ),
         widget.GroupBox(
             font='FontAwesome',
             fontsize=16,
@@ -58,6 +61,9 @@ monitor_bar = bar.Bar(
 
 primary_bar = bar.Bar(
     [
+        widget.Sep(
+            linewidth=0, padding=10, foreground=colors[2], background=colors[1]
+        ),
         widget.GroupBox(
             font='FontAwesome',
             fontsize=16,
