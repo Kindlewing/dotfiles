@@ -26,6 +26,7 @@ starship init fish | source
 # Sets environment variables
 set -x  PATH $PATH /usr/local/go/bin
 set -x PATH $PATH ~/.go/bin/
+set -x PATH $PATH /home/hudson/.local/share/gem/ruby/3.0.0/bin
 set -x ANDROID_HOME /home/hudson/Android/Sdk
 set -x SUDO_EDITOR /usr/bin/nvim
 set -x VISUAL /usr/bin/nvim

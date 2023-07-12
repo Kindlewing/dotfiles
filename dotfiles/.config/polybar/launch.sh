@@ -7,10 +7,10 @@
   while pgrep -u $UID -x polybar > /dev/null; do sleep 0.5; done
 
   outputs=$(polybar --list-monitors | cut -d":" -f1)
-  tray_output=DP-2
+  tray_output=HDMI-3
 
   for m in $outputs; do
-    if [[ $m == "HDMI-1" ]]; then
+    if [[ $m == "HDMI-3" ]]; then
         tray_output=$m
     fi
   done
