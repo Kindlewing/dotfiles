@@ -4,3 +4,4 @@
 ~/.config/nushell/history.txt
 ~/.config/nushell/history.txt
 dotfiles/.config/qtile/__pycache__
+.venv

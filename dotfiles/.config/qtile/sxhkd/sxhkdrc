@@ -21,7 +21,7 @@ super + z
 
 #Spotify
 super + s
-    spotify
+    spotify-launcher
 
 #Rofi
 super + shift + d
