@@ -33,8 +33,7 @@ super + Return
 
 #File-Manager
 super + shift + Return
-    alacritty -e ranger
-
+    nemo
 
 #################################################################
 # SUPER + ... KEYS
