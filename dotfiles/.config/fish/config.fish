@@ -34,6 +34,7 @@ set -x SUDO_EDITOR /usr/bin/nvim
 set -x VISUAL /usr/bin/nvim
 set -x EDITOR /usr/bin/nvim
 set -x BROWSER /usr/bin/brave
+set -x PAGER /usr/bin/bat
 set -x CHARM_HOST home-server/home-server-charm
 
 function run_zellij_sessions
