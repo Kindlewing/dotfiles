@@ -9,7 +9,7 @@
 
 #Browser
 super + b
-    firefox
+    firefox-developer-edition
 
 #Code
 super + c
