@@ -9,7 +9,7 @@
 
 #Browser
 super + b
-    brave
+    firefox
 
 #Code
 super + c

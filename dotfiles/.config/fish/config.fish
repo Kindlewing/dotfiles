@@ -33,7 +33,7 @@ set -x ANDROID_HOME /home/hudson/Android/Sdk
 set -x SUDO_EDITOR /usr/bin/nvim
 set -x VISUAL /usr/bin/nvim
 set -x EDITOR /usr/bin/nvim
-set -x BROWSER /usr/bin/brave
+set -x BROWSER /usr/bin/firefox
 set -x PAGER /usr/bin/bat
 set -x CHARM_HOST home-server/home-server-charm
 
