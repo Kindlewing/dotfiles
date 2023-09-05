@@ -7,7 +7,6 @@ alias clear='clear && neofetch'
 # Server
 alias home-server='ssh -p 589 hudson@homelab'
 alias hs='ssh -p 589 hudson@homelab'
-alias ssh='TERM=xterm-256color ssh'
 
 # Zellij
 alias zn='zellij'
@@ -42,4 +41,7 @@ function run_zellij_sessions
 	bash -c "~/.scripts/autostart-zellij.sh"
 end
 
+function ssh
+    bash -c "TERM=xterm-256color ssh"
+end
 
