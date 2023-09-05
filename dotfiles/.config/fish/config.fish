@@ -7,6 +7,7 @@ alias clear='clear && neofetch'
 # Server
 alias home-server='ssh -p 589 hudson@homelab'
 alias hs='ssh -p 589 hudson@homelab'
+alias ssh='TERM=xterm-256color ssh'
 
 # Zellij
 alias zn='zellij'
