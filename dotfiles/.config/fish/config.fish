@@ -42,6 +42,6 @@ function run_zellij_sessions
 end
 
 function ssh
-    bash -c "TERM=xterm-256color ssh"
+    bash -c "TERM=xterm-256color ssh $argv"
 end
 
