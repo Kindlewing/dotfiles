@@ -1,3 +1,3 @@
 function ls 
-    exa -hl --icons --group-directories-first --color=always $argv
+    eza -hlX --icons --group-directories-first --color=always $argv
 end
