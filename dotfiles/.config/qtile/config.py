@@ -32,7 +32,7 @@ def start_always():
 
 @hook.subscribe.startup
 def set_wallpaper():
-    path = '$HOME/.config/qtile/wallpapers/Mist.png'
+    path = '$HOME/.config/qtile/wallpapers/color_scheme/catppuccin/catppuccin_cat_10.png' # NOQA
     os.system('feh --bg-scale ' + path)
 
 
