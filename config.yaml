@@ -90,6 +90,9 @@ dotfiles:
   f_zshrc:
     src: .zshrc
     dst: ~/.zshrc
+  f_p10k.zsh:
+    src: .p10k.zsh
+    dst: ~/.p10k.zsh
 profiles:
   home-pc:
     dotfiles:
@@ -113,6 +116,7 @@ profiles:
     - d_config_polybar
     - f_zsh_aliases
     - f_zshrc
+    - f_p10k.zsh
   hudson-arco:
     dotfiles:
     - d_screenlayout

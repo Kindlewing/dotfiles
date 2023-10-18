@@ -1,7 +1,6 @@
 font:
     normal:
-        family: JetBrainsMono Nerd Font
-        style: Regular
+        family: MesloLGS NF
     size: 11
     # Theme
 colors:
