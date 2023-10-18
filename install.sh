@@ -1,10 +1,20 @@
-#!/bin/bash
+# Check if the script is run as the superuser (root)
+if [ "$EUID" -ne 0 ]; then
+    echo "Please run this script as the superuser (root)."
+    exit 1
+fi
 
 # Update the package database and upgrade installed packages
-sudo pacman -Syu --noconfirm
+pacman -Syu --noconfirm
 
-# Install the specified packages
-sudo pacman -S --noconfirm \
+# Install yay
+git clone https://aur.archlinux.org/yay.git /tmp/yay
+chown -R hudson:hudson /tmp/yay
+(cd /tmp/yay && sudo -u hudson makepkg -si --noconfirm)
+rm -rf /tmp/yay
+
+# Install the specified packages using yay as the user 'hudson'
+sudo -u hudson yay -S --noconfirm \
   zsh \
   zellij \
   polybar \
@@ -19,16 +29,12 @@ sudo pacman -S --noconfirm \
   eza \
   xh
 
-git clone https://aur.archlinux.org/yay.git /tmp/yay
-chown -R hudson:hudson /tmp/yay
-(cd /tmp/yay && sudo -u hudson makepkg -si --noconfirm)
-rm -rf /tmp/yay
+# Install Dotdrop using yay as the user 'hudson'
+sudo -u hudson yay -S --noconfirm dotdrop
 
-
-# Install Dotdrop
-yay -S dotdrop
 # Change the shell to Zsh for the user "hudson"
-sudo chsh -s /usr/bin/zsh hudson
+chsh -s /usr/bin/zsh hudson
 
-# Run Dotdrop to install the "home-pc" profile
-dotdrop install -p home-pc
+# Run Dotdrop to install the "home-pc" profile as the user 'hudson'
+ dotdrop install -p home-pc
+
