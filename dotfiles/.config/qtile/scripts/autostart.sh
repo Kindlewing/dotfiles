@@ -11,17 +11,17 @@ function run {
 conky &
 
 #start sxhkd to replace Qtile native key-bindings
-run sxhkd -c ~/.config/qtile/sxhkd/sxhkdrc &
+run sxhkd -c ~/.config/qtile/sxhkd/sxhkdrc 
 
 
 #starting utility applications at boot time
-run nm-applet &
-run pamac-tray &
-run xfce4-power-manager &
-numlockx on &
-blueberry-tray &
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-/usr/lib/xfce4/notifyd/xfce4-notifyd &
+run nm-applet
+run pamac-tray
+run xfce4-power-manage
+numlockx on
+blueberry-tray
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+/usr/lib/xfce4/notifyd/xfce4-notifyd
 
 #starting user applications at boot time
 run volumeicon &
