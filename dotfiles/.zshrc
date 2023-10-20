@@ -33,13 +33,13 @@ ssh() {
 }
 
 
-eval "$(starship init zsh)"
+source ~/.zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
+source $ZSH/catppuccin_syntax_highlighting.zsh
+
+source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 source $HOME/.zsh_aliases
-
-[[ -d $ZSH/antidote ]] || git clone https://github.com/mattmc3/antidote $ZSH/antidote
-
-source $ZSH/antidote/antidote.zsh
-antidote load
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

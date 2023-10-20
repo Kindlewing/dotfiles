@@ -28,7 +28,7 @@ super + shift + d
 	sh $HOME/.config/rofi/bin/launcher
 #Terminal
 super + Return
-    alacritty
+    kitty
 
 
 #File-Manager

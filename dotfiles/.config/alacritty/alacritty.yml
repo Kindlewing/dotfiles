@@ -1,6 +1,6 @@
 font:
     normal:
-        family: MesloLGS NF
+        family: 'MesloLGS NF'
     size: 11
     # Theme
 colors:

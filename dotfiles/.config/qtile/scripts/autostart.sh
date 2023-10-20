@@ -15,10 +15,10 @@ run sxhkd -c ~/.config/qtile/sxhkd/sxhkdrc
 run nm-applet &
 run pamac-tray &
 run xfce4-power-manage &
+run dunst &
 numlockx on &
 blueberry-tray &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-/usr/lib/xfce4/notifyd/xfce4-notifyd &
 
 #starting user applications at boot time
 run volumeicon &
