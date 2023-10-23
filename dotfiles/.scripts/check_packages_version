@@ -1,0 +1,13 @@
+#!/bin/bash
+
+packages=("gtkmm3" "jsoncpp" "libsigc++" "fmt" "wayland" "chrono-date" "spdlog" "libgtk-3" "gobject-introspection" "girepository" "pulseaudio" "libnl" "libappindicator-gtk3" "libdbusmenu-gtk3" "libmpdclient" "libsndio" "libevdev" "xkbregistry" "upower")
+
+output_file="package_versions.txt"
+
+for package in "${packages[@]}"; do
+    version=$(pacman -Si "$package" | grep "Version" | awk '{print $3}')
+    echo "$package: $version" >> "$output_file"
+done
+
+echo "Package versions have been saved to $output_file"
+
