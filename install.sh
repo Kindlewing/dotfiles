@@ -17,6 +17,11 @@ rm -rf /tmp/yay
 sudo -u hudson yay -S --noconfirm \
   zsh \
   zellij \
+  hyprland \
+  waybar \
+  swaybg \
+  dunst \
+  xdg-desktop-portal-hyprland
   polybar \
   rofi \
   zathura \
