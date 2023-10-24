@@ -99,6 +99,9 @@ dotfiles:
     src: .config/waybar
     dst: ~/.config/waybar
     link: absolute
+  d_config_wlogout:
+    src: .config/wlogout
+    dst: ~/.config/wlogout
 profiles:
   home-pc:
     dotfiles:
@@ -124,6 +127,7 @@ profiles:
     - d_config_hypr
     - d_config_wofi
     - d_config_waybar
+    - d_config_wlogout
   hudson-arco:
     dotfiles:
     - d_screenlayout
