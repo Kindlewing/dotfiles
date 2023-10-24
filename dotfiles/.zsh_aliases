@@ -1,4 +1,3 @@
-alias clear='clear && neofetch'
 alias zn='zellij'
 alias za='zellij sessions'
 alias zls='zellij ls'
