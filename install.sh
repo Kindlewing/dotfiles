@@ -100,7 +100,7 @@ echo ""
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-declare -A directory_mappings=(
+declare -A mappings=(
 	["dunst"]="$HOME/.config/dunst"
 	["fonts"]="$HOME/.local/share/fonts"
 	["hypr"]="$HOME/.config/hypr"
@@ -112,14 +112,20 @@ declare -A directory_mappings=(
 	["wofi"]="$HOME/.config/wofi"
 	["zathura"]="$HOME/.config/zathura"
 	["zellij"]="$HOME/.config/zellij"
+
+	# Mapping for individual files
+	["zshrc"]="$HOME/.zshrc"
+	["zsh_aliases"]="$HOME/.zsh_aliases"
+	["p10k"]="$HOME/.p10k.zsh"
 )
 
+# Check if the user wants to install dotfiles.
 if _confirm_installation; then
-	# Loop through the directory mappings and create symlinks.
-	for src_dir in "${!directory_mappings[@]}"; do
-		dest_dir="${directory_mappings[$src_dir]}"
-		src_dir="$script_dir/$source_folder/$src_dir"
+	# Loop through the directory and file mappings and create symlinks.
+	for src_name in "${!mappings[@]}"; do
+		dest_path="${mappings[$src_name]}"
+		src_path="$source_folder/$src_name"
 
-		_installSymLink "$src_dir" "$dest_dir" "$src_dir" "$dest_dir"
+		_installSymLink "$src_name" "$dest_path" "$src_path"
 	done
 fi
