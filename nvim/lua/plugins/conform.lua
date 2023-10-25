@@ -21,6 +21,7 @@ return {
             python = { 'isort', 'black' },
             javascript = { { 'prettierd', 'prettier' } },
             php = { 'phpcsfixer' },
+            sh = { 'beautysh', 'shfmt' }
         },
         -- Customize formatters
         formatters = {
