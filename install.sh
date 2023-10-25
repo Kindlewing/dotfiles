@@ -1,3 +1,4 @@
+#!/usr/bin/bash
 # Check if the script is run as the superuser (root)
 if [ "$EUID" -ne 0 ]; then
     echo "Please run this script as the superuser (root)."
@@ -8,34 +9,23 @@ fi
 pacman -Syu --noconfirm
 
 # Install yay
-git clone https://aur.archlinux.org/yay.git /tmp/yay
-chown -R hudson:hudson /tmp/yay
-(cd /tmp/yay && sudo -u hudson makepkg -si --noconfirm)
-rm -rf /tmp/yay
+pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd ..
+if [[ -d "yay"]]; then
+    rm -rf yay
+fi
 
-# Install the specified packages using yay as the user 'hudson'
-sudo -u hudson yay -S --noconfirm \
-  zsh \
-  zellij \
-  hyprland \
-  waybar \
-  swaybg \
-  dunst \
-  xdg-desktop-portal-hyprland
-  polybar \
-  rofi \
-  zathura \
-  alacritty \
-  git \
-  lazygit \
-  neovim \
-  ripgrep \
-  bat \
-  eza \
-  xh
+pacman_packages=(zsh zellij hyprland wl-clipboard waybar swaybg dunst xdg-desktop-portal-hyprland zathura git lazygit neovim ripgrep bat eza xh)
+yay_packages=(wlogout swaylock-effects-git dotdrop catppuccin-gtk-theme-mocha)
 
-# Install Dotdrop using yay as the user 'hudson'
-sudo -u hudson yay -S --noconfirm dotdrop
+for package in pacman_packages
+do
+    sudo pacman -S "$package" --noconfirm
+done
+
+for package in yay_packages
+do
+    yay -S "$package" --noconfirm
+done
 
 # Change the shell to Zsh for the user "hudson"
 chsh -s /usr/bin/zsh hudson
