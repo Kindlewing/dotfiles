@@ -75,40 +75,31 @@ _installSymLink() {
     linksource="$3";
     linktarget="$4";
 
-    while true; do
-        read -p "DO YOU WANT TO INSTALL ${name}? (Existing dotfiles will be removed!) (Yy/Nn): " yn
-        case $yn in
-            [Yy]* )
-                if [ -L "${symlink}" ]; then
-                    rm ${symlink}
-                    ln -s ${linksource} ${linktarget}
-                    echo "Symlink ${linksource} -> ${linktarget} created."
-                    echo ""
-                else
-                    if [ -d ${symlink} ]; then
-                        rm -rf ${symlink}/
-                        ln -s ${linksource} ${linktarget}
-                        echo "Symlink for directory ${linksource} -> ${linktarget} created."
-                        echo ""
-                    else
-                        if [ -f ${symlink} ]; then
-                            rm ${symlink}
-                            ln -s ${linksource} ${linktarget}
-                            echo "Symlink to file ${linksource} -> ${linktarget} created."
-                            echo ""
-                        else
-                            ln -s ${linksource} ${linktarget}
-                            echo "New symlink ${linksource} -> ${linktarget} created."
-                            echo ""
-                        fi
-                    fi
-                fi
-                break ;;
-            [Nn]* )
-                echo ""
-                # exit;
-                break ;;
-            * ) echo "Please answer yes or no." ;;
-        esac
-    done
+    name="$1"
+    symlink="$2"
+    linksource="$3"
+    linktarget="$4"
+
+    if [ -L "${symlink}" ]; then
+        rm "${symlink}"
+        echo "Removed existing symlink: ${symlink}"
+    elif [ -d "${symlink}" ]; then
+        rm -rf "${symlink}"
+        echo "Removed existing directory: ${symlink}"
+    elif [ -f "${symlink}" ]; then
+        rm "${symlink}"
+        echo "Removed existing file: ${symlink}"
+    fi
+
+    ln -s "${linksource}" "${linktarget}"
+    echo "Symlink for ${name}: ${linksource} -> ${linktarget} created."
+}
+
+_confirm_installation() {
+    read -p "Do you want to install dotfiles? (Existing dotfiles will be removed!) (Yy/Nn): " yn
+    case $yn in
+        [Yy]* ) return 0 ;;
+        [Nn]* ) return 1 ;;
+        * ) echo "Please answer yes or no."; return 1 ;;
+    esac
 }

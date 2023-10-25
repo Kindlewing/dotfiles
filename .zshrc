@@ -30,25 +30,26 @@ if [[ ! -d "$ZSH" ]]; then
     mkdir -p "~/.zsh/plugins"
 fi
 
-if [[ ! -d "$ZSH_PLUGINS/powerlevel10k" ]] then
+if [[ ! -d "$ZSH_PLUGINS/powerlevel10k" ]]; then
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_PLUGINS/powerlevel10k
 fi
 
-if [[ ! -d "$ZSH_PLUGINS/zsh-autosuggestions" ]] then
+if [[ ! -d "$ZSH_PLUGINS/zsh-autosuggestions" ]]; then
     git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions $ZSH_PLUGINS/zsh-autosuggestions
-fi
-
-if [[ ! -d "$ZSH_PLUGINS/colored_man_pages" ]] then
-    curl -o $ZSH_PLUGINS/colored-man-pages.zsh https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/colored-man-pages/colored-man-pages.plugin.zsh
 fi
 
 if [[ ! -d "$ZSH_PLUGINS/zsh-syntax-highlighting" ]]; then
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_PLUGINS/zsh-syntax-highlighting
 fi
 
+if [[ ! -f "$ZSH_PLUGINS/colored_man_pages.zsh" ]]; then
+    curl -o $ZSH_PLUGINS/colored-man-pages.zsh https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/colored-man-pages/colored-man-pages.plugin.zsh
+fi
+
 if [[ ! -f "$ZSH_PLUGINS/catppuccin_syntax_highlighting.zsh" ]]; then
     curl -o $ZSH_PLUGINS/catppuccin_syntax_highlighting.zsh https://gist.githubusercontent.com/Kindlewing/b47c566bc588cf6644f0ca650eb939b5/raw/c5023459ed755c7f0792e3ff3fd1507c1a37199e/catppuccin_syntax_highlighting.zsh
 fi
+
 
 source $ZSH_PLUGINS/powerlevel10k/powerlevel10k.zsh-theme
 source $ZSH_PLUGINS/catppuccin_syntax_highlighting.zsh
@@ -58,6 +59,4 @@ source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source $HOME/.zsh_aliases
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

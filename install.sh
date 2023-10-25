@@ -91,17 +91,31 @@ echo ""
 echo "-------------------------------------"
 echo "-> Install general dotfiles"
 echo "-------------------------------------"
-echo ""
+echo "" 
 
-_installSymLink nvim ~/.config/nvim ~/.dotfiles/nvim/ ~/.config
-_installSymLink dunst ~/.config/dunst ~/.dotfiles/dunst/ ~/.config
-_installSymLink wofi ~/.config/wofi ~/.dotfiles/wofi/ ~/.config
-_installSymLink hypr ~/.config/hypr ~/.dotfiles/hypr/ ~/.config
-_installSymLink waybar ~/.config/waybar ~/.dotfiles/waybar/ ~/.config
-_installSymLink swaylock ~/.config/swaylock ~/.dotfiles/swaylock/ ~/.config
-_installSymLink wlogout ~/.config/wlogout ~/.dotfiles/wlogout/ ~/.config
-_installSymLink zshrc ~/.zshrc ~/.dotfiles/.zshrc ~
-_installSymLink aliases ~/.zsh_aliases ~/.dotfiles/.zsh_aliases ~
-_installSymLink p10k ~/.p10k.zsh ~/.dotfiles/.p10k.zsh ~
-_installSymLink kitty ~/.config/kitty ~/.dotfiles/kitty ~/.config
-_installSymLink fonts ~/.local/share/fonts ~/.dotfiles/fonts/ ~/.local/share/fonts
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+declare -A directory_mappings=(
+  ["dunst"]="$HOME/.config/dunst"
+  ["fonts"]="$HOME/.local/share/fonts"
+  ["hypr"]="$HOME/.config/hypr"
+  ["kitty"]="$HOME/.config/kitty"
+  ["nvim"]="$HOME/.config/nvim"
+  ["scripts"]="$HOME/.config/scripts"
+  ["waybar"]="$HOME/.config/waybar"
+  ["wlogout"]="$HOME/.config/wlogout"
+  ["wofi"]="$HOME/.config/wofi"
+  ["zathura"]="$HOME/.config/zathura"
+  ["zellij"]="$HOME/.config/zellij"
+)
+
+
+if _confirm_installation; then
+    # Loop through the directory mappings and create symlinks.
+    for src_dir in "${!directory_mappings[@]}"; do
+        dest_dir="${directory_mappings[$src_dir]}"
+        src_dir="$script_dir/$source_folder/$src_dir"
+
+        _installSymLink "$src_dir" "$dest_dir" "$src_dir" "$dest_dir"
+    done
+fi
