@@ -9,7 +9,7 @@ fi
 pacman -Syu --noconfirm
 
 # Install yay
-if [[ -d "yay"]]; then
+if [[ -d "yay" ]]; then
     rm -rf yay
 fi
 
