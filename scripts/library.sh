@@ -72,7 +72,6 @@ _installSymLink() {
 	name="$1"
 	symlink="$2"
 	linksource="$3"
-	linktarget="$4"
 
 	if [ -L "${symlink}" ]; then
 		rm "${symlink}"
