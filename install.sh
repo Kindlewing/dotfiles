@@ -1,4 +1,6 @@
 #!/usr/bin/bash
+echo "Script not safe to use yet"
+exit
 source $(dirname "$0")/scripts/library.sh
 clear
 
