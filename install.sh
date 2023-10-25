@@ -1,36 +1,107 @@
 #!/usr/bin/bash
-# Check if the script is run as the superuser (root)
-if [ "$EUID" -ne 0 ]; then
-    echo "Please run this script as the superuser (root)."
-    exit 1
-fi
+source $(dirname "$0")/scripts/library.sh
+clear
 
 # Update the package database and upgrade installed packages
-pacman -Syu --noconfirm
+while true; do
+    read -p "Update required; continue? (Yy/Nn): " yn
+    case $yn in
+        [Yy]* )
+            echo "Installation started."
+            break ;;
+        [Nn]* )
+            exit;
+            break ;;
+        * ) echo "Please answer yes or no." ;;
+    esac
+done
+sudo pacman -Syu --noconfirm
 
-# Install yay
-if [[ -d "yay" ]]; then
-    rm -rf yay
+
+if sudo pacman -Qs yay > /dev/null ; then
+    echo "yay is installed. You can proceed with the installation"
+else
+    echo "yay is not installed. Will be installed now!"
+    _installPackagesPacman "base-devel"
+    git clone https://aur.archlinux.org/yay-git.git ~/yay-git
+    cd ~/yay-git
+    makepkg -si
+    cd ~/dotfiles/
+    clear
+    echo "yay has been installed successfully."
 fi
 
-pacman -S --needed git base-devel && sudo -u hudson git clone https://aur.archlinux.org/yay.git && cd yay && sudo -u hudson makepkg -si && cd ..
-
-pacman_packages=(zsh zellij hyprland wl-clipboard waybar swaybg dunst xdg-desktop-portal-hyprland zathura git lazygit neovim ripgrep bat eza xh)
-yay_packages=(wlogout swaylock-effects-git dotdrop catppuccin-gtk-theme-mocha)
-
-for package in pacman_packages
-do
-    sudo pacman -S "$package" --noconfirm
+while true; do
+    read -p "Do you want to install the required packages? (Yy/Nn): " yn
+    case $yn in
+        [Yy]* )
+            echo "Installation started."
+            break ;;
+        [Nn]* )
+            exit;
+            break ;;
+        * ) echo "Please answer yes or no." ;;
+    esac
 done
 
-for package in yay_packages
-do
-    sudo -u hudson yay -S "$package" --noconfirm
-done
+echo ""
+echo "-> Install main packages"
+
+pacman_packages=(zsh zellij hyprland wl-clipboard waybar swaybg dunst xdg-desktop-portal-hyprland zathura git lazygit neovim ripgrep bat eza xh);
+
+_installPackagesPacman "${pacman_packages[@]}";
+
+yay_packages=(wlogout swaylock-effects-git catppuccin-gtk-theme-mocha)
+_installPackagesYay "${yay_packages[@]}";
 
 # Change the shell to Zsh for the user "hudson"
 chsh -s /usr/bin/zsh hudson
 
-# Run Dotdrop to install the "home-pc" profile as the user 'hudson'
- dotdrop install -p home-pc
+while true; do
+    read -p "Do you want to install dotfiles? (Yy/Nn): " yn
+    case $yn in
+        [Yy]* )
+            echo "Installation started."
+            break ;;
+        [Nn]* )
+            exit;
+            break ;;
+        * ) echo "Please answer yes or no." ;;
+    esac
+done
+# ------------------------------------------------------
+# Create .config folder
+# ------------------------------------------------------
+echo ""
+echo "-> Check if .config folder exists"
 
+if [ -d ~/.config ]; then
+    echo ".config folder already exists."
+else
+    mkdir ~/.config
+    echo ".config folder created."
+fi
+
+# ------------------------------------------------------
+# Create symbolic links
+# ------------------------------------------------------
+# name symlink source target
+
+echo ""
+echo "-------------------------------------"
+echo "-> Install general dotfiles"
+echo "-------------------------------------"
+echo ""
+
+_installSymLink nvim ~/.config/nvim ~/.dotfiles/nvim/ ~/.config
+_installSymLink dunst ~/.config/dunst ~/.dotfiles/dunst/ ~/.config
+_installSymLink wofi ~/.config/wofi ~/.dotfiles/wofi/ ~/.config
+_installSymLink hypr ~/.config/hypr ~/.dotfiles/hypr/ ~/.config
+_installSymLink waybar ~/.config/waybar ~/.dotfiles/waybar/ ~/.config
+_installSymLink swaylock ~/.config/swaylock ~/.dotfiles/swaylock/ ~/.config
+_installSymLink wlogout ~/.config/wlogout ~/.dotfiles/wlogout/ ~/.config
+_installSymLink zshrc ~/.zshrc ~/.dotfiles/.zshrc ~
+_installSymLink aliases ~/.zsh_aliases ~/.dotfiles/.zsh_aliases ~
+_installSymLink p10k ~/.p10k.zsh ~/.dotfiles/.p10k.zsh ~
+_installSymLink kitty ~/.config/kitty ~/.dotfiles/kitty ~/.config
+_installSymLink fonts ~/.local/share/fonts ~/.dotfiles/fonts/ ~/.local/share/fonts
