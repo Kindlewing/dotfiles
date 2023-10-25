@@ -9,10 +9,11 @@ fi
 pacman -Syu --noconfirm
 
 # Install yay
-pacman -S --needed git base-devel && sudo -u hudson git clone https://aur.archlinux.org/yay.git && cd yay && sudo -u hudson makepkg -si && cd ..
 if [[ -d "yay"]]; then
     rm -rf yay
 fi
+
+pacman -S --needed git base-devel && sudo -u hudson git clone https://aur.archlinux.org/yay.git && cd yay && sudo -u hudson makepkg -si && cd ..
 
 pacman_packages=(zsh zellij hyprland wl-clipboard waybar swaybg dunst xdg-desktop-portal-hyprland zathura git lazygit neovim ripgrep bat eza xh)
 yay_packages=(wlogout swaylock-effects-git dotdrop catppuccin-gtk-theme-mocha)
