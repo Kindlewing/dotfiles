@@ -9,7 +9,7 @@ fi
 pacman -Syu --noconfirm
 
 # Install yay
-pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd ..
+pacman -S --needed git base-devel && sudo -u hudson git clone https://aur.archlinux.org/yay.git && cd yay && sudo -u hudson makepkg -si && cd ..
 if [[ -d "yay"]]; then
     rm -rf yay
 fi
@@ -24,7 +24,7 @@ done
 
 for package in yay_packages
 do
-    yay -S "$package" --noconfirm
+    sudo -u hudson yay -S "$package" --noconfirm
 done
 
 # Change the shell to Zsh for the user "hudson"
