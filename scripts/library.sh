@@ -84,7 +84,7 @@ _installSymLink() {
 		echo "Removed existing file: ${symlink}"
 	fi
 
-	ln -s "${linksource}" "${linktarget}"
+	ln -s "${linksource}" "${symlink}"
 	echo "Symlink for ${name}: ${linksource} -> ${symlink} created."
 }
 
