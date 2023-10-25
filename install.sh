@@ -126,6 +126,6 @@ if _confirm_installation; then
 		dest_path="${mappings[$src_name]}"
 		src_path="$source_folder/$src_name"
 
-		_installSymLink "$src_name" "$dest_path" "$src_path"
+		_installSymLink "$src_name" "$dest_path" "$dest_path"
 	done
 fi

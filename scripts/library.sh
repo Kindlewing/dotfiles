@@ -72,6 +72,7 @@ _installSymLink() {
 	name="$1"
 	symlink="$2"
 	linksource="$3"
+	linktarget="$3"
 
 	if [ -L "${symlink}" ]; then
 		rm "${symlink}"
@@ -84,8 +85,8 @@ _installSymLink() {
 		echo "Removed existing file: ${symlink}"
 	fi
 
-	ln -s "${linksource}" "${symlink}"
-	echo "Symlink for ${name}: ${linksource} -> ${symlink} created."
+	ln -s "${linksource}" "${linktarget}"
+	echo "Symlink for ${name}: ${linksource} -> {$linktarget} created."
 }
 
 _confirm_installation() {
