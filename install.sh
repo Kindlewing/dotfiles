@@ -114,9 +114,9 @@ declare -A mappings=(
 	["zellij"]="$HOME/.config/zellij"
 
 	# Mapping for individual files
-	["zshrc"]="$HOME/.zshrc"
-	["zsh_aliases"]="$HOME/.zsh_aliases"
-	["p10k"]="$HOME/.p10k.zsh"
+	[".zshrc"]="$HOME/.zshrc"
+	[".zsh_aliases"]="$HOME/.zsh_aliases"
+	[".p10k.zsh"]="$HOME/.p10k.zsh"
 )
 
 # Check if the user wants to install dotfiles.
