@@ -50,7 +50,7 @@ done
 echo ""
 echo "-> Install main packages"
 
-pacman_packages=(zsh zellij hyprland wl-clipboard waybar swaybg dunst xdg-desktop-portal-hyprland zathura git lazygit neovim ripgrep bat eza xh)
+pacman_packages=(zsh zellij hyprland wl-clipboard kitty wofi waybar swaybg dunst xdg-desktop-portal-hyprland zathura git lazygit neovim ripgrep bat eza xh)
 
 _installPackagesPacman "${pacman_packages[@]}"
 
