@@ -85,7 +85,7 @@ _installSymLink() {
 	fi
 
 	ln -s "${linksource}" "${linktarget}"
-	echo "Symlink for ${name}: ${linksource} -> ${linktarget} created."
+	echo "Symlink for ${name}: ${linksource} -> ${symlink} created."
 }
 
 _confirm_installation() {
