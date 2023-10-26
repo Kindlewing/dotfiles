@@ -74,35 +74,25 @@ _installSymLink() {
 	symlink="$2"
 	linksource="$3"
 	linktarget="$4"
-
-	if [ -L "${symlink}" ]; then
-		rm ${symlink}
-		ln -s ${linksource} ${linktarget}
-		echo "Symlink ${linksource} -> ${linktarget} created."
-		echo ""
+	if [ -e "${linktarget}" ]; then
+		echo "Target file '${linktarget}' already exists. Remove or backup it before creating a symbolic link."
 	else
-		if [ -d ${symlink} ]; then
-			rm -rf ${symlink}/
-			ln -s ${linksource} ${linktarget}
+		if [ -L "${symlink}" ]; then
+			rm "${symlink}"
+			ln -s "${linksource}" "${linktarget}"
+			echo "Symlink ${linksource} -> ${linktarget} created."
+		elif [ -d "${symlink}" ]; then
+			rm -rf "${symlink}/"
+			ln -s "${linksource}" "${linktarget}"
 			echo "Symlink for directory ${linksource} -> ${linktarget} created."
-			echo ""
+		elif [ -f "${symlink}" ]; then
+			rm "${symlink}"
+			ln -s "${linksource}" "${linktarget}"
+			echo "Symlink to file ${linksource} -> ${linktarget} created."
 		else
-			if [ -f ${symlink} ]; then
-				rm ${symlink}
-				ln -s ${linksource} ${linktarget}
-				echo "Symlink to file ${linksource} -> ${linktarget} created."
-				echo ""
-			else
-				ln -s ${linksource} ${linktarget}
-				echo "New symlink ${linksource} -> ${linktarget} created."
-				echo ""
-			fi
+			ln -s "${linksource}" "${linktarget}"
+			echo "New symlink ${linksource} -> ${linktarget} created."
 		fi
 	fi
 	echo "${name} successfully linked"
-}
-
-_installDotfiles() {
-	dotfiles="$1"
-	_installSymlink
 }
