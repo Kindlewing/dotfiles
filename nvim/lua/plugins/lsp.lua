@@ -48,6 +48,8 @@ return {
 				filetypes = { 'html', 'twig' },
 				provideFormatter = true,
 			},
+
+			bashls = {},
 		},
 	},
 }

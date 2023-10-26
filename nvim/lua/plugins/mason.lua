@@ -23,7 +23,7 @@ return {
 			'rust-analyzer',
 			'pyright',
 			'blue',
-			'bash-language-server',
+			'bashls',
 			'rustfmt',
 			'typescript-language-server',
 			'php-cs-fixer',
@@ -34,16 +34,4 @@ return {
 			'html-lsp',
 		},
 	},
-	---@param opts MasonSettings | {ensure_installed: string[]}
-	config = function(plugin, opts)
-		require('mason').setup(opts)
-		local mr = require('mason-registry')
-		for _, tool in ipairs(opts.ensure_installed) do
-			local p = mr.get_package(tool)
-			if not p:is_installed() then
-				p:install()
-			end
-		end
-	end,
-	'williamboman/mason-lspconfig.nvim',
 }
