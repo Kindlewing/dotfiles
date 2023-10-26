@@ -3,82 +3,82 @@
 		"name": "nvim",
 		"symlink": "~/.config/nvim",
 		"linksource": "~/.dotfiles/nvim/",
-		"linktarget": "~/.config/"
+		"linktarget": "~/.config"
 	},
 	{
 		"name": "wofi",
 		"symlink": "~/.config/wofi",
 		"linksource": "~/.dotfiles/wofi/",
-		"linktarget": "~/.config/"
+		"linktarget": "~/.config"
 	},
 	{
 		"name": "dunst",
 		"symlink": "~/.config/dunst",
 		"linksource": "~/.dotfiles/dunst/",
-		"linktarget": "~/.config/"
+		"linktarget": "~/.config"
 	},
 	{
-		"name": "fonts",
+		"name": ".fonts",
 		"symlink": "~/.local/share/fonts",
 		"linksource": "~/.dotfiles/fonts/",
-		"linktarget": "~/.local/share/"
+		"linktarget": "~/.local/share"
 	},
 	{
 		"name": "hypr",
 		"symlink": "~/.config/hypr",
 		"linksource": "~/.dotfiles/hypr/",
-		"linktarget": "~/.config/"
+		"linktarget": "~/.config"
 	},
 	{
 		"name": "kitty",
 		"symlink": "~/.config/kitty",
 		"linksource": "~/.dotfiles/kitty/",
-		"linktarget": "~/.config/"
+		"linktarget": "~/.config"
 	},
 	{
 		"name": "waybar",
 		"symlink": "~/.config/waybar",
 		"linksource": "~/.dotfiles/waybar/",
-		"linktarget": "~/.config/"
+		"linktarget": "~/.config"
 	},
 	{
 		"name": "wlogout",
 		"symlink": "~/.config/wlogout",
 		"linksource": "~/.dotfiles/wlogout/",
-		"linktarget": "~/.config/"
+		"linktarget": "~/.config"
 	},
 	{
 		"name": "zathura",
 		"symlink": "~/.config/zathura",
 		"linksource": "~/.dotfiles/zathura/",
-		"linktarget": "~/.config/"
+		"linktarget": "~/.config"
 	},
 	{
 		"name": "zellij",
 		"symlink": "~/.config/zellij",
 		"linksource": "~/.dotfiles/zellij/",
-		"linktarget": "~/.config/"
+		"linktarget": "~/.config"
 	},
 	{
-		"name": "zshrc",
+		"name": ".zshrc",
 		"symlink": "~/.zshrc",
 		"linksource": "~/.dotfiles/.zshrc",
 		"linktarget": "~/.zshrc"
 	},
 	{
-		"name": "bashrc",
+		"name": ".bashrc",
 		"symlink": "~/.bashrc",
 		"linksource": "~/.dotfiles/.bashrc",
 		"linktarget": "~/.bashrc"
 	},
 	{
-		"name": "p10k.zsh",
+		"name": ".p10k.zsh",
 		"symlink": "~/.p10k.zsh",
 		"linksource": "~/.dotfiles/.p10k.zsh",
 		"linktarget": "~/.p10k.zsh"
 	},
 	{
-		"name": "zsh_aliases",
+		"name": ".zsh_aliases",
 		"symlink": "~/.zsh_aliases",
 		"linksource": "~/.dotfiles/.zsh_aliases",
 		"linktarget": "~/.zsh_aliases"
