@@ -93,12 +93,11 @@ echo "-> Install general dotfiles"
 echo "-------------------------------------"
 echo ""
 
-declare -A dotfiles
-
 # Read JSON from a file
 json_file="config.json" # Change this to your JSON file
 json_entries=$(cat "$json_file")
 
+read -rp "Do you want to install the dotfiles? Existing symlinks will be removed (Yy/Nn): " yn
 # Parse JSON and call _installSymLink function for each entry
 IFS=$'\n' read -r -d '' -a entries < <(jq -c '.[]' <<<"$json_entries")
 for entry in "${entries[@]}"; do
@@ -109,10 +108,4 @@ for entry in "${entries[@]}"; do
 	_installSymLink "$name" "$symlink" "$linksource" "$linktarget"
 done
 
-# Print the associative array for verification
-for param in "${!dotfiles[@]}"; do
-	echo "$param: ${dotfiles[$param]}"
-done
-
-# Check if the user wants to install dotfiles.
-read -rp "Do you want to install the dotfiles? Existing symlinks will be removed (Yy/Nn): " yn
+echo "Dotfiles successfully installed!"
