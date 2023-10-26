@@ -75,25 +75,25 @@ _installSymLink() {
 	linksource="$3"
 	linktarget="$4"
 
-	if [ -L "${symlink}" ]; then
-		rm "${symlink}"
-		ln -s "${linksource}" "${linktarget}"
+	if [ -L ${symlink} ]; then
+		rm ${symlink}
+		ln -s ${linksource} ${linktarget}
 		echo "Symlink ${linksource} -> ${linktarget} created."
 		echo ""
 	else
-		if [ -d "${symlink}" ]; then
-			rm -rf "${symlink:?}"/
-			ln -s "${linksource}" "${linktarget}"
+		if [ -d ${symlink} ]; then
+			rm -rf ${symlink}/
+			ln -s ${linksource} ${linktarget}
 			echo "Symlink for directory ${linksource} -> ${linktarget} created."
 			echo ""
 		else
-			if [ -f "${symlink}" ]; then
-				rm "${symlink}"
-				ln -s "${linksource}" "${linktarget}"
+			if [ -f ${symlink} ]; then
+				rm ${symlink}
+				ln -s ${linksource} ${linktarget}
 				echo "Symlink to file ${linksource} -> ${linktarget} created."
 				echo ""
 			else
-				ln -s "${linksource}" "${linktarget}"
+				ln -s ${linksource} ${linktarget}
 				echo "New symlink ${linksource} -> ${linktarget} created."
 				echo ""
 			fi
