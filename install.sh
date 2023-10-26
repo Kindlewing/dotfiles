@@ -2,6 +2,20 @@
 source "$(dirname "$0")/scripts/library.sh"
 clear
 
+echo "     _       _    __ _ _            "
+echo "  __| | ___ | |_ / _(_) | ___  ___  "
+echo " / _' |/ _ \| __| |_| | |/ _ \/ __| "
+echo "| (_| | (_) | |_|  _| | |  __/\__ \ "
+echo " \__,_|\___/ \__|_| |_|_|\___||___/ "
+echo "                                    "
+echo "by Hudson Finn (2023)"
+echo "-------------------------------------"
+echo ""
+echo "The script will ask for permission to remove existing directories and files from ~/.config/"
+echo "Symbolic links will then be created from ~/dotfiles into your ~/.config/ directory."
+echo "But you can decide to keep your personal versions by answering with No (Nn)."
+echo ""
+
 # Update the package database and upgrade installed packages
 while true; do
 	read -rp "Update required; continue? (Yy/Nn): " yn
@@ -104,7 +118,7 @@ _installSymLink .fonts ~/.local/share/fonts ~/.dotfiles/fonts/ ~/.local/share/fo
 
 echo ""
 echo "-------------------------------------"
-echo "-> Install general dotfiles"
+echo "-> Install zsh dotfiles"
 echo "-------------------------------------"
 echo ""
 
