@@ -82,7 +82,7 @@ _installSymLink() {
 		echo ""
 	else
 		if [ -d "${symlink}" ]; then
-			rm -rf ${symlink}/
+			rm -rf "${symlink:?}"/
 			ln -s "${linksource}" "${linktarget}"
 			echo "Symlink for directory ${linksource} -> ${linktarget} created."
 			echo ""
