@@ -93,19 +93,33 @@ echo "-> Install general dotfiles"
 echo "-------------------------------------"
 echo ""
 
-# Read JSON from a file
-json_file="config.json" # Change this to your JSON file
-json_entries=$(cat "$json_file")
+_installSymLink nvim ~/.config/nvim ~/.dotfiles/nvim/ ~/.config
+_installSymLink rofi ~/.config/rofi ~/.dotfiles/rofi/ ~/.config
+_installSymLink dunst ~/.config/dunst ~/.dotfiles/dunst/ ~/.config
+_installSymLink wofi ~/.config/wofi ~/.dotfiles/wofi/ ~/.config
+_installSymLink kitty ~/.config/kitty ~/.dotfiles/kitty/ ~/.config
+_installSymLink zellij ~/.config/zellij ~/.dotfiles/zellij/ ~/.config
+_installSymLink zathura ~/.config/zathura ~/.dotfiles/zathura/ ~/.config
+_installSymLink .fonts ~/.local/share/fonts ~/.dotfiles/fonts/ ~/.local/share/fonts
 
-read -rp "Do you want to install the dotfiles? Existing symlinks will be removed (Yy/Nn): " yn
-# Parse JSON and call _installSymLink function for each entry
-IFS=$'\n' read -r -d '' -a entries < <(jq -c '.[]' <<<"$json_entries")
-for entry in "${entries[@]}"; do
-	name=$(jq -r '.name' <<<"$entry")
-	symlink=$(jq -r '.symlink' <<<"$entry")
-	linksource=$(jq -r '.linksource' <<<"$entry")
-	linktarget=$(jq -r '.linktarget' <<<"$entry")
-	_installSymLink "$name" "$symlink" "$linksource" "$linktarget"
-done
+echo ""
+echo "-------------------------------------"
+echo "-> Install general dotfiles"
+echo "-------------------------------------"
+echo ""
+
+_installSymLink .zshrc ~/.zshrc ~/.dotfiles/.zshrc
+_installSymLink .zsh_aliases ~/.zsh_aliases ~/.dotfiles/.zsh_aliases
+_installSymLink .p10k.zsh ~/.p10k.zsh ~/.dotfiles/.p10k.zsh
+
+echo "-------------------------------------"
+echo "-> Install Hyprland dotfiles"
+echo "-------------------------------------"
+echo ""
+
+_installSymLink hypr ~/.config/hypr ~/.dotfiles/hypr/ ~/.config
+_installSymLink waybar ~/.config/waybar ~/.dotfiles/waybar/ ~/.config
+_installSymLink swaylock ~/.config/swaylock ~/.dotfiles/swaylock/ ~/.config
+_installSymLink wlogout ~/.config/wlogout ~/.dotfiles/wlogout/ ~/.config
 
 echo "Dotfiles successfully installed!"
