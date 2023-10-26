@@ -1,86 +1,86 @@
 [
 	{
 		"name": "nvim",
-		"symlink": "$HOME/.config/nvim",
-		"linksource": "$HOME/.dotfiles/nvim/",
-		"linktarget": "$HOME/.config/"
+		"symlink": "~/.config/nvim",
+		"linksource": "~/.dotfiles/nvim/",
+		"linktarget": "~/.config/"
 	},
 	{
 		"name": "wofi",
-		"symlink": "$HOME/.config/wofi",
-		"linksource": "$HOME/.dotfiles/wofi/",
-		"linktarget": "$HOME/.config/"
+		"symlink": "~/.config/wofi",
+		"linksource": "~/.dotfiles/wofi/",
+		"linktarget": "~/.config/"
 	},
 	{
 		"name": "dunst",
-		"symlink": "$HOME/.config/dunst",
-		"linksource": "$HOME/.dotfiles/dunst/",
-		"linktarget": "$HOME/.config/"
+		"symlink": "~/.config/dunst",
+		"linksource": "~/.dotfiles/dunst/",
+		"linktarget": "~/.config/"
 	},
 	{
 		"name": "fonts",
-		"symlink": "$HOME/.local/share/fonts",
-		"linksource": "$HOME/.dotfiles/fonts/",
-		"linktarget": "$HOME/.local/share/"
+		"symlink": "~/.local/share/fonts",
+		"linksource": "~/.dotfiles/fonts/",
+		"linktarget": "~/.local/share/"
 	},
 	{
 		"name": "hypr",
-		"symlink": "$HOME/.config/hypr",
-		"linksource": "$HOME/.dotfiles/hypr/",
-		"linktarget": "$HOME/.config/"
+		"symlink": "~/.config/hypr",
+		"linksource": "~/.dotfiles/hypr/",
+		"linktarget": "~/.config/"
 	},
 	{
 		"name": "kitty",
-		"symlink": "$HOME/.config/kitty",
-		"linksource": "$HOME/.dotfiles/kitty/",
-		"linktarget": "$HOME/.config/"
+		"symlink": "~/.config/kitty",
+		"linksource": "~/.dotfiles/kitty/",
+		"linktarget": "~/.config/"
 	},
 	{
 		"name": "waybar",
-		"symlink": "$HOME/.config/waybar",
-		"linksource": "$HOME/.dotfiles/waybar/",
-		"linktarget": "$HOME/.config/"
+		"symlink": "~/.config/waybar",
+		"linksource": "~/.dotfiles/waybar/",
+		"linktarget": "~/.config/"
 	},
 	{
 		"name": "wlogout",
-		"symlink": "$HOME/.config/wlogout",
-		"linksource": "$HOME/.dotfiles/wlogout/",
-		"linktarget": "$HOME/.config/"
+		"symlink": "~/.config/wlogout",
+		"linksource": "~/.dotfiles/wlogout/",
+		"linktarget": "~/.config/"
 	},
 	{
 		"name": "zathura",
-		"symlink": "$HOME/.config/zathura",
-		"linksource": "$HOME/.dotfiles/zathura/",
-		"linktarget": "$HOME/.config/"
+		"symlink": "~/.config/zathura",
+		"linksource": "~/.dotfiles/zathura/",
+		"linktarget": "~/.config/"
 	},
 	{
 		"name": "zellij",
-		"symlink": "$HOME/.config/zellij",
-		"linksource": "$HOME/.dotfiles/zellij/",
-		"linktarget": "$HOME/.config/"
+		"symlink": "~/.config/zellij",
+		"linksource": "~/.dotfiles/zellij/",
+		"linktarget": "~/.config/"
 	},
 	{
 		"name": "zshrc",
-		"symlink": "$HOME/.zshrc",
-		"linksource": "$HOME/.dotfiles/.zshrc",
-		"linktarget": "$HOME/"
+		"symlink": "~/.zshrc",
+		"linksource": "~/.dotfiles/.zshrc",
+		"linktarget": "~/"
 	},
 	{
 		"name": "bashrc",
-		"symlink": "$HOME/.bashrc",
-		"linksource": "$HOME/.dotfiles/.bashrc",
-		"linktarget": "$HOME/"
+		"symlink": "~/.bashrc",
+		"linksource": "~/.dotfiles/.bashrc",
+		"linktarget": "~/"
 	},
 	{
 		"name": "p10k.zsh",
-		"symlink": "$HOME/.p10k.zsh",
-		"linksource": "$HOME/.dotfiles/.p10k.zsh",
-		"linktarget": "$HOME/"
+		"symlink": "~/.p10k.zsh",
+		"linksource": "~/.dotfiles/.p10k.zsh",
+		"linktarget": "~/"
 	},
 	{
 		"name": "zsh_aliases",
-		"symlink": "$HOME/.zsh_aliases",
-		"linksource": "$HOME/.dotfiles/.zsh_aliases",
-		"linktarget": "$HOME/"
+		"symlink": "~/.zsh_aliases",
+		"linksource": "~/.dotfiles/.zsh_aliases",
+		"linktarget": "~/"
 	}
 ]
