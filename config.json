@@ -63,24 +63,24 @@
 		"name": "zshrc",
 		"symlink": "~/.zshrc",
 		"linksource": "~/.dotfiles/.zshrc",
-		"linktarget": "~/"
+		"linktarget": "~/.zshrc"
 	},
 	{
 		"name": "bashrc",
 		"symlink": "~/.bashrc",
 		"linksource": "~/.dotfiles/.bashrc",
-		"linktarget": "~/"
+		"linktarget": "~/.bashrc"
 	},
 	{
 		"name": "p10k.zsh",
 		"symlink": "~/.p10k.zsh",
 		"linksource": "~/.dotfiles/.p10k.zsh",
-		"linktarget": "~/"
+		"linktarget": "~/.p10k.zsh"
 	},
 	{
 		"name": "zsh_aliases",
 		"symlink": "~/.zsh_aliases",
 		"linksource": "~/.dotfiles/.zsh_aliases",
-		"linktarget": "~/"
+		"linktarget": "~/.zsh_aliases"
 	}
 ]
