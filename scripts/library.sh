@@ -75,7 +75,7 @@ _installSymLink() {
 	linksource="$3"
 	linktarget="$4"
 
-	if [ -L ${symlink} ]; then
+	if [ -L "${symlink}" ]; then
 		rm ${symlink}
 		ln -s ${linksource} ${linktarget}
 		echo "Symlink ${linksource} -> ${linktarget} created."
