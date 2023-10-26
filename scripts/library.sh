@@ -68,42 +68,41 @@ _installPackagesYay() {
 # ------------------------------------------------------
 # Create symbolic links
 # ------------------------------------------------------
+
 _installSymLink() {
 	name="$1"
 	symlink="$2"
 	linksource="$3"
-	linktarget="$3"
+	linktarget="$4"
 
 	if [ -L "${symlink}" ]; then
 		rm "${symlink}"
-		echo "Removed existing symlink: ${symlink}"
-	elif [ -d "${symlink}" ]; then
-		rm -rf "${symlink}"
-		echo "Removed existing directory: ${symlink}"
-	elif [ -f "${symlink}" ]; then
-		rm "${symlink}"
-		echo "Removed existing file: ${symlink}"
+		ln -s "${linksource}" "${linktarget}"
+		echo "Symlink ${linksource} -> ${linktarget} created."
+		echo ""
+	else
+		if [ -d "${symlink}" ]; then
+			rm -rf ${symlink}/
+			ln -s "${linksource}" "${linktarget}"
+			echo "Symlink for directory ${linksource} -> ${linktarget} created."
+			echo ""
+		else
+			if [ -f "${symlink}" ]; then
+				rm "${symlink}"
+				ln -s "${linksource}" "${linktarget}"
+				echo "Symlink to file ${linksource} -> ${linktarget} created."
+				echo ""
+			else
+				ln -s "${linksource}" "${linktarget}"
+				echo "New symlink ${linksource} -> ${linktarget} created."
+				echo ""
+			fi
+		fi
 	fi
-
-	ln -s "${linksource}" "${linktarget}"
-	echo "Symlink for ${name}: ${linksource} -> {$linktarget} created."
+	echo "${name} successfully linked"
 }
 
-_confirm_installation() {
-	echo "The following symlinks will be created:"
-	for src_name in "${!mappings[@]}"; do
-		dest_path="${mappings[$src_name]}"
-		src_path="$source_folder/$src_name"
-		echo "  $src_path -> $dest_path"
-	done
-
-	read -p "Do you want to install dotfiles? (Existing dotfiles will be removed!) (Yy/Nn): " yn
-	case $yn in
-	[Yy]*) return 0 ;;
-	[Nn]*) return 1 ;;
-	*)
-		echo "Please answer yes or no."
-		return 1
-		;;
-	esac
+_installDotfiles() {
+	dotfiles="$1"
+	_installSymlink
 }
