@@ -11,7 +11,7 @@ return {
 			},
 		},
 		ensure_installed = {
-			'lua_ls',
+			'lua-language-server',
 			'shellcheck',
 			'editorconfig-checker',
 			'beautysh',
@@ -23,7 +23,7 @@ return {
 			'rust-analyzer',
 			'pyright',
 			'blue',
-			'bashls',
+			'bash-language-server',
 			'rustfmt',
 			'typescript-language-server',
 			'php-cs-fixer',
