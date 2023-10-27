@@ -41,10 +41,6 @@ dotfiles:
         src: .p10k.zsh
         dst: ~/.p10k.zsh
         link: absolute
-    f_zsh_plugins.txt:
-        src: .zsh_plugins.txt
-        dst: ~/.zsh_plugins.txt
-        link: absolute
     d_config_kitty:
         src: .config/kitty
         dst: ~/.config/kitty
@@ -78,17 +74,12 @@ profiles:
         dotfiles:
             - d_config_zathura
             - f_bashrc
-            - f_xresources
             - d_local_share_fonts
             - d_config_zellij
-            - d_config_alacritty
-            - d_scripts
-            - d_screenlayout
             - d_icons
             - f_zsh_aliases
             - f_p10k.zsh
             - f_zshrc
-            - f_zsh_plugins.txt
             - d_config_kitty
             - d_config_dunst
             - d_config_hypr

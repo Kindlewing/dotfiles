@@ -9,6 +9,5 @@ alias grep=rg
 alias vim=nvim
 alias cat=bat
 alias ls='eza -hlX --icons --group-directories-first --color=always'
-alias dotdrop='/home/hudson/.dotfiles/dotdrop.sh --cfg=/home/hudson/.dotfiles/config.yaml'
 alias http=xh
 alias curl=xh
