@@ -120,10 +120,9 @@ while true; do
 done
 
 # ------------------------------------------------------
-# Dotdrop
+# Dotter
 # ------------------------------------------------------
-# name symlink source target
 
-dotdrop -c ~/.dotfiles/config.yml -p home
+./dotter
 
 echo "Dotfiles successfully installed!"
