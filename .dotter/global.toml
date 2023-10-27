@@ -1,0 +1,27 @@
+[helpers]
+
+[default]
+depends = []
+
+[default.files]
+dunst = "~/.config/dunst"
+hypr = "~/.config/hypr"
+kitty = "~/.config/kitty"
+nvim = "~/.config/nvim"
+scripts = "~/.config/scripts/"
+waybar = "~/.config/waybar"
+wlogout = "~/.config/wlogout"
+wofi = "~/.config/wofi"
+zathura = "~/.config/zathura"
+zellij = "~/.config/zellij"
+
+fonts = "~/.local/share/fonts"
+swaylock = "~/.swaylock"
+icons = "~/.icons"
+
+[zsh.files]
+"zsh/zshrc" = "~/.zshrc"
+"zsh/aliases" = "~/.aliases"
+"zsh/p10k.zsh" = "~/.p10k.zsh"
+
+[default.variables]
