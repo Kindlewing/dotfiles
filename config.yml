@@ -9,6 +9,10 @@ config:
     link_on_import: nolink
     dotpath: ./
 dotfiles:
+    d_config_nvim:
+      src: .config/nvim
+      dst: ~/.config/nvim
+      link: absolute
     d_config_zathura:
         src: .config/zathura
         dst: ~/.config/zathura
@@ -72,6 +76,7 @@ dotfiles:
 profiles:
     home:
         dotfiles:
+            - d_config_nvim
             - d_config_zathura
             - f_bashrc
             - d_local_share_fonts
