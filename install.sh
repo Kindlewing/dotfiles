@@ -88,6 +88,6 @@ done
 # ------------------------------------------------------
 # name symlink source target
 
-dotdrop -c ~/.dotfiles/ -p home
+dotdrop -c ~/.dotfiles/config.yml -p home
 
 echo "Dotfiles successfully installed!"
