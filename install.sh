@@ -32,6 +32,18 @@ while true; do
 done
 sudo pacman -Syu --noconfirm
 
+clear
+
+echo "     _       _    __ _ _            "
+echo "  __| | ___ | |_ / _(_) | ___  ___  "
+echo " / _' |/ _ \| __| |_| | |/ _ \/ __| "
+echo "| (_| | (_) | |_|  _| | |  __/\__ \ "
+echo " \__,_|\___/ \__|_| |_|_|\___||___/ "
+echo "                                    "
+echo "by Hudson Finn (2023)"
+echo "-------------------------------------"
+echo ""
+
 if sudo pacman -Qs yay >/dev/null; then
 	echo "yay is installed. You can proceed with the installation"
 else
@@ -44,6 +56,18 @@ else
 	clear
 	echo "yay has been installed successfully."
 fi
+
+clear
+
+echo "     _       _    __ _ _            "
+echo "  __| | ___ | |_ / _(_) | ___  ___  "
+echo " / _' |/ _ \| __| |_| | |/ _ \/ __| "
+echo "| (_| | (_) | |_|  _| | |  __/\__ \ "
+echo " \__,_|\___/ \__|_| |_|_|\___||___/ "
+echo "                                    "
+echo "by Hudson Finn (2023)"
+echo "-------------------------------------"
+echo ""
 
 while true; do
 	read -rp "Do you want to install the required packages? (Yy/Nn): " yn
@@ -68,6 +92,18 @@ _installPackagesPacman "${pacman_packages[@]}"
 
 yay_packages=(wlogout dotdrop swaylock-effects-git catppuccin-gtk-theme-mocha)
 _installPackagesYay "${yay_packages[@]}"
+
+clear
+
+echo "     _       _    __ _ _            "
+echo "  __| | ___ | |_ / _(_) | ___  ___  "
+echo " / _' |/ _ \| __| |_| | |/ _ \/ __| "
+echo "| (_| | (_) | |_|  _| | |  __/\__ \ "
+echo " \__,_|\___/ \__|_| |_|_|\___||___/ "
+echo "                                    "
+echo "by Hudson Finn (2023)"
+echo "-------------------------------------"
+echo ""
 
 while true; do
 	read -rp "Do you want to install dotfiles? (Yy/Nn): " yn
