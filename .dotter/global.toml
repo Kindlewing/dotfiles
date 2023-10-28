@@ -18,10 +18,12 @@ zellij = "~/.config/zellij"
 fonts = "~/.local/share/fonts"
 swaylock = "~/.swaylock"
 icons = "~/.icons"
+bookmarks = "~/.bookmarks"
 
 [zsh.files]
 "zsh/zshrc" = "~/.zshrc"
 "zsh/aliases" = "~/.aliases"
 "zsh/p10k.zsh" = "~/.p10k.zsh"
+
 
 [default.variables]
