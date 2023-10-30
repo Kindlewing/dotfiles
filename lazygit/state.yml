@@ -1,0 +1,9 @@
+lastupdatecheck: 0
+recentrepos:
+- /home/hudson/.dotfiles
+- /home/hudson/development/repos/work/ship
+- /home/hudson/development/repos/work/test-ci
+startuppopupversion: 5
+customcommandshistory: []
+hidecommandlog: false
+ignorewhitespaceindiffview: false
