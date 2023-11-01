@@ -17,6 +17,7 @@ export VISUAL="/usr/bin/nvim"
 export EDITOR="/usr/bin/nvim"
 export BROWSER="/usr/bin/firefox-developer-edition"
 export PAGER="/usr/bin/bat"
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
 ZSH_ATOSUGGEST_STRATEGY=(history completion)
 
@@ -34,7 +35,6 @@ fi
 if [[ ! -d "$ZSH_PLUGINS/zsh-autosuggestions" ]]; then
     git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions $ZSH_PLUGINS/zsh-autosuggestions
 fi
-
 if [[ ! -d "$ZSH_PLUGINS/zsh-syntax-highlighting" ]]; then
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_PLUGINS/zsh-syntax-highlighting
 fi
@@ -52,7 +52,6 @@ source $ZSH_PLUGINS/powerlevel10k/powerlevel10k.zsh-theme
 source $ZSH_PLUGINS/catppuccin_syntax_highlighting.zsh
 source $ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $ZSH_PLUGINS/command-not-found.zsh
 
-source $HOME/.aliases
+source $HOME/.aliases.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
