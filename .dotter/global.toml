@@ -23,7 +23,7 @@ bookmarks = "~/.bookmarks"
 
 [zsh.files]
 "zsh/zshrc" = "~/.zshrc"
-"zsh/aliases" = "~/.aliases"
+"zsh/aliases" = "~/.aliases.zsh"
 "zsh/p10k.zsh" = "~/.p10k.zsh"
 
 
