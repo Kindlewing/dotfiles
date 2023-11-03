@@ -32,6 +32,7 @@ return {
 			'cssmodules-language-server',
 			'emmet-language-server',
 			'html-lsp',
+			'markdownlint',
 		},
 	},
 }
