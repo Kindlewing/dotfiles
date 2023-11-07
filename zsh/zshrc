@@ -17,7 +17,7 @@ export VISUAL="/usr/bin/nvim"
 export EDITOR="/usr/bin/nvim"
 export BROWSER="/usr/bin/firefox-developer-edition"
 export PAGER="/usr/bin/bat"
-[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
+[ "$TERM" = "xterm-kitty" ]
 
 ZSH_ATOSUGGEST_STRATEGY=(history completion)
 

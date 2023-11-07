@@ -1,7 +1,8 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/hudson/.dotfiles
+- /home/hudson/development/repos/ship
 startuppopupversion: 5
 customcommandshistory: []
-hidecommandlog: false
+hidecommandlog: true
 ignorewhitespaceindiffview: false

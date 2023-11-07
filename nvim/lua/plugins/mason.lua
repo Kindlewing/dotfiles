@@ -12,6 +12,7 @@ return {
 		},
 		ensure_installed = {
 			'lua-language-server',
+			'php-cs-fixer',
 			'shellcheck',
 			'editorconfig-checker',
 			'beautysh',

@@ -1,5 +1,5 @@
 alias zn='zellij'
-alias za='./.config/scripts/zellij_attach.sh'
+alias za='.config/scripts/./zellij_attach.sh'
 alias zls='zellij ls'
 alias zka='zellij ka'
 alias zr='zellij run -- $argv'
