@@ -3,7 +3,25 @@
 [default]
 depends = []
 
-[default.files]
+[workstation.files]
+dunst = "~/.config/dunst"
+hypr = "~/.config/hypr"
+kitty = "~/.config/kitty"
+nvim = "~/.config/nvim"
+scripts = "~/.config/scripts"
+waybar = "~/.config/waybar"
+wlogout = "~/.config/wlogout"
+wofi = "~/.config/wofi"
+lazygit = "~/.config/lazygit/"
+zathura = "~/.config/zathura"
+zellij = "~/.config/zellij"
+
+fonts = "~/.local/share/fonts"
+swaylock = "~/.swaylock"
+icons = "~/.icons"
+bookmarks = "~/.bookmarks"
+
+[laptop.files]
 dunst = "~/.config/dunst"
 hypr = "~/.config/hypr"
 kitty = "~/.config/kitty"
