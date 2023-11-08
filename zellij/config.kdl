@@ -7,9 +7,15 @@ ui {
 
 keybinds {
     unbind "Ctrl h"
+    unbind "Ctrl o"
+
     normal {
         bind "Ctrl m" { SwitchToMode "Move"; }
     }
+    shared_except "session" "locked" {
+		bind "Ctrl x" { SwitchToMode "Session"; }
+	}
+
 }
 
 theme "catppuccin-mocha"
