@@ -11,8 +11,10 @@ keybinds {
 
     normal {
         bind "Ctrl m" { SwitchToMode "Move"; }
+		bind "Ctrl x" { SwitchToMode "Session"; }
     }
     shared_except "session" "locked" {
+        unbind "Ctrl o"
 		bind "Ctrl x" { SwitchToMode "Session"; }
 	}
 

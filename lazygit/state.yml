@@ -1,6 +1,7 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/hudson/.dotfiles
+- /home/hudson/development/repos/php-fedex-api
 - /home/hudson/development/repos/ship
 startuppopupversion: 5
 customcommandshistory: []
