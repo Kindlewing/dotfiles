@@ -1,8 +1,8 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/hudson/.dotfiles
-- /home/hudson/development/repos/php-fedex-api
 - /home/hudson/development/repos/ship
+- /home/hudson/development/repos/php-fedex-api
 startuppopupversion: 5
 customcommandshistory: []
 hidecommandlog: true
