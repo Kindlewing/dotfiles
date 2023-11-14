@@ -125,7 +125,7 @@ tooltip {
 
 #tray {
   color: @base;
-  background-color: @peach;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 #tray > .passive {
