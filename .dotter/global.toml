@@ -3,16 +3,15 @@
 [default]
 depends = []
 
-[workstation.files]
+[default.files]
 dunst = "~/.config/dunst"
-hypr = "~/.config/hypr"
 kitty = "~/.config/kitty"
 nvim = "~/.config/nvim"
 scripts = "~/.config/scripts"
 waybar = "~/.config/waybar"
 wlogout = "~/.config/wlogout"
 wofi = "~/.config/wofi"
-lazygit = "~/.config/lazygit/"
+lazygit = "~/.config/lazygit"
 zathura = "~/.config/zathura"
 zellij = "~/.config/zellij"
 
@@ -21,23 +20,17 @@ swaylock = "~/.swaylock"
 icons = "~/.icons"
 bookmarks = "~/.bookmarks"
 
-[laptop.files]
-dunst = "~/.config/dunst"
-hypr = "~/.config/hypr"
-kitty = "~/.config/kitty"
-nvim = "~/.config/nvim"
-scripts = "~/.config/scripts"
-waybar = "~/.config/waybar"
-wlogout = "~/.config/wlogout"
-wofi = "~/.config/wofi"
-lazygit = "~/.config/lazygit/"
-zathura = "~/.config/zathura"
-zellij = "~/.config/zellij"
 
-fonts = "~/.local/share/fonts"
-swaylock = "~/.swaylock"
-icons = "~/.icons"
-bookmarks = "~/.bookmarks"
+[home.files]
+"hyprland-home" = "~/.config/hypr"
+
+[work.files]
+"hyprland-work" = "~/.config/hypr"
+
+"home/fonts" = "~/.local/share/fonts"
+"home/swaylock" = "~/.swaylock"
+"home/icons" = "~/.icons"
+"home/bookmarks" = "~/.bookmarks"
 
 [zsh.files]
 "zsh/zshrc" = "~/.zshrc"
