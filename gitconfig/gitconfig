@@ -1,0 +1,26 @@
+[safe]
+	directory = /home/hudson/.dotfiles
+[user]
+	name = hudson
+	email = hfinn@autodist.com
+[pull]
+	rebase = false
+
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    side-by-side = true
+    minus-style = "#f38ba8" bold ul
+    plus-style = "#a6e3a1" bold
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default

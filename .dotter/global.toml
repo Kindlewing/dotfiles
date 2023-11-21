@@ -15,6 +15,8 @@ lazygit = "~/.config/lazygit"
 zathura = "~/.config/zathura"
 zellij = "~/.config/zellij"
 
+"gitconfig/gitconfig"= "~/.gitconfig"
+
 fonts = "~/.local/share/fonts"
 swaylock = "~/.swaylock"
 icons = "~/.icons"
