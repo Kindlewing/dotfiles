@@ -86,7 +86,7 @@ done
 echo ""
 echo "-> Install main packages"
 
-pacman_packages=(zsh zellij hyprland wl-clipboard kitty wofi waybar swaybg nodejs npm dunst xdg-desktop-portal-hyprland zathura git lazygit neovim ripgrep bat eza xh)
+pacman_packages=(zsh zellij hyprland git-delta wl-clipboard kitty wofi waybar swaybg nodejs npm dunst xdg-desktop-portal-hyprland zathura git lazygit neovim ripgrep bat eza xh)
 
 _installPackagesPacman "${pacman_packages[@]}"
 
