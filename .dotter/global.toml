@@ -32,7 +32,6 @@ bookmarks = "~/.bookmarks"
 "home/fonts" = "~/.local/share/fonts"
 "home/swaylock" = "~/.swaylock"
 "home/icons" = "~/.icons"
-"home/bookmarks" = "~/.bookmarks"
 
 [zsh.files]
 "zsh/zshrc" = "~/.zshrc"
