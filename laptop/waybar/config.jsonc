@@ -1,0 +1,72 @@
+{
+  "layer": "top",
+  "height": 40,
+  "spacing": 4,
+
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["tray"],
+  "modules-right": ["pulseaudio", "network", "cpu", "memory", "clock"],
+
+  "hyprland/workspaces": {
+    "format": "{name}  {icon}",
+    "on-click": "activate",
+    "all-outputs": true,
+    "sort-by-number": true,
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": ""
+    },
+    "persistant_workspaces": {
+      "*": 7
+    }
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10
+  },
+  "clock": {
+    "format": "{:%I:%M %p}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d}"
+  },
+  "cpu": {
+    "format": "{usage}% <span font='14'>󰻠</span>"
+  },
+  "memory": {
+    "format": "{}% <span font='14'>󰍛</span>"
+  },
+  "network": {
+    "format-wifi": "{essid} ({signalStrength}%) <span font='14'>󰖩</span>",
+    "format-ethernet": "Connected <span font='14'>󰈁</span>",
+    "tooltip-format": "{ifname} via {gwaddr}/{cidr}",
+    "format-linked": "{ifname} (No IP) <span font='14'>󰈁</span>",
+    "format-disconnected": "Disconnected <span font='14'>󰈂</span>",
+    "format-alt": "{ipaddr}"
+  },
+  "pulseaudio": {
+    "format": "{volume}% <span font='14'>{icon}</span>",
+    "format-bluetooth": "{volume}% <span font='14'>{icon}</span>",
+    "format-bluetooth-muted": "<span font='14'>󰖁</span>",
+    "format-muted": "<span font='14'>󰖁</span>",
+    "format-source": "{volume}% <span font='14'>󰕾</span>",
+    "format-source-muted": "<span font='14'>󰖁</span>",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "󰋎",
+      "headset": "󰕾",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "~/.config/dunst/scripts/volume mute"
+  }
+}

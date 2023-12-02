@@ -23,11 +23,12 @@ icons = "~/.icons"
 bookmarks = "~/.bookmarks"
 
 
-[home.files]
-"hyprland-home" = "~/.config/hypr"
+[workstation.files]
+"workstation/hyprland" = "~/.config/hypr"
 
-[work.files]
-"hyprland-work" = "~/.config/hypr"
+[laptop.files]
+"laptop/hyprland" = "~/.config/hypr"
+"laptop/waybar" = "~/.config/waybar"
 
 "home/fonts" = "~/.local/share/fonts"
 "home/swaylock" = "~/.swaylock"
