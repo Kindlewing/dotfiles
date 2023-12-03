@@ -30,10 +30,6 @@ bookmarks = "~/.bookmarks"
 "laptop/hyprland" = "~/.config/hypr"
 "laptop/waybar" = "~/.config/waybar"
 
-"home/fonts" = "~/.local/share/fonts"
-"home/swaylock" = "~/.swaylock"
-"home/icons" = "~/.icons"
-
 [zsh.files]
 "zsh/zshrc" = "~/.zshrc"
 "zsh/aliases.zsh" = "~/.aliases.zsh"
