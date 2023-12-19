@@ -5,7 +5,8 @@ return {
 	config = function()
 		require('dashboard').setup({
 			theme = 'hyper',
+			week_header = { enable = true },
+			packages = { enable = true },
 		})
 	end,
-	requires = { 'nvim-tree/nvim-web-devicons' },
 }

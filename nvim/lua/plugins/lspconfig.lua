@@ -3,10 +3,13 @@ return {
 	config = function()
 		local lspconfig = require('lspconfig')
 
-		-- Rust
+		-- rust
 		lspconfig.rust_analyzer.setup({})
 
+		-- typescript
 		lspconfig.tsserver.setup({})
+
+		-- php
 		lspconfig.intelephense.setup({})
 
 		-- lua
