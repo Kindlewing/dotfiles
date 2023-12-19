@@ -1,27 +1,26 @@
 return {
-  'stevearc/conform.nvim',
-  lazy = true,
-  event = { 'BufReadPre', 'BufNewFile' }, -- to disable, comment this out
-  config = function()
-    require('conform').setup {
-      formatters_by_ft = {
-        lua = { 'stylua' },
-        javascript = { 'prettierd' },
-        typescript = { 'prettierd' },
-        javascriptreact = { 'prettierd' },
-        typescriptreact = { 'prettierd' },
-        css = { 'prettierd' },
-        html = { 'prettierd' },
-        json = { 'prettierd' },
-        yaml = { 'prettierd' },
-        markdown = { 'prettierd' },
-        graphql = { 'prettierd' },
-      },
-      format_on_save = {
-        timeout_ms = 500,
-        async = false,
-        lsp_fallback = true,
-      },
-    }
-  end,
+	'stevearc/conform.nvim',
+	lazy = true,
+	event = { 'BufReadPre', 'BufNewFile' }, -- to disable, comment this out
+	config = function()
+		require('conform').setup({
+			formatters_by_ft = {
+				lua = { 'stylua' },
+				javascript = { 'prettier' },
+				typescript = { 'prettier' },
+				javascriptreact = { 'prettier' },
+				typescriptreact = { 'prettier' },
+				css = { 'prettier' },
+				html = { 'prettier' },
+				json = { 'prettier' },
+				yaml = { 'prettier' },
+				markdown = { 'prettier' },
+			},
+			format_on_save = {
+				timeout_ms = 500,
+				async = false,
+				lsp_fallback = true,
+			},
+		})
+	end,
 }

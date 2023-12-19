@@ -23,3 +23,6 @@ keymap.set('n', '<leader>nh', ':nohl<CR>', { desc = 'Clear search highlights' })
 -- Telescope
 keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find files' })
 keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Find word' })
+
+-- Mason
+keymap.set('n', '<leader>pm', ':Mason<CR>', { desc = 'Mason' })

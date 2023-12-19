@@ -21,8 +21,9 @@ return {
 				'lua-language-server',
 				'stylua',
 				'eslint_d',
-				'prettierd',
+				'prettier',
 				'rust-analyzer',
+				'intelephense',
 			},
 		})
 	end,
