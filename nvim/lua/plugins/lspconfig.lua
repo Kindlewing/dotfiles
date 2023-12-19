@@ -1,25 +1,23 @@
 return {
-  'neovim/nvim-lspconfig',
-  config = function()
-    local lspconfig = require 'lspconfig'
+	'neovim/nvim-lspconfig',
+	config = function()
+		local lspconfig = require('lspconfig')
 
-    -- graphql
-    lspconfig.graphql.setup {
-      filetypes = {
-        'graphql',
-        'gql',
-      },
-    }
+		-- Rust
+		lspconfig.rust_analyzer.setup({})
 
-    -- lua
-    lspconfig.lua_ls.setup {
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = { 'vim' },
-          },
-        },
-      },
-    }
-  end,
+		lspconfig.tsserver.setup({})
+		lspconfig.intelephense.setup({})
+
+		-- lua
+		lspconfig.lua_ls.setup({
+			settings = {
+				Lua = {
+					diagnostics = {
+						globals = { 'vim' },
+					},
+				},
+			},
+		})
+	end,
 }

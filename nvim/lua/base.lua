@@ -9,8 +9,8 @@ opt.sidescrolloff = 5
 opt.hlsearch = true
 opt.incsearch = true
 
-opt.mouse:append 'a'
-opt.clipboard:append 'unnamedplus'
+opt.mouse:append('a')
+opt.clipboard:append('unnamedplus')
 
 opt.tabstop = 4
 opt.shiftwidth = 4
@@ -27,9 +27,11 @@ vim.bo.autoread = true
 opt.cursorline = true
 opt.termguicolors = true
 
+vim.g.mapleader = ' '
+
 -- highlight on yank
 vim.api.nvim_create_autocmd('TextYankPost', {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })

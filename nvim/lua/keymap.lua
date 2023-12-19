@@ -1,4 +1,3 @@
-vim.g.mapleader = ' '
 local builtin = require('telescope.builtin')
 local keymap = vim.keymap
 

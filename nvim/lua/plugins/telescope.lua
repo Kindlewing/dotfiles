@@ -26,13 +26,8 @@ return {
 			},
 			pickers = {
 				find_files = {
+					follow = true,
 					hidden = true,
-				},
-			},
-			layout_config = {
-				horizontal = {
-					preview_cutoff = 100,
-					preview_width = 0.5,
 				},
 			},
 		})
