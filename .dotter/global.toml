@@ -24,7 +24,7 @@ bookmarks = "~/.bookmarks"
 
 
 [workstation.files]
-"workstation/hyprland" = "~/.config/hypr"
+"workstation/hypr" = "~/.config/hypr"
 
 [laptop.files]
 "laptop/hyprland" = "~/.config/hypr"
