@@ -1,12 +1,19 @@
--- bootstrap lazy.nvim, LazyVim and your plugins
-require('config.lazy')
----@class ParserInfo
-local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
-parser_config.hypr = {
-	install_info = {
-		url = 'https://github.com/luckasRanarison/tree-sitter-hypr',
-		files = { 'src/parser.c' },
-		branch = 'master',
-	},
-	filetype = 'hypr',
-}
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		'git',
+		'clone',
+		'--filter=blob:none',
+		'https://github.com/folke/lazy.nvim.git',
+		'--branch=stable', -- latest stable release
+		lazypath,
+	})
+end
+
+vim.opt.rtp:prepend(lazypath)
+
+require('base')
+require('keymap')
+require('lazy').setup('plugins')
+require('register-keys')

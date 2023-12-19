@@ -1,4 +1,9 @@
-# 💤 LazyVim
+## Screenshot
 
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
-Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
+![screenshot](https://github.com/bitterteasweetorange/nvim/blob/main/screenshot.png)
+
+## Requirements
+
+- Neovim 0.8+
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [nerdfonts](https://www.nerdfonts.com/)

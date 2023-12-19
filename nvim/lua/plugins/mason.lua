@@ -1,39 +1,29 @@
 return {
 	'williamboman/mason.nvim',
-	cmd = 'Mason',
-	keys = { { '<leader>cm', '<cmd>Mason<cr>', desc = 'Mason' } },
-	opts = {
-		ui = {
-			icons = {
-				package_installed = '✓',
-				package_pending = '➜',
-				package_uninstalled = '✗',
-			},
-		},
-		ensure_installed = {
-			'lua-language-server',
-			'php-cs-fixer',
-			'shellcheck',
-			'editorconfig-checker',
-			'beautysh',
-			'marksman',
-			'shfmt',
-			'flake8',
-			'prettier',
-			'prettierd',
-			'rust-analyzer',
-			'pyright',
-			'blue',
-			'bash-language-server',
-			'rustfmt',
-			'typescript-language-server',
-			'php-cs-fixer',
-			'tailwindcss-language-server',
-			'css-lsp',
-			'cssmodules-language-server',
-			'emmet-language-server',
-			'html-lsp',
-			'markdownlint',
-		},
+	dependencies = {
+		'williamboman/mason-lspconfig.nvim',
+		'WhoIsSethDaniel/mason-tool-installer.nvim',
 	},
+	config = function()
+		require('mason').setup({
+			ui = {
+				icons = {
+					package_installed = '✓',
+					package_pending = '➜',
+					package_uninstalled = '✗',
+				},
+			},
+		})
+
+		require('mason-lspconfig').setup({})
+		require('mason-tool-installer').setup({
+			ensure_installed = {
+				'lua-language-server',
+				'stylua',
+				'eslint_d',
+				'prettierd',
+				'rust-analyzer',
+			},
+		})
+	end,
 }

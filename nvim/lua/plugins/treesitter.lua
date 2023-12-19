@@ -1,42 +1,61 @@
 return {
-	'nvim-treesitter/nvim-treesitter',
-	dependencies = {
-		'luckasRanarison/tree-sitter-hypr',
-	},
-	opts = {
-		ensure_installed = {
-			'tsx',
-			'typescript',
-			'php',
-			'css',
-			'html',
-			'markdown',
-			'markdown_inline',
-		},
-		autotag = {
-			enable = true,
-			enable_rename = true,
-			enable_close = true,
-			enable_close_on_slash = true,
-			filetypes = {
-				'html',
-				'javascript',
-				'typescript',
-				'javascriptreact',
-				'typescriptreact',
-				'svelte',
-				'vue',
-				'tsx',
-				'jsx',
-				'rescript',
-				'xml',
-				'php',
-				'markdown',
-				'astro',
-				'glimmer',
-				'handlebars',
-				'hbs',
-			},
-		},
-	},
+  {
+    'nvim-treesitter/nvim-treesitter',
+    event = { 'BufReadPre', 'BufNewFile' },
+    build = ':TSUpdate',
+    dependencies = {
+      'windwp/nvim-ts-autotag',
+      'axelvc/template-string.nvim',
+    },
+    config = function()
+      require('nvim-treesitter.configs').setup {
+        ensure_installed = {
+          'tsx',
+          'lua',
+          'vim',
+          'typescript',
+          'javascript',
+          'html',
+          'css',
+          'json',
+          'graphql',
+          'regex',
+          'rust',
+          'prisma',
+          'markdown',
+          'markdown_inline',
+        },
+
+        sync_install = false,
+
+        auto_install = true,
+
+        highlight = {
+          enable = true,
+
+          additional_vim_regex_highlighting = false,
+        },
+        autotag = {
+          enable = true,
+        },
+        incremental_selection = {
+          enable = true,
+          keymaps = {
+            init_selection = '<enter>',
+            node_incremental = '<enter>',
+            scope_incremental = false,
+            node_decremental = '<bs>',
+          },
+        },
+      }
+
+      require('template-string').setup {}
+
+      -- fold
+      local opt = vim.opt
+      opt.foldmethod = 'expr'
+      opt.foldexpr = 'nvim_treesitter#foldexpr()'
+      opt.foldenable = false
+    end,
+  },
 }

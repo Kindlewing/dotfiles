@@ -1,37 +1,27 @@
 return {
-	'stevearc/conform.nvim',
-	---@class ConformOpts
-	opts = {
-		-- LazyVim will use these options when formatting with the conform.nvim formatter
-		format = {
-			timeout_ms = 3000,
-			async = false, -- not recommended to change
-			quiet = false, -- not recommended to change
-		},
-		---@type table<string, conform.FormatterUnit[]>
-		formatters_by_ft = {
-			lua = { 'stylua' },
-			fish = { 'fish_indent' },
-			sh = { 'shfmt' },
-			php = { 'php_cs_fixer' },
-			twig = { 'djlint' },
-		},
-		-- The options you set here will be merged with the builtin formatters.
-		-- You can also define any custom formatters here.
-		---@type table<string, conform.FormatterConfigOverride|fun(bufnr: integer): nil|conform.FormatterConfigOverride>
-		formatters = {
-			injected = { options = { ignore_errors = true } },
-			-- # Example of using dprint only when a dprint.json file is present
-			-- dprint = {
-			--   condition = function(ctx)
-			--     return vim.fs.find({ "dprint.json" }, { path = ctx.filename, upward = true })[1]
-			--   end,
-			-- },
-			--
-			-- # Example of using shfmt with extra args
-			-- shfmt = {
-			--   prepend_args = { "-i", "2", "-ci" },
-			-- },
-		},
-	},
+  'stevearc/conform.nvim',
+  lazy = true,
+  event = { 'BufReadPre', 'BufNewFile' }, -- to disable, comment this out
+  config = function()
+    require('conform').setup {
+      formatters_by_ft = {
+        lua = { 'stylua' },
+        javascript = { 'prettierd' },
+        typescript = { 'prettierd' },
+        javascriptreact = { 'prettierd' },
+        typescriptreact = { 'prettierd' },
+        css = { 'prettierd' },
+        html = { 'prettierd' },
+        json = { 'prettierd' },
+        yaml = { 'prettierd' },
+        markdown = { 'prettierd' },
+        graphql = { 'prettierd' },
+      },
+      format_on_save = {
+        timeout_ms = 500,
+        async = false,
+        lsp_fallback = true,
+      },
+    }
+  end,
 }

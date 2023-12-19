@@ -1,20 +1,44 @@
 return {
-    'nvim-telescope/telescope.nvim',
-    opts = {
-        defaults = {
-            file_ignore_patterns = {
-                'vendor/',
-                'node_modules/',
-                'target/',
-                '.git/',
-            },
+  'nvim-telescope/telescope.nvim',
+  tag = '0.1.4',
+  dependencies = { 'nvim-lua/plenary.nvim' },
+  config = function()
+    local builtin = require 'telescope.builtin'
+    local keymap = vim.keymap
+    keymap.set('n', '<leader>ff', builtin.find_files, {})
+    keymap.set('n', '<leader>fg', builtin.live_grep, {})
+
+    local actions = require 'telescope.actions'
+    require('telescope').setup {
+      defaults = {
+        mappings = {
+          i = {
+            ['esc'] = actions.close,
+          },
         },
-        pickers = {
-            find_files = {
-                hidden = true,
-                follow = true,
-                no_ignore = true,
-            },
+        file_ignore_patterns = {
+          'codegen.ts',
+          '.git',
+          'lazy-lock.json',
+          'node_modules',
+          'vendor',
+          '%.lock',
+          'schema.gql',
         },
-    },
+        dynamic_preview_title = true,
+        path_display = { 'smart' },
+      },
+      pickers = {
+        find_files = {
+          hidden = true,
+        },
+      },
+      layout_config = {
+        horizontal = {
+          preview_cutoff = 100,
+          preview_width = 0.5,
+        },
+      },
+    }
+  end,
 }
