@@ -1,1 +1,0 @@
-/home/hudson/.dotfiles/nvim/lua/base.lua
