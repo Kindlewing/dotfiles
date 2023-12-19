@@ -1,13 +1,1 @@
-{
-  "name": "custom-snippets",
-  "contributes": {
-    "snippets": [
-      {
-        "language": [
-          "typescriptreact"
-        ],
-        "path": "./typescriptreact.json"
-      }
-    ]
-  }
-}
+/home/hudson/.dotfiles/nvim/snippets/package.json
