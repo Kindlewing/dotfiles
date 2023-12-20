@@ -51,7 +51,6 @@ return {
 				vim.keymap.set('n', 'gr', builtin.lsp_references, opts)
 			end,
 		})
-
 		-- for crates.nvim
 		local function show_documentation()
 			local filetype = vim.bo.filetype
@@ -69,7 +68,7 @@ return {
 			end
 		end
 
-		vim.keymap.set('n', '<leader>k', show_documentation, { silent = true })
+		vim.keymap.set('n', 'K', show_documentation, { silent = true })
 
 		-- error lens
 		vim.fn.sign_define({
