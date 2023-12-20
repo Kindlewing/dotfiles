@@ -51,7 +51,7 @@ return {
 				vim.keymap.set('n', 'gr', builtin.lsp_references, opts)
 			end,
 		})
-		-- for crates.nvim
+
 		local function show_documentation()
 			local filetype = vim.bo.filetype
 			if vim.tbl_contains({ 'vim', 'help' }, filetype) then
@@ -70,7 +70,6 @@ return {
 
 		vim.keymap.set('n', 'K', show_documentation, { silent = true })
 
-		-- error lens
 		vim.fn.sign_define({
 			{
 				name = 'DiagnosticSignError',
