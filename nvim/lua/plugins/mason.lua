@@ -19,6 +19,7 @@ return {
 		require('mason-tool-installer').setup({
 			ensure_installed = {
 				'lua-language-server',
+				'typescript-language-server',
 				'stylua',
 				'eslint_d',
 				'prettier',
