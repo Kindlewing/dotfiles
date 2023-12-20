@@ -15,6 +15,7 @@ return {
 				json = { 'prettier' },
 				yaml = { 'prettier' },
 				markdown = { 'prettier' },
+				php = { 'php_cs_fixer' },
 			},
 			format_on_save = {
 				timeout_ms = 500,
