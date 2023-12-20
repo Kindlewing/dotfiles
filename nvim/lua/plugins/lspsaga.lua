@@ -12,6 +12,9 @@ return {
 				border = 'rounded',
 				devicon = true,
 			},
+			lightbulb = {
+				enable = false,
+			},
 		})
 
 		keymap.set('n', '[d', '<cmd>Lspsaga diagnostic_jump_prev<cr>')
