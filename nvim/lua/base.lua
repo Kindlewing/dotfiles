@@ -28,8 +28,6 @@ vim.bo.autoread = true
 opt.cursorline = true
 opt.termguicolors = true
 
-vim.g.mapleader = ' '
-
 -- highlight on yank
 vim.api.nvim_create_autocmd('TextYankPost', {
 	callback = function()

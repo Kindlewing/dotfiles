@@ -12,8 +12,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath)
+vim.g.mapleader = ' '
+require('lazy').setup('plugins')
+
+vim.cmd.colorscheme('catppuccin')
 
 require('base')
-require('lazy').setup('plugins')
 require('keymap')
 require('register-keys')
