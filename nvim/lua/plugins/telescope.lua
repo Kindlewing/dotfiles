@@ -18,8 +18,6 @@ return {
 					'lazy-lock.json',
 					'node_modules',
 					'vendor',
-					'%.lock',
-					'schema.gql',
 				},
 				dynamic_preview_title = true,
 				path_display = { 'smart' },
