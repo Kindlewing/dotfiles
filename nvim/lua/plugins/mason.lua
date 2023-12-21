@@ -2,7 +2,6 @@ return {
 	'williamboman/mason.nvim',
 	dependencies = {
 		'williamboman/mason-lspconfig.nvim',
-		'WhoIsSethDaniel/mason-tool-installer.nvim',
 	},
 	config = function()
 		require('mason').setup({
@@ -13,17 +12,18 @@ return {
 					package_uninstalled = '✗',
 				},
 			},
-		})
-
-		require('mason-lspconfig').setup({})
-		require('mason-tool-installer').setup({
 			ensure_installed = {
-				'lua-language-server',
-				'typescript-language-server',
 				'stylua',
 				'eslint_d',
 				'prettier',
-				'rust-analyzer',
+			},
+		})
+
+		require('mason-lspconfig').setup({
+			ensure_installed = {
+				'lua_ls',
+				'tsserver',
+				'rust_analyzer',
 				'intelephense',
 			},
 		})
