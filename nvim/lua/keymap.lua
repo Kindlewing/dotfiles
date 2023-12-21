@@ -26,3 +26,6 @@ keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Find word' })
 
 -- Mason
 keymap.set('n', '<leader>pm', ':Mason<CR>', { desc = 'Mason' })
+
+-- lsp
+keymap.set('n', 'K', vim.lsp.buf.hover, {})

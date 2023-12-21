@@ -1,78 +1,89 @@
 return {
-	'hrsh7th/nvim-cmp',
-	event = 'InsertEnter',
-	dependencies = {
-		'hrsh7th/cmp-buffer', -- source for text in buffer
-		'hrsh7th/cmp-path', -- source for file system paths
-		'L3MON4D3/LuaSnip', -- snippet engine
-		'saadparwaiz1/cmp_luasnip', -- for autocompletion
-		'onsails/lspkind.nvim', -- vs-code like pictograms
-		'hrsh7th/cmp-nvim-lsp',
-		'hrsh7th/cmp-cmdline',
+	{
+		'L3MON4D3/LuaSnip',
+		-- follow latest release.
+		version = 'v2.*', -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+		-- install jsregexp (optional!).
+		build = 'make install_jsregexp',
 	},
-	config = function()
-		local cmp = require('cmp')
-		local luasnip = require('luasnip')
-		local lspkind = require('lspkind')
-
-		cmp.setup({
-			completion = {
-				completeopt = 'menu,menuone,preview,noselect',
-			},
-			formatting = {
-				format = lspkind.cmp_format({
-					maxwidth = 50,
-					ellipsis_char = '...',
+	{
+		'hrsh7th/nvim-cmp',
+		version = false, -- last release is way too old
+		event = 'InsertEnter',
+		dependencies = {
+			'hrsh7th/cmp-nvim-lsp',
+			'hrsh7th/cmp-buffer',
+			'hrsh7th/cmp-path',
+			'saadparwaiz1/cmp_luasnip',
+		},
+		opts = function()
+			vim.api.nvim_set_hl(
+				0,
+				'CmpGhostText',
+				{ link = 'Comment', default = true }
+			)
+			local cmp = require('cmp')
+			local defaults = require('cmp.config.default')()
+			return {
+				completion = {
+					completeopt = 'menu,menuone,noinsert',
+				},
+				snippet = {
+					expand = function(args)
+						require('luasnip').lsp_expand(args.body)
+					end,
+				},
+				mapping = cmp.mapping.preset.insert({
+					['<C-n>'] = cmp.mapping.select_next_item({
+						behavior = cmp.SelectBehavior.Insert,
+					}),
+					['<C-p>'] = cmp.mapping.select_prev_item({
+						behavior = cmp.SelectBehavior.Insert,
+					}),
+					['<C-b>'] = cmp.mapping.scroll_docs(-4),
+					['<C-f>'] = cmp.mapping.scroll_docs(4),
+					['<C-Space>'] = cmp.mapping.complete(),
+					['<C-e>'] = cmp.mapping.abort(),
+					['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+					['<S-CR>'] = cmp.mapping.confirm({
+						behavior = cmp.ConfirmBehavior.Replace,
+						select = true,
+					}), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+					['<C-CR>'] = function(fallback)
+						cmp.abort()
+						fallback()
+					end,
 				}),
-			},
-			snippet = { -- configure how nvim-cmp interacts with snippet engine
-				expand = function(args)
-					luasnip.lsp_expand(args.body)
-				end,
-			},
-			mapping = cmp.mapping.preset.insert({
-				['<C-Space>'] = cmp.mapping.complete(),
-				['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-			}),
-			sources = cmp.config.sources({
-				{ name = 'nvim_lsp' },
-				{ name = 'luasnip' }, -- For luasnip users.
-				{ name = 'crates' },
-			}, {
-				{ name = 'buffer' },
-			}),
-		})
-
-		-- Set configuration for specific filetype.
-		cmp.setup.filetype('gitcommit', {
-			sources = cmp.config.sources({
-				{ name = 'git' }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
-			}, {
-				{ name = 'buffer' },
-			}),
-		})
-
-		-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-		cmp.setup.cmdline({ '/', '?' }, {
-			mapping = cmp.mapping.preset.cmdline(),
-			sources = {
-				{ name = 'buffer' },
-			},
-		})
-
-		-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-		cmp.setup.cmdline(':', {
-			mapping = cmp.mapping.preset.cmdline(),
-			sources = cmp.config.sources({
-				{ name = 'path' },
-			}, {
-				{ name = 'cmdline' },
-			}),
-		})
-
-		-- snippets
-		require('luasnip.loaders.from_vscode').load({
-			paths = { '~/.config/nvim/snippets' },
-		})
-	end,
+				sources = cmp.config.sources({
+					{ name = 'nvim_lsp' },
+					{ name = 'luasnip' },
+					{ name = 'path' },
+				}, {
+					{ name = 'buffer' },
+				}),
+				formatting = {
+					format = function(_, item)
+						local icons = require('icons').icons.kinds
+						if icons[item.kind] then
+							item.kind = icons[item.kind] .. item.kind
+						end
+						return item
+					end,
+				},
+				experimental = {
+					ghost_text = {
+						hl_group = 'CmpGhostText',
+					},
+				},
+				sorting = defaults.sorting,
+			}
+		end,
+		---@param opts cmp.ConfigSchema
+		config = function(_, opts)
+			for _, source in ipairs(opts.sources) do
+				source.group_index = source.group_index or 1
+			end
+			require('cmp').setup(opts)
+		end,
+	},
 }

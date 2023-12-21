@@ -13,6 +13,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ' '
+require('icons')
 require('lazy').setup('plugins')
 
 vim.cmd.colorscheme('catppuccin')

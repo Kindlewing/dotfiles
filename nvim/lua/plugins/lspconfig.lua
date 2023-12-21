@@ -1,7 +1,11 @@
 return {
 	'neovim/nvim-lspconfig',
+	dependencies = {
+		'folke/neodev.nvim',
+	},
 	config = function()
 		local lspconfig = require('lspconfig')
+		require('neodev').setup()
 		lspconfig.rust_analyzer.setup({})
 		lspconfig.tsserver.setup({})
 		lspconfig.intelephense.setup({})
