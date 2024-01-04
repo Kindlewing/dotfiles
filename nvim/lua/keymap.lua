@@ -1,31 +1,51 @@
 local builtin = require('telescope.builtin')
-local keymap = vim.keymap
+local map = vim.keymap.set
 
-keymap.set({ 'n', 'x' }, '<leader>p', '"1p')
+map({ 'n', 'x' }, '<leader>p', '"1p')
 
-keymap.set('n', '<leader>q', '<cmd>q<cr>', { desc = 'Quit' })
-keymap.set('n', '<leader>w', '<cmd>w<cr>', { desc = 'Write current file' })
+map('n', '<leader>q', '<cmd>q<cr>', { desc = 'Quit' })
+map('n', '<leader>w', '<cmd>w<cr>', { desc = 'Write current file' })
 
-keymap.set('n', 'H', ':bprevious<CR>', { silent = true })
-keymap.set('n', 'L', ':bnext<CR>', { silent = true })
-keymap.set(
-	'n',
-	'<leader>bd',
-	'<cmd>:bdelete<CR>',
-	{ desc = 'Close buffer', silent = true }
+map('n', 'H', ':bprevious<CR>', { silent = true })
+map('n', 'L', ':bnext<CR>', { silent = true })
+map(
+    'n',
+    '<leader>bd',
+    '<cmd>:bdelete<CR>',
+    { desc = 'Close buffer', silent = true }
 )
 
-keymap.set('n', 'j', [[v:count?'j':'gj']], { noremap = true, expr = true })
-keymap.set('n', 'k', [[v:count?'k':'gk']], { noremap = true, expr = true })
+map('n', 'j', [[v:count?'j':'gj']], { noremap = true, expr = true })
+map('n', 'k', [[v:count?'k':'gk']], { noremap = true, expr = true })
 
-keymap.set('n', '<leader>nh', ':nohl<CR>', { desc = 'Clear search highlights' })
+map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
+
+-- better indenting
+map("v", "<", "<gv")
+map("v", ">", ">gv")
 
 -- Telescope
-keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find files' })
-keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Find word' })
+map('n', '<leader>ff', builtin.find_files, { desc = 'Find files' })
+map('n', '<leader>fg', builtin.live_grep, { desc = 'Find word' })
 
 -- Mason
-keymap.set('n', '<leader>pm', ':Mason<CR>', { desc = 'Mason' })
+map('n', '<leader>pm', ':Mason<CR>', { desc = 'Mason' })
 
 -- lsp
-keymap.set('n', 'K', vim.lsp.buf.hover, {})
+map('n', 'K', vim.lsp.buf.hover, {})
+
+-- diagnostic
+local diagnostic_goto = function(next, severity)
+    local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
+    severity = severity and vim.diagnostic.severity[severity] or nil
+    return function()
+        go({ severity = severity })
+    end
+end
+map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
+map("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
+map("n", "[d", diagnostic_goto(false), { desc = "Prev Diagnostic" })
+map("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
+map("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
+map("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
+map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })

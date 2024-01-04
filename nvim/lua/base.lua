@@ -30,7 +30,7 @@ opt.termguicolors = true
 
 -- highlight on yank
 vim.api.nvim_create_autocmd('TextYankPost', {
-	callback = function()
-		vim.highlight.on_yank()
-	end,
+    callback = function()
+        vim.highlight.on_yank()
+    end,
 })
