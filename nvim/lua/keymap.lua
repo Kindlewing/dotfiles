@@ -24,16 +24,18 @@ map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsea
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
--- Telescope
+-- telescope
 map('n', '<leader>ff', builtin.find_files, { desc = 'Find files' })
 map('n', '<leader>fg', builtin.live_grep, { desc = 'Find word' })
 
--- Mason
+-- mason
 map('n', '<leader>pm', ':Mason<CR>', { desc = 'Mason' })
 
 -- lsp
 map('n', 'K', vim.lsp.buf.hover, {})
 
+-- git
+map('n', '<leader>gg', ':LazyGit<CR>', { desc = 'Lazygit' })
 -- diagnostic
 local diagnostic_goto = function(next, severity)
     local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
