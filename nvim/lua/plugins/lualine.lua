@@ -1,7 +1,6 @@
 return {
     'nvim-lualine/lualine.nvim',
     config = function()
-        local lspsaga = require('lspsaga');
         require('lualine').setup({
             options = {
                 component_separators = '|',
