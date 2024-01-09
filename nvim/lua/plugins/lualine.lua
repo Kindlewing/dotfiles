@@ -14,9 +14,9 @@ return {
                 lualine_b = {
                     'filename',
                     'branch',
-                    { 'diff', colored = false },
+                    { 'diff', colored = true },
                 },
-                lualine_c = {},
+                lualine_c = { 'diagnostics', colored = true },
                 lualine_x = {},
                 lualine_y = { 'filetype', 'progress' },
                 lualine_z = {
