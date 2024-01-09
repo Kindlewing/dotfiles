@@ -25,8 +25,9 @@ map("v", "<", "<gv")
 map("v", ">", ">gv")
 
 -- telescope
-map('n', '<leader>ff', builtin.find_files, { desc = 'Find files' })
-map('n', '<leader>fg', builtin.live_grep, { desc = 'Find word' })
+map('n', '<leader>sf', builtin.find_files, { desc = 'Search files' })
+map('n', '<leader>sw', builtin.live_grep, { desc = 'Search words' })
+map('n', '<leader>sd', builtin.diagnostics, { desc = 'Search diagnostics' })
 
 -- mason
 map('n', '<leader>pm', ':Mason<CR>', { desc = 'Mason' })
@@ -36,6 +37,7 @@ map('n', 'K', vim.lsp.buf.hover, {})
 
 -- git
 map('n', '<leader>gg', ':LazyGit<CR>', { desc = 'Lazygit' })
+
 -- diagnostic
 local diagnostic_goto = function(next, severity)
     local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
@@ -44,6 +46,7 @@ local diagnostic_goto = function(next, severity)
         go({ severity = severity })
     end
 end
+
 map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
 map("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
 map("n", "[d", diagnostic_goto(false), { desc = "Prev Diagnostic" })
