@@ -16,7 +16,7 @@ return {
                     'branch',
                     { 'diff', colored = true },
                 },
-                lualine_c = { 'diagnostics', colored = true },
+                lualine_c = { 'diagnostics' },
                 lualine_x = {},
                 lualine_y = { 'filetype', 'progress' },
                 lualine_z = {
