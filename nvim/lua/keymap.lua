@@ -18,6 +18,11 @@ map(
 map('n', 'j', [[v:count?'j':'gj']], { noremap = true, expr = true })
 map('n', 'k', [[v:count?'k':'gk']], { noremap = true, expr = true })
 
+map("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
+map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
+map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
+map("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
+
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 
 -- better indenting
