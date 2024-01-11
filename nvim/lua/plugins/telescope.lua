@@ -17,6 +17,7 @@ return {
                     '.git',
                     'lazy-lock.json',
                     'node_modules',
+                    'target',
                     'vendor',
                 },
                 dynamic_preview_title = true,
