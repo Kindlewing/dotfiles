@@ -11,4 +11,3 @@ alias ssh="kitten ssh"
 alias cat=bat
 alias ls='eza -hlX --icons --group-directories-first --color=always'
 alias http=xh
-alias curl=xh
