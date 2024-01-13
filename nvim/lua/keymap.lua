@@ -33,6 +33,7 @@ map("v", ">", ">gv")
 map('n', '<leader>sf', builtin.find_files, { desc = 'Search files' })
 map('n', '<leader>sw', builtin.live_grep, { desc = 'Search words' })
 map('n', '<leader>sd', builtin.diagnostics, { desc = 'Search diagnostics' })
+map('n', '<leader>sh', builtin.help_tags, { desc = "Search help" })
 
 -- mason
 map('n', '<leader>pm', ':Mason<CR>', { desc = 'Mason' })
