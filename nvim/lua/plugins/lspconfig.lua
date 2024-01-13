@@ -1,33 +1,36 @@
 return {
-    'neovim/nvim-lspconfig',
-    dependencies = {
-        'folke/neodev.nvim',
-        'folke/neoconf.nvim'
-    },
-    config = function()
-        require('neodev').setup({})
-        require('neoconf').setup({})
-        local lspconfig = require('lspconfig')
-        lspconfig.rust_analyzer.setup({})
-        lspconfig.tsserver.setup({})
-        lspconfig.intelephense.setup({})
-        lspconfig.html.setup({})
+	'neovim/nvim-lspconfig',
+	dependencies = {
+		'folke/neodev.nvim',
+		'folke/neoconf.nvim',
+		'hrsh7th/cmp-nvim-lsp'
+	},
+	config = function()
+		require('neodev').setup({})
+		require('neoconf').setup({})
+		local lspconfig = require('lspconfig')
+		local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-        lspconfig.lua_ls.setup({
-            settings = {
-                Lua = {
-                    diagnostics = {
-                        globals = { 'vim' },
-                    },
-                },
-            },
-        })
+		lspconfig.rust_analyzer.setup({ capabilities = capabilities })
+		lspconfig.tsserver.setup({ capabilities = capabilities })
+		lspconfig.intelephense.setup({ capabilities = capabilities })
+		lspconfig.html.setup({ capabilities = capabilities })
 
-        -- CSS
-        local capabilities = vim.lsp.protocol.make_client_capabilities()
-        capabilities.textDocument.completion.completionItem.snippetSupport =
-            true
+		lspconfig.lua_ls.setup({
+			capabilities = capabilities,
+			settings = {
+				Lua = {
+					diagnostics = {
+						globals = { 'vim' },
+					},
+				},
+			},
+		})
 
-        lspconfig.cssls.setup({ capabilities = capabilities })
-    end,
+		-- CSS
+		capabilities.textDocument.completion.completionItem.snippetSupport =
+			true
+
+		lspconfig.cssls.setup({ capabilities = capabilities })
+	end,
 }
