@@ -113,13 +113,14 @@ keybinds clear-defaults=true {
     session {
         bind "Ctrl o" { SwitchToMode "Normal"; }
         bind "Ctrl s" { SwitchToMode "Scroll"; }
-		 bind "w" {
-            LaunchOrFocusPlugin "zellij:session-manager" {
+		bind "d" { Detach; }
+		bind "w" {
+			LaunchOrFocusPlugin "zellij:session-manager" {
                 floating true
                 move_to_focused_tab true
             };
             SwitchToMode "Normal"
-        }       bind "d" { Detach; }
+        }       
     }
     shared_except "locked" {
         bind "Ctrl g" { SwitchToMode "Locked"; }
