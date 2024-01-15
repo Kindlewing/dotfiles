@@ -44,8 +44,7 @@ return {
 					{
 						'filename',
 						file_status = true,
-						path = 3,
-						shorting_target = 30
+						path = 0,
 					},
 
 					'branch',
