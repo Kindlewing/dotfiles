@@ -40,6 +40,7 @@ map('n', '<leader>pm', ':Mason<CR>', { desc = 'Mason' })
 
 -- lsp
 map('n', 'K', vim.lsp.buf.hover, {})
+map('n', '<leader>ca', require('actions-preview').code_actions, { desc = 'Code actions' })
 
 local bufopts = { noremap = true, silent = true }
 local buf_nmap = function(lhs, rhs, desc)
