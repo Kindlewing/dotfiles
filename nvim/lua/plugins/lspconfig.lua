@@ -12,6 +12,7 @@ return {
 		local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 		lspconfig.tsserver.setup({ capabilities = capabilities })
+		lspconfig.rust_analyzer.setup({ capabilities = capabilities })
 		lspconfig.intelephense.setup({ capabilities = capabilities })
 		lspconfig.html.setup({ capabilities = capabilities })
 
