@@ -1,6 +1,4 @@
 return {
 	'ahmedkhalf/project.nvim',
-	opts = {
-		patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", "Cargo.toml" },
-	}
+	patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", "Cargo.toml" },
 }
