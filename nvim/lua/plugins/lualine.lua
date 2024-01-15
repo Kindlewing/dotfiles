@@ -22,7 +22,15 @@ return {
 				},
 				lualine_c = { 'diagnostics' },
 				lualine_x = {},
-				lualine_y = { 'filetype', 'progress' },
+				lualine_y = {
+					{
+						'filetype',
+						colored = true,
+					},
+					{
+						'progress'
+					},
+				},
 				lualine_z = {
 					{
 						'location',
