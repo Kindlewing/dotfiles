@@ -78,6 +78,7 @@ return {
 					{
 						'progress'
 					},
+					{ 'searchcount' }
 				},
 				lualine_z = {
 					{

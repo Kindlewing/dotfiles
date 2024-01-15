@@ -13,9 +13,11 @@ return {
 
 		lspconfig.tsserver.setup({ capabilities = capabilities })
 		lspconfig.rust_analyzer.setup({ capabilities = capabilities })
-		lspconfig.intelephense.setup({ capabilities = capabilities })
 		lspconfig.html.setup({ capabilities = capabilities })
 
+		lspconfig.intelephense.setup({
+			capabilities = capabilities,
+		})
 		lspconfig.lua_ls.setup({
 			capabilities = capabilities,
 			settings = {

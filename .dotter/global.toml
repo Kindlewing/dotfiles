@@ -8,6 +8,7 @@ dunst = "~/.config/dunst"
 kitty = "~/.config/kitty"
 nvim = "~/.config/nvim"
 scripts = "~/.config/scripts"
+hypr = "~/.config/hypr"
 waybar = "~/.config/waybar"
 wlogout = "~/.config/wlogout"
 wofi = "~/.config/wofi"
@@ -22,9 +23,6 @@ swaylock = "~/.swaylock"
 icons = "~/.icons"
 bookmarks = "~/.bookmarks"
 
-
-[workstation.files]
-"workstation/hypr" = "~/.config/hypr"
 
 [laptop.files]
 "laptop/hyprland" = "~/.config/hypr"
