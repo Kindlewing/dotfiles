@@ -18,7 +18,6 @@ return {
 		event = "InsertEnter",
 		dependencies = {
 			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
 			"onsails/lspkind.nvim",
 			'hrsh7th/cmp-nvim-lsp-signature-help',
@@ -90,7 +89,6 @@ return {
 					{ name = 'crates' },
 				}, {
 					{ name = "path" },
-					{ name = "buffer", keyword_length = 4 },
 				}),
 				experimental = {
 					native_menu = false,

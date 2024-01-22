@@ -18,6 +18,13 @@ return {
 		lspconfig.intelephense.setup({
 			capabilities = capabilities,
 		})
+		lspconfig.bashls.setup({
+			capabilities = capabilities,
+			filetypes = {
+				'sh',
+				'zsh'
+			}
+		})
 		lspconfig.lua_ls.setup({
 			capabilities = capabilities,
 			settings = {
