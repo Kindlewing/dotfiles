@@ -23,11 +23,6 @@ swaylock = "~/.swaylock"
 icons = "~/.icons"
 bookmarks = "~/.bookmarks"
 
-
-[laptop.files]
-"laptop/hyprland" = "~/.config/hypr"
-"laptop/waybar" = "~/.config/waybar"
-
 [zsh.files]
 "zsh/zshrc" = "~/.zshrc"
 "zsh/aliases.zsh" = "~/.aliases.zsh"
