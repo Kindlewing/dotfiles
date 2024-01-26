@@ -5,8 +5,6 @@ return {
 		'nvim-tree/nvim-web-devicons', -- optional
 	},
 	config = function()
-		local keymap = vim.keymap
-
 		require('lspsaga').setup({
 			ui = {
 				border = 'rounded',
@@ -16,59 +14,6 @@ return {
 				enable = false,
 			},
 		})
-
-		keymap.set('n', '[d', '<cmd>Lspsaga diagnostic_jump_prev<cr>')
-		keymap.set('n', ']d', '<cmd>Lspsaga diagnostic_jump_next<cr>')
-		keymap.set('n', '<leader>lo', '<cmd>Lspsaga outline<cr>')
-
-		local builtin = require('telescope.builtin')
-
-		vim.api.nvim_create_autocmd('LspAttach', {
-			group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-			callback = function(ev)
-				-- Enable completion triggered by <c-x><c-o>
-				vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-
-				local opts = { buffer = ev.buf }
-				vim.keymap.set(
-					'n',
-					'gd',
-					'<cmd>Lspsaga goto_definition<cr>',
-					opts
-				)
-				vim.keymap.set(
-					'n',
-					'<leader>lr',
-					'<cmd>Lspsaga rename<cr>',
-					opts
-				)
-				vim.keymap.set(
-					{ 'n', 'v' },
-					'<leader>ca',
-					'<cmd>Lspsaga code_action<cr>',
-					opts
-				)
-				vim.keymap.set('n', 'gr', builtin.lsp_references, opts)
-			end,
-		})
-
-		local function show_documentation()
-			local filetype = vim.bo.filetype
-			if vim.tbl_contains({ 'vim', 'help' }, filetype) then
-				vim.cmd('h ' .. vim.fn.expand('<cword>'))
-			elseif vim.tbl_contains({ 'man' }, filetype) then
-				vim.cmd('Man ' .. vim.fn.expand('<cword>'))
-			elseif
-				vim.fn.expand('%:t') == 'Cargo.toml'
-				and require('crates').popup_available()
-			then
-				require('crates').show_popup()
-			else
-				vim.cmd('Lspsaga hover_doc')
-			end
-		end
-
-		vim.keymap.set('n', 'K', show_documentation, { silent = true })
 
 		vim.fn.sign_define({
 			{

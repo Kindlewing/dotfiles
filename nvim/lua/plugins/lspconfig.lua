@@ -3,7 +3,7 @@ return {
 	dependencies = {
 		'folke/neodev.nvim',
 		'folke/neoconf.nvim',
-		'hrsh7th/cmp-nvim-lsp'
+		'hrsh7th/cmp-nvim-lsp',
 	},
 	config = function()
 		require('neodev').setup({})
@@ -15,15 +15,13 @@ return {
 		lspconfig.rust_analyzer.setup({ capabilities = capabilities })
 		lspconfig.html.setup({ capabilities = capabilities })
 
-		lspconfig.intelephense.setup({
-			capabilities = capabilities,
-		})
+		lspconfig.intelephense.setup({ capabilities = capabilities })
 		lspconfig.bashls.setup({
 			capabilities = capabilities,
 			filetypes = {
 				'sh',
-				'zsh'
-			}
+				'zsh',
+			},
 		})
 		lspconfig.lua_ls.setup({
 			capabilities = capabilities,
@@ -31,6 +29,7 @@ return {
 				Lua = {
 					diagnostics = {
 						globals = { 'vim' },
+						disable = { 'missing-parameters', 'missing-fields' },
 					},
 				},
 			},
