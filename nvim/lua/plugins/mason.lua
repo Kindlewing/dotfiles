@@ -24,6 +24,7 @@ return {
 				'tsserver',
 				'html',
 				'cssls',
+				'tailwindcss',
 				'rust_analyzer',
 				'intelephense',
 			},

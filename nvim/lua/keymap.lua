@@ -1,6 +1,7 @@
 local builtin = require('telescope.builtin')
 local map = vim.keymap.set
 
+
 map({ 'n', 'x' }, '<leader>p', '"1p')
 
 map('n', '<leader>q', '<cmd>q<cr>', { desc = 'Quit' })
