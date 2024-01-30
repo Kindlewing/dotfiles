@@ -22,6 +22,11 @@ opt.wrap = false
 opt.ignorecase = true
 opt.smartcase = true
 
+-- Set completeopt to have a better completion experience
+opt.completeopt = { "menuone", "noselect" }
+
+-- Enable persistent undo history
+opt.undofile = true
 
 opt.swapfile = false
 opt.autoread = true
@@ -29,6 +34,7 @@ vim.bo.autoread = true
 
 opt.cursorline = true
 opt.termguicolors = true
+opt.colorcolumn = "80"
 
 -- highlight on yank
 vim.api.nvim_create_autocmd('TextYankPost', {
