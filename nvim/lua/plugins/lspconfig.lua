@@ -7,6 +7,7 @@ return {
 		'hrsh7th/cmp-nvim-lsp',
 	},
 	config = function()
+		local cmp = require("cmp")
 		require('neodev').setup({})
 		require('neoconf').setup({})
 		require("tailwindcss-colors").setup()
@@ -37,7 +38,27 @@ return {
 				},
 			},
 		})
+		cmp.setup.cmdline('/', {
+			mapping = cmp.mapping.preset.cmdline(),
+			sources = {
+				{ name = 'buffer' }
+			}
+		})
 
+		-- `:` cmdline setup.
+		cmp.setup.cmdline(':', {
+			mapping = cmp.mapping.preset.cmdline(),
+			sources = cmp.config.sources({
+				{ name = 'path' }
+			}, {
+				{
+					name = 'cmdline',
+					option = {
+						ignore_cmds = { 'Man', '!' }
+					}
+				}
+			})
+		})
 		-- CSS
 		lspconfig.tailwindcss.setup({ capabilities = capabilities })
 		capabilities.textDocument.completion.completionItem.snippetSupport =
