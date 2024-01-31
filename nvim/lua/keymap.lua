@@ -1,6 +1,6 @@
 local builtin = require('telescope.builtin')
 local map = vim.keymap.set
-
+local opts = { silent = true, noremap = true }
 
 map({ 'n', 'x' }, '<leader>p', '"1p')
 
@@ -156,3 +156,7 @@ map('n', '[w', diagnostic_goto(false, 'WARN'), { desc = 'Prev Warning' })
 
 -- oil
 map('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
+
+-- git
+map('n', '<leader>gp', ':Gitsigns preview_hunk<CR>', opts)
+map('n', '<leader>gb', ':Gitsigns toggle_current_line_blame<CR>', opts)
