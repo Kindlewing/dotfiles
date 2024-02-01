@@ -6,17 +6,10 @@ $directory\
 $username\
 $hostname\
 $container\
-$sudo\
-$shlvl\
 [](fg:red bg:peach)\
-$vcsh\
 $git_branch\
-$git_commit\
-$git_state\
 $git_status\
-$git_metrics\
 [](fg:peach bg:yellow)\
-$cmd_duration\
 $status\
 [](fg:yellow bg:green)\
 $deno\
@@ -69,54 +62,17 @@ format = '[$symbol]($style)'
 style = 'bg:red fg:#000000'
 symbol = '  '
 
-[shlvl]
-style = 'bg:red fg:#000000'
 
-### VCS
 [git_branch]
 symbol = ' '
 format = '[$symbol$branch]($style)'
 style = 'bg:peach fg:#000000'
 
-[hg_branch]
-format = '[$symbol$branch]($style)'
-style = 'bg:peach fg:#000000'
-
-[git_commit]
-format = '[\($hash$tag\)]($style)'
-tag_disabled = false
-tag_symbol = '  '
-style = 'bg:peach fg:#000000'
-
-[git_state]
-format = '[\($state( $progress_current/$progress_total)\)]($style)'
-style = 'bg:peach fg:#000000'
-
-[git_metrics]
-format = '([ +$added]($added_style)[/](bg:peach fg:#000000)[-$deleted]($deleted_style))'
-added_style = 'bg:peach fg:#000000'
-deleted_style = 'bg:peach fg:#000000'
-disabled = false
-
 [git_status]
 format = '([ $all_status$ahead_behind]($style))'
 ahead = "↑"
 behind = "↓"
-conflicted = "!"
-deleted = "×"
-diverged = "↕"
-modified = "~"
-renamed = "»"
-untracked = "+"
-staged = "●"
-stashed = "ﮅ "
 style = 'bg:peach fg:#000000'
-
-[cmd_duration]
-format = '[ﮫ $duration]($style)'
-style = 'bg:yellow fg:#000000'
-show_milliseconds = false
-min_time = 300000
 
 [status]
 style = 'bg:yellow fg:#000000'
