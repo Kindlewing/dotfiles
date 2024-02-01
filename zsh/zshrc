@@ -2,11 +2,6 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 
-
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  #  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-#fi
-
 export ZSH="$HOME/.zsh"
 export ZSH_PLUGINS=$ZSH/plugins
 export PATH="/usr/local/go/bin:$PATH"
@@ -30,10 +25,6 @@ if [[ ! -d "$ZSH" ]]; then
     mkdir -p "~/.zsh/plugins"
 fi
 
-# if [[ ! -d "$ZSH_PLUGINS/powerlevel10k" ]]; then
-#    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_PLUGINS/powerlevel10k
-# fi
-
 if [[ ! -d "$ZSH_PLUGINS/zsh-autosuggestions" ]]; then
     git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions $ZSH_PLUGINS/zsh-autosuggestions
 fi
@@ -50,7 +41,6 @@ if [[ ! -f "$ZSH_PLUGINS/command-not-found.zsh" ]]; then
 
 fi
 
-# source $ZSH_PLUGINS/powerlevel10k/powerlevel10k.zsh-theme
 source $ZSH_PLUGINS/catppuccin_syntax_highlighting.zsh
 source $ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh
