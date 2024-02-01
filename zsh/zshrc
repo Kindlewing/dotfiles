@@ -41,11 +41,9 @@ if [[ ! -f "$ZSH_PLUGINS/command-not-found.zsh" ]]; then
 
 fi
 
+
+source $HOME/.aliases.zsh
+eval "$(starship init zsh)"
 source $ZSH_PLUGINS/catppuccin_syntax_highlighting.zsh
 source $ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-source $HOME/.aliases.zsh
-
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-eval "$(starship init zsh)"
