@@ -7,7 +7,6 @@ depends = []
 dunst = "~/.config/dunst"
 kitty = "~/.config/kitty"
 nvim = "~/.config/nvim"
-starship = "~/.config/starship.toml"
 scripts = "~/.config/scripts"
 hypr = "~/.config/hypr"
 waybar = "~/.config/waybar"
@@ -18,6 +17,7 @@ zathura = "~/.config/zathura"
 zellij = "~/.config/zellij"
 
 "gitconfig/gitconfig"= "~/.gitconfig"
+"starship/starship.toml" = "~/.config/starship.toml"
 
 fonts = "~/.local/share/fonts"
 swaylock = "~/.swaylock"

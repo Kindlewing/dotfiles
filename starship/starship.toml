@@ -1,33 +1,25 @@
 "$schema" = "https://starship.rs/config-schema.json"
 
 format = """
-[](fg:red)\
+[](fg:mauve)\
 $directory\
-$username\
-$hostname\
-$container\
-[](fg:red bg:peach)\
+[](fg:mauve bg:red)\
 $git_branch\
+[](fg:red bg:peach)\
 $git_status\
-[](fg:peach bg:yellow)\
-$status\
-[](fg:yellow bg:green)\
-$deno\
+[](fg:peach bg:green)\
 $golang\
-$helm\
 $lua\
 $nodejs\
 $php\
 $python\
 $rust\
-[](fg:green bg:blue)\
+[](fg:green bg:blue)\
 $package\
 $nix_shell\
-[](fg:blue bg:mauve)\
-$azure\
+[](fg:blue bg:mauve)\
 $docker_context\
-$kubernetes\
-[](fg:mauve)\
+[ ](fg:mauve)\
 $line_break\
 $shell\
 $character"""
@@ -37,10 +29,21 @@ palette = "catppuccin_mocha"
 
 [directory]
 format = "[$path]($style)[$read_only]($read_only_style)"
-style = 'bg:red fg:#000000'
-read_only_style = 'bg:red fg:#000000'
+style = 'bg:mauve fg:crust'
+read_only_style = 'bg:mauve fg:crust'
 read_only = ' '
 use_os_path_sep = false
+
+[git_branch]
+symbol = ' '
+format = '[[ $symbol$branch](fg:crust bg:red)]($style)'
+style = 'bg:peach fg:#000000'
+
+[git_status]
+format = '[[( $all_status$ahead_behind )](fg:crust bg:peach)]($style)'
+ahead = "↑"
+behind = "↓"
+style = 'bg:peach'
 
 [username]
 format = '[ $user]($style)'
@@ -63,21 +66,10 @@ style = 'bg:red fg:#000000'
 symbol = '  '
 
 
-[git_branch]
-symbol = ' '
-format = '[$symbol$branch]($style)'
-style = 'bg:peach fg:#000000'
-
-[git_status]
-format = '([ $all_status$ahead_behind]($style))'
-ahead = "↑"
-behind = "↓"
-style = 'bg:peach fg:#000000'
 
 [status]
 style = 'bg:yellow fg:#000000'
 
-### LANGUAGE VERSION INDICATORS
 [c]
 format = '[ $symbol($version(-$name)) ]($style)'
 style = 'bg:green fg:#000000'
@@ -86,67 +78,8 @@ style = 'bg:green fg:#000000'
 format = '[ $symbol($version) ]($style)'
 style = 'bg:green fg:#000000'
 
-[cobol]
-format = '[ $symbol($version) ]($style)'
-style = 'bg:green fg:#000000'
-
-[conda]
-format = '[ $symbol$environment ]($style)'
-style = 'bg:green fg:#000000'
-
-[crystal]
-format = '[ $symbol($version) ]($style)'
-style = 'bg:green fg:#000000'
-
-[dart]
-format = '[ $symbol($version) ]($style)'
-style = 'bg:green fg:#000000'
-
-[deno]
-format = '[ $symbol($version) ]($style)'
-style = 'bg:green fg:#000000'
-
-[dotnet]
-format = '[ $symbol($version)( $tfm) ]($style)'
-style = 'bg:green fg:#000000'
-
-[elixir]
-format = '[ $symbol($version \(OTP $otp_version\)) ]($style)'
-style = 'bg:green fg:#000000'
-
-[elm]
-format = '[ $symbol($version) ]($style)'
-style = 'bg:green fg:#000000'
-
-[erlang]
-format = '[ $symbol($version) ]($style)'
-style = 'bg:green fg:#000000'
-
 [golang]
 symbol = ' '
-format = '[ $symbol($version) ]($style)'
-style = 'bg:green fg:#000000'
-
-[haskell]
-symbol = ' '
-format = '[ $symbol($version) ]($style)'
-style = 'bg:green fg:#000000'
-
-[helm]
-symbol = 'ﴱ '
-format = '[ $symbol($version) ]($style)'
-style = 'bg:green fg:#000000'
-
-[java]
-symbol = ' '
-format = '[ $symbol($version) ]($style)'
-style = 'bg:green fg:#000000'
-
-[julia]
-format = '[ $symbol($version) ]($style)'
-style = 'bg:green fg:#000000'
-
-[kotlin]
 format = '[ $symbol($version) ]($style)'
 style = 'bg:green fg:#000000'
 
@@ -155,21 +88,8 @@ symbol = ' '
 format = '[ $symbol($version) ]($style)'
 style = 'bg:green fg:#000000'
 
-[nim]
-format = '[ $symbol($version) ]($style)'
-style = 'bg:green fg:#000000'
-
-[nix_shell]
-format = '[ $symbol$state( \($name\)) ]($style)'
-symbol = ' '
-style = 'bg:blue fg:#000000'
-
 [nodejs]
 format = '[ $symbol($version) ]($style)'
-style = 'bg:green fg:#000000'
-
-[ocaml]
-format = '[ $symbol($version)(\($switch_indicator$switch_name\)) ]($style)'
 style = 'bg:green fg:#000000'
 
 [perl]
@@ -181,26 +101,9 @@ symbol = ' '
 format = '[ $symbol($version) ]($style)'
 style = 'bg:green fg:#000000'
 
-[pulumi]
-format = '[ $symbol$stack ]($style)'
-style = 'bg:green fg:#000000'
-
-[purescript]
-format = '[ $symbol($version) ]($style)'
-style = 'bg:green fg:#000000'
-
 [python]
 symbol = ' '
 format = '[ ${symbol}${pyenv_prefix}(${version})(\($virtualenv\)) ]($style)'
-style = 'bg:green fg:#000000'
-
-[red]
-format = '[ $symbol($version) ]($style)'
-style = 'bg:green fg:#000000'
-
-[ruby]
-symbol = ' '
-format = '[ $symbol($version) ]($style)'
 style = 'bg:green fg:#000000'
 
 [rust]
@@ -208,67 +111,14 @@ symbol = ' '
 format = '[ $symbol($version) ]($style)'
 style = 'bg:green fg:#000000'
 
-[scala]
-format = '[ $symbol($version) ]($style)'
-style = 'bg:green fg:#000000'
-
-[spack]
-format = '[ $symbol$environment ]($style)'
-style = 'bg:green fg:#000000'
-
-[swift]
-symbol = ' '
-format = '[ $symbol($version) ]($style)'
-style = 'bg:green fg:#000000'
-
-[vagrant]
-format = '[ $symbol($version) ]($style)'
-style = 'bg:green fg:#000000'
-
-[vlang]
-format = '[ $symbol($version) ]($style)'
-style = 'bg:green fg:#000000'
-
-[zig]
-format = '[ $symbol($version) ]($style)'
-style = 'bg:green fg:#000000'
-
-### PACKAGE INDICATORS
-
 [package]
 symbol = ' '
 format = '[ $symbol$version ]($style)'
 style = 'bg:blue fg:#000000'
 
-### CONTEXT INDICATORS
-[aws]
-symbol = ' '
-format = '[ $symbol($profile)(\($region\))(\[$duration\]) ]($style)'
-style = 'bg:mauve fg:#000000'
-
 [docker_context]
 symbol = ' '
 format = '[ $symbol$context ]($style)'
-style = 'bg:mauve fg:#000000'
-
-[gcloud]
-symbol = ' '
-format = '[ $symbol$account(@$domain)(\($region\)) ]($style)'
-style = 'bg:mauve fg:#000000'
-
-[kubernetes]
-symbol = '󱃾 '
-format = '[ $symbol($cluster/$namespace) ]($style)'
-disabled = false
-style = 'bg:mauve fg:#000000'
-
-[openstack]
-symbol = ' '
-format = '[ $symbol$cloud(\($project\)) ]($style)'
-style = 'bg:mauve fg:#000000'
-
-[terraform]
-format = '[ $symbol$workspace ]($style)'
 style = 'bg:mauve fg:#000000'
 
 ### STATUS INDICATORS
