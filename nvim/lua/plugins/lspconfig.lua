@@ -20,6 +20,9 @@ return {
 		lspconfig.html.setup({ capabilities = capabilities })
 
 		lspconfig.intelephense.setup({ capabilities = capabilities })
+		lspconfig.dockerls.setup({
+			capabilities = capabilities
+		})
 		lspconfig.bashls.setup({
 			capabilities = capabilities,
 			filetypes = {
