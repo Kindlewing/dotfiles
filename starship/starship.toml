@@ -56,9 +56,9 @@ Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
 
 [directory]
-format = "[ $path ]($style)[$read_only]($read_only_style)"
+format = "[ $path]($style)[$read_only]($read_only_style)"
 style = 'bg:teal fg:crust'
-read_only_style = 'bg:mauve fg:crust'
+read_only_style = 'bg:teal fg:crust'
 read_only = ' '
 truncation_length = 3
 truncation_symbol = '../'
