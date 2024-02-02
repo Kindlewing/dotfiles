@@ -17,6 +17,7 @@ return {
 		lspconfig.nginx_language_server.setup({ capabilities = capabilities })
 		lspconfig.tsserver.setup({ capabilities = capabilities })
 		lspconfig.rust_analyzer.setup({ capabilities = capabilities })
+		lspconfig.gopls.setup({ capabilities = capabilities })
 		lspconfig.html.setup({ capabilities = capabilities })
 
 		lspconfig.intelephense.setup({ capabilities = capabilities })

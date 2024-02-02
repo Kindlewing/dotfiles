@@ -1,6 +1,4 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
+eval "$(starship init zsh)"
 
 export ZSH="$HOME/.zsh"
 export ZSH_PLUGINS=$ZSH/plugins
@@ -16,10 +14,6 @@ export BROWSER="/usr/bin/firefox-developer-edition"
 export PAGER="/usr/bin/bat"
 [ "$TERM" = "xterm-kitty" ]
 
-ZSH_ATOSUGGEST_STRATEGY=(history completion)
-
-SAVEHIST=1000
-HISTFILE=~/.zsh_history
 
 if [[ ! -d "$ZSH" ]]; then
     mkdir -p "~/.zsh/plugins"
@@ -42,8 +36,13 @@ if [[ ! -f "$ZSH_PLUGINS/command-not-found.zsh" ]]; then
 fi
 
 
+
+ZSH_ATOSUGGEST_STRATEGY=(history completion)
+
+SAVEHIST=1000
+HISTFILE=~/.zsh_history
+
 source $HOME/.aliases.zsh
-eval "$(starship init zsh)"
 source $ZSH_PLUGINS/catppuccin_syntax_highlighting.zsh
 source $ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh

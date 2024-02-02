@@ -30,6 +30,7 @@ return {
 				'cssls',
 				'tailwindcss',
 				'rust_analyzer',
+				'gopls',
 				'intelephense',
 			},
 		})
