@@ -26,7 +26,6 @@ return {
 				'tsserver',
 				'html',
 				'dockerls',
-				'docker',
 				'docker_compose_language_service',
 				'bashls',
 				'cssls',

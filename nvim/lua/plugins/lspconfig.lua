@@ -18,7 +18,10 @@ return {
 		lspconfig.tsserver.setup({ capabilities = capabilities })
 		lspconfig.rust_analyzer.setup({ capabilities = capabilities })
 		lspconfig.gopls.setup({ capabilities = capabilities })
-		lspconfig.docker_compose_language_service.setup({ capabilities = capabilities })
+		lspconfig.docker_compose_language_service.setup({
+			capabilities = capabilities,
+			root_dir = lspconfig.util.root_pattern("docker-compose.yml")
+		})
 		lspconfig.html.setup({ capabilities = capabilities })
 
 		lspconfig.intelephense.setup({ capabilities = capabilities })
