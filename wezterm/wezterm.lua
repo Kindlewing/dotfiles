@@ -8,8 +8,11 @@ end
 config.color_scheme = 'Catppuccin Mocha'
 config.enable_tab_bar = false
 config.font_size = 10.0
-
+config.font = wezterm.font("CaskaydiaCoveNerdFont", {
+	weight = "Regular",
+})
 config.window_background_opacity = 0.8
+
 config.window_decorations = 'RESIZE'
 config.keys = {
 	{
