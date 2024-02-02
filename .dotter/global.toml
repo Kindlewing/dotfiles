@@ -15,6 +15,7 @@ wofi = "~/.config/wofi"
 lazygit = "~/.config/lazygit"
 zathura = "~/.config/zathura"
 zellij = "~/.config/zellij"
+"wezterm/wezterm.lua" = "~/.wezterm.lua"
 
 "gitconfig/gitconfig"= "~/.gitconfig"
 "starship/starship.toml" = "~/.config/starship.toml"
