@@ -27,7 +27,7 @@ return {
 				'html',
 				'dockerls',
 				'docker',
-				'docker-compose-language-service',
+				'docker_compose_language_service',
 				'bashls',
 				'cssls',
 				'tailwindcss',
