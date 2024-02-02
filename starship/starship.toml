@@ -1,9 +1,11 @@
 "$schema" = "https://starship.rs/config-schema.json"
 
 format = """
-[](fg:mauve)\
+[](fg:mauve bg:mauve)\
+$os\
+[](fg:mauve bg:teal)\
 $directory\
-[](fg:mauve bg:red)\
+[](fg:teal bg:red)\
 $git_branch\
 [](fg:red bg:peach)\
 $git_status\
@@ -27,11 +29,39 @@ $character"""
 add_newline = true
 palette = "catppuccin_mocha"
 
+[os]
+disabled = false
+style = "fg:crust bg:mauve"
+
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
 [directory]
-format = "[$path]($style)[$read_only]($read_only_style)"
-style = 'bg:mauve fg:crust'
+format = "[ $path ]($style)[$read_only]($read_only_style)"
+style = 'bg:teal fg:crust'
 read_only_style = 'bg:mauve fg:crust'
 read_only = ' '
+truncation_length = 3
+truncation_symbol = '../'
 use_os_path_sep = false
 
 [git_branch]
