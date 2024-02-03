@@ -75,7 +75,7 @@ return {
 				lualine_x = {
 					{
 						show_active_lsp,
-						icon = ' LSP:',
+						icon = '  LSP:',
 					},
 					{ show_macro_recording }
 				},
