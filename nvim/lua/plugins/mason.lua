@@ -25,6 +25,7 @@ return {
 				'lua_ls',
 				'tsserver',
 				'html',
+				'pyright',
 				'dockerls',
 				'docker_compose_language_service',
 				'bashls',
