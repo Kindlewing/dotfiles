@@ -6,6 +6,7 @@ if wezterm.config_builder then
 end
 
 config.color_scheme = 'Catppuccin Mocha'
+config.enable_wayland = true
 config.enable_tab_bar = false
 config.font_size = 10.0
 config.font = wezterm.font("CaskaydiaCoveNerdFont", {
