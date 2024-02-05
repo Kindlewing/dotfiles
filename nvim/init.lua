@@ -16,7 +16,7 @@ vim.g.mapleader = ' '
 require('icons')
 require('lazy').setup('plugins')
 
-vim.cmd.colorscheme('catppuccin')
+vim.cmd.colorscheme('gruvbox-material')
 
 require('base')
 require('keymap')

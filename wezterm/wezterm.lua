@@ -5,7 +5,7 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = 'Catppuccin Mocha'
+config.color_scheme = 'Gruvbox Material (Gogh)'
 config.enable_tab_bar = false
 config.font_size = 10.0
 config.font = wezterm.font("CaskaydiaCoveNerdFont", {
