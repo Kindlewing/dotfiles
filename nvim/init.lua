@@ -14,11 +14,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ' '
 require('icons')
+require('base')
 require('lazy').setup('plugins')
 
-vim.cmd.colorscheme('gruvbox-material')
+vim.cmd.colorscheme('gruvbox')
 
-require('base')
 require('keymap')
 require('highlights')
 require('register-keys')
