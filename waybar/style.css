@@ -1,138 +1,93 @@
-@import "mocha.css";
-
 * {
-  font-family: "Recursive Sans Casual Static", "Symbols Nerd Font",
-    "Recursive Mono Casual Static";
-  font-size: 14px;
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: "Noto Sans", "Font Awesome";
+  font-size: 11px;
+  letter-spacing: 0.8px;
+}
+
+.modules-right,
+.modules-left,
+.modules-center {
+  margin: 4px;
+}
+
+.modules-right > * > *,
+.modules-left,
+.modules-center {
+  border-radius: 12px;
+}
+
+.modules-right > * > * {
+  padding: 0px 12px;
+  font-weight: normal;
+  background-color: #191919;
+  margin-left: 8px;
+}
+
+.modules-center {
+}
+
+#tray {
+  padding: 0px 12px;
 }
 
 window#waybar {
-  background-color: rgba(30, 30, 46, 0.5);
-  color: @text;
-  transition-property: background-color;
-  transition-duration: 0.5s;
+  background-color: #090909;
+  color: #dcdcdc;
+  font-weight: bold;
+  border: solid 10px #090909;
 }
 
-window#waybar.hidden {
-  opacity: 0.2;
+#battery.critical:not(.charging) {
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
-button {
-  box-shadow: inset 0 -3px transparent;
-  border: none;
-  border-radius: 0;
+.modules-left {
+  background-color: #191919;
 }
 
-button:hover {
-  background: @overlay0;
-  box-shadow: inset 0 -3px @overlay0;
+#window {
+  background-color: #191919;
+  border-radius: 12px;
+  padding: 0px 12px;
 }
 
-#workspaces {
-  border-radius: 10px;
+window#waybar.empty #window {
+  background-color: transparent;
 }
 
 #workspaces button {
+  font-weight: normal;
   padding: 0 5px;
-  background-color: transparent;
-  color: @mauve;
+  background: none;
+  border: none;
+  border-radius: 1000px;
+  border: solid 2px #191919;
 }
 
-#workspaces button:hover {
-  background: rgba(108, 112, 134, 0.2);
-}
-
+#workspaces button.focused,
 #workspaces button.active {
-  background-color: @base;
-  box-shadow: inset 0 -3px @teal;
+  background-color: #191919;
+  color: #fff;
+  border: solid 2px #458588;
 }
 
-#workspaces button.urgent {
-  background-color: @red;
+#mpris {
+  padding: 0 6px;
+  font-weight: normal;
 }
 
-tooltip {
-  color: @text;
-  background: rgba(30, 30, 46, 0.5);
-  border: 3px solid @teal;
-}
-
-#clock,
-#cpu,
-#memory,
-#network,
-#pulseaudio,
-#custom-media,
-#tray {
-  min-width: 100px;
-  padding: 0 10px;
-  color: @base;
-  border-radius: 0;
-}
-
-#window,
-#workspaces {
-  margin: 0 4px;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-  margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-  margin-right: 0;
-}
-
-#clock {
-  color: @base;
-  background-color: @red;
-}
-
-#cpu {
-  color: @base;
-  background-color: @teal;
-}
-
-#memory {
-  color: @base;
-  background-color: @mauve;
-}
-
-#network {
-  color: @base;
-  background-color: @sapphire;
-}
-
-#network.disconnected {
-  background-color: @subtext1;
-}
-
-#pulseaudio {
-  color: @base;
-  background-color: @yellow;
-}
-
-#pulseaudio.muted {
-  background-color: @subtext1;
-  color: @base;
-}
-
-#custom-media.custom-spotify {
-  background-color: @teal;
-}
-
-#tray {
-  color: @base;
-  background-color: rgba(0, 0, 0, 0);
-}
-
-#tray > .passive {
-  -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-  -gtk-icon-effect: highlight;
-  background-color: @red;
+#mpris.spotifyd,
+#mpris.spotify {
+  background-color: #253526;
+  /* color: #fff; */
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  padding: 0px 12px;
 }
