@@ -90,7 +90,7 @@ pacman_packages=(zsh zellij hyprland git-delta wl-clipboard kitty wofi waybar sw
 
 _installPackagesPacman "${pacman_packages[@]}"
 
-yay_packages=(wlogout dotdrop swaylock-effects-git catppuccin-gtk-theme-mocha)
+yay_packages=(wlogout wezterm-git eww-wayland swaylock-effects-git catppuccin-gtk-theme-mocha)
 _installPackagesYay "${yay_packages[@]}"
 
 clear
