@@ -1,8 +1,8 @@
 {
-    "height": 34, // Waybar height (to be removed for auto height)
+    "height": 40, // Waybar height (to be removed for auto height)
     "spacing": 4, // Gaps between modules (4px)
-    "modules-left": ["hyprland/workspaces", "mpris"],
-    "modules-center": ["hyprland/window"],
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["mpris"],
     "modules-right": ["pulseaudio", "memory", "cpu", "temperature", "battery", "clock", "tray"],
     "layer": "top",
 
@@ -20,12 +20,8 @@
           "3": "",
           "4": "",
           "5": "",
-          "8": "",
-          "9": "",
-          "10": "",
-          "urgent": "",
-          "focused": "",
-          "default": ""
+          "6": "",
+          "7": "",
       }
     },
 
@@ -42,11 +38,6 @@
             "locked": "",
             "unlocked": ""
         }
-    },
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "sway/window": {
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -100,16 +91,16 @@
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": "  {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format-source": "{volume}%  ",
+        "format-source-muted": " ",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+            "headphone": " ",
+            "hands-free": " ",
+            "headset": " ",
+            "phone": " ",
+            "portable": " ",
+            "car": " ",
+            "default": [" ", " ", " "]
         },
         "on-click": "pavucontrol"
     },

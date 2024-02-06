@@ -27,6 +27,7 @@ return {
 				'html',
 				'pyright',
 				'dockerls',
+				'texlab',
 				'docker_compose_language_service',
 				'bashls',
 				'cssls',
