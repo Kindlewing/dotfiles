@@ -19,6 +19,6 @@ return {
 			'intelephense',
 		},
 		auto_update = true,
-		start_delay = 500
-	}
+		start_delay = 500,
+	},
 }
