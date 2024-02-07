@@ -9,6 +9,8 @@ return {
 			'html',
 			'pyright',
 			'dockerls',
+			'clangd',
+			'clang-format',
 			'texlab',
 			'docker_compose_language_service',
 			'bashls',
