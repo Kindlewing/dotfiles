@@ -14,27 +14,11 @@ export BROWSER="/usr/bin/firefox-developer-edition"
 export PAGER="/usr/bin/bat"
 [ "$TERM" = "xterm-kitty" ]
 
-
-if [[ ! -d "$ZSH" ]]; then
-    mkdir -p "~/.zsh/plugins"
+if [[ -f "$HOME/.cargo/env" ]]; then
+	source "$HOME/.cargo/env"	
 fi
 
-if [[ ! -d "$ZSH_PLUGINS/zsh-autosuggestions" ]]; then
-    git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions $ZSH_PLUGINS/zsh-autosuggestions
-fi
-if [[ ! -d "$ZSH_PLUGINS/zsh-syntax-highlighting" ]]; then
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_PLUGINS/zsh-syntax-highlighting
-fi
-
-if [[ ! -f "$ZSH_PLUGINS/catppuccin_syntax_highlighting.zsh" ]]; then
-    curl -qo $ZSH_PLUGINS/catppuccin_syntax_highlighting.zsh https://gist.githubusercontent.com/Kindlewing/b47c566bc588cf6644f0ca650eb939b5/raw/c5023459ed755c7f0792e3ff3fd1507c1a37199e/catppuccin_syntax_highlighting.zsh
-fi
-
-if [[ ! -f "$ZSH_PLUGINS/command-not-found.zsh" ]]; then
-    curl -qo $ZSH_PLUGINS/command-not-found.zsh https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/command-not-found/command-not-found.plugin.zsh
-
-fi
-
+eval "$(sheldon source)"
 
 
 ZSH_ATOSUGGEST_STRATEGY=(history completion)
@@ -43,6 +27,3 @@ SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
 source $HOME/.aliases.zsh
-source $ZSH_PLUGINS/catppuccin_syntax_highlighting.zsh
-source $ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh
