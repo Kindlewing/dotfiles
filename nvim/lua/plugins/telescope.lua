@@ -19,6 +19,8 @@ return {
 					'node_modules',
 					'target',
 					'vendor',
+					'build',
+					'*.o',
 				},
 				dynamic_preview_title = true,
 				path_display = { 'smart' },
@@ -28,9 +30,6 @@ return {
 					follow = true,
 					hidden = true,
 					no_ignore = true,
-				},
-				help_tags = {
-					theme = 'dropdown',
 				},
 			},
 		})
