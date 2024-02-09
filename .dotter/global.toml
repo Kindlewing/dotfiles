@@ -20,8 +20,8 @@ fonts = "~/.local/share/fonts"
 swaylock = "~/.swaylock"
 icons = "~/.icons"
 bookmarks = "~/.bookmarks"
-cargo = "~/.cargo"
 
+"cargo/env" = "~/.cargo/env"
 "zsh/zshrc" = "~/.zshrc"
 "zsh/aliases.zsh" = "~/.aliases.zsh"
 

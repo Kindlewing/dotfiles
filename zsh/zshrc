@@ -11,7 +11,7 @@ export SUDO_EDITOR="/usr/bin/nvim"
 export VISUAL="/usr/bin/nvim"
 export EDITOR="/usr/bin/nvim"
 export BROWSER="/usr/bin/firefox-developer-edition"
-export PAGER="/usr/bin/bat"
+export PAGER="/usr/bin/less"
 [ "$TERM" = "xterm-kitty" ]
 
 if [[ -f "$HOME/.cargo/env" ]]; then
