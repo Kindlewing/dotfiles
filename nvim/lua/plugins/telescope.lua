@@ -20,6 +20,7 @@ return {
 					'target/',
 					'vendor/',
 					'build/',
+					'.venv/',
 					'*.o',
 				},
 				dynamic_preview_title = true,
