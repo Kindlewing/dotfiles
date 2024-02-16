@@ -27,3 +27,5 @@ SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
 source $HOME/.aliases.zsh
+eval "$(zoxide init --cmd cd zsh)"
+

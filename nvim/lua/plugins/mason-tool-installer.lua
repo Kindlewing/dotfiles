@@ -10,6 +10,7 @@ return {
 			'pyright',
 			'dockerls',
 			'clangd',
+			'cmake',
 			'clang-format',
 			'texlab',
 			'docker_compose_language_service',

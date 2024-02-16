@@ -21,6 +21,7 @@ return {
 					'vendor/',
 					'build/',
 					'.venv/',
+					'.cache/',
 					'*.o',
 				},
 				dynamic_preview_title = true,
