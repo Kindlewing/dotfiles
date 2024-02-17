@@ -185,36 +185,13 @@ keybinds clear-defaults=true {
 plugins {
 	tab-bar { path "tab-bar"; }
 	status-bar { path "status-bar"; }
-	strider { path "strider"; }
 	compact-bar { path "compact-bar"; }
 }
-
-// Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
-// eg. when terminal window with an active zellij session is closed
-// Options:
-//   - detach (Default)
-//   - quit
-//
 on_force_close "detach"
-
-//  Send a request for a simplified ui (without arrow fonts) to plugins
-//  Options:
-//    - true
-//    - false (Default)
-//
 simplified_ui true
-
-// Choose the path to the default shell that zellij will use for opening new panes
-// Default: $SHELL
-//
-// default_shell "fish"
-
-// Toggle between having pane frames around the panes
-// Options:
-//   - true (default)
-//   - false
-//
 pane_frames false
+default_layout "terminal"
+default_mode "normal"
 
 theme "gruvbox-dark"
 
