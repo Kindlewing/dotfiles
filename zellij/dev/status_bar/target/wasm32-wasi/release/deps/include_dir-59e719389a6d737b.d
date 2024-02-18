@@ -1,0 +1,11 @@
+/home/hudson/zellij-dotfiles/bin/zellij/statusbar/target/wasm32-wasi/release/deps/include_dir-59e719389a6d737b.rmeta: /home/hudson/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/lib.rs /home/hudson/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/dir.rs /home/hudson/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/dir_entry.rs /home/hudson/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/file.rs /home/hudson/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/../README.md
+
+/home/hudson/zellij-dotfiles/bin/zellij/statusbar/target/wasm32-wasi/release/deps/libinclude_dir-59e719389a6d737b.rlib: /home/hudson/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/lib.rs /home/hudson/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/dir.rs /home/hudson/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/dir_entry.rs /home/hudson/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/file.rs /home/hudson/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/../README.md
+
+/home/hudson/zellij-dotfiles/bin/zellij/statusbar/target/wasm32-wasi/release/deps/include_dir-59e719389a6d737b.d: /home/hudson/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/lib.rs /home/hudson/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/dir.rs /home/hudson/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/dir_entry.rs /home/hudson/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/file.rs /home/hudson/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/../README.md
+
+/home/hudson/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/lib.rs:
+/home/hudson/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/dir.rs:
+/home/hudson/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/dir_entry.rs:
+/home/hudson/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/file.rs:
+/home/hudson/.cargo/registry/src/index.crates.io-6f17d22bba15001f/include_dir-0.7.3/src/../README.md:
