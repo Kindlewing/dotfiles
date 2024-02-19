@@ -10,8 +10,6 @@ keybinds clear-defaults=true {
 		unbind "Ctrl o"
 		unbind "Ctrl q"
 		unbind "Ctrl h"
-		// uncomment this and adjust key if using copy_on_select=false
-		// bind "Alt c" { Copy; }
 	}
 	locked {
 		bind "Ctrl g" { SwitchToMode "Normal"; }
@@ -188,8 +186,8 @@ plugins {
 	compact-bar { path "compact-bar"; }
 }
 on_force_close "detach"
-simplified_ui true
-pane_frames false
+simplified_ui false
+pane_frames true
 default_layout "terminal"
 default_mode "normal"
 
