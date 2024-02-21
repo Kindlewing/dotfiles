@@ -1,1 +1,0 @@
-{"rustc":16895609601713598366,"features":"","target":0,"profile":0,"path":0,"deps":[[1346534427351037696,"build_script_build",false,5479464080903398471]],"local":[{"RerunIfChanged":{"output":"wasm32-wasi/release/build/crossbeam-queue-783236b14ee3a4bf/output","paths":["no_atomic.rs"]}}],"rustflags":[],"metadata":0,"config":0,"compile_kind":0}

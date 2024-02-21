@@ -1,5 +1,5 @@
 nvim/lua/packer_compiled.lua
-zellij/dev/target/
+target/
 .dotter/local.toml
 .dotter/cache.toml
 .dotter/cache
