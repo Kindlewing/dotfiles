@@ -18,25 +18,25 @@ return {
 		end
 		local function show_macro_recording()
 			local recording_register = vim.fn.reg_recording()
-			if recording_register == "" then
-				return ""
+			if recording_register == '' then
+				return ''
 			else
-				return "Recording @" .. recording_register
+				return 'Recording @' .. recording_register
 			end
 		end
 
 		local colors = {
-			bg       = '#202328',
-			fg       = '#bbc2cf',
-			yellow   = '#ECBE7B',
-			cyan     = '#008080',
+			bg = '#202328',
+			fg = '#bbc2cf',
+			yellow = '#ECBE7B',
+			cyan = '#008080',
 			darkblue = '#081633',
-			green    = '#98be65',
-			orange   = '#FF8800',
-			violet   = '#a9a1e1',
-			magenta  = '#c678dd',
-			blue     = '#51afef',
-			red      = '#ec5f67',
+			green = '#98be65',
+			orange = '#FF8800',
+			violet = '#a9a1e1',
+			magenta = '#c678dd',
+			blue = '#51afef',
+			red = '#ec5f67',
 		}
 
 		require('lualine').setup({
@@ -63,22 +63,24 @@ return {
 					{
 						'diagnostics',
 						sources = { 'nvim_diagnostic' },
-						symbols = { error = ' ', warn = ' ', info = ' ' },
+						symbols = {
+							error = ' ',
+							warn = ' ',
+							info = ' ',
+						},
 						diagnostics_color = {
 							color_error = { fg = colors.red },
 							color_warn = { fg = colors.yellow },
-							color_info = { fg = colors.cyan }
-						}
-					}
-
-
+							color_info = { fg = colors.cyan },
+						},
+					},
 				},
 				lualine_x = {
 					{
 						show_active_lsp,
 						icon = '  LSP:',
 					},
-					{ show_macro_recording }
+					{ show_macro_recording },
 				},
 				lualine_y = {
 					{
@@ -86,9 +88,9 @@ return {
 						colored = true,
 					},
 					{
-						'progress'
+						'progress',
 					},
-					{ 'searchcount' }
+					{ 'searchcount' },
 				},
 				lualine_z = {
 					{

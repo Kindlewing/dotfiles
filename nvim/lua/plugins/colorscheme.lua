@@ -12,7 +12,7 @@ return {
 				illuminate = true,
 				indent_blankline = {
 					enabled = false,
-					scope_color = "sapphire",
+					scope_color = 'sapphire',
 					colored_indent_levels = false,
 				},
 				mason = true,
@@ -24,10 +24,10 @@ return {
 				telescope = true,
 				treesitter = true,
 				treesitter_context = true,
-			}
+			},
 		},
 	},
 	{
-		"sainnhe/gruvbox-material",
-	}
+		'sainnhe/gruvbox-material',
+	},
 }

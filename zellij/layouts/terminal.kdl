@@ -7,7 +7,7 @@ layout {
     }
 
     tab name="editor" focus=true {
-        pane borderless=true
+        pane
     }
     tab name="terminal" {
         pane
