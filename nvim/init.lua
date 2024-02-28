@@ -23,7 +23,9 @@ vim.g.gruvbox_material_background = 'medium'
 vim.g.gruvbox_material_float_style = 'dim'
 vim.g.gruvbox_material_diagnostic_virtual_text = 'colored'
 
+-- vim.cmd.colorscheme('tokyodark')
 vim.cmd.colorscheme('gruvbox-material')
+-- vim.cmd.colorscheme('catppuccin')
 
 require('keymap')
 require('highlights')
