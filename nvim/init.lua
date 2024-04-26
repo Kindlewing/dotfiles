@@ -30,3 +30,11 @@ vim.cmd.colorscheme('gruvbox-material')
 require('keymap')
 require('highlights')
 require('register-keys')
+require('snippets.luasnip')
+
+vim.cmd([[
+augroup python
+    autocmd!
+    autocmd FileType python setlocal noexpandtab tabstop=4
+augroup end
+]])

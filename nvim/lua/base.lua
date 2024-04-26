@@ -14,6 +14,7 @@ opt.clipboard = 'unnamedplus'
 
 opt.tabstop = 4
 opt.shiftwidth = 4
+opt.smarttab = false
 opt.expandtab = false
 opt.autoindent = true
 opt.smartindent = true
@@ -23,7 +24,7 @@ opt.ignorecase = true
 opt.smartcase = true
 
 -- Set completeopt to have a better completion experience
-opt.completeopt = { "menuone", "noselect" }
+opt.completeopt = { 'menuone', 'noselect' }
 
 -- Enable persistent undo history
 opt.undofile = true
@@ -34,8 +35,8 @@ vim.bo.autoread = true
 
 opt.cursorline = true
 opt.termguicolors = true
-opt.background = "dark"
-opt.colorcolumn = "80"
+opt.background = 'dark'
+opt.colorcolumn = '80'
 
 -- highlight on yank
 vim.api.nvim_create_autocmd('TextYankPost', {

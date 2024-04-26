@@ -1,4 +1,5 @@
 eval "$(starship init zsh)"
+eval "$(direnv hook zsh)"
 
 export ZSH="$HOME/.zsh"
 export ZSH_PLUGINS=$ZSH/plugins
