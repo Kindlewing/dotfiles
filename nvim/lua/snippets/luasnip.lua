@@ -40,4 +40,19 @@ ls.add_snippets('make', {
 			{ i(1), rep(1) }
 		)
 	),
+
+	s(
+		'make_arm_c',
+		fmt(
+			[[
+		SRC=src
+		CFLAGS=-mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16
+		CC=arm-linux-gnueabi-gcc
+
+		{}:$(SRC)/*.c
+			$(CC) $(CFLAGS) -o {} -c $(SRC)/*.c 
+		]],
+			{ i(1), rep(1) }
+		)
+	),
 })
