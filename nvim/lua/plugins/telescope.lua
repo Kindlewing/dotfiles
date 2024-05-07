@@ -16,7 +16,7 @@ return {
 					'codegen.ts',
 					'.git/',
 					'lazy-lock.json',
-					'compile_commands.json'
+					'compile_commands.json',
 					'node_modules/',
 					'target/',
 					'vendor/',
