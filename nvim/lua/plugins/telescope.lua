@@ -16,6 +16,7 @@ return {
 					'codegen.ts',
 					'.git/',
 					'lazy-lock.json',
+					'compile_commands.json'
 					'node_modules/',
 					'target/',
 					'vendor/',
@@ -23,6 +24,8 @@ return {
 					'.venv/',
 					'.cache/',
 					'*.o',
+					'*.hex',
+					'*.bin',
 				},
 				dynamic_preview_title = true,
 				path_display = { 'smart' },
