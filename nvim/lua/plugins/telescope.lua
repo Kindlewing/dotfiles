@@ -1,6 +1,5 @@
 return {
 	'nvim-telescope/telescope.nvim',
-	tag = '0.1.4',
 	dependencies = { 'nvim-lua/plenary.nvim' },
 	config = function()
 		local actions = require('telescope.actions')
@@ -26,8 +25,6 @@ return {
 					'.png',
 					'.jpg',
 					'.jpeg',
-					'.o',
-					'.hex',
 				},
 				dynamic_preview_title = true,
 				path_display = { 'smart' },
