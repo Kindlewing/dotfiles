@@ -119,29 +119,6 @@ keybinds clear-defaults=true {
 		    SwitchToMode "Normal"
 		}
 	}
-	tmux {
-		bind "[" { SwitchToMode "Scroll"; }
-		bind "Ctrl b" { Write 2; SwitchToMode "Normal"; }
-		bind "\"" { NewPane "Down"; SwitchToMode "Normal"; }
-		bind "%" { NewPane "Right"; SwitchToMode "Normal"; }
-		bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
-		bind "c" { NewTab; SwitchToMode "Normal"; }
-		bind "," { SwitchToMode "RenameTab"; }
-		bind "p" { GoToPreviousTab; SwitchToMode "Normal"; }
-		bind "n" { GoToNextTab; SwitchToMode "Normal"; }
-		bind "Left" { MoveFocus "Left"; SwitchToMode "Normal"; }
-		bind "Right" { MoveFocus "Right"; SwitchToMode "Normal"; }
-		bind "Down" { MoveFocus "Down"; SwitchToMode "Normal"; }
-		bind "Up" { MoveFocus "Up"; SwitchToMode "Normal"; }
-		bind "h" { MoveFocus "Left"; SwitchToMode "Normal"; }
-		bind "l" { MoveFocus "Right"; SwitchToMode "Normal"; }
-		bind "j" { MoveFocus "Down"; SwitchToMode "Normal"; }
-		bind "k" { MoveFocus "Up"; SwitchToMode "Normal"; }
-		bind "o" { FocusNextPane; }
-		bind "d" { Detach; }
-		bind "Space" { NextSwapLayout; }
-		bind "x" { CloseFocus; SwitchToMode "Normal"; }
-	}
 	shared_except "locked" {
 		bind "Ctrl g" { SwitchToMode "Locked"; }
 		bind "Alt n" { NewPane; }
@@ -180,33 +157,13 @@ keybinds clear-defaults=true {
 	}
 }
 
-plugins {
-	tab-bar { path "tab-bar"; }
-	status-bar { path "status-bar"; }
-	compact-bar { path "compact-bar"; }
-}
 on_force_close "detach"
-simplified_ui false
-pane_frames true
-default_layout "terminal"
+simplified_ui true
 default_mode "normal"
 
 theme "gruvbox-dark"
 
 themes {
-    catppuccin-mocha {
-        fg 205 214 244
-        bg 88 91 112
-        black 24 24 37
-        red 243 139 168
-        green 166 227 161
-        yellow 249 226 175
-        blue 137 180 250
-        magenta 245 194 231
-        cyan 137 220 235
-        white 205 214 244
-        orange 250 179 135
-    }
 	gruvbox-dark {
  		fg "#D5C4A1"
  		bg "#282828"
