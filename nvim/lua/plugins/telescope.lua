@@ -20,6 +20,7 @@ return {
 					'target/',
 					'vendor/',
 					'build/',
+					'bin',
 					'.venv/',
 					'.cache/',
 					'.png',
