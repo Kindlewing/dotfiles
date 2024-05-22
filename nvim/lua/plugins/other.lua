@@ -1,14 +1,6 @@
 return {
 
 	{
-		"folke/zen-mode.nvim",
-		opts = {}
-	},
-	{
-		"folke/twilight.nvim",
-		opts = {}
-	},
-	{
 		'echasnovski/mini.indentscope',
 		opts = {},
 	},

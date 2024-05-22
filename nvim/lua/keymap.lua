@@ -66,10 +66,18 @@ end, { desc = 'Dap UI scopes' })
 -- telescope
 map('n', '<leader>sf', builtin.find_files, { desc = 'Search files' })
 map('n', '<leader>sg', builtin.live_grep, { desc = 'Search words' })
-map('n', '<leader>sw', '<CMD>lua require("telescope").extensions.git_worktree.git_worktrees()<CR>',
-	{ desc = "Search worktrees" });
-map('n', '<leader>sc', '<CMD>lua require("telescope").extensions.git_worktree.create_git_worktree()<CR>',
-	{ desc = "Create git worktree" });
+map(
+	'n',
+	'<leader>sw',
+	'<CMD>lua require("telescope").extensions.git_worktree.git_worktrees()<CR>',
+	{ desc = 'Search worktrees' }
+)
+map(
+	'n',
+	'<leader>sc',
+	'<CMD>lua require("telescope").extensions.git_worktree.create_git_worktree()<CR>',
+	{ desc = 'Create git worktree' }
+)
 map(
 	'n',
 	'<leader>ss',
@@ -164,3 +172,7 @@ map('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
 -- git
 map('n', '<leader>gp', ':Gitsigns preview_hunk<CR>', opts)
 map('n', '<leader>gb', ':Gitsigns toggle_current_line_blame<CR>', opts)
+
+map('n', '<leader>z', function()
+	require('zen-mode').toggle({})
+end, { desc = 'Zen mode' })

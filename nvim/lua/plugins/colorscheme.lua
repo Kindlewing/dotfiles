@@ -39,4 +39,7 @@ return {
 	{
 		'sainnhe/gruvbox-material',
 	},
+	{
+		'sainnhe/everforest',
+	},
 }

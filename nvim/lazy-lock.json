@@ -14,6 +14,7 @@
   "conform.nvim": { "branch": "master", "commit": "d2a54aa54d84117ac3d99afdd527281f81e9e2c9" },
   "crates.nvim": { "branch": "main", "commit": "7d8541ec0e3b30ac2c43864d3ee13a632e1231ed" },
   "dashboard-nvim": { "branch": "master", "commit": "a0a78099658c7d4be3714f657b18ca8285d5d106" },
+  "everforest": { "branch": "master", "commit": "c6b3315ed7e890128ff1e274969d4aca2eeb8185" },
   "flash.nvim": { "branch": "main", "commit": "7bb4a9c75d1e20cd24185afedeaa11681829ba23" },
   "friendly-snippets": { "branch": "main", "commit": "3e9a3f5a0cfcef1741e352c37bda4e82e5eb846a" },
   "git-worktree.nvim": { "branch": "master", "commit": "f247308e68dab9f1133759b05d944569ad054546" },
