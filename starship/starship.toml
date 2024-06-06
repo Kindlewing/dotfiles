@@ -6,21 +6,16 @@ add_newline = true
 # Change command timeout from 500 to 1000 ms
 command_timeout = 1000
 
-# Change the default prompt format
-# ---
-# old config ...
 format = """\
 [╭╴](238)$env_var\
 $all[╰─](238)$character"""
 
-# new config
-#format = """$env_var $all"""
 
 # Change the default prompt characters
 [character]
 # old config
-success_symbol = "[](238)"
-error_symbol = "[](238)"
+success_symbol = "[ ](238)"
+error_symbol = "[ ](238)"
 #success_symbol = ""
 #error_symbol = ""
 
@@ -46,13 +41,13 @@ disabled = false
 [directory]
 truncation_length = 1
 truncation_symbol = "…/"
-home_symbol = " ~"
+home_symbol = "  ~"
 read_only_style = "197"
 read_only = "  "
 format = "at [$path]($style)[$read_only]($read_only_style) "
 
 [git_branch]
-symbol = " "
+symbol = " "
 format = "via [$symbol$branch]($style) "
 # truncation_length = 4
 truncation_symbol = "…/"
@@ -61,7 +56,7 @@ style = "bold green"
 [git_status]
 format = '[\($all_status$ahead_behind\)]($style) '
 style = "bold green"
-conflicted = "🏳"
+conflicted = "= "
 up_to_date = " "
 untracked = " "
 ahead = "⇡${count}"
@@ -73,38 +68,16 @@ staged = '[++\($count\)](green)'
 renamed = "襁 "
 deleted = " "
 
-[kubernetes]
-format = 'via [ﴱ $context\($namespace\)](bold purple) '
-disabled = false
+[package]
+format = 'is [$symbol$version]($style) '
+symbol = '  '
+version_format = 'v${raw}'
+style = 'bold 208'
 
-# (deactivated because of no space left)
-# 
-[terraform]
-format = "via [ terraform $version]($style) 壟 [$workspace]($style) "
-disabled = false
-
-[vagrant]
-format = "via [ vagrant $version]($style) "
-disabled = false
-
-[docker_context]
-format = "via [ $context](bold blue) "
-disabled = false
-
-[helm]
-format = "via [ $version](bold purple) "
-disabled = false
+[rust]
+symbol = '󱘗  '
 
 [python]
 symbol = " "
 python_binary = "python3"
 disabled = false
-
-[nodejs]
-format = "via [ $version](bold green) "
-disabled = false
-
-[ruby]
-format = "via [ $version]($style) "
-disabled = false
-
