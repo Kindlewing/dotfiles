@@ -42,4 +42,7 @@ return {
 	{
 		'sainnhe/everforest',
 	},
+	{
+		'rebelot/kanagawa.nvim',
+	},
 }
