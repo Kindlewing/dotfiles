@@ -5,6 +5,14 @@ return {
 		lazy = false,
 		priority = 1000,
 		opts = {
+			flavour = 'frappe',
+			transparent_background = true,
+			styles = {
+				functions = { 'italic' },
+				keywords = { 'bold' },
+				comments = { 'italic' },
+				conditionals = { 'italic' },
+			},
 			integrations = {
 				cmp = true,
 				gitsigns = true,
@@ -26,23 +34,5 @@ return {
 				treesitter_context = true,
 			},
 		},
-	},
-	{
-		'tiagovla/tokyodark.nvim',
-		opts = {
-			-- custom options here
-		},
-		config = function(_, opts)
-			require('tokyodark').setup(opts) -- calling setup is optional
-		end,
-	},
-	{
-		'sainnhe/gruvbox-material',
-	},
-	{
-		'sainnhe/everforest',
-	},
-	{
-		'rebelot/kanagawa.nvim',
 	},
 }
