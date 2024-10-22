@@ -14,6 +14,7 @@ return {
 			'clang-format',
 			'texlab',
 			'docker_compose_language_service',
+			'nginx-language-server',
 			'bashls',
 			'cssls',
 			'tailwindcss',
