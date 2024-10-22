@@ -5,7 +5,7 @@ return {
 			'stylua',
 			'prettier',
 			'lua_ls',
-			'tsserver',
+			'ts_ls',
 			'html',
 			'pyright',
 			'dockerls',

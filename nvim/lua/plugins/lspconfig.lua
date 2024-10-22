@@ -15,7 +15,7 @@ return {
 		local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 		lspconfig.nginx_language_server.setup({ capabilities = capabilities })
-		lspconfig.tsserver.setup({ capabilities = capabilities })
+		lspconfig.ts_ls.setup({ capabilities = capabilities })
 		lspconfig.texlab.setup({ capabilities = capabilities })
 		lspconfig.pyright.setup({ capabilities = capabilities })
 		lspconfig.clangd.setup({ capabilities = capabilities })
