@@ -12,7 +12,6 @@ return {
 			delete_check_events = 'TextChanged',
 		},
 	},
-
 	{
 		'hrsh7th/nvim-cmp',
 		event = 'InsertEnter',
@@ -53,13 +52,11 @@ return {
 				completion = {
 					completeopt = 'menu,menuone,noinsert',
 				},
-
 				snippet = {
 					expand = function(args)
 						require('luasnip').lsp_expand(args.body)
 					end,
 				},
-
 				window = {
 					completion = {
 						border = 'rounded',
