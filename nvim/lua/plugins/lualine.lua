@@ -56,7 +56,7 @@ return {
 
 		require('lualine').setup({
 			options = {
-				theme = 'catppuccin',
+				theme = 'everforest',
 				component_separators = '|',
 				section_separators = { left = '', right = '' },
 			},

@@ -17,6 +17,7 @@ return {
 		lspconfig.nginx_language_server.setup({ capabilities = capabilities })
 		lspconfig.ts_ls.setup({ capabilities = capabilities })
 		lspconfig.texlab.setup({ capabilities = capabilities })
+		lspconfig.ols.setup({ capabilities = capabilities })
 		lspconfig.pyright.setup({ capabilities = capabilities })
 		lspconfig.clangd.setup({ capabilities = capabilities })
 		lspconfig.rust_analyzer.setup({ capabilities = capabilities })

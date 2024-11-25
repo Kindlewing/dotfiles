@@ -9,6 +9,7 @@ return {
 			'html',
 			'pyright',
 			'dockerls',
+			'ols',
 			'clangd',
 			'cmake',
 			'clang-format',

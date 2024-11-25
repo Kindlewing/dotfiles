@@ -17,15 +17,9 @@ require('icons')
 require('base')
 require('lazy').setup('plugins')
 
-vim.g.gruvbox_material_transparent_background = 2
-vim.g.gruvbox_material_better_performance = 1
-vim.g.gruvbox_material_background = 'medium'
-vim.g.gruvbox_material_float_style = 'dim'
-vim.g.gruvbox_material_diagnostic_virtual_text = 'colored'
-
 -- vim.cmd.colorscheme('tokyodark')
-vim.cmd.colorscheme('catppuccin')
---vim.cmd.colorscheme('everforest')
+--vim.cmd.colorscheme('catppuccin')
+vim.cmd.colorscheme('everforest')
 
 require('keymap')
 require('highlights')
