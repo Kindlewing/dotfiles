@@ -23,7 +23,6 @@ vim.cmd.colorscheme('everforest')
 
 require('keymap')
 require('highlights')
-require('register-keys')
 require('snippets.luasnip')
 
 vim.cmd([[

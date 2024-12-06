@@ -2,6 +2,17 @@ local builtin = require('telescope.builtin')
 local map = vim.keymap.set
 local opts = { silent = true, noremap = true }
 
+local wk = require('which-key')
+wk.add({
+	{ '<leader>p', group = 'package' },
+	{ '<leader>b', group = 'buffer' },
+	{ '<leader>c', group = 'code' },
+	{ '<leader>d', group = 'debug' },
+	{ '<leader>s', group = 'search' },
+	{ '<leader>u', group = 'toggle' },
+	{ '<leader>g', group = 'git' },
+})
+
 map({ 'n', 'x' }, '<leader>p', '"1p')
 
 map('n', '<leader>q', '<cmd>q<cr>', { desc = 'Quit' })
@@ -9,13 +20,6 @@ map('n', '<leader>w', '<cmd>w<cr>', { desc = 'Write current file' })
 
 map('n', 'H', ':bprevious<CR>', { silent = true })
 map('n', 'L', ':bnext<CR>', { silent = true })
-map(
-	'n',
-	'<leader>bd',
-	'<cmd>:bdelete<CR>',
-	{ desc = 'Close buffer', silent = true }
-)
-
 map('n', 'j', [[v:count?'j':'gj']], { noremap = true, expr = true })
 map('n', 'k', [[v:count?'k':'gk']], { noremap = true, expr = true })
 
