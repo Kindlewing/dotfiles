@@ -19,7 +19,8 @@ require('lazy').setup('plugins')
 
 -- vim.cmd.colorscheme('tokyodark')
 --vim.cmd.colorscheme('catppuccin')
-vim.cmd.colorscheme('everforest')
+--vim.cmd.colorscheme('everforest')
+vim.cmd.colorscheme('kanagawa-paper')
 
 require('keymap')
 require('highlights')

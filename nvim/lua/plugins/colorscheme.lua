@@ -1,5 +1,42 @@
 return {
 	{
+		'sho-87/kanagawa-paper.nvim',
+		lazy = false,
+		priority = 1000,
+		opts = function()
+			local colors = require('kanagawa-paper.colors').setup()
+			return {
+				undercurl = false,
+				transparent = false,
+				gutter = false,
+				dimInactive = true, -- disabled when transparent
+				terminalColors = true,
+				commentStyle = { italic = true },
+				functionStyle = { italic = false, bold = true },
+				keywordStyle = { italic = true, bold = false },
+				statementStyle = { italic = true, bold = false },
+				typeStyle = { italic = true },
+				colors = {
+					theme = {
+						diag = {
+							error = colors.palette.dragonRed,
+						},
+					},
+					palette = {},
+				}, -- override default palette and theme colors
+				overrides = function(colors) -- override highlight groups
+					local theme = colors.theme
+					return {
+						Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 }, -- add `blend = vim.o.pumblend` to enable transparency
+						PmenuSel = { fg = 'NONE', bg = theme.ui.bg_p2 },
+						PmenuSbar = { bg = theme.ui.bg_m1 },
+						PmenuThumb = { bg = theme.ui.bg_p2 },
+					}
+				end,
+			}
+		end,
+	},
+	{
 		'catppuccin/nvim',
 		name = 'catppuccin',
 		lazy = false,
