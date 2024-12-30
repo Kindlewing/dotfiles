@@ -16,7 +16,7 @@ vim.g.mapleader = ' '
 require('icons')
 require('base')
 require('lazy').setup('plugins')
-
+vim.diagnostic.config({ virtual_text = false })
 -- vim.cmd.colorscheme('tokyodark')
 --vim.cmd.colorscheme('catppuccin')
 --vim.cmd.colorscheme('everforest')
