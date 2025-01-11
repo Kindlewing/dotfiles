@@ -77,6 +77,11 @@ return {
 				treesitter = true,
 				treesitter_context = true,
 			},
+			color_overrides = {
+				mocha = {
+					base = '#1e1e2e',
+				},
+			},
 		},
 	},
 }
