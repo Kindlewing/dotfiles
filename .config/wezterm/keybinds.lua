@@ -1,5 +1,4 @@
 local wezterm = require("wezterm")
-
 return {
 	{
 		mods = "LEADER",
