@@ -1,7 +1,13 @@
 // If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
+on_force_close "detach"
+simplified_ui true
+default_mode "normal"
+pane_frames false
+
+theme "catppuccin-mocha"
 ui {
     pane_frames {
-        hide_session_name false
+        hide_session_name true
     }
 }
 keybinds clear-defaults=true {
@@ -157,8 +163,3 @@ keybinds clear-defaults=true {
 	}
 }
 
-on_force_close "detach"
-simplified_ui true
-default_mode "normal"
-
-theme "catppuccin-frappe"
