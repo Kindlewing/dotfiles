@@ -23,7 +23,6 @@ return {
 			'hrsh7th/cmp-nvim-lsp-document-symbol',
 			'hrsh7th/cmp-cmdline',
 			'hrsh7th/cmp-nvim-lua',
-			'f3fora/cmp-spell',
 			{
 				'petertriho/cmp-git',
 				dependencies = 'nvim-lua/plenary.nvim',
@@ -33,10 +32,6 @@ return {
 				dependencies = 'neovim/nvim-lspconfig',
 			},
 			{ 'saadparwaiz1/cmp_luasnip', dependencies = 'L3MON4D3/LuaSnip' },
-			{
-				'saecki/crates.nvim',
-				dependencies = 'nvim-lua/plenary.nvim',
-			},
 		},
 		opts = function()
 			local cmp = require('cmp')

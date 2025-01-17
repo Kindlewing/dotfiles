@@ -25,7 +25,7 @@ return {
 		lspconfig.gopls.setup({ capabilities = capabilities })
 		lspconfig.docker_compose_language_service.setup({
 			capabilities = capabilities,
-			root_dir = lspconfig.util.root_pattern('docker-compose.yaml'),
+			root_dir = lspconfig.util.root_pattern('docker-compose.*.yaml'),
 		})
 		lspconfig.html.setup({ capabilities = capabilities })
 
