@@ -1,4 +1,18 @@
 {
+  "bar.customModules.updates.pollingInterval": 1440000,
+  "theme.font.name": "CaskaydiaCove Nerd Font Mono",
+  "theme.font.style": "italic",
+  "theme.font.label": "CaskaydiaCove Nerd Font Mono Ultra-Light Italic",
+  "theme.bar.floating": false,
+  "theme.bar.buttons.enableBorders": false,
+  "bar.workspaces.show_icons": false,
+  "bar.workspaces.show_numbered": false,
+  "bar.workspaces.showApplicationIcons": false,
+  "bar.workspaces.showWsIcons": false,
+  "bar.workspaces.numbered_active_indicator": "underline",
+  "bar.workspaces.workspaces": 5,
+  "scalingPriority": "gdk",
+  "theme.bar.scaling": 80,
   "theme.bar.menus.menu.notifications.scrollbar.color": "#b4befe",
   "theme.bar.menus.menu.notifications.pager.label": "#9399b2",
   "theme.bar.menus.menu.notifications.pager.button": "#b4befe",
@@ -361,5 +375,6 @@
   "theme.bar.buttons.modules.cava.text": "#242438",
   "theme.bar.buttons.modules.cava.icon": "#242438",
   "theme.bar.buttons.modules.cava.icon_background": "#94e2d5",
-  "theme.bar.buttons.modules.cava.border": "#94e2d5"
+  "theme.bar.buttons.modules.cava.border": "#94e2d5",
+  "menus.media.hideAuthor": false
 }
