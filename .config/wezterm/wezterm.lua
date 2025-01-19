@@ -1,8 +1,8 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
-local config = wezterm.config_builer()
+local config = wezterm.config_builder()
 
-config.keys = require("lua.keybins")
+config.keys = require("lua.keybinds")
 config.color_scheme = "Catppuccin Mocha"
 
 config.font = wezterm.font("CaskaydiaCove NF", { weight = "Regular", style = "Italic" })
