@@ -378,5 +378,6 @@
   "theme.bar.buttons.modules.cava.border": "#94e2d5",
   "menus.media.hideAuthor": false,
   "bar.launcher.autoDetectIcon": false,
-  "bar.workspaces.applicationIconOncePerWorkspace": false
+  "bar.workspaces.applicationIconOncePerWorkspace": false,
+  "bar.scrollSpeed": 0
 }
