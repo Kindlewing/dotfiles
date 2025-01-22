@@ -16,8 +16,8 @@ return {
 
 		lspconfig.nginx_language_server.setup({ capabilities = capabilities })
 		lspconfig.ts_ls.setup({ capabilities = capabilities })
-		lspconfig.texlab.setup({ capabilities = capabilities })
 		lspconfig.ols.setup({ capabilities = capabilities })
+		lspconfig.glsl_analyzer.setup({ capabilities = capabilities })
 		lspconfig.pyright.setup({ capabilities = capabilities })
 		lspconfig.clangd.setup({ capabilities = capabilities })
 		lspconfig.rust_analyzer.setup({ capabilities = capabilities })
@@ -78,5 +78,29 @@ return {
 			true
 
 		lspconfig.cssls.setup({ capabilities = capabilities })
+
+		lspconfig.texlab.setup({
+			capabilities = capabilities,
+			settings = {
+				texlab = {
+					rootDirectory = '.',
+					build = {
+						onSave = true,
+						executable = 'tectonic',
+						args = {
+							'-X',
+							'compile',
+							'%f',
+						},
+						forwardSearchAfter = true,
+					},
+					forwardSearch = {
+						executable = 'zathura',
+						args = { '--synctex-forward', '%l:1:%f', '%p' },
+						onSave = true,
+					},
+				},
+			},
+		})
 	end,
 }
