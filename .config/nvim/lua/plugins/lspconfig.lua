@@ -16,22 +16,42 @@ return {
 
 		lspconfig.nginx_language_server.setup({ capabilities = capabilities })
 		lspconfig.ts_ls.setup({ capabilities = capabilities })
-		lspconfig.ols.setup({ capabilities = capabilities })
 		lspconfig.glsl_analyzer.setup({ capabilities = capabilities })
+		lspconfig.tailwindcss.setup({ capabilities = capabilities })
 		lspconfig.pyright.setup({ capabilities = capabilities })
 		lspconfig.clangd.setup({ capabilities = capabilities })
 		lspconfig.rust_analyzer.setup({ capabilities = capabilities })
 		lspconfig.cmake.setup({ capabilities = capabilities })
 		lspconfig.gopls.setup({ capabilities = capabilities })
+		lspconfig.html.setup({ capabilities = capabilities })
+		lspconfig.intelephense.setup({ capabilities = capabilities })
+		lspconfig.dockerls.setup({ capabilities = capabilities })
+
+		lspconfig.ols.setup({
+			capabilities = capabilities,
+			init_options = {
+				checker_args = '-strict-style',
+				enable_semantic_tokens = false,
+				enable_document_symbols = true,
+				enable_hover = true,
+				enable_snippets = true,
+				collections = {
+					{
+						name = 'shared',
+						path = vim.fn.expand('$HOME/$ODIN_LIBS'),
+					},
+					{
+						name = 'vendor',
+						path = vim.fn.expand('$HOME/$ODIN_LIBS'),
+					},
+					{ name = 'core', path = vim.fn.expand('$HOME/$ODIN_LIBS') },
+					{ name = 'base', path = vim.fn.expand('$HOME/$ODIN_LIBS') },
+				},
+			},
+		})
 		lspconfig.docker_compose_language_service.setup({
 			capabilities = capabilities,
 			root_dir = lspconfig.util.root_pattern('docker-compose.*.yaml'),
-		})
-		lspconfig.html.setup({ capabilities = capabilities })
-
-		lspconfig.intelephense.setup({ capabilities = capabilities })
-		lspconfig.dockerls.setup({
-			capabilities = capabilities,
 		})
 		lspconfig.bashls.setup({
 			capabilities = capabilities,
@@ -73,12 +93,9 @@ return {
 			}),
 		})
 		-- CSS
-		lspconfig.tailwindcss.setup({ capabilities = capabilities })
 		capabilities.textDocument.completion.completionItem.snippetSupport =
 			true
-
 		lspconfig.cssls.setup({ capabilities = capabilities })
-
 		lspconfig.texlab.setup({
 			capabilities = capabilities,
 			settings = {

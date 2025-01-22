@@ -2,6 +2,7 @@ eval "$(starship init zsh)"
 eval "$(direnv hook zsh)"
 
 export ZSH="$HOME/.zsh"
+export ODIN_LIBS="$HOME/.odin/"
 export ZSH_PLUGINS=$ZSH/plugins
 export PATH="/usr/local/go/bin:$PATH"
 export PATH="~/.go/bin/:$PATH"
