@@ -30,23 +30,12 @@ return {
 		lspconfig.ols.setup({
 			capabilities = capabilities,
 			init_options = {
+				schema = 'https://raw.githubusercontent.com/DanielGavin/ols/master/misc/odinfmt.schema.json',
 				checker_args = '-strict-style',
 				enable_semantic_tokens = false,
 				enable_document_symbols = true,
 				enable_hover = true,
 				enable_snippets = true,
-				collections = {
-					{
-						name = 'shared',
-						path = vim.fn.expand('$HOME/$ODIN_LIBS'),
-					},
-					{
-						name = 'vendor',
-						path = vim.fn.expand('$HOME/$ODIN_LIBS'),
-					},
-					{ name = 'core', path = vim.fn.expand('$HOME/$ODIN_LIBS') },
-					{ name = 'base', path = vim.fn.expand('$HOME/$ODIN_LIBS') },
-				},
 			},
 		})
 		lspconfig.docker_compose_language_service.setup({
