@@ -31,5 +31,9 @@ SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
 source $HOME/.aliases.zsh
+source /etc/profile.d/debuginfod.sh
 eval "$(zoxide init --cmd cd zsh)"
 
+
+export NVM_DIR="/home/hudson/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

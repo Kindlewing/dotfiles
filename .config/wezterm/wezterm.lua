@@ -9,6 +9,7 @@ config.font = wezterm.font("CaskaydiaCove NF", { weight = "Regular", style = "It
 config.font_size = 11
 
 config.window_decorations = "NONE"
+config.window_close_confirmation = "NeverPrompt"
 
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2000 }
 

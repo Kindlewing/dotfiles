@@ -1,22 +1,35 @@
 return {
-	'neovim/nvim-lspconfig',
+	"neovim/nvim-lspconfig",
 	dependencies = {
-		'folke/neodev.nvim',
-		'folke/neoconf.nvim',
-		'themaxmarchuk/tailwindcss-colors.nvim',
-		'hrsh7th/cmp-nvim-lsp',
+		"folke/neodev.nvim",
+		"folke/neoconf.nvim",
+		"themaxmarchuk/tailwindcss-colors.nvim",
+		"hrsh7th/cmp-nvim-lsp",
 	},
 	config = function()
-		local cmp = require('cmp')
-		require('neodev').setup({})
-		require('neoconf').setup({})
-		require('tailwindcss-colors').setup()
-		local lspconfig = require('lspconfig')
-		local capabilities = require('cmp_nvim_lsp').default_capabilities()
+		local cmp = require("cmp")
+		require("neodev").setup({})
+		require("neoconf").setup({})
+		require("tailwindcss-colors").setup()
+		local lspconfig = require("lspconfig")
+		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 		lspconfig.nginx_language_server.setup({ capabilities = capabilities })
 		lspconfig.ts_ls.setup({ capabilities = capabilities })
-		lspconfig.glsl_analyzer.setup({ capabilities = capabilities })
+		lspconfig.glsl_analyzer.setup({
+			capabilities = capabilities,
+			filetypes = {
+				"glsl",
+				"vert",
+				"tesc",
+				"tese",
+				"vs",
+				"fs",
+				"frag",
+				"geom",
+				"comp",
+			},
+		})
 		lspconfig.tailwindcss.setup({ capabilities = capabilities })
 		lspconfig.pyright.setup({ capabilities = capabilities })
 		lspconfig.clangd.setup({ capabilities = capabilities })
@@ -30,8 +43,8 @@ return {
 		lspconfig.ols.setup({
 			capabilities = capabilities,
 			init_options = {
-				schema = 'https://raw.githubusercontent.com/DanielGavin/ols/master/misc/odinfmt.schema.json',
-				checker_args = '-strict-style',
+				schema = "https://raw.githubusercontent.com/DanielGavin/ols/master/misc/odinfmt.schema.json",
+				checker_args = "-strict-style",
 				enable_semantic_tokens = false,
 				enable_document_symbols = true,
 				enable_hover = true,
@@ -40,13 +53,13 @@ return {
 		})
 		lspconfig.docker_compose_language_service.setup({
 			capabilities = capabilities,
-			root_dir = lspconfig.util.root_pattern('docker-compose.*.yaml'),
+			root_dir = lspconfig.util.root_pattern("docker-compose.*.yaml"),
 		})
 		lspconfig.bashls.setup({
 			capabilities = capabilities,
 			filetypes = {
-				'sh',
-				'zsh',
+				"sh",
+				"zsh",
 			},
 		})
 		lspconfig.lua_ls.setup({
@@ -54,29 +67,29 @@ return {
 			settings = {
 				Lua = {
 					diagnostics = {
-						globals = { 'vim' },
-						disable = { 'missing-parameters', 'missing-fields' },
+						globals = { "vim" },
+						disable = { "missing-parameters", "missing-fields" },
 					},
 				},
 			},
 		})
-		cmp.setup.cmdline('/', {
+		cmp.setup.cmdline("/", {
 			mapping = cmp.mapping.preset.cmdline(),
 			sources = {
-				{ name = 'buffer' },
+				{ name = "buffer" },
 			},
 		})
 
 		-- `:` cmdline setup.
-		cmp.setup.cmdline(':', {
+		cmp.setup.cmdline(":", {
 			mapping = cmp.mapping.preset.cmdline(),
 			sources = cmp.config.sources({
-				{ name = 'path' },
+				{ name = "path" },
 			}, {
 				{
-					name = 'cmdline',
+					name = "cmdline",
 					option = {
-						ignore_cmds = { 'Man', '!' },
+						ignore_cmds = { "Man", "!" },
 					},
 				},
 			}),
@@ -89,20 +102,20 @@ return {
 			capabilities = capabilities,
 			settings = {
 				texlab = {
-					rootDirectory = '.',
+					rootDirectory = ".",
 					build = {
 						onSave = true,
-						executable = 'tectonic',
+						executable = "tectonic",
 						args = {
-							'-X',
-							'compile',
-							'%f',
+							"-X",
+							"compile",
+							"%f",
 						},
 						forwardSearchAfter = true,
 					},
 					forwardSearch = {
-						executable = 'zathura',
-						args = { '--synctex-forward', '%l:1:%f', '%p' },
+						executable = "zathura",
+						args = { "--synctex-forward", "%l:1:%f", "%p" },
 						onSave = true,
 					},
 				},
