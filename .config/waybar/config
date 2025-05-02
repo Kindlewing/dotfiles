@@ -1,74 +1,53 @@
+// __        __          _                 
+// \ \      / /_ _ _   _| |__   __ _ _ __  
+//  \ \ /\ / / _` | | | | '_ \ / _` | '__| 
+//   \ V  V / (_| | |_| | |_) | (_| | |    
+//    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    
+//                 |___/                   
+//  
+// by Stephan Raabe (2023) 
+// ----------------------------------------------------- 
+//
 {
+    // General Settings
+
+    // Position TOP
     "layer": "top",
-    "position": "top",
-    "height": 40,
-    "margin-top": 0,
-    "modules-left": ["hyprland/workspaces", "hyprland/window"],
-    "modules-center": ["mpris", "tray"],
-    "modules-right": ["pulseaudio", "network", "clock"],
+    "margin-bottom": 0,
 
-    "battery": {
-        "format": "bat: {capacity}%",
-        "format-charging": "charging: {capacity}%"
-    },
+    // Position BOTTOM
+    // "position": "bottom",
+    // "margin-top": 0,
+    // "margin-bottom": 14,
+    
+    "margin-left": 0,
+    "margin-right": 0,    
+    "spacing": 0,
 
-	"hyprland/window": {
-		"format": "  {}",
-		"separate-outputs": true
-	},
+    // Load Modules
+    "include": [
+        "~/.config/waybar/modules.json"
+    ],
 
-	"mpris": {
-		"format": "{player_icon}  {artist} - {title}   ",
-		"format-paused": "{status_icon}  {artist} - {title}   ",
-		"player-icons": {
-			"default": "",
-			"spotifyd": "",
-			"spotify": ""
-		},
-		"status-icons": {
-			"paused": ""
-		},
-		"ignored-players": ["firefox"]
-	},
+    // Modules Left
+    "modules-left": [
+        //"wlr/taskbar",
+        "hyprland/window",
+    ],
 
-    "clock": {
-        "format": "{:%I:%M %p}",
-        "format-alt": "{:%a, %d. %b  %I:%M %p}"
-    },
+    // Modules Center
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
 
-    "pulseaudio": {
-        "format": " {volume}%",
-        "format-bluetooth": " {volume}%",
-        "format-muted": " muted",
-        "scroll-step": 1,
-        "on-click": "pavucontrol",
-        "ignored-sinks": ["Easy Effects Sink"]
-    },
-
-	 "tray": {
-        "spacing": 10
-	},
-
-    "network": {
-        "interface": "enp2s0",
-        "format": "{ifname}",
-        "format-wifi": "wlo1: {essid}",
-        "format-ethernet": "enp2s0: {ipaddr}/{cidr}",
-        "format-disconnected": "wlo1: disconnected",
-        "max-length": 50
-    },
-
-    "hyprland/workspaces": {
-      "format": "{icon}",
-      "on-click": "activate",
-      "sort-by-number": true,
-      "sort-by-name": false,
-      "all-outputs": true,
-      "format-icons": {
-          "1": "",
-          "2": "",
-          "3": "",
-          "4": "",
-      }
-    }
+    // Modules Right    
+    "modules-right": [
+        "custom/updates",
+        "bluetooth",
+        "battery", 
+        "network",
+        "group/hardware",
+        "tray",
+        "clock"
+    ]
 }
