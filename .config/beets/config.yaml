@@ -12,7 +12,7 @@ paths:
     comp: Compilation/$album %aunique{}/$track $title %aunique{} 
     albumtype:soundtrack: Soundtracks/$album %aunique{}/$track $title %aunique{}
 
-plugins: fetchart embedart lastgenre rewrite ihate duplicates 
+plugins: fetchart embedart lyrics lastgenre rewrite ihate duplicates 
 
 embedart: 
     remove_art_file: yes 
