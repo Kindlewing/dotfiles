@@ -4,3 +4,7 @@ target/
 .dotter/cache.toml
 .dotter/cache
 lazygit/state.yml
+*.db
+*.txt
+*.sql
+database

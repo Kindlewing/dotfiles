@@ -1,0 +1,14 @@
+directory: ~/Music
+import:
+    copy: yes
+    write: yes
+    log: beetslog.txt
+art_filename: albumart
+ui:
+    color: yes
+
+paths:
+    default: $genre/$albumartist/$album/$track $title
+    singleton: Singletons/$artist - $title
+    comp: Compilations/$album%aunique{}/$track $title
+    albumtype:soundtrack: Soundtracks/$album/$track $title
