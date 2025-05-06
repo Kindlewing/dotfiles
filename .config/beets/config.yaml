@@ -1,24 +1,25 @@
 directory: ~/Music/library
+library: ~/Music/library.db
 import:
     move: yes
     write: yes
+    incremental: yes
     log: beetslog.txt
 art_filename: albumart
 ui:
     color: yes
-
-threaded: yes
-
 paths: 
-    default: the$albumartist/$album %aunique{}/$track $title %aunique{} 
+    default: $albumartist/$album %aunique{}/$track $title %aunique{} 
     singleton: $albumartist/$album %aunique{}/$track $title %aunique{} 
     comp: Compilation/$album %aunique{}/$track $title %aunique{} 
     albumtype:soundtrack: Soundtracks/$album %aunique{}/$track $title %aunique{}
 
-plugins: the fetchart embedart lyrics lastgenre rewrite ihate duplicates convert
+plugins: fetchart embedart lyrics lastgenre rewrite ihate duplicates convert
 
 embedart: 
-    auto: no
+    remove_art_file: yes 
+    auto: yes 
+    ifempty: no 
 lastgenre: 
     count: 5 
     whitelist: yes 
@@ -32,8 +33,7 @@ lastgenre:
     prefer_specific: no 
 fetchart: 
     auto: yes 
-    midwidth: 400
-    enforce_ratio: 10px
+    enforce_ratio: no 
     cautious: no 
     cover_names: 
     - cover 
@@ -48,6 +48,7 @@ fetchart:
     - amazon 
     - albumart 
     store_source: no 
+rewrite: {} 
 duplicates: 
     album: no 
     checksum: '' 
