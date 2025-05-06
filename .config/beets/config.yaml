@@ -6,20 +6,19 @@ import:
 art_filename: albumart
 ui:
     color: yes
+
+threaded: yes
+
 paths: 
-    default: $albumartist/$album %aunique{}/$track $title %aunique{} 
+    default: the$albumartist/$album %aunique{}/$track $title %aunique{} 
     singleton: $albumartist/$album %aunique{}/$track $title %aunique{} 
     comp: Compilation/$album %aunique{}/$track $title %aunique{} 
     albumtype:soundtrack: Soundtracks/$album %aunique{}/$track $title %aunique{}
 
-plugins: fetchart embedart lyrics lastgenre rewrite ihate duplicates 
+plugins: the fetchart embedart lyrics lastgenre rewrite ihate duplicates convert
 
 embedart: 
-    remove_art_file: yes 
-    maxwidth: 0 
-    auto: yes 
-    compare_threshold: 0 
-    ifempty: no 
+    auto: no
 lastgenre: 
     count: 5 
     whitelist: yes 
@@ -33,9 +32,8 @@ lastgenre:
     prefer_specific: no 
 fetchart: 
     auto: yes 
-    minwidth: 0 
-    maxwidth: 0 
-    enforce_ratio: no 
+    midwidth: 400
+    enforce_ratio: 10px
     cautious: no 
     cover_names: 
     - cover 
@@ -50,7 +48,6 @@ fetchart:
     - amazon 
     - albumart 
     store_source: no 
-rewrite: {} 
 duplicates: 
     album: no 
     checksum: '' 

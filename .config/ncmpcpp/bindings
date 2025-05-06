@@ -73,3 +73,5 @@ def_key "x"
   delete_playlist_items
 def_key "P"
   show_playlist
+def_key "ctrl-v"
+  select_range

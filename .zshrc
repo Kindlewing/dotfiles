@@ -32,6 +32,7 @@ HISTFILE=$HOME/.zsh_history
 
 source $HOME/.aliases.zsh
 source /etc/profile.d/debuginfod.sh
+
 eval "$(zoxide init --cmd cd zsh)"
 
 

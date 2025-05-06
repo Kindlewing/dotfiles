@@ -8,3 +8,4 @@ lazygit/state.yml
 *.txt
 *.sql
 database
+.config/mpd/playlists/Lofi.m3u
