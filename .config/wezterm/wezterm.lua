@@ -10,6 +10,7 @@ config.font_size = 11
 
 config.window_decorations = "NONE"
 config.window_close_confirmation = "NeverPrompt"
+config.window_background_opacity = 0.85
 
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2000 }
 

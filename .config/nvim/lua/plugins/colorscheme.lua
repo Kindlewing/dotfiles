@@ -1,21 +1,22 @@
 return {
 	{
-		'catppuccin/nvim',
-		name = 'catppuccin',
+		"catppuccin/nvim",
+		name = "catppuccin",
 		lazy = false,
 		priority = 1000,
 		opts = {
-			flavour = 'mocha',
+			flavour = "mocha",
+			transparent_background = true,
 			styles = {
-				functions = { 'italic' },
-				comments = { 'italic' },
-				conditionals = { 'italic' },
+				functions = { "italic" },
+				comments = { "italic" },
+				conditionals = { "italic" },
 			},
 			integrations = {
 				cmp = true,
 				indent_blankline = {
 					enabled = false,
-					scope_color = 'sapphire',
+					scope_color = "sapphire",
 					colored_indent_levels = false,
 				},
 				mason = true,
@@ -28,7 +29,7 @@ return {
 			},
 			color_overrides = {
 				mocha = {
-					base = '#1e1e2e',
+					base = "#1e1e2e",
 				},
 			},
 		},
