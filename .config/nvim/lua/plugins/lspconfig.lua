@@ -94,6 +94,15 @@ return {
 				},
 			}),
 		})
+
+		lspconfig.perlnavigator.setup({
+			settings = {
+				perlnavigator = {
+					perlPath = "/usr/bin/perl",
+				},
+			},
+		})
+
 		-- CSS
 		capabilities.textDocument.completion.completionItem.snippetSupport =
 			true

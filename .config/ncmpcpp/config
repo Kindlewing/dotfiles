@@ -3,7 +3,7 @@ mpd_port = 6600
 mpd_connection_timeout = "5"
 mpd_crossfade_time = "5"
 mpd_music_dir = ~/Music/library/
-lyrics_directory  = ~/.config/ncmpcpp/lyrics
+lyrics_directory  = ~/Music/lyrics
 execute_on_song_change  = songinfo
 
 
