@@ -1,3 +1,4 @@
 --target=~
 --ignore=.stowrc
+--ignore=requirements.txt
 --ignore=.git
