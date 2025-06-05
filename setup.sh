@@ -1,10 +1,1 @@
-#!/usr/bin/env bash
-
-stow_dotfiles() {
-	dir_name=$(basename "$0")
-	echo "Stowing $dir_name..."
-	stow -v .
-}
-sudo ./install.sh
-export -f stow_dotfiles
-find . -maxdepth 1 -mindepth 1 -type d ! -name ".git" ! -name ".github" ! -name "git" -exec bash -c 'stow_dotfiles "$0"' {} \;
+.scripts/setup.sh
