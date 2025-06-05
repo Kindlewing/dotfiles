@@ -3,10 +3,10 @@
 stow_dotfiles() {
 	dir_name=$(basename "$0")
 	echo "Stowing $dir_name..."
-	stow -t ~ "$dir_name"
+	stow -v .
 }
 
-./install.sh
+sudo ./install.sh
 
 # stow the directories
 export -f stow_dotfiles
