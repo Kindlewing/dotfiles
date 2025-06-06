@@ -9,6 +9,7 @@ export PATH="$HOME/.go/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
 export PATH="$HOME/.odin:$PATH"
+export PATH="/usr/bin:$PATH"
 export PATH="$HOME)/Development/flutter/bin:$PATH"
 export PATH="$HOME/.android-tools/bin:$PATH"
 export SUDO_EDITOR="/usr/bin/nvim"
@@ -19,11 +20,10 @@ export PAGER="/usr/bin/less"
 [ "$TERM" = "xterm-kitty" ]
 
 if [[ -f "$HOME/.cargo/env" ]]; then
-	source "$HOME/.cargo/env"	
+	source "$HOME/.cargo/env"
 fi
 
 eval "$(sheldon source)"
-
 
 ZSH_ATOSUGGEST_STRATEGY=(history completion)
 
@@ -35,6 +35,5 @@ source /etc/profile.d/debuginfod.sh
 
 eval "$(zoxide init --cmd cd zsh)"
 
-
 export NVM_DIR="/home/hudson/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
