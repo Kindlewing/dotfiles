@@ -3,12 +3,12 @@ return {
 	dependencies = {
 		"folke/neodev.nvim",
 		"folke/neoconf.nvim",
-		"themaxmarchuk/tailwindcss-colors.nvim",
+		"themaxmarchuk/tailwincss-colors.nvim",
 		"hrsh7th/cmp-nvim-lsp",
 	},
 	config = function()
 		local cmp = require("cmp")
-		require("neodev").setup({})
+		require("neoev").setup({})
 		require("neoconf").setup({})
 		require("tailwindcss-colors").setup()
 		local lspconfig = require("lspconfig")
