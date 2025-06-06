@@ -1,12 +1,26 @@
 #!/usr/bin/env bash
+DOTDIR="$HOME/.dotfiles"
+TARGET="$HOME"
 
-DOTDIR="/home/hudson/.dotfiles/"
 stow_dotfiles() {
-	dir_name=$(basename "$0")
-	echo "Stowing $dir_name..."
-	stow -v "$DOTDIR"
+	dir="$1"
+	name="$(basename "$dir")"
+	if [[ ! -d "$HOME/.scripts" ]]; then
+		mkdir "$HOME/.scripts"
+	fi
+	case "$name" in
+	.config) target="$HOME/.config" ;;
+	.local) target="$HOME/.local" ;;
+	.scripts) target="$HOME/.scripts" ;; # optional, or use $HOME/bin
+	*) target="$HOME" ;;
+	esac
+	echo "🔧 Stowing $target..."
+	stow -v -d "$DOTDIR" -t "$target" "$name"
 }
-sudo ./install.sh
+
 export -f stow_dotfiles
-echo "Stowing files"
-find "$DOTDIR" -maxdepth 1 -mindepth 1 -type d ! -name ".git" ! -name ".github" ! -name "git" -exec bash -c 'stow_dotfiles "$0"' {} \;
+export DOTDIR TARGET
+
+find "$DOTDIR" -maxdepth 1 -mindepth 1 -type d \
+	! -name ".git" ! -name ".github" \
+	-exec bash -c 'stow_dotfiles "$0"' {} \;
