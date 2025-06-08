@@ -18,11 +18,9 @@ export VISUAL="/usr/bin/nvim"
 export EDITOR="/usr/bin/nvim"
 export BROWSER="/usr/bin/firefox-developer-edition"
 export PAGER="/usr/bin/less"
-[ "$TERM" = "xterm-kitty" ]
 
-if [[ -f "$HOME/.cargo/env" ]]; then
-	source "$HOME/.cargo/env"
-fi
+export CONFIG="$HOME/.config"
+export DOTDIR="$HOME/.dotfiles"
 
 eval "$(sheldon source)"
 
@@ -31,10 +29,8 @@ ZSH_ATOSUGGEST_STRATEGY=(history completion)
 SAVEHIST=1000
 HISTFILE=$HOME/.zsh_history
 
-source $HOME/.aliases.zsh
+source "$HOME/.aliases.zsh"
 source /etc/profile.d/debuginfod.sh
 
 eval "$(zoxide init --cmd cd zsh)"
 
-export NVM_DIR="/home/hudson/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
