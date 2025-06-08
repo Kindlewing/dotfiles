@@ -14,10 +14,10 @@ return {
 			enabled = true,
 		},
 		completion = {
-			documentation = { autoshow = true, auto_show_elay_ms = 200 },
+			documentation = { auto_show = true, auto_show_delay_ms = 200 },
 		},
 		sources = {
-			efault = { "lsp", "path", "snippets", "buffer" },
+			default = { "lsp", "path", "snippets", "buffer" },
 		},
 		fuzzy = { implementation = "prefer_rust_with_warning" },
 	},

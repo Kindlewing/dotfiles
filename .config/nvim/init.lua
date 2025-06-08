@@ -31,3 +31,8 @@ augroup python
     autocmd FileType python setlocal noexpandtab tabstop=4
 augroup end
 ]])
+
+vim.lsp.enable({
+	"lua-ls",
+	"intelsephene",
+})
