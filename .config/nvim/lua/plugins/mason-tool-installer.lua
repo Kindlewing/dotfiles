@@ -18,7 +18,6 @@ return {
 			"glsl_analyzer",
 			"bashls",
 			"cssls",
-			"tailwindcss",
 			"rust_analyzer",
 			"intelephense",
 		},

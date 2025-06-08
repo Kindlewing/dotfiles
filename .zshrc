@@ -1,5 +1,6 @@
 eval "$(starship init zsh)"
 eval "$(direnv hook zsh)"
+source <(fzf --zsh)
 
 export ZSH="$HOME/.zsh"
 export ODIN_LIBS="$HOME/.odin"
