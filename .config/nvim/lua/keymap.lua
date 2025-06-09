@@ -2,6 +2,7 @@ local builtin = require("telescope.builtin")
 local map = vim.keymap.set
 local opts = { silent = true, noremap = true }
 local wk = require("which-key")
+local cmp = require("blink.cmp")
 
 wk.add({
 	{ "<leader>p", group = "package" },
@@ -95,7 +96,7 @@ map("n", "<leader>sh", builtin.help_tags, { desc = "Search help" })
 map("n", "<leader>pm", ":Mason<CR>", { desc = "Mason" })
 
 -- lsp
-map("n", "K", require("blink.cmp").show_documentation, {})
+map("n", "K", vim.lsp.buf.hover, {})
 
 local bufopts = { noremap = true, silent = true }
 local buf_nmap = function(lhs, rhs, desc)
