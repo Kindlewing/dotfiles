@@ -35,4 +35,5 @@ augroup end
 vim.lsp.enable({
 	"lua-ls",
 	"intelsephene",
+	"bashls",
 })
