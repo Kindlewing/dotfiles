@@ -1,25 +1,25 @@
 return {
-	'stevearc/conform.nvim',
+	"stevearc/conform.nvim",
 	lazy = true,
-	event = { 'BufReadPre', 'BufNewFile' }, -- to disable, comment this out
+	event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
 	config = function()
 		local slow_format_filetypes = {}
-		require('conform').setup({
+		require("conform").setup({
 			formatters_by_ft = {
-				lua = { 'stylua' },
-				c = { 'clang_format' },
-				cpp = { 'clang_format' },
-				nix = { 'nixpkgs-format' },
-				javascript = { 'prettier' },
-				typescript = { 'prettier' },
-				javascriptreact = { 'prettier' },
-				typescriptreact = { 'prettier' },
-				css = { 'prettier' },
-				html = { 'prettier' },
-				json = { 'prettier' },
-				yaml = { 'prettier' },
-				markdown = { 'prettier' },
-				php = { 'php_cs_fixer' },
+				lua = { "stylua" },
+				c = { "clang_format" },
+				cpp = { "clang_format" },
+				nix = { "nixpkgs-format" },
+				javascript = { "prettier" },
+				typescript = { "prettier" },
+				javascriptreact = { "prettier" },
+				typescriptreact = { "prettier" },
+				css = { "prettier" },
+				html = { "prettier" },
+				json = { "prettier" },
+				yaml = { "prettier" },
+				markdown = { "prettier" },
+				php = { "php_cs_fixer" },
 			},
 
 			format_on_save = function(bufnr)
@@ -27,7 +27,7 @@ return {
 					return
 				end
 				local function on_format(err)
-					if err and err:match('timeout$') then
+					if err and err:match("timeout$") then
 						slow_format_filetypes[vim.bo[bufnr].filetype] = true
 					end
 				end

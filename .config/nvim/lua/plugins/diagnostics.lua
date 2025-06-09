@@ -1,18 +1,18 @@
 return {
-	'rachartier/tiny-inline-diagnostic.nvim',
-	event = 'VeryLazy', -- Or `LspAttach`
+	"rachartier/tiny-inline-diagnostic.nvim",
+	event = "VeryLazy", -- Or `LspAttach`
 	priority = 1000, -- needs to be loaded in first
 	config = function()
-		require('tiny-inline-diagnostic').setup({
-			preset = 'modern', -- Can be: "modern", "classic", "minimal", "powerline", ghost", "simple", "nonerdfont", "amongus"
+		require("tiny-inline-diagnostic").setup({
+			preset = "minimal", -- Can be: "modern", "classic", "minimal", "powerline", ghost", "simple", "nonerdfont", "amongus"
 			hi = {
-				error = 'DiagnosticError',
-				warn = 'DiagnosticWarn',
-				info = 'DiagnosticInfo',
-				hint = 'DiagnosticHint',
-				arrow = 'NonText',
-				background = 'CursorLine', -- Can be a highlight or a hexadecimal color (#RRGGBB)
-				mixing_color = 'None', -- Can be None or a hexadecimal color (#RRGGBB). Used to blend the background color with the diagnostic background color with another color.
+				error = "DiagnosticError",
+				warn = "DiagnosticWarn",
+				info = "DiagnosticInfo",
+				hint = "DiagnosticHint",
+				arrow = "NonText",
+				background = "CursorLine", -- Can be a highlight or a hexadecimal color (#RRGGBB)
+				mixing_color = "None", -- Can be None or a hexadecimal color (#RRGGBB). Used to blend the background color with the diagnostic background color with another color.
 			},
 			options = {
 				-- Show the source of the diagnostic.
@@ -67,7 +67,7 @@ return {
 					--    - wrap: when the message is too long, it is then displayed on multiple lines.
 					--    - none: the message will not be truncated.
 					--    - oneline: message will be displayed entirely on one line.
-					mode = 'wrap',
+					mode = "wrap",
 				},
 
 				-- Format the diagnostic message.
@@ -94,9 +94,6 @@ return {
 					vim.diagnostic.severity.INFO,
 					vim.diagnostic.severity.HINT,
 				},
-
-				-- Overwrite events to attach to a buffer. You should not change it, but if the plugin
-				-- does not works in your configuration, you may try to tweak it.
 				overwrite_events = nil,
 			},
 		})
