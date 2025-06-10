@@ -54,4 +54,5 @@ vim.lsp.enable({
 	"lua_ls",
 	"intelsephene",
 	"bashls",
+	"pyright",
 })

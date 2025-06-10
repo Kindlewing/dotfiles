@@ -9,3 +9,4 @@ lazygit/state.yml
 *.sql
 database
 .config/mpd/playlists/Lofi.m3u
+.config/qutebrowser/__pycache__
