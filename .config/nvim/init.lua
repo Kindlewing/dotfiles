@@ -55,4 +55,5 @@ vim.lsp.enable({
 	"intelsephene",
 	"bashls",
 	"pyright",
+	"tinymist",
 })

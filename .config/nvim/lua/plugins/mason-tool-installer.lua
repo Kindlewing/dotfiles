@@ -13,7 +13,7 @@ return {
 			"ols",
 			"clangd",
 			"clang-format",
-			"texlab",
+			"tinymist",
 			"docker_compose_language_service",
 			"glsl_analyzer",
 			"bashls",
