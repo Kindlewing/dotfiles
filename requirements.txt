@@ -1,0 +1,35 @@
+# Pacman
+base-devel
+git
+neovim
+zathura
+zathura-pdf-poppler
+starship
+curl
+lazygit
+zsh
+zoxide
+eza
+bat
+hyprland
+wofi
+mpd
+mpc
+rmpc
+waybar
+ttf-font-awesome
+swaync
+hyprlock
+hypridle
+hyprpaper
+fd
+fzf
+xdg-desktop-portal-gtk
+xdg-desktop-portal-hyprland
+
+
+# AUR
+hyprshot
+catppuccin-gtk-theme-mocha
+wezterm-git
+wl-clipboard

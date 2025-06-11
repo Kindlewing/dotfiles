@@ -5,9 +5,10 @@ target/
 .dotter/cache
 lazygit/state.yml
 *.db
-!requirements.txt
 *.txt
 *.sql
 database
 .config/mpd/playlists/Lofi.m3u
 .config/qutebrowser/__pycache__
+
+!requirements.txt
