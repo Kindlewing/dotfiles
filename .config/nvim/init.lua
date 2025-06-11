@@ -52,7 +52,6 @@ augroup end
 
 vim.lsp.enable({
 	"lua_ls",
-	"intelsephene",
 	"bashls",
 	"pyright",
 	"tinymist",

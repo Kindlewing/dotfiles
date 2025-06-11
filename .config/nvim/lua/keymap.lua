@@ -21,6 +21,7 @@ map("n", "<leader>w", "<cmd>w<cr>", { desc = "Write current file" })
 
 map("n", "H", ":bprevious<CR>", { silent = true })
 map("n", "L", ":bnext<CR>", { silent = true })
+map("n", "<leader>bd", ":bdelete<CR>", { silent = true })
 map("n", "j", [[v:count?'j':'gj']], { noremap = true, expr = true })
 map("n", "k", [[v:count?'k':'gk']], { noremap = true, expr = true })
 
