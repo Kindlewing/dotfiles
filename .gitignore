@@ -5,6 +5,7 @@ target/
 .dotter/cache
 lazygit/state.yml
 *.db
+!requirements.txt
 *.txt
 *.sql
 database
