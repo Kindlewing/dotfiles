@@ -17,8 +17,11 @@ settings:
     global: '#fab38705'
   colors.keyhint.fg:
     global: '#cdd6f406'
+  colors.webpage.darkmode.algorithm:
+    global: lightness-cielab
   content.javascript.clipboard:
     https://catppuccin.com: access-paste
+    https://cmp.saghen.dev: access-paste
   content.notifications.enabled:
     https://mail.zoho.com: true
   content.register_protocol_handler:
