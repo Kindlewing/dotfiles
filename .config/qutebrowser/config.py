@@ -28,7 +28,7 @@ c.url.searchengines = {
         }
 
 c.completion.open_categories = ['searchengines', 'quickmarks', 'bookmarks', 'history', 'filesystem']
-config.load_autoconfig() # load settings done via the gui
+config.load_autoconfig(False) # load settings done via the gui
 c.auto_save.session = True # save tabs on quit/restart
 
 c.colors.webpage.darkmode.enabled = False
@@ -36,6 +36,7 @@ c.colors.webpage.darkmode.policy.images = 'never'
 
 c.tabs.padding = {'top': 5, 'bottom': 5, 'left': 9, 'right': 9}
 c.tabs.indicator.width = 0 # no tab indicators
+c.tabs.favicons.show = "always"
 c.tabs.width = '7%'
 
 c.fonts.web.family.sans_serif = 'CaskaydiaCoveNerdFont-Italic'
