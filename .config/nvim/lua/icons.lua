@@ -4,6 +4,9 @@ neovim.icons = {
 	misc = {
 		dots = "󰇘",
 	},
+	ft = {
+		octo = "",
+	},
 	dap = {
 		Stopped = { "󰁕 ", "DiagnosticWarn", "DapStoppedLine" },
 		Breakpoint = " ",
@@ -53,8 +56,10 @@ neovim.icons = {
 		Package = " ",
 		Property = " ",
 		Reference = " ",
+		Snippet = "󱄽 ",
 		String = " ",
 		Struct = "󰆼 ",
+		Supermaven = " ",
 		TabNine = "󰏚 ",
 		Text = " ",
 		TypeParameter = " ",
