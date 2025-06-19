@@ -6,37 +6,5 @@
 
 config_version: 2
 settings:
-  aliases:
-    global:
-      q: close
-      qa: quit
-      w: session-save
-      wq: quit --save
-      wqa: quit --save
-  colors.hints.bg:
-    global: '#fab38705'
-  colors.keyhint.fg:
-    global: '#cdd6f406'
-  colors.webpage.darkmode.algorithm:
-    global: lightness-cielab
-  content.javascript.clipboard:
-    https://catppuccin.com: access-paste
-    https://cmp.saghen.dev: access-paste
-  content.notifications.enabled:
-    https://mail.zoho.com: true
   content.register_protocol_handler:
-    https://mail.google.com?extsrc=mailto&url=%25s: true
-  hints.mode:
-    global: letter
-  hints.scatter:
-    global: false
-  keyhint.radius:
-    global: 2
-  tabs.favicons.show:
-    global: pinned
-  tabs.padding:
-    global:
-      bottom: 0
-      left: 5
-      right: 5
-      top: 0
+    https://mail.google.com?extsrc=mailto&url=%25s: false

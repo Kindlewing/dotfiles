@@ -55,4 +55,6 @@ vim.lsp.enable({
 	"bashls",
 	"pyright",
 	"tinymist",
+	"clangd",
+	"intelephense",
 })
