@@ -14,6 +14,7 @@ bat
 hyprland
 wofi
 mpd
+gdb
 mpc
 rmpc
 waybar
