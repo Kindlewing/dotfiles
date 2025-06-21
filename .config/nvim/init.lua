@@ -38,7 +38,7 @@ require("icons")
 require("opts")
 
 vim.diagnostic.config({ virtual_text = false })
-vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme("rose-pine")
 
 require("keymap")
 require("highlights")
@@ -57,4 +57,6 @@ vim.lsp.enable({
 	"tinymist",
 	"clangd",
 	"intelephense",
+	"ols",
+	"perlpls",
 })

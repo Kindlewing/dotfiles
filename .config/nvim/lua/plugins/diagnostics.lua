@@ -4,7 +4,7 @@ return {
 	priority = 1000, -- needs to be loaded in first
 	config = function()
 		require("tiny-inline-diagnostic").setup({
-			preset = "minimal", -- Can be: "modern", "classic", "minimal", "powerline", ghost", "simple", "nonerdfont", "amongus"
+			preset = "modern", -- Can be: "modern", "classic", "minimal", "powerline", ghost", "simple", "nonerdfont", "amongus"
 			hi = {
 				error = "DiagnosticError",
 				warn = "DiagnosticWarn",
