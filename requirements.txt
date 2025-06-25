@@ -7,6 +7,7 @@ zathura-pdf-poppler
 starship
 curl
 lazygit
+unzip
 zsh
 zoxide
 eza
