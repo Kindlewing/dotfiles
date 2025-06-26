@@ -59,4 +59,5 @@ vim.lsp.enable({
 	"intelephense",
 	"ols",
 	"perlpls",
+	"ts_ls",
 })
