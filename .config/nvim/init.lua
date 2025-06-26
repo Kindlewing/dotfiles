@@ -60,4 +60,7 @@ vim.lsp.enable({
 	"ols",
 	"perlpls",
 	"ts_ls",
+	"html",
+	"hyprls",
+	"cssls",
 })

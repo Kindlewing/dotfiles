@@ -7,6 +7,7 @@ return {
 			"lua_ls",
 			"ts_ls",
 			"html",
+			"hyprls",
 			"pyright",
 			"dockerls",
 			"perlnavigator",
