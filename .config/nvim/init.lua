@@ -63,4 +63,5 @@ vim.lsp.enable({
 	"html",
 	"hyprls",
 	"cssls",
+	"twiggy_language_server",
 })
