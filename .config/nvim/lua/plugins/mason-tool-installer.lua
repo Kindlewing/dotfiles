@@ -20,6 +20,7 @@ return {
 			"bashls",
 			"cssls",
 			"rust_analyzer",
+			"twiggy_language_server",
 			"intelephense",
 		},
 		auto_update = true,
