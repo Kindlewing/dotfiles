@@ -14,6 +14,18 @@ return {
 				background = "CursorLine", -- Can be a highlight or a hexadecimal color (#RRGGBB)
 				mixing_color = "None", -- Can be None or a hexadecimal color (#RRGGBB). Used to blend the background color with the diagnostic background color with another color.
 			},
+			signs = {
+				left = "",
+				right = "",
+				diag = "●",
+				arrow = "    ",
+				up_arrow = "    ",
+				vertical = " │",
+				vertical_end = " └",
+			},
+			blend = {
+				factor = 0.22,
+			},
 			options = {
 				-- Show the source of the diagnostic.
 				show_source = false,
