@@ -35,7 +35,7 @@ return {
   },
 
 		config = function()
-			local neovim = require("icons")
+			local neovim = require("utils")
 			-- load mason-nvim-dap here, after all adapters have been setup
 
 			vim.api.nvim_set_hl(
@@ -44,7 +44,7 @@ return {
 				{ default = true, link = "Visual" }
 			)
 
-			for name, sign in pairs(neovim.icons.dap) do
+			for name, sign in pairs(neovim.config.icons.dap) do
 				sign = type(sign) == "table" and sign or { sign }
 				vim.fn.sign_define("Dap" .. name, {
 					text = sign[1],

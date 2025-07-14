@@ -1,4 +1,4 @@
-_G.neovim = {}
+local neovim = {}
 
 neovim.config = {
 	icons = {
@@ -70,4 +70,67 @@ neovim.config = {
 		},
 	},
 }
+
+function neovim.configure_signs()
+	local icons = neovim.config.icons
+
+	vim.diagnostic.config({
+		signs = {
+			text = {
+				[vim.diagnostic.severity.ERROR] = icons.diagnostics.Error,
+				[vim.diagnostic.severity.WARN] = icons.diagnostics.Warn,
+				[vim.diagnostic.severity.INFO] = icons.diagnostics.Info,
+				[vim.diagnostic.severity.HINT] = icons.diagnostics.Hint,
+			},
+		},
+	})
+
+	vim.fn.sign_define(
+		"GitSignsAdd",
+		{ text = icons.git.added, texthl = "GitSignsAdd", numhl = "" }
+	)
+	vim.fn.sign_define(
+		"GitSignsChange",
+		{ text = icons.git.modified, texthl = "GitSignsChange", numhl = "" }
+	)
+	vim.fn.sign_define(
+		"GitSignsDelete",
+		{ text = icons.git.removed, texthl = "GitSignsDelete", numhl = "" }
+	)
+
+	vim.fn.sign_define(
+		"DapBreakpoint",
+		{ text = icons.dap.Breakpoint, texthl = "DiagnosticInfo", numhl = "" }
+	)
+	vim.fn.sign_define(
+		"DapBreakpointCondition",
+		{
+			text = icons.dap.BreakpointCondition,
+			texthl = "DiagnosticInfo",
+			numhl = "",
+		}
+	)
+	vim.fn.sign_define(
+		"DapBreakpointRejected",
+		{
+			text = icons.dap.BreakpointRejected[1],
+			texthl = icons.dap.BreakpointRejected[2],
+			numhl = "",
+		}
+	)
+	vim.fn.sign_define(
+		"DapStopped",
+		{
+			text = icons.dap.Stopped[1],
+			texthl = icons.dap.Stopped[2],
+			linehl = icons.dap.Stopped[3],
+			numhl = "",
+		}
+	)
+	vim.fn.sign_define(
+		"DapLogPoint",
+		{ text = icons.dap.LogPoint, texthl = "DiagnosticInfo", numhl = "" }
+	)
+end
+
 return neovim
