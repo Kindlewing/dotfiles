@@ -4,7 +4,7 @@
 (
     default_album_art_path: None,
     draw_borders: false,
-    show_song_table_header: false,
+    show_song_table_header: true,
     symbols: (song: "🎵", dir: "📁", marker: "\u{e0b0}"),
     layout: Split(
         direction: Vertical,
