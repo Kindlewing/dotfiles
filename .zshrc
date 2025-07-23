@@ -4,6 +4,7 @@ source <(fzf --zsh)
 
 export ZSH="$HOME/.zsh"
 export ODIN_LIBS="$HOME/.odin"
+export ODIN_ROOT="$ODIN_LIBS"
 export ZSH_PLUGINS=$ZSH/plugins
 export PATH="/usr/local/go/bin:$PATH"
 export PATH="$HOME/.go/bin:$PATH"

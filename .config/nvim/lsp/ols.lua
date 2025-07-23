@@ -1,5 +1,5 @@
 return {
 	cmd = { "ols" },
 	filetypes = { "odin" },
-	rootPatterns = { "ols.json" },
+	root_markers = { "osl.json", ".git", "*.odin" },
 }
