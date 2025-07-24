@@ -2,6 +2,8 @@
 base-devel
 git
 neovim
+man-db
+man-pages
 zathura
 zathura-pdf-poppler
 starship
