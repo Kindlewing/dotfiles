@@ -2,6 +2,8 @@ eval "$(starship init zsh)"
 eval "$(direnv hook zsh)"
 source <(fzf --zsh)
 
+export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
+
 export ZSH="$HOME/.zsh"
 export ODIN_LIBS="$HOME/.odin"
 export ODIN_ROOT="$ODIN_LIBS"
@@ -41,3 +43,11 @@ PERL5LIB="/home/hudson/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LI
 PERL_LOCAL_LIB_ROOT="/home/hudson/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/hudson/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/hudson/perl5"; export PERL_MM_OPT;
+
+# pnpm
+export PNPM_HOME="/home/hudson/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

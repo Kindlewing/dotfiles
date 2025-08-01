@@ -30,7 +30,7 @@ require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
 	},
-	install = { colorscheme = { "rose-pine" } },
+	install = { colorscheme = { "kanagawa" } },
 	checker = { enabled = true },
 })
 vim.opt.rtp:prepend(lazypath)
@@ -39,7 +39,7 @@ require("icons")
 require("opts")
 
 vim.diagnostic.config({ virtual_text = false })
-vim.cmd.colorscheme("rose-pine")
+vim.cmd.colorscheme("kanagawa")
 
 require("keymap")
 require("highlights")
