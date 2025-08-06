@@ -5,10 +5,24 @@ return {
 		desc = "Debugging support. Requires language specific adapters to be configured. (see lang extras)",
 		dependencies = {
 			"theHamsta/nvim-dap-virtual-text",
-			"igorlfs/nvim-dap-view",
+			"rcarriga/nvim-dap-ui",
 		},
 		config = function()
 			local dap = require("dap")
+			local dapui = require("dapui")
+			require("dapui").setup()
+			dap.listeners.before.attach.dapui_config = function()
+				dapui.open()
+			end
+			dap.listeners.before.launch.dapui_config = function()
+				dapui.open()
+			end
+			dap.listeners.before.event_terminated.dapui_config = function()
+				dapui.close()
+			end
+			dap.listeners.before.event_exited.dapui_config = function()
+				dapui.close()
+			end
 			dap.adapters.php = {
 				type = "executable",
 				command = "node",
