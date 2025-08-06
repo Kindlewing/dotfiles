@@ -5,7 +5,10 @@ return {
 		desc = "Debugging support. Requires language specific adapters to be configured. (see lang extras)",
 		dependencies = {
 			"theHamsta/nvim-dap-virtual-text",
-			"rcarriga/nvim-dap-ui",
+			{
+				"rcarriga/nvim-dap-ui",
+				dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+			},
 		},
 		config = function()
 			local dap = require("dap")
