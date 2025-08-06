@@ -5,8 +5,6 @@ return {
 		desc = "Debugging support. Requires language specific adapters to be configured. (see lang extras)",
 
 		dependencies = {
-			"igorlfs/nvim-dap-view",
-			-- virtual text for the debugger
 			{
 				"theHamsta/nvim-dap-virtual-text",
 				opts = {},
@@ -32,11 +30,25 @@ return {
 			{ "<leader>ds", function() require("dap").session() end, desc = "Session" },
 			{ "<leader>dt", function() require("dap").terminate() end, desc = "Terminate" },
 		},
+		opts = {
+			adapters = {
+				php = {
+					type = "executable",
+					command = "node",
+					args = { "~/vscode-php-debug/out/phpDebug.js" },
+				},
+			},
+			configurations = {
+				php = {
+					type = "php",
+					request = "launch",
+					name = "Listen for Xdebug",
+					port = 9003,
+				},
+			},
+		},
 	},
 	{
 		"igorlfs/nvim-dap-view",
-		---@module 'dap-view'
-		---@type dapview.Config
-		opts = {},
 	},
 }
