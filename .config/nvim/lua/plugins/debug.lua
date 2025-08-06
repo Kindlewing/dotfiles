@@ -19,7 +19,8 @@ return {
 					type = "php",
 					request = "launch",
 					name = "Listen for Xdebug",
-					port = 9003,
+					port = 9900,
+					log = true,
 				},
 			}
 		end,
