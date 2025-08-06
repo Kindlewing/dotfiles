@@ -7,7 +7,6 @@ return {
 		dependencies = {
 			{
 				"theHamsta/nvim-dap-virtual-text",
-				opts = {},
 			},
 		},
 
