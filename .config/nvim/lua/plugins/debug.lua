@@ -12,7 +12,7 @@ return {
 			dap.adapters.php = {
 				type = "executable",
 				command = "node",
-				args = { "~/vscode-php-debug/out/phpDebug.js" },
+				args = { "$HOME/vscode-php-debug/out/phpDebug.js" },
 			}
 			dap.configurations.php = {
 				{
