@@ -10,7 +10,7 @@ return {
 				dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
 			},
 			{
-				"mason-nvim-dap",
+				"jay-babu/mason-nvim-dap.nvim",
 			},
 		},
 		config = function()
