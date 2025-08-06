@@ -3,6 +3,8 @@ base-devel
 git
 neovim
 man-db
+make
+cmake
 man-pages
 zathura
 zathura-pdf-poppler
