@@ -9,11 +9,17 @@ return {
 				"rcarriga/nvim-dap-ui",
 				dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
 			},
+			{
+				"mason-nvim-dap",
+			},
 		},
 		config = function()
 			local dap = require("dap")
 			local dapui = require("dapui")
 			require("dapui").setup()
+			require("mason-nvim-dap").setup({
+				ensure_installed = { "php-debug-adapter" },
+			})
 			dap.listeners.before.attach.dapui_config = function()
 				dapui.open()
 			end
