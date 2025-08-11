@@ -5,6 +5,13 @@ neovim
 man-db
 make
 cmake
+clang
+gcc
+avr-gcc
+avrdude
+arm-none-eabi-gcc 
+arm-none-eabi-binutils
+arm-none-eabi-newlib
 man-pages
 zathura
 zathura-pdf-poppler
