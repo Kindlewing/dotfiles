@@ -40,3 +40,12 @@ if [[ -n "$aur_packages" ]]; then
 		exit 1
 	fi
 fi
+
+echo "📦 Installing bossac..."
+git clone https://github.com/shumatech/BOSSA.git && cd BOSSA
+make bossac && echo "✔ bossac successfully built"
+echo "🔧 Copying the bossac binary to /usr/local/bin"
+sudo cp bin/bossac /usr/local/bin
+sudo chmod +x /usr/local/bin/bossac && echo "✔ bossac successfully installed"
+
+

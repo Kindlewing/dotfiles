@@ -3,6 +3,7 @@ base-devel
 git
 neovim
 man-db
+readline
 make
 cmake
 clang
