@@ -28,3 +28,4 @@ fi
 #ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
 . "$HOME/.cargo/env"
+export PATH=/opt/renesas/rfp:$PATH

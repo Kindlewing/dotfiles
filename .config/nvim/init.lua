@@ -65,6 +65,7 @@ vim.lsp.enable({
 	"hyprls",
 	"cssls",
 	"twiggy_language_server",
+	"asm_lsp",
 	"neocmakelsp",
 })
 neovim.configure_signs()

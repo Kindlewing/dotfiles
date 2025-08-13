@@ -11,6 +11,7 @@ return {
 			"pyright",
 			"dockerls",
 			"perlnavigator",
+			"asm_lsp",
 			"ols",
 			"clangd",
 			"clang-format",

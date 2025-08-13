@@ -9,6 +9,7 @@ export ODIN_LIBS="$HOME/.odin"
 export ODIN_ROOT="$ODIN_LIBS"
 export ZSH_PLUGINS=$ZSH/plugins
 export PATH="/usr/local/go/bin:$PATH"
+export PATH="/opt/renesas/rfp/linux-x64/:$PATH"
 export PATH="$HOME/.go/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
