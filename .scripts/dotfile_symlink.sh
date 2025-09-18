@@ -18,7 +18,6 @@ link_dotfiles() {
 	*) target="$HOME" ;;
 	esac
 
-
 	echo "🔧 Linking into $target..."
 
 	# Ensure the target directory exists
