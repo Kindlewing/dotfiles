@@ -24,6 +24,7 @@ zsh
 zoxide
 eza
 bat
+premake
 hyprland
 wofi
 mpd
