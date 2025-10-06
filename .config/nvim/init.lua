@@ -30,7 +30,7 @@ require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
 	},
-	install = { colorscheme = { "kanagawa" } },
+	install = { colorscheme = { "gruvbox-material" } },
 	checker = { enabled = true },
 })
 vim.opt.rtp:prepend(lazypath)
@@ -39,7 +39,9 @@ require("icons")
 require("opts")
 
 vim.diagnostic.config({ virtual_text = false })
-vim.cmd.colorscheme("kanagawa")
+vim.cmd.colorscheme("gruvbox-material")
+vim.g.gruvbox_material_background = "hard"
+vim.g.gruvbox_material_better_performance = 1
 
 require("keymap")
 require("highlights")
