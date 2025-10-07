@@ -11,8 +11,8 @@ link_dotfiles() {
 	case "$name" in
 	.config) target="$HOME/.config" ;;
 	.local) target="$HOME/.local" ;;
-	.scripts)
-		target="$HOME/.scripts"
+	.scripts) target="$HOME/.scripts" ;;
+	.typst) target="$HOME/.typst"
 		[[ -d "$target" ]] || mkdir -p "$target"
 		;;
 	*) target="$HOME" ;;
