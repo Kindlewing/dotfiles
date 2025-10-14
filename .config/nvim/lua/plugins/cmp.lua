@@ -49,6 +49,12 @@ return {
 			menu = {
 				enabled = true,
 				border = "rounded",
+				draw = {
+					columns = {
+						{ "kind_icon", "label", gap = 1 },
+						{ "kind" },
+					},
+				},
 			},
 			documentation = { auto_show = true, auto_show_delay_ms = 200 },
 			list = {
