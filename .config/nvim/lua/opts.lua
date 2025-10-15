@@ -7,6 +7,7 @@ opt.scrolloff = 5
 opt.sidescrolloff = 5
 opt.hlsearch = true
 opt.incsearch = true
+opt.inccommand = nosplit
 opt.mouse = ""
 opt.clipboard = "unnamedplus"
 opt.tabstop = 4

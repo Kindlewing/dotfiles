@@ -2,7 +2,7 @@ return {
 	{
 		"mfussenegger/nvim-dap",
 		recommended = true,
-		desc = "Debugging support. Requires language specific adapters to be configured. (see lang extras)",
+		desc = "Debugging support for C/C++ using GDB",
 		dependencies = {
 			"theHamsta/nvim-dap-virtual-text",
 			{
@@ -13,13 +13,19 @@ return {
 				"jay-babu/mason-nvim-dap.nvim",
 			},
 		},
+
 		config = function()
 			local dap = require("dap")
 			local dapui = require("dapui")
-			require("dapui").setup()
+
+			-- 🧩 Setup UI
+			dapui.setup()
 			require("mason-nvim-dap").setup({
-				ensure_installed = { "php-debug-adapter" },
+				ensure_installed = { "codelldb", "cppdbg" }, -- optional; GDB doesn't install via mason
+				automatic_installation = false,
 			})
+
+			-- Auto-open/close UI
 			dap.listeners.before.attach.dapui_config = function()
 				dapui.open()
 			end
@@ -33,19 +39,17 @@ return {
 				dapui.close()
 			end
 
+			-- 🧠 GDB adapter setup
 			dap.adapters.gdb = {
 				type = "executable",
 				command = "gdb",
 				args = { "--interpreter=dap", "--eval-command", "set print pretty on" },
 			}
-			dap.adapters.php = {
-				type = "executable",
-				command = "node",
-				args = { os.getenv("HOME") .. "/vscode-php-debug/out/phpDebug.js" },
-			}
+
+			-- ⚙️ Configurations for C (and C++)
 			dap.configurations.c = {
 				{
-					name = "Launch",
+					name = "Launch executable",
 					type = "gdb",
 					request = "launch",
 					program = function()
@@ -58,47 +62,10 @@ return {
 					cwd = "${workspaceFolder}",
 					stopAtBeginningOfMainSubprogram = false,
 				},
-				{
-					name = "Select and attach to process",
-					type = "gdb",
-					request = "attach",
-					program = function()
-						return vim.fn.input(
-							"Path to executable: ",
-							vim.fn.getcwd() .. "/",
-							"file"
-						)
-					end,
-					pid = function()
-						local name = vim.fn.input("Executable name (filter): ")
-						return require("dap.utils").pick_process({ filter = name })
-					end,
-					cwd = "${workspaceFolder}",
-				},
-				{
-					name = "Attach to gdbserver :1234",
-					type = "gdb",
-					request = "attach",
-					target = "localhost:1234",
-					program = function()
-						return vim.fn.input(
-							"Path to executable: ",
-							vim.fn.getcwd() .. "/",
-							"file"
-						)
-					end,
-					cwd = "${workspaceFolder}",
-				},
 			}
-			dap.configurations.php = {
-				{
-					type = "php",
-					request = "launch",
-					name = "Listen for Xdebug",
-					port = 9900,
-					log = true,
-				},
-			}
+
+			-- Make same setup work for C++
+			dap.configurations.cpp = dap.configurations.c
 		end,
 	},
 }
