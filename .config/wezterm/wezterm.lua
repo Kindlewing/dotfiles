@@ -15,6 +15,12 @@ config.text_background_opacity = 1.0
 
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2000 }
 
+config.colors = {
+	cursor_bg = "#ffffff",
+	cursor_fg = "#000000",
+	cursor_border = "#ffffff",
+}
+
 config.hide_tab_bar_if_only_one_tab = false
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
