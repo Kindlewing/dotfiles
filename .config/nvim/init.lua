@@ -67,6 +67,7 @@ vim.lsp.enable({
 	"twiggy_language_server",
 	"asm_lsp",
 	"neocmakelsp",
+	"dockerls",
 	"marksman",
 })
 neovim.configure_signs()
