@@ -22,8 +22,10 @@ config.colors = {
 }
 
 config.hide_tab_bar_if_only_one_tab = false
+config.hide_mouse_cursor_when_typing = false
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
+config.warn_about_missing_glyphs = false
 config.exit_behavior_messaging = "Verbose"
 config.tab_and_split_indices_are_zero_based = true
 
