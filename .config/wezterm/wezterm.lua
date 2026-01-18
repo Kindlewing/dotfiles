@@ -12,6 +12,7 @@ config.window_decorations = "NONE"
 config.window_close_confirmation = "NeverPrompt"
 config.window_background_opacity = 0.90
 config.text_background_opacity = 1.0
+config.default_cursor_style = "SteadyBlock"
 
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2000 }
 

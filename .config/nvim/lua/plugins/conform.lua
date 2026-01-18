@@ -7,8 +7,8 @@ return {
 		require("conform").setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
-				c = { "clang_format" },
-				cpp = { "clang_format" },
+				c = { "clang-format" },
+				cpp = { "clang-format" },
 				nix = { "nixpkgs-format" },
 				javascript = { "prettier" },
 				typescript = { "prettier" },
@@ -19,7 +19,15 @@ return {
 				json = { "prettier" },
 				yaml = { "prettier" },
 				markdown = { "prettier" },
-				php = { "php_cs_fixer" },
+				php = { "pretty-php" },
+			},
+
+			formatters = {
+				["pretty-php"] = {
+					command = "pretty-php",
+					args = { "-1", "--tab=4", "--" },
+					stdin = true,
+				},
 			},
 
 			format_on_save = function(bufnr)
