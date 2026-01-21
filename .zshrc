@@ -4,6 +4,19 @@ source <(fzf --zsh)
 
 export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
 
+
+export LESS_TERMCAP_mb=$'\e[1;31m'     # blinking text (rare)
+export LESS_TERMCAP_md=$'\e[1;31m'     # bold headers in red
+export LESS_TERMCAP_me=$'\e[0m'        # reset bold/blink
+export LESS_TERMCAP_so=$'\e[38;5;245m' # standout (highlighted text)
+export LESS_TERMCAP_se=$'\e[0m'        # reset standout
+export LESS_TERMCAP_us=$'\e[1;33m'     # underline (yellow)
+export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
+
+export MANPAGER="less -RFX --use-color --mouse -S"
+export MANWIDTH=80
+export GROFF_NO_SGR=0
+
 export ZSH="$HOME/.zsh"
 export ODIN_LIBS="$HOME/.odin"
 export ODIN_ROOT="$ODIN_LIBS"

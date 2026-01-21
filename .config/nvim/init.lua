@@ -65,7 +65,6 @@ vim.lsp.enable({
 	"hyprls",
 	"cssls",
 	"twiggy_language_server",
-	"asm_lsp",
 	"neocmakelsp",
 	"dockerls",
 	"marksman",
