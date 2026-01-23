@@ -16,6 +16,7 @@ arm-none-eabi-newlib
 man-pages
 zathura
 zathura-pdf-poppler
+uncrustify
 starship
 curl
 lazygit

@@ -29,6 +29,7 @@
   "template-string.nvim": { "branch": "main", "commit": "d3a26d3c449a97c44891a31736a101b60b64cf2b" },
   "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "ecce93ff7db4461e942c03e0fcc64bd785df4057" },
   "typst-preview.nvim": { "branch": "master", "commit": "e123a7ab64e52d836e00dea9251e85b201f38966" },
+  "uncrustify.nvim": { "branch": "main", "commit": "dd2ab05f092ad17c5388c8327670532d663f9ddb" },
   "vim-fugitive": { "branch": "master", "commit": "61b51c09b7c9ce04e821f6cf76ea4f6f903e3cf4" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" },
   "yazi.nvim": { "branch": "main", "commit": "bf4056540f31682769a8dbc74f95ea7423990b95" }
