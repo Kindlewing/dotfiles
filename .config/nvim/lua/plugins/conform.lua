@@ -7,7 +7,7 @@ return {
 		require("conform").setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
-				c = { "uncrustify" },
+				c = { "clang-format" },
 				cpp = { "clang-format" },
 				nix = { "nixpkgs-format" },
 				javascript = { "prettier" },

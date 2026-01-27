@@ -39,18 +39,19 @@ return {
 				dapui.close()
 			end
 
-			-- 🧠 GDB adapter setup
-			dap.adapters.gdb = {
-				type = "executable",
-				command = "gdb",
-				args = { "--interpreter=dap", "--eval-command", "set print pretty on" },
+			dap.adapters.codelldb = {
+				type = "server",
+				port = "${port}",
+				executable = {
+					command = vim.fn.stdpath("data") .. "/mason/bin/codelldb",
+					args = { "--port", "${port}" },
+				},
 			}
 
-			-- ⚙️ Configurations for C (and C++)
 			dap.configurations.c = {
 				{
-					name = "Launch executable",
-					type = "gdb",
+					name = "Launch",
+					type = "codelldb",
 					request = "launch",
 					program = function()
 						return vim.fn.input(
@@ -60,11 +61,10 @@ return {
 						)
 					end,
 					cwd = "${workspaceFolder}",
-					stopAtBeginningOfMainSubprogram = false,
+					stopOnEntry = false,
 				},
 			}
 
-			-- Make same setup work for C++
 			dap.configurations.cpp = dap.configurations.c
 		end,
 	},
