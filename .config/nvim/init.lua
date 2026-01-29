@@ -24,14 +24,16 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
+vim.g.everforest_background = "hard"
 
 -- Setup lazy.nvim
 require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
 	},
-	install = { colorscheme = { "material" } },
-	checker = { enabled = true },
+	install = { colorscheme = { "everforest" } },
+	checker = { enabled = true, notify = false },
+	change_detection = { enabled = true, notify = false },
 })
 vim.opt.rtp:prepend(lazypath)
 
@@ -39,11 +41,11 @@ require("icons")
 require("opts")
 
 vim.diagnostic.config({ virtual_text = false })
-vim.g.everforest_background = "hard"
 vim.cmd.colorscheme("everforest")
 
 require("keymap")
 require("highlights")
+require("autocmd")
 
 vim.cmd([[
 augroup python
