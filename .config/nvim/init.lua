@@ -30,7 +30,7 @@ require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
 	},
-	install = { colorscheme = { "kanagawa" } },
+	install = { colorscheme = { "material" } },
 	checker = { enabled = true },
 })
 vim.opt.rtp:prepend(lazypath)
@@ -39,7 +39,8 @@ require("icons")
 require("opts")
 
 vim.diagnostic.config({ virtual_text = false })
-vim.cmd.colorscheme("kanagawa")
+vim.g.everforest_background = "hard"
+vim.cmd.colorscheme("everforest")
 
 require("keymap")
 require("highlights")

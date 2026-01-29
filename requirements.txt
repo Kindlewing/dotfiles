@@ -47,6 +47,7 @@ xdg-desktop-portal-hyprland
 
 # AUR
 hyprshot
+btctl
 catppuccin-gtk-theme-mocha
 wezterm-git
 wl-clipboard

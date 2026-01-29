@@ -3,14 +3,14 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 config.keys = require("lua.keybinds")
-config.color_scheme = "Catppuccin Mocha"
+config.color_scheme = "Everforest Dark Hard (Gogh)"
 
 config.font = wezterm.font("CaskaydiaCove NF", { weight = "Regular", style = "Italic" })
 config.font_size = 11
 
 config.window_decorations = "NONE"
 config.window_close_confirmation = "NeverPrompt"
-config.window_background_opacity = 0.90
+config.window_background_opacity = 1
 config.text_background_opacity = 1.0
 config.default_cursor_style = "SteadyBlock"
 
