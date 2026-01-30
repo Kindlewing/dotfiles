@@ -11,8 +11,21 @@ wk.add({
 	{ "<leader>d", group = "debug" },
 	{ "<leader>s", group = "search" },
 	{ "<leader>u", group = "toggle" },
+	{ "<leader>f", group = "format" },
 	{ "<leader>g", group = "git" },
 })
+
+local function toggle_formatting()
+	if vim.b.disable_autoformat then
+		vim.b.disable_autoformat = false
+	else
+		vim.b.disable_autoformat = true
+	end
+
+	pcall(function()
+		require("lualine").refresh()
+	end)
+end
 
 map({ "n", "x" }, "<leader>p", '"1p')
 
@@ -68,6 +81,14 @@ map("n", "<Leader>ds", function()
 	local widgets = require("dap.ui.widgets")
 	widgets.centered_float(widgets.scopes)
 end, { desc = "Dap UI scopes" })
+
+-- formatting
+map(
+	"n",
+	"<leader>ff",
+	toggle_formatting,
+	{ desc = "Toggle format on save (buffer)" }
+)
 
 -- telescope
 map("n", "<leader>sf", builtin.find_files, { desc = "Search files" })

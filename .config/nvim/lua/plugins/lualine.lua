@@ -1,3 +1,16 @@
+local function format_status()
+	-- buffer-local wins
+	if vim.b.disable_autoformat then
+		return "󰉥 Format off (buf)"
+	end
+
+	if vim.g.disable_autoformat then
+		return "󰉥 Format off"
+	end
+
+	return "󰉥 Format on"
+end
+
 return {
 	"nvim-lualine/lualine.nvim",
 	config = function()
@@ -57,6 +70,15 @@ return {
 					},
 				},
 				lualine_x = {
+					{
+						format_status,
+						color = function()
+							if vim.b.disable_autoformat or vim.g.disable_autoformat then
+								return { fg = "#e67e80" } -- red-ish
+							end
+							return { fg = "#a7c080" } -- green-ish
+						end,
+					},
 					{
 						show_active_lsp,
 						icon = "  LSP:",
