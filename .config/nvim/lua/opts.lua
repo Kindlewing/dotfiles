@@ -27,7 +27,7 @@ vim.bo.autoread = true
 opt.cursorline = true
 opt.termguicolors = true
 opt.background = "dark"
-opt.colorcolumn = "100"
+opt.colorcolumn = "90"
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()
