@@ -68,8 +68,12 @@ vim.lsp.enable({
 	"hyprls",
 	"cssls",
 	"twiggy_language_server",
-	"cmake",
+	"neocmake",
 	"dockerls",
 	"marksman",
 })
 neovim.configure_signs()
+
+local capabilities = require("blink.cmp").get_lsp_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+vim.lsp.config("neocmake", { capabilities = capabilities })

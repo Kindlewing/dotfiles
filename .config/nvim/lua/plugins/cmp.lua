@@ -1,9 +1,3 @@
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-vim.lsp.config("neocmake", {
-	capabilities = capabilities,
-})
 return {
 	"saghen/blink.cmp",
 	dependencies = { "rafamadriz/friendly-snippets" },
@@ -69,6 +63,11 @@ return {
 					auto_insert = true,
 				},
 			},
+		},
+		snippets = {
+			expand = function(args)
+				require("luasnip").lsp_expand(args.body)
+			end,
 		},
 		sources = {
 			default = { "lsp", "path", "snippets" },
