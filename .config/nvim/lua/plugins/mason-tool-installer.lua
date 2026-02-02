@@ -22,7 +22,7 @@ return {
 			"cssls",
 			"rust_analyzer",
 			"twiggy_language_server",
-			"neocmakelsp",
+			"cmake-language-server",
 			"intelephense",
 		},
 		auto_update = true,

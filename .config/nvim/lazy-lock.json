@@ -32,5 +32,5 @@
   "uncrustify.nvim": { "branch": "main", "commit": "dd2ab05f092ad17c5388c8327670532d663f9ddb" },
   "vim-fugitive": { "branch": "master", "commit": "61b51c09b7c9ce04e821f6cf76ea4f6f903e3cf4" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" },
-  "yazi.nvim": { "branch": "main", "commit": "f7becca2d605fdae4d0cfacdc11863fef21ac61b" }
+  "yazi.nvim": { "branch": "main", "commit": "46fd318814b13cdb27750c045973df3f80425e68" }
 }
