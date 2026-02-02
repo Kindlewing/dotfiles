@@ -68,7 +68,7 @@ vim.lsp.enable({
 	"hyprls",
 	"cssls",
 	"twiggy_language_server",
-	"neocmakelsp",
+	"neocmake",
 	"dockerls",
 	"marksman",
 })
