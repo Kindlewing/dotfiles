@@ -21,7 +21,7 @@ return {
 			-- 🧩 Setup UI
 			dapui.setup()
 			require("mason-nvim-dap").setup({
-				ensure_installed = { "codelldb", "cppdbg" }, -- optional; GDB doesn't install via mason
+				ensure_installed = { "codelldb", "cppdbg" },
 				automatic_installation = false,
 			})
 
@@ -50,6 +50,7 @@ return {
 
 			dap.configurations.c = {
 				{
+
 					name = "Launch",
 					type = "codelldb",
 					request = "launch",

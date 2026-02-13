@@ -37,7 +37,6 @@ require("lazy").setup({
 })
 vim.opt.rtp:prepend(lazypath)
 
-require("icons")
 require("opts")
 
 vim.diagnostic.config({ virtual_text = false })
