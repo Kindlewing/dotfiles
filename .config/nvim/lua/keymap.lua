@@ -1,200 +1,118 @@
-local builtin = require("telescope.builtin")
 local map = vim.keymap.set
 local opts = { silent = true, noremap = true }
-local wk = require("which-key")
-local cmp = require("blink.cmp")
 
+-- optional deps
+local has_telescope, telescope = pcall(require, "telescope.builtin")
+local dap = require("dap")
+local widgets = require("dap.ui.widgets")
+local wk = require("which-key")
+
+-- which-key groups
 wk.add({
-	{ "<leader>p", group = "package" },
 	{ "<leader>b", group = "buffer" },
 	{ "<leader>c", group = "code" },
 	{ "<leader>d", group = "debug" },
-	{ "<leader>s", group = "search" },
-	{ "<leader>u", group = "toggle" },
 	{ "<leader>f", group = "format" },
 	{ "<leader>g", group = "git" },
+	{ "<leader>p", group = "package" },
+	{ "<leader>s", group = "search" },
+	{ "<leader>u", group = "toggle" },
 })
 
+-- utils
 local function toggle_formatting()
-	if vim.b.disable_autoformat then
-		vim.b.disable_autoformat = false
-	else
-		vim.b.disable_autoformat = true
-	end
-
-	pcall(function()
-		require("lualine").refresh()
-	end)
+	vim.b.disable_autoformat = not vim.b.disable_autoformat
+	pcall(require("lualine").refresh)
 end
 
+local function diag(next, sev)
+	return function()
+		vim.diagnostic[next and "goto_next" or "goto_prev"]({
+			severity = sev and vim.diagnostic.severity[sev],
+		})
+	end
+end
+
+-- basics
 map({ "n", "x" }, "<leader>p", '"1p')
-
 map("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit" })
-map("n", "<leader>w", "<cmd>w<cr>", { desc = "Write current file" })
+map("n", "<leader>w", "<cmd>w<cr>", { desc = "Write" })
 
-map("n", "H", ":bprevious<CR>", { silent = true })
-map("n", "L", ":bnext<CR>", { silent = true })
-map("n", "<leader>bd", ":bdelete<CR>", { silent = true })
-map("n", "j", [[v:count?'j':'gj']], { noremap = true, expr = true })
-map("n", "k", [[v:count?'k':'gk']], { noremap = true, expr = true })
+map("n", "H", "<cmd>bprev<cr>", opts)
+map("n", "L", "<cmd>bnext<cr>", opts)
+map("n", "<leader>bd", "<cmd>bdelete<cr>", opts)
 
-map("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
-map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
-map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
-map("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
+map("n", "j", [[v:count?'j':'gj']], { expr = true })
+map("n", "k", [[v:count?'k':'gk']], { expr = true })
 
-map(
-	{ "i", "n" },
-	"<esc>",
-	"<cmd>noh<cr><esc>",
-	{ desc = "Escape and clear hlsearch" }
-)
+map("n", "<C-h>", "<C-w>h", { remap = true })
+map("n", "<C-j>", "<C-w>j", { remap = true })
+map("n", "<C-k>", "<C-w>k", { remap = true })
+map("n", "<C-l>", "<C-w>l", { remap = true })
 
--- better indenting
+map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Clear search" })
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
 -- dap
-map("n", "<leader>dc", function()
-	require("dap").continue()
-end, { desc = "Continue" })
-map("n", "<leader>do", function()
-	require("dap").step_over()
-end, { desc = "Step over" })
-map("n", "<leader>di", function()
-	require("dap").step_into()
-end, { desc = "Step into" })
-map("n", "<Leader>db", function()
-	require("dap").toggle_breakpoint()
-end, { desc = "Toggle breakpoint" })
-map({ "n", "v" }, "<Leader>dh", function()
-	require("dap.ui.widgets").hover()
-end, { desc = "UI hover widgets" })
-map({ "n", "v" }, "<Leader>dp", function()
-	require("dap.ui.widgets").preview()
-end, { desc = "Dap UI preview" })
-map("n", "<Leader>df", function()
-	local widgets = require("dap.ui.widgets")
+map("n", "<leader>dc", dap.continue, { desc = "Continue" })
+map("n", "<leader>do", dap.step_over, { desc = "Step over" })
+map("n", "<leader>di", dap.step_into, { desc = "Step into" })
+map("n", "<leader>db", dap.toggle_breakpoint, { desc = "Breakpoint" })
+map({ "n", "v" }, "<leader>dh", widgets.hover, { desc = "Hover" })
+map({ "n", "v" }, "<leader>dp", widgets.preview, { desc = "Preview" })
+map("n", "<leader>df", function()
 	widgets.centered_float(widgets.frames)
-end, { desc = "Dap UI frames" })
-map("n", "<Leader>ds", function()
-	local widgets = require("dap.ui.widgets")
+end)
+map("n", "<leader>ds", function()
 	widgets.centered_float(widgets.scopes)
-end, { desc = "Dap UI scopes" })
+end)
 
 -- formatting
-map(
-	"n",
-	"<leader>ff",
-	toggle_formatting,
-	{ desc = "Toggle format on save (buffer)" }
-)
+map("n", "<leader>ff", toggle_formatting, { desc = "Toggle format on save" })
 
 -- telescope
-map("n", "<leader>sf", builtin.find_files, { desc = "Search files" })
-map("n", "<leader>sg", builtin.live_grep, { desc = "Search words" })
-map(
-	"n",
-	"<leader>sw",
-	'<CMD>lua require("telescope").extensions.git_worktree.git_worktrees()<CR>',
-	{ desc = "Search worktrees" }
-)
-map(
-	"n",
-	"<leader>sc",
-	'<CMD>lua require("telescope").extensions.git_worktree.create_git_worktree()<CR>',
-	{ desc = "Create git worktree" }
-)
-map(
-	"n",
-	"<leader>ss",
-	builtin.lsp_document_symbols,
-	{ desc = "Search symbols (in current buffer)" }
-)
-map("n", "<leader>sd", builtin.diagnostics, { desc = "Search diagnostics" })
-map("n", "<leader>sh", builtin.help_tags, { desc = "Search help" })
+if has_telescope then
+	map("n", "<leader>sf", telescope.find_files)
+	map("n", "<leader>sg", telescope.live_grep)
+	map("n", "<leader>ss", telescope.lsp_document_symbols)
+	map("n", "<leader>sd", telescope.diagnostics)
+	map("n", "<leader>sh", telescope.help_tags)
 
--- mason
-map("n", "<leader>pm", ":Mason<CR>", { desc = "Mason" })
+	map("n", "gd", telescope.lsp_definitions)
+	map("n", "gt", telescope.lsp_type_definitions)
+	map("n", "gi", telescope.lsp_implementations)
+	map("n", "gr", telescope.lsp_references)
+else
+	map("n", "gd", vim.lsp.buf.definition)
+	map("n", "gD", vim.lsp.buf.declaration)
+	map("n", "gt", vim.lsp.buf.type_definition)
+	map("n", "gi", vim.lsp.buf.implementation)
+	map("n", "gr", vim.lsp.buf.references)
+end
 
 -- lsp
-map("n", "K", vim.lsp.buf.hover, {})
+map("n", "K", vim.lsp.buf.hover)
 
-local bufopts = { noremap = true, silent = true }
-local buf_nmap = function(lhs, rhs, desc)
-	vim.keymap.set(
-		"n",
-		lhs,
-		rhs,
-		vim.tbl_extend("force", bufopts, { desc = desc })
-	)
-end
-local buf_map = function(lhs, rhs, modes, desc)
-	vim.keymap.set(
-		modes,
-		lhs,
-		rhs,
-		vim.tbl_extend("force", bufopts, { desc = desc })
-	)
-end
+-- diagnostics
+map("n", "<leader>cd", vim.diagnostic.open_float)
+map("n", "]d", diag(true))
+map("n", "[d", diag(false))
+map("n", "]e", diag(true, "ERROR"))
+map("n", "[e", diag(false, "ERROR"))
+map("n", "]w", diag(true, "WARN"))
+map("n", "[w", diag(false, "WARN"))
 
-if pcall(require, "telescope") then
-	buf_nmap(
-		"gd",
-		require("telescope.builtin").lsp_definitions,
-		"[G]oto [D]efinition (include Declaration)"
-	)
-	buf_nmap(
-		"gt",
-		require("telescope.builtin").lsp_type_definitions,
-		"[G]oto [T]ype definition"
-	)
-	buf_nmap(
-		"gi",
-		require("telescope.builtin").lsp_implementations,
-		"[G]oto [I]mplementation"
-	)
-	buf_nmap(
-		"gr",
-		require("telescope.builtin").lsp_references,
-		"[G]oto [R]eference"
-	)
-else
-	buf_nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
-	buf_nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-	buf_nmap("gt", vim.lsp.buf.type_definition, "[G]oto [T]ype definition")
-	buf_nmap("gi", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
-	buf_nmap("gr", vim.lsp.buf.references, "[G]oto [R]eference")
-end
+map({ "n", "x" }, "<leader>ca", function(ctx)
+	require("tiny-code-action").code_action(ctx)
+end)
 
 -- git
-map("n", "<leader>gg", ":LazyGit<CR>", { desc = "Lazygit" })
+map("n", "<leader>gg", "<cmd>LazyGit<cr>")
+map("n", "<leader>gp", "<cmd>Gitsigns preview_hunk<cr>", opts)
+map("n", "<leader>gb", "<cmd>Gitsigns toggle_current_line_blame<cr>", opts)
 
--- diagnostic
-local diagnostic_goto = function(next, severity)
-	local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
-	severity = severity and vim.diagnostic.severity[severity] or nil
-	return function()
-		go({ severity = severity })
-	end
-end
-
-map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
-map("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
-map("n", "[d", diagnostic_goto(false), { desc = "Prev Diagnostic" })
-map("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
-map("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
-map("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
-map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
-
-map({ "n", "x" }, "<leader>ca", function(j)
-	require("tiny-code-action").code_action(j)
-end, { noremap = true, silent = true })
-
--- git
-map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", opts)
-map("n", "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>", opts)
-
+-- zen
 map("n", "<leader>z", function()
-	require("zen-mode").toggle({})
-end, { desc = "Zen mode" })
+	require("zen-mode").toggle()
+end)
