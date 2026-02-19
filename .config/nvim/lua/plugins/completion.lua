@@ -64,11 +64,6 @@ return {
 				},
 			},
 		},
-		snippets = {
-			expand = function(args)
-				require("luasnip").lsp_expand(args.body)
-			end,
-		},
 		sources = {
 			default = { "lsp", "path", "snippets" },
 		},

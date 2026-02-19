@@ -1,14 +1,13 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+vim.g.everforest_background = "hard"
+vim.g.everforest_enable_italic = true
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-local neovim = require("utils")
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
 	local out = vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"--branch=stable",
-		lazyrepo,
-		lazypath,
+		"git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath,
 	})
 	if vim.v.shell_error ~= 0 then
 		vim.api.nvim_echo({
@@ -22,57 +21,12 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-vim.g.everforest_background = "hard"
-
--- Setup lazy.nvim
 require("lazy").setup({
-	spec = {
-		{ import = "plugins" },
-	},
+	spec = { { import = "plugins" } },
 	install = { colorscheme = { "everforest" } },
 	checker = { enabled = true, notify = false },
 	change_detection = { enabled = true, notify = false },
 })
-vim.opt.rtp:prepend(lazypath)
 
-require("opts")
-
-vim.diagnostic.config({ virtual_text = false })
-vim.cmd.colorscheme("everforest")
-
+require("core")
 require("keymap")
-require("highlights")
-require("autocmd")
-
-vim.cmd([[
-augroup python
-    autocmd!
-    autocmd FileType python setlocal noexpandtab tabstop=4
-augroup end
-]])
-
-vim.lsp.enable({
-	"lua_ls",
-	"bashls",
-	"pyright",
-	"tinymist",
-	"clangd",
-	"intelephense",
-	"ols",
-	"perlpls",
-	"ts_ls",
-	"html",
-	"hyprls",
-	"cssls",
-	"twiggy_language_server",
-	"neocmake",
-	"dockerls",
-	"marksman",
-})
-neovim.configure_signs()
-
-local capabilities = require("blink.cmp").get_lsp_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-vim.lsp.config("neocmake", { capabilities = capabilities })
