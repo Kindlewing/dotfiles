@@ -74,6 +74,41 @@ return {
 		},
 	},
 	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		init = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+		end,
+		opts = {
+			preset = "modern",
+			icons = {
+				breadcrumb = "»",
+				separator = "➜",
+				group = "+",
+			},
+			win = {
+				border = "rounded",
+				padding = { 1, 2 },
+				title = true,
+				title_pos = "center",
+			},
+			layout = {
+				align = "center",
+				spacing = 6,
+			},
+			show_help = false,
+			show_keys = false,
+			spec = {
+				{ "<leader>b", group = "buffer" },
+				{ "<leader>c", group = "code" },
+				{ "<leader>f", group = "format" },
+				{ "<leader>g", group = "git" },
+				{ "<leader>s", group = "search" },
+			},
+		},
+	},
+	{
 		"folke/lazydev.nvim",
 		ft = "lua",
 		opts = {

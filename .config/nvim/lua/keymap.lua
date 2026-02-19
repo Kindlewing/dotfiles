@@ -1,5 +1,4 @@
 local map = vim.keymap.set
-local opts = { silent = true, noremap = true }
 local telescope = require("telescope.builtin")
 
 local function toggle_formatting()
@@ -16,13 +15,13 @@ local function diag(next, sev)
 end
 
 -- basics
-map({ "n", "x" }, "<leader>p", '"1p')
+map({ "n", "x" }, "<leader>p", '"1p', { desc = "Paste from register 1" })
 map("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit" })
 map("n", "<leader>w", "<cmd>w<cr>", { desc = "Write" })
 
-map("n", "H", "<cmd>bprev<cr>", opts)
-map("n", "L", "<cmd>bnext<cr>", opts)
-map("n", "<leader>bd", "<cmd>bdelete<cr>", opts)
+map("n", "H", "<cmd>bprev<cr>", { silent = true, noremap = true, desc = "Prev buffer" })
+map("n", "L", "<cmd>bnext<cr>", { silent = true, noremap = true, desc = "Next buffer" })
+map("n", "<leader>bd", "<cmd>bdelete<cr>", { silent = true, noremap = true, desc = "Delete buffer" })
 
 map("n", "j", [[v:count?'j':'gj']], { expr = true })
 map("n", "k", [[v:count?'k':'gk']], { expr = true })
@@ -40,31 +39,31 @@ map("v", ">", ">gv")
 map("n", "<leader>ff", toggle_formatting, { desc = "Toggle format on save" })
 
 -- telescope
-map("n", "<leader>sf", telescope.find_files)
-map("n", "<leader>sg", telescope.live_grep)
-map("n", "<leader>ss", telescope.lsp_document_symbols)
-map("n", "<leader>sd", telescope.diagnostics)
-map("n", "<leader>sh", telescope.help_tags)
+map("n", "<leader>sf", telescope.find_files, { desc = "Find files" })
+map("n", "<leader>sg", telescope.live_grep, { desc = "Live grep" })
+map("n", "<leader>ss", telescope.lsp_document_symbols, { desc = "Document symbols" })
+map("n", "<leader>sd", telescope.diagnostics, { desc = "Diagnostics" })
+map("n", "<leader>sh", telescope.help_tags, { desc = "Help tags" })
 
-map("n", "gd", telescope.lsp_definitions)
-map("n", "gt", telescope.lsp_type_definitions)
-map("n", "gi", telescope.lsp_implementations)
-map("n", "gr", telescope.lsp_references)
+map("n", "gd", telescope.lsp_definitions, { desc = "Go to definition" })
+map("n", "gt", telescope.lsp_type_definitions, { desc = "Go to type definition" })
+map("n", "gi", telescope.lsp_implementations, { desc = "Go to implementation" })
+map("n", "gr", telescope.lsp_references, { desc = "References" })
 
 -- lsp
-map("n", "K", vim.lsp.buf.hover)
+map("n", "K", vim.lsp.buf.hover, { desc = "Hover" })
 map({ "n", "x" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
 
 -- diagnostics
-map("n", "<leader>cd", vim.diagnostic.open_float)
-map("n", "]d", diag(true))
-map("n", "[d", diag(false))
-map("n", "]e", diag(true, "ERROR"))
-map("n", "[e", diag(false, "ERROR"))
-map("n", "]w", diag(true, "WARN"))
-map("n", "[w", diag(false, "WARN"))
+map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Diagnostics float" })
+map("n", "]d", diag(true), { desc = "Next diagnostic" })
+map("n", "[d", diag(false), { desc = "Prev diagnostic" })
+map("n", "]e", diag(true, "ERROR"), { desc = "Next error" })
+map("n", "[e", diag(false, "ERROR"), { desc = "Prev error" })
+map("n", "]w", diag(true, "WARN"), { desc = "Next warning" })
+map("n", "[w", diag(false, "WARN"), { desc = "Prev warning" })
 
 -- git
-map("n", "<leader>gg", "<cmd>LazyGit<cr>")
-map("n", "<leader>gp", "<cmd>Gitsigns preview_hunk<cr>", opts)
-map("n", "<leader>gb", "<cmd>Gitsigns toggle_current_line_blame<cr>", opts)
+map("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })
+map("n", "<leader>gp", "<cmd>Gitsigns preview_hunk<cr>", { silent = true, noremap = true, desc = "Preview hunk" })
+map("n", "<leader>gb", "<cmd>Gitsigns toggle_current_line_blame<cr>", { silent = true, noremap = true, desc = "Toggle blame" })
