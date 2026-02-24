@@ -33,6 +33,7 @@ gdb
 valgrind
 mpc
 rmpc
+rsync
 waybar
 ttf-font-awesome
 swaync
