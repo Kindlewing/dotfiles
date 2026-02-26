@@ -4,6 +4,7 @@ target/
 .dotter/cache.toml
 .dotter/cache
 lazygit/state.yml
+*.pickle
 *.db
 *.txt
 *.sql
