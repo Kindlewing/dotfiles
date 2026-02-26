@@ -8,59 +8,52 @@ import:
 art_filename: albumart
 ui:
     color: yes
-paths: 
-    default: $albumartist/$album %aunique{}/$track $title %aunique{} 
-    singleton: $albumartist/$album %aunique{}/$track $title %aunique{} 
-    comp: Compilation/$album %aunique{}/$track $title %aunique{} 
-    albumtype:soundtrack: Soundtracks/$album %aunique{}/$track $title %aunique{}
+paths:
+    default: $albumartist/$album%aunique{}/$track $title
+    singleton: $albumartist/Singles/$title
+    comp: Compilations/$album%aunique{}/$track $title
+    albumtype:soundtrack: Soundtracks/$album%aunique{}/$track $title
 
 plugins: musicbrainz fetchart embedart lyrics lastgenre rewrite ihate duplicates convert
 
-embedart: 
-    remove_art_file: yes 
-    auto: yes 
-    ifempty: no 
-lastgenre: 
-    count: 5 
-    whitelist: yes 
-    min_weight: 10 
-    fallback: 
-    canonical: no 
-    source: album 
-    force: yes 
-    auto: yes 
-    separator: ', ' 
-    prefer_specific: no 
-fetchart: 
-    auto: yes 
-    enforce_ratio: no 
-    cautious: no 
-    cover_names: 
-    - cover 
-    - front 
-    - art 
-    - album 
-    - folder 
-    sources: 
-    - filesystem 
-    - coverart 
-    - itunes 
-    - amazon 
-    - albumart 
-    store_source: no 
-rewrite: {} 
-duplicates: 
-    album: no 
-    checksum: '' 
-    copy: '' 
-    count: no 
-    delete: no 
-    format: '' 
-    full: no 
-    keys: [] 
-    merge: no 
-    move: '' 
-    path: no 
-    tiebreak: {} 
-    strict: no 
-    tag: '' 
+embedart:
+    remove_art_file: yes
+    auto: yes
+    ifempty: no
+lastgenre:
+    count: 5
+    whitelist: yes
+    min_weight: 10
+    source: album
+    force: yes
+    auto: yes
+    separator: ", "
+    prefer_specific: no
+fetchart:
+    auto: yes
+    enforce_ratio: yes
+    min_width: 250
+    cautious: no
+    cover_names:
+        - cover
+        - front
+        - art
+        - album
+        - folder
+    sources:
+        - filesystem
+        - coverart
+        - itunes
+        - amazon
+        - albumart
+    store_source: no
+rewrite: {}
+duplicates: {}
+lyrics:
+    auto: yes
+    force: no
+    synced: yes
+    dist_thresh: 0.11
+    sources:
+        - lrclib
+        - genius
