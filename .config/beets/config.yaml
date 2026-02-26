@@ -56,4 +56,3 @@ lyrics:
     dist_thresh: 0.11
     sources:
         - lrclib
-        - genius
