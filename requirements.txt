@@ -1,54 +1,79 @@
 # Pacman
 base-devel
 git
-neovim
-man-db
-readline
 make
 cmake
 clang
 gcc
-avr-gcc
-avrdude
-arm-none-eabi-gcc 
-arm-none-eabi-binutils
-arm-none-eabi-newlib
-man-pages
-zathura
-zathura-pdf-poppler
-uncrustify
-starship
+bc
 curl
-lazygit
 unzip
+
+# System
+man-db
+man-pages
 zsh
-zoxide
-eza
-bat
-premake
-hyprland
-wofi
-mpd
-gdb
-valgrind
-mpc
-rmpc
-rsync
-waybar
-ttf-font-awesome
-swaync
-hyprlock
-hypridle
-hyprpaper
-fd
-fzf
+direnv
+brightnessctl
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 
+# Desktop
+hyprland
+hyprlock
+hypridle
+hyprpaper
+dunst
+fuzzel
+wofi
+waybar
+wl-clipboard
+ttf-font-awesome
+swaylock
+
+# Terminal & shell
+neovim
+starship
+zoxide
+zellij
+fzf
+fd
+ripgrep
+eza
+bat
+xh
+
+# Dev tools
+gdb
+valgrind
+avr-gcc
+avrdude
+arm-none-eabi-gcc
+arm-none-eabi-binutils
+arm-none-eabi-newlib
+uncrustify
+premake
+
+# Apps
+lazygit
+yazi
+qutebrowser
+zathura
+zathura-pdf-poppler
+rsync
+
+# Music
+mpd
+mpc
+rmpc
+beets
+ffmpeg
 
 # AUR
 hyprshot
+hyprpanel
 btctl
 catppuccin-gtk-theme-mocha
 wezterm-git
-wl-clipboard
+sheldon
+wlogout

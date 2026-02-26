@@ -1,19 +1,23 @@
-# Dotfiles managed with Dotter
+# Dotfiles
 
-# Getting started
+## Getting started
 
----
-
-Clone this repository
+Clone this repository:
 
 ```bash
 git clone git@github.com:Kindlewing/dotfiles.git ~/.dotfiles/
 ```
 
-Change into the newly clone dotfiles directory
+Run the symlink script to install:
 
 ```bash
-cd ~/.dotfiles/
+~/.dotfiles/.scripts/dotfile_symlink.sh
 ```
 
-Run `./dotter deploy` to install the dotfiles
+## Packages
+
+Install packages from `requirements.txt`:
+
+```bash
+~/.dotfiles/.scripts/package_install.sh
+```

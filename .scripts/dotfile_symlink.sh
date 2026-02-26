@@ -15,7 +15,8 @@ link_dotfiles() {
 	.typst) target="$HOME/.typst"
 		[[ -d "$target" ]] || mkdir -p "$target"
 		;;
-	*) target="$HOME" ;;
+	home) target="$HOME" ;;
+	*) return ;;
 	esac
 
 	echo "🔧 Linking into $target..."

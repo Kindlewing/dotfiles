@@ -27,8 +27,6 @@ export PATH="$HOME/.go/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
 export PATH="$HOME/.odin:$PATH"
-export PATH="/usr/bin:$PATH"
-export PATH="$HOME)/Development/flutter/bin:$PATH"
 export PATH="$HOME/.android-tools/bin:$PATH"
 export SUDO_EDITOR="/usr/bin/nvim"
 export VISUAL="/usr/bin/nvim"
@@ -49,19 +47,18 @@ HISTFILE=$HOME/.zsh_history
 source "$HOME/.aliases.zsh"
 source /etc/profile.d/debuginfod.sh
 
-eval "$(zoxide init --cmd cd zsh)"
-
-
-PATH="/home/hudson/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/hudson/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/hudson/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/hudson/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/hudson/perl5"; export PERL_MM_OPT;
+PATH="$HOME/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 
 # pnpm
-export PNPM_HOME="/home/hudson/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+eval "$(zoxide init --cmd cd zsh)"

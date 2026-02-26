@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 
 function notify_brightness() {
-  # Function to show brightness notification
   MAX_BRIGHTNESS=$(brightnessctl max)
-  CURRENT_BRIGHTNESS=$(brightnessctl get) 
+  CURRENT_BRIGHTNESS=$(brightnessctl get)
+  BRIGHTNESS_PERCENT=$(bc <<< "scale=0; $CURRENT_BRIGHTNESS / $MAX_BRIGHTNESS * 100")
 
-  BRIGHTNESS_PERCENT=$(bc <<< "scale=1; "$CURRENT_BRIGHTNESS" / "$MAX_BRIGHTNESS" * 100")
+  dunstify -h int:value:"$BRIGHTNESS_PERCENT" \
+    -i display-brightness-symbolic \
+    -r 9999 \
+    "Brightness" "${BRIGHTNESS_PERCENT}%"
 }
 
 # Check command line arguments

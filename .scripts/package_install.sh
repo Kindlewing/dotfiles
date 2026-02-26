@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-DOTDIR="/home/hudson/.dotfiles"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DOTDIR="$(dirname "$SCRIPT_DIR")"
 REQUIREMENTS_FILE="$DOTDIR/requirements.txt"
 
 # Check for required headers
@@ -27,25 +28,28 @@ if [[ -n "$pacman_packages" ]]; then
 	echo "$pacman_packages" | sudo pacman -S --needed -
 fi
 
-# Install AUR packages with paru or yay
+# Install AUR packages via git clone + makepkg
+install_aur() {
+	local pkg="$1"
+	local tmpdir
+	tmpdir=$(mktemp -d)
+	echo "📦 Installing AUR package: $pkg..."
+	git clone --depth 1 "https://aur.archlinux.org/${pkg}.git" "$tmpdir"
+	(cd "$tmpdir" && makepkg -si --needed --noconfirm)
+	rm -rf "$tmpdir"
+}
+
 if [[ -n "$aur_packages" ]]; then
-	if command -v paru &>/dev/null; then
-		echo "📦 Installing AUR packages with paru..."
-		echo "$aur_packages" | paru -S --needed -
-	elif command -v yay &>/dev/null; then
-		echo "📦 Installing AUR packages with yay..."
-		echo "$aur_packages" | yay -S --needed -
-	else
-		echo "⚠️  No AUR helper found (paru or yay). Please install AUR dependencies manually."
-		exit 1
-	fi
+	while IFS= read -r pkg; do
+		install_aur "$pkg"
+	done <<< "$aur_packages"
 fi
 
+# Build and install bossac from source
 echo "📦 Installing bossac..."
-git clone https://github.com/shumatech/BOSSA.git && cd BOSSA
-make bossac && echo "✔ bossac successfully built"
-echo "🔧 Copying the bossac binary to /usr/local/bin"
-sudo cp bin/bossac /usr/local/bin
-sudo chmod +x /usr/local/bin/bossac && echo "✔ bossac successfully installed"
-
-
+tmpdir=$(mktemp -d)
+git clone --depth 1 https://github.com/shumatech/BOSSA.git "$tmpdir"
+make -C "$tmpdir" bossac
+sudo install -m755 "$tmpdir/bin/bossac" /usr/local/bin/bossac
+rm -rf "$tmpdir"
+echo "✔ bossac installed to /usr/local/bin/bossac"
