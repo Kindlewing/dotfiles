@@ -65,7 +65,7 @@ return {
 			},
 		},
 		sources = {
-			default = { "lsp", "path", "snippets" },
+			default = { "lsp", "path", "snippets", "datastar" },
 		},
 		fuzzy = { implementation = "prefer_rust_with_warning" },
 	},
