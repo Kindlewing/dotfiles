@@ -66,6 +66,13 @@ return {
 		},
 		sources = {
 			default = { "lsp", "path", "snippets", "datastar" },
+			providers = {
+				datastar = {
+					name = "datastar",
+					module = "datastar.cmp_source",
+					score_offset = 100, -- prioritize Datastar completions
+				},
+			},
 		},
 		fuzzy = { implementation = "prefer_rust_with_warning" },
 	},
