@@ -48,6 +48,7 @@ vim.lsp.enable({
 	"neocmake",
 	"dockerls",
 	"marksman",
+	"emmet_language_server",
 })
 
 vim.cmd.colorscheme("everforest")

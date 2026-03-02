@@ -68,6 +68,7 @@ return {
 				"css-lsp",
 				"neocmakelsp",
 				"intelephense",
+				"emmet-language-server",
 			},
 			auto_update = true,
 			start_delay = 500,
