@@ -44,6 +44,7 @@ bat
 xh
 
 # Dev tools
+gopls
 gdb
 valgrind
 avr-gcc

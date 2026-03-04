@@ -15,6 +15,7 @@ return {
 			require("conform").setup({
 				formatters_by_ft = {
 					lua = { "stylua" },
+					go = { "goimports" },
 					c = { "clang-format" },
 					cpp = { "clang-format" },
 					nix = { "nixpkgs-format" },

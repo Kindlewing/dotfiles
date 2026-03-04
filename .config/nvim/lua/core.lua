@@ -19,18 +19,20 @@ opt.completeopt = { "menuone", "noselect" }
 opt.undofile = true
 opt.swapfile = false
 opt.autoread = true
+opt.updatetime = 300
 opt.cursorline = true
 opt.background = "dark"
 opt.colorcolumn = "90"
 
 vim.diagnostic.config({
 	virtual_text = false,
+	severity_sort = true,
 	signs = {
 		text = {
-			[vim.diagnostic.severity.ERROR] = " ",
-			[vim.diagnostic.severity.WARN] = " ",
-			[vim.diagnostic.severity.INFO] = " ",
-			[vim.diagnostic.severity.HINT] = " ",
+			[vim.diagnostic.severity.ERROR] = " ",
+			[vim.diagnostic.severity.WARN] = " ",
+			[vim.diagnostic.severity.INFO] = " ",
+			[vim.diagnostic.severity.HINT] = " ",
 		},
 	},
 })
@@ -41,6 +43,7 @@ vim.lsp.enable({
 	"pyright",
 	"tinymist",
 	"clangd",
+	"gopls",
 	"intelephense",
 	"ts_ls",
 	"html",
@@ -52,6 +55,18 @@ vim.lsp.enable({
 })
 
 vim.cmd.colorscheme("everforest")
+
+vim.api.nvim_create_autocmd("FileType", {
+	callback = function()
+		pcall(vim.treesitter.start)
+	end,
+})
+
+vim.api.nvim_create_autocmd("CursorHold", {
+	callback = function()
+		vim.diagnostic.open_float(nil, { focus = false })
+	end,
+})
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()

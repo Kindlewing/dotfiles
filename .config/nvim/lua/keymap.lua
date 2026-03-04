@@ -51,7 +51,21 @@ map("n", "gi", telescope.lsp_implementations, { desc = "Go to implementation" })
 map("n", "gr", telescope.lsp_references, { desc = "References" })
 
 -- lsp
-map("n", "K", vim.lsp.buf.hover, { desc = "Hover" })
+map("n", "K", function()
+	-- If currently in a float, go back to the previous window
+	if vim.api.nvim_win_get_config(0).relative ~= "" then
+		vim.cmd("wincmd p")
+		return
+	end
+	-- If a float is visible, focus it (makes docs "stay")
+	for _, win in ipairs(vim.api.nvim_list_wins()) do
+		if vim.api.nvim_win_get_config(win).relative ~= "" then
+			vim.api.nvim_set_current_win(win)
+			return
+		end
+	end
+	vim.lsp.buf.hover()
+end, { desc = "Hover" })
 map({ "n", "x" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
 
 -- diagnostics
@@ -62,6 +76,24 @@ map("n", "]e", diag(true, "ERROR"), { desc = "Next error" })
 map("n", "[e", diag(false, "ERROR"), { desc = "Prev error" })
 map("n", "]w", diag(true, "WARN"), { desc = "Next warning" })
 map("n", "[w", diag(false, "WARN"), { desc = "Prev warning" })
+
+-- live server
+map("n", "<leader>ls", function()
+	local git_root = vim.trim(vim.fn.system("git rev-parse --show-toplevel 2>/dev/null"))
+	if vim.v.shell_error ~= 0 or git_root == "" then
+		require("live-server").start()
+		return
+	end
+	for _, subdir in ipairs({ "", "src", "public", "www", "static" }) do
+		local candidate = subdir == "" and git_root or (git_root .. "/" .. subdir)
+		if vim.uv.fs_stat(candidate .. "/index.html") then
+			require("live-server").start(candidate)
+			return
+		end
+	end
+	require("live-server").start(git_root)
+end, { desc = "Start live server" })
+map("n", "<leader>lx", "<cmd>LiveServerStop<cr>", { desc = "Stop live server" })
 
 -- git
 map("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })

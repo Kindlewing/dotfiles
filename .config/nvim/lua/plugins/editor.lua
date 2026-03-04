@@ -56,6 +56,8 @@ return {
 				"stylua",
 				"prettier",
 				"lua-language-server",
+				"gopls",
+				"goimports",
 				"typescript-language-server",
 				"html-lsp",
 				"pyright",
@@ -105,9 +107,18 @@ return {
 				{ "<leader>c", group = "code" },
 				{ "<leader>f", group = "format" },
 				{ "<leader>g", group = "git" },
+				{ "<leader>l", group = "live server" },
 				{ "<leader>s", group = "search" },
 			},
 		},
+	},
+	{
+		"barrett-ruth/live-server.nvim",
+		build = "npm install -g live-server --prefix ~/.local",
+		cmd = { "LiveServerStart", "LiveServerStop" },
+		init = function()
+			vim.g.live_server = {}
+		end,
 	},
 	{
 		"folke/lazydev.nvim",
