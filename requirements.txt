@@ -8,6 +8,7 @@ gcc
 bc
 curl
 unzip
+fzf
 
 # System
 man-db

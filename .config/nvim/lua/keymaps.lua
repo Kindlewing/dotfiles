@@ -1,9 +1,13 @@
 local map = vim.keymap.set
-local telescope = require("telescope.builtin")
+
+local function fzf(picker)
+	return function()
+		require("fzf-lua")[picker]()
+	end
+end
 
 local function toggle_formatting()
 	vim.b.disable_autoformat = not vim.b.disable_autoformat
-	pcall(require("lualine").refresh)
 end
 
 local function diag(next, sev)
@@ -19,24 +23,9 @@ map({ "n", "x" }, "<leader>p", '"1p', { desc = "Paste from register 1" })
 map("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit" })
 map("n", "<leader>w", "<cmd>w<cr>", { desc = "Write" })
 
-map(
-	"n",
-	"H",
-	"<cmd>bprev<cr>",
-	{ silent = true, noremap = true, desc = "Prev buffer" }
-)
-map(
-	"n",
-	"L",
-	"<cmd>bnext<cr>",
-	{ silent = true, noremap = true, desc = "Next buffer" }
-)
-map(
-	"n",
-	"<leader>bd",
-	"<cmd>bdelete<cr>",
-	{ silent = true, noremap = true, desc = "Delete buffer" }
-)
+map("n", "H", "<cmd>bprev<cr>", { silent = true, noremap = true, desc = "Prev buffer" })
+map("n", "L", "<cmd>bnext<cr>", { silent = true, noremap = true, desc = "Next buffer" })
+map("n", "<leader>bd", "<cmd>bdelete<cr>", { silent = true, noremap = true, desc = "Delete buffer" })
 
 map("n", "j", [[v:count?'j':'gj']], { expr = true })
 map("n", "k", [[v:count?'k':'gk']], { expr = true })
@@ -50,39 +39,30 @@ map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Clear search" })
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
+-- file explorer
+map("n", "<leader>e", "<cmd>Explore<cr>", { desc = "Explorer" })
+
 -- formatting
 map("n", "<leader>ff", toggle_formatting, { desc = "Toggle format on save" })
 
--- telescope
-map("n", "<leader>sf", telescope.find_files, { desc = "Find files" })
-map("n", "<leader>sg", telescope.live_grep, { desc = "Live grep" })
-map(
-	"n",
-	"<leader>ss",
-	telescope.lsp_document_symbols,
-	{ desc = "Document symbols" }
-)
-map("n", "<leader>sd", telescope.diagnostics, { desc = "Diagnostics" })
-map("n", "<leader>sh", telescope.help_tags, { desc = "Help tags" })
+-- search
+map("n", "<leader>sf", fzf("files"), { desc = "Find files" })
+map("n", "<leader>sg", fzf("live_grep"), { desc = "Live grep" })
+map("n", "<leader>ss", fzf("lsp_document_symbols"), { desc = "Document symbols" })
+map("n", "<leader>sd", fzf("diagnostics_document"), { desc = "Diagnostics" })
+map("n", "<leader>sh", fzf("help_tags"), { desc = "Help tags" })
 
-map("n", "gd", telescope.lsp_definitions, { desc = "Go to definition" })
-map(
-	"n",
-	"gt",
-	telescope.lsp_type_definitions,
-	{ desc = "Go to type definition" }
-)
-map("n", "gi", telescope.lsp_implementations, { desc = "Go to implementation" })
-map("n", "gr", telescope.lsp_references, { desc = "References" })
+map("n", "gd", fzf("lsp_definitions"), { desc = "Go to definition" })
+map("n", "gt", fzf("lsp_typedefs"), { desc = "Go to type definition" })
+map("n", "gi", fzf("lsp_implementations"), { desc = "Go to implementation" })
+map("n", "gr", fzf("lsp_references"), { desc = "References" })
 
 -- lsp
 map("n", "K", function()
-	-- If currently in a float, go back to the previous window
 	if vim.api.nvim_win_get_config(0).relative ~= "" then
 		vim.cmd("wincmd p")
 		return
 	end
-	-- If a float is visible, focus it (makes docs "stay")
 	for _, win in ipairs(vim.api.nvim_list_wins()) do
 		if vim.api.nvim_win_get_config(win).relative ~= "" then
 			vim.api.nvim_set_current_win(win)
@@ -91,20 +71,10 @@ map("n", "K", function()
 	end
 	vim.lsp.buf.hover()
 end, { desc = "Hover" })
-map(
-	{ "n", "x" },
-	"<leader>ca",
-	vim.lsp.buf.code_action,
-	{ desc = "Code action" }
-)
+map({ "n", "x" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
 
 -- diagnostics
-map(
-	"n",
-	"<leader>cd",
-	vim.diagnostic.open_float,
-	{ desc = "Diagnostics float" }
-)
+map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Diagnostics float" })
 map("n", "]d", diag(true), { desc = "Next diagnostic" })
 map("n", "[d", diag(false), { desc = "Prev diagnostic" })
 map("n", "]e", diag(true, "ERROR"), { desc = "Next error" })
@@ -114,8 +84,7 @@ map("n", "[w", diag(false, "WARN"), { desc = "Prev warning" })
 
 -- live server
 map("n", "<leader>ls", function()
-	local git_root =
-		vim.trim(vim.fn.system("git rev-parse --show-toplevel 2>/dev/null"))
+	local git_root = vim.trim(vim.fn.system("git rev-parse --show-toplevel 2>/dev/null"))
 	if vim.v.shell_error ~= 0 or git_root == "" then
 		require("live-server").start()
 		return
@@ -133,15 +102,5 @@ map("n", "<leader>lx", "<cmd>LiveServerStop<cr>", { desc = "Stop live server" })
 
 -- git
 map("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })
-map(
-	"n",
-	"<leader>gp",
-	"<cmd>Gitsigns preview_hunk<cr>",
-	{ silent = true, noremap = true, desc = "Preview hunk" }
-)
-map(
-	"n",
-	"<leader>gb",
-	"<cmd>Gitsigns toggle_current_line_blame<cr>",
-	{ silent = true, noremap = true, desc = "Toggle blame" }
-)
+map("n", "<leader>gp", "<cmd>Gitsigns preview_hunk<cr>", { silent = true, noremap = true, desc = "Preview hunk" })
+map("n", "<leader>gb", "<cmd>Gitsigns toggle_current_line_blame<cr>", { silent = true, noremap = true, desc = "Toggle blame" })
