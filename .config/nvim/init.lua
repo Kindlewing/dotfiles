@@ -1,3 +1,4 @@
+local neovim = require("core")
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.g.everforest_background = "hard"
@@ -28,3 +29,4 @@ require("keymaps")
 require("autocmds")
 require("statusline")
 require("lsp")
+neovim.configure_signs()
