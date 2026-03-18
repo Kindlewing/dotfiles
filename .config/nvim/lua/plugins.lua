@@ -2,6 +2,9 @@ return {
 	-- colorscheme
 	{ "sainnhe/everforest", lazy = false, priority = 1000 },
 
+	-- statusline
+	{ "rebelot/heirline.nvim", lazy = false },
+
 	-- icons (used by fzf-lua)
 	{ "nvim-tree/nvim-web-devicons", opts = {} },
 
@@ -94,7 +97,13 @@ return {
 				formatters = {
 					biome = {
 						args = function(_, ctx)
-							return { "format", "--indent-style=space", "--indent-width=2", "--stdin-file-path", ctx.filename }
+							return {
+								"format",
+								"--indent-style=space",
+								"--indent-width=2",
+								"--stdin-file-path",
+								ctx.filename,
+							}
 						end,
 					},
 					yamlfmt = { prepend_args = { "-continue_on_error" } },
@@ -109,7 +118,9 @@ return {
 					},
 				},
 				format_on_save = function(bufnr)
-					if vim.b[bufnr].disable_autoformat then return nil end
+					if vim.b[bufnr].disable_autoformat then
+						return nil
+					end
 					local ft = vim.bo[bufnr].filetype
 					return {
 						timeout_ms = ft == "html" and 2000 or 200,
@@ -127,6 +138,14 @@ return {
 		build = ":TSUpdate",
 		dependencies = { "windwp/nvim-ts-autotag" },
 		config = function()
+			require("nvim-treesitter").setup({
+				ensure_installed = {
+					"go",
+					"c",
+					"html",
+					"css",
+				},
+			})
 			require("nvim-ts-autotag").setup({})
 		end,
 	},

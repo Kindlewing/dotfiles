@@ -1,6 +1,8 @@
 # Pacman
 base-devel
 git
+tree-sitter
+tree-sitter-cli
 make
 cmake
 clang
