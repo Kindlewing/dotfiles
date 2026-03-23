@@ -5,6 +5,20 @@ return {
 	-- statusline
 	{ "rebelot/heirline.nvim", lazy = false },
 
+	-- bufferline
+	{
+		"akinsho/bufferline.nvim",
+		lazy = false,
+		opts = {
+			options = {
+				diagnostics = "nvim_lsp",
+				separator_style = "slope",
+				show_buffer_close_icons = false,
+				show_close_icon = false,
+			},
+		},
+	},
+
 	-- icons (used by fzf-lua)
 	{ "nvim-tree/nvim-web-devicons", opts = {} },
 

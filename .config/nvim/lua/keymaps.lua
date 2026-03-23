@@ -23,8 +23,8 @@ map({ "n", "x" }, "<leader>p", '"1p', { desc = "Paste from register 1" })
 map("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit" })
 map("n", "<leader>w", "<cmd>w<cr>", { desc = "Write" })
 
-map("n", "H", "<cmd>bprev<cr>", { silent = true, noremap = true, desc = "Prev buffer" })
-map("n", "L", "<cmd>bnext<cr>", { silent = true, noremap = true, desc = "Next buffer" })
+map("n", "H", "<cmd>BufferLineCyclePrev<cr>", { silent = true, noremap = true, desc = "Prev buffer" })
+map("n", "L", "<cmd>BufferLineCycleNext<cr>", { silent = true, noremap = true, desc = "Next buffer" })
 map("n", "<leader>bd", "<cmd>bdelete<cr>", { silent = true, noremap = true, desc = "Delete buffer" })
 
 map("n", "j", [[v:count?'j':'gj']], { expr = true })
