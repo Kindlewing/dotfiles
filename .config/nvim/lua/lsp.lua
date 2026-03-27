@@ -9,4 +9,5 @@ vim.lsp.enable({
 	"cssls",
 	"emmet_language_server",
 	"marksman",
+	"intelephense",
 })

@@ -27,6 +27,5 @@ require("lazy").setup({
 require("configs")
 require("keymaps")
 require("autocmds")
-require("statusline")
 require("lsp")
 neovim.configure_signs()
