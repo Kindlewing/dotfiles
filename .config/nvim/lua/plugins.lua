@@ -61,9 +61,6 @@ return {
 		end,
 	},
 
-	-- icons (used by fzf-lua)
-	{ "nvim-tree/nvim-web-devicons", opts = {} },
-
 	-- completion
 	{
 		"saghen/blink.cmp",
@@ -114,18 +111,10 @@ return {
 	},
 
 	-- fuzzy search
-	{
-		"ibhagwan/fzf-lua",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		opts = {},
-	},
+	{ "ibhagwan/fzf-lua", opts = {} },
 
 	-- git
 	{ "lewis6991/gitsigns.nvim", opts = {} },
-	{
-		"kdheepak/lazygit.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
-	},
 
 	-- formatting
 	{

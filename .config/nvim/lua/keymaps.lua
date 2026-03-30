@@ -101,6 +101,23 @@ end, { desc = "Start live server" })
 map("n", "<leader>lx", "<cmd>LiveServerStop<cr>", { desc = "Stop live server" })
 
 -- git
-map("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })
+map("n", "<leader>gg", function()
+	local buf = vim.api.nvim_create_buf(false, true)
+	local win = vim.api.nvim_open_win(buf, true, {
+		relative = "editor",
+		width = math.floor(vim.o.columns * 0.9),
+		height = math.floor(vim.o.lines * 0.9),
+		row = math.floor(vim.o.lines * 0.05),
+		col = math.floor(vim.o.columns * 0.05),
+		style = "minimal",
+		border = "rounded",
+	})
+	vim.fn.termopen("lazygit", {
+		on_exit = function()
+			vim.api.nvim_win_close(win, true)
+		end,
+	})
+	vim.cmd("startinsert")
+end, { desc = "LazyGit" })
 map("n", "<leader>gp", "<cmd>Gitsigns preview_hunk<cr>", { silent = true, noremap = true, desc = "Preview hunk" })
 map("n", "<leader>gb", "<cmd>Gitsigns toggle_current_line_blame<cr>", { silent = true, noremap = true, desc = "Toggle blame" })

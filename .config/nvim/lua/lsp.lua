@@ -1,13 +1,11 @@
 vim.lsp.enable({
 	"lua_ls",
 	"bashls",
-	"pyright",
 	"clangd",
 	"gopls",
 	"ts_ls",
 	"html",
 	"cssls",
 	"emmet_language_server",
-	"marksman",
 	"intelephense",
 })
