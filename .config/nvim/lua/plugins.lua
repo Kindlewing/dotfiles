@@ -232,18 +232,21 @@ return {
 				},
 			})
 			wk.add({
-				{ "<leader>b", group = "Buffer",      icon = "󰓩" },
-				{ "<leader>c", group = "Code",        icon = "" },
-				{ "<leader>f", group = "Format",      icon = "󰉢" },
-				{ "<leader>g", group = "Git",         icon = "" },
+				{ "<leader>b", group = "Buffer", icon = "󰓩" },
+				{ "<leader>c", group = "Code", icon = "" },
+				{ "<leader>f", group = "Format", icon = "󰉢" },
+				{ "<leader>g", group = "Git", icon = "" },
 				{ "<leader>l", group = "Live Server", icon = "󰖟" },
-				{ "<leader>s", group = "Search",      icon = "" },
-				{ "]",         group = "Next",        icon = "" },
-				{ "[",         group = "Prev",        icon = "" },
-				{ "g",         group = "Go to",       icon = "" },
+				{ "<leader>s", group = "Search", icon = "" },
+				{ "]", group = "Next", icon = "" },
+				{ "[", group = "Prev", icon = "" },
+				{ "g", group = "Go to", icon = "" },
 			})
 		end,
 	},
+
+	-- compiler explorer
+	{ "krady21/compiler-explorer.nvim" },
 
 	-- LSP installer
 	{ "williamboman/mason.nvim", opts = {} },
