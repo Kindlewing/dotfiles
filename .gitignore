@@ -11,5 +11,12 @@ lazygit/state.yml
 database
 .config/mpd/playlists/Lofi.m3u
 .config/qutebrowser/__pycache__
+.local/share/claude/
+.local/share/dev.psysonic.player/
+.local/share/hyprland/
+.local/share/nvim/
+.local/share/sddm/
+.local/share/sheldon/
+.local/share/zoxide/
 
 !requirements.txt
