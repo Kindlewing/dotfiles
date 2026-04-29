@@ -19,7 +19,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	spec = { { import = "plugins" } },
-	install = { colorscheme = { "everforest" } },
+	install = { colorscheme = { "gruvbox-material" } },
 	checker = { enabled = false },
 	change_detection = { enabled = false },
 })

@@ -3,12 +3,99 @@
       xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
       xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
 >
-  <bookmark href="file:///home/hudson/development/resume/hudson_finn_resume.pdf" added="2026-04-25T01:45:40.164764Z" modified="2026-04-25T01:49:13.294306Z" visited="2026-04-25T01:45:40.164769Z">
+  <bookmark href="file:///home/hudson/development/resume/hudson_finn_resume.pdf" added="2026-04-25T01:45:40.164764Z" modified="2026-04-28T23:20:01.748937Z" visited="2026-04-25T01:45:40.164769Z">
     <info>
       <metadata owner="http://freedesktop.org">
         <mime:mime-type type="application/pdf"/>
         <bookmark:applications>
-          <bookmark:application name="Zen" exec="&apos;zen %u&apos;" modified="2026-04-25T01:49:13.294295Z" count="5"/>
+          <bookmark:application name="Zen" exec="&apos;zen %u&apos;" modified="2026-04-25T23:32:03.646427Z" count="6"/>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;xdg-desktop-portal-gtk %u&apos;" modified="2026-04-28T23:20:01.748931Z" count="3"/>
+          <bookmark:application name="zen-browser" exec="&apos;gio open %u&apos;" modified="2026-04-28T23:20:01.737837Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/hudson/development/resume/cover_letters/wealth_counsel.pdf" added="2026-04-25T23:42:09.771367Z" modified="2026-04-25T23:42:09.771389Z" visited="2026-04-25T23:42:09.771373Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Zen" exec="&apos;zen %u&apos;" modified="2026-04-25T23:42:09.771380Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/hudson/documents" added="2026-04-26T23:06:32.948935Z" modified="2026-04-26T23:06:32.960195Z" visited="2026-04-26T23:06:32.948940Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="org.chromium.Chromium" exec="&apos;gio open %u&apos;" modified="2026-04-26T23:06:32.948946Z" count="1"/>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;xdg-desktop-portal-gtk %u&apos;" modified="2026-04-26T23:06:32.960188Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/hudson/documents/The%20Linux%20Command%20Line,%207th%20Internet%20Edition%20-%20TLCL-25.12.pdf" added="2026-04-28T17:30:02.404789Z" modified="2026-04-28T17:30:02.654818Z" visited="2026-04-28T17:30:02.404793Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;gio open %u&apos;" modified="2026-04-28T17:30:02.654812Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/hudson/Downloads/dwm_gruvbox_1.png" added="2026-04-28T18:46:58.295186Z" modified="2026-04-28T18:47:15.795795Z" visited="2026-04-28T18:46:58.295189Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;xdg-desktop-portal-gtk %u&apos;" modified="2026-04-28T18:47:15.795789Z" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/hudson/Downloads/gruvbox_dock.png" added="2026-04-28T23:47:59.015731Z" modified="2026-04-28T23:47:59.265768Z" visited="2026-04-28T23:47:59.015735Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;xdg-desktop-portal-gtk %u&apos;" modified="2026-04-28T23:47:59.015741Z" count="1"/>
+          <bookmark:application name="zen-browser" exec="&apos;gio open %u&apos;" modified="2026-04-28T23:47:59.265760Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/hudson/Downloads/girl-reading-book.png" added="2026-04-28T23:48:16.204547Z" modified="2026-04-28T23:48:16.454825Z" visited="2026-04-28T23:48:16.204552Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;xdg-desktop-portal-gtk %u&apos;" modified="2026-04-28T23:48:16.204557Z" count="1"/>
+          <bookmark:application name="zen-browser" exec="&apos;gio open %u&apos;" modified="2026-04-28T23:48:16.454817Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/hudson/Downloads/house-garden.png" added="2026-04-28T23:48:39.709485Z" modified="2026-04-28T23:48:39.959527Z" visited="2026-04-28T23:48:39.709489Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;xdg-desktop-portal-gtk %u&apos;" modified="2026-04-28T23:48:39.709493Z" count="1"/>
+          <bookmark:application name="zen-browser" exec="&apos;gio open %u&apos;" modified="2026-04-28T23:48:39.959522Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/hudson/Downloads/dryhope-White_Oak.jpg" added="2026-04-28T23:49:34.191143Z" modified="2026-04-28T23:49:34.441563Z" visited="2026-04-28T23:49:34.191148Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;xdg-desktop-portal-gtk %u&apos;" modified="2026-04-28T23:49:34.191155Z" count="1"/>
+          <bookmark:application name="zen-browser" exec="&apos;gio open %u&apos;" modified="2026-04-28T23:49:34.441555Z" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>
