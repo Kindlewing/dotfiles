@@ -1,0 +1,54 @@
+directory: ~/Music/library
+library: ~/Music/library.db
+import:
+  move: yes
+  write: yes
+  incremental: yes
+  log: beetslog.txt
+art_filename: albumart
+ui:
+  color: yes
+paths:
+  default: $albumartist/$album%aunique{}/$track $title
+  singleton: $albumartist/Singles/$title
+  comp: Compilations/$album%aunique{}/$track $title
+  albumtype:soundtrack: Soundtracks/$album%aunique{}/$track $title
+plugins: musicbrainz fetchart embedart lyrics lastgenre rewrite ihate duplicates convert
+embedart:
+  auto: yes
+  ifempty: no
+lastgenre:
+  count: 5
+  whitelist: yes
+  min_weight: 10
+  source: album
+  force: yes
+  auto: yes
+  separator: ", "
+  prefer_specific: no
+fetchart:
+  auto: yes
+  enforce_ratio: yes
+  min_width: 250
+  cautious: no
+  cover_names:
+    - cover
+    - front
+    - art
+    - album
+    - folder
+  sources:
+    - filesystem
+    - coverart
+    - itunes
+    - amazon
+    - albumart
+rewrite: {}
+duplicates: {}
+lyrics:
+  auto: yes
+  force: no
+  synced: yes
+  dist_thresh: 0.11
+  sources:
+    - lrclib

@@ -1,0 +1,23 @@
+---
+- name: Install waybar
+  become: true
+  community.general.pacman:
+    name: waybar
+    state: present
+
+- name: Stat existing waybar config
+  ansible.builtin.stat:
+    path: "{{ ansible_facts['user_dir'] }}/.config/waybar"
+  register: waybar_stat
+
+- name: Remove existing waybar config directory if not a symlink
+  ansible.builtin.file:
+    path: "{{ ansible_facts['user_dir'] }}/.config/waybar"
+    state: absent
+  when: waybar_stat.stat.exists and not waybar_stat.stat.islnk
+
+- name: Symlink waybar config
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/waybar"
+    dest: "{{ ansible_facts['user_dir'] }}/.config/waybar"
+    state: link

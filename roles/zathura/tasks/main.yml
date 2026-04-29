@@ -1,0 +1,15 @@
+---
+- name: Install zathura
+  become: true
+  community.general.pacman:
+    name:
+      - zathura
+      - zathura-pdf-poppler
+    state: present
+
+- name: Symlink zathura config
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/zathura"
+    dest: "{{ ansible_facts['user_dir'] }}/.config/zathura"
+    state: link
+    force: true

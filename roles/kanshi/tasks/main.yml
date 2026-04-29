@@ -1,0 +1,23 @@
+---
+- name: Install kanshi
+  become: true
+  community.general.pacman:
+    name: kanshi
+    state: present
+
+- name: Stat existing kanshi config
+  ansible.builtin.stat:
+    path: "{{ ansible_facts['user_dir'] }}/.config/kanshi"
+  register: kanshi_stat
+
+- name: Remove existing kanshi config directory if not a symlink
+  ansible.builtin.file:
+    path: "{{ ansible_facts['user_dir'] }}/.config/kanshi"
+    state: absent
+  when: kanshi_stat.stat.exists and not kanshi_stat.stat.islnk
+
+- name: Symlink kanshi config
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/kanshi"
+    dest: "{{ ansible_facts['user_dir'] }}/.config/kanshi"
+    state: link

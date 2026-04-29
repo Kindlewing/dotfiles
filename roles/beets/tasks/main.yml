@@ -1,0 +1,19 @@
+---
+- name: Install beets
+  become: true
+  community.general.pacman:
+    name: beets
+    state: present
+
+- name: Ensure beets config directory exists
+  ansible.builtin.file:
+    path: "{{ ansible_facts['user_dir'] }}/.config/beets"
+    state: directory
+    mode: '0755'
+
+- name: Symlink beets config
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/beets/config.yaml"
+    dest: "{{ ansible_facts['user_dir'] }}/.config/beets/config.yaml"
+    state: link
+    force: true

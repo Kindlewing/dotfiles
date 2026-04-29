@@ -1,0 +1,15 @@
+---
+- name: Dotfiles
+  hosts: localhost
+  connection: local
+  roles:
+    - system
+    - niri
+    - kanshi
+    - waybar
+    - neovim
+    - starship
+    - terminal
+    - zathura
+    - beets
+    - greeter

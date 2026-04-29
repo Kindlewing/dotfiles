@@ -1,0 +1,29 @@
+---
+- name: Update system
+  become: true
+  community.general.pacman:
+    update_cache: true
+    upgrade: true
+
+- name: Install system packages
+  become: true
+  community.general.pacman:
+    name:
+      - base-devel
+      - rsync
+      - btop
+      - fzf
+      - tree
+      - swaybg
+      - pipewire
+      - wireplumber
+      - swaync
+      - libnotify
+      - man-db
+      - man-pages
+      - zsh
+      - direnv
+      - brightnessctl
+      - xdg-desktop-portal
+      - xdg-desktop-portal-gnome
+    state: present
