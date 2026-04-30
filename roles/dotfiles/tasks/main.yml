@@ -92,6 +92,10 @@
     force: true
     follow: false
 
+
+# ============================================================
+# Shell 
+# ============================================================
 - name: Symlink starship config
   ansible.builtin.file:
     src: "{{ role_path }}/files/starship.toml"
@@ -100,6 +104,13 @@
     force: true
     follow: false
 
+- name: Symlink zsh
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/.zshrc"
+    dest: "{{ ansible_facts['user_dir'] }}/.zshrc"
+    state: link
+    force: true
+    follow: false
 # ============================================================
 # Neovim (directory symlink excluded — lazy-lock.json is
 # written at runtime and should not be tracked)
