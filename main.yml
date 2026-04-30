@@ -4,12 +4,4 @@
   connection: local
   roles:
     - system
-    - niri
-    - kanshi
-    - waybar
-    - neovim
-    - starship
-    - terminal
-    - zathura
-    - beets
-    - greeter
+    - dotfiles

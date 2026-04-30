@@ -5,25 +5,57 @@
     update_cache: true
     upgrade: true
 
-- name: Install system packages
+- name: Install base packages
   become: true
   community.general.pacman:
     name:
       - base-devel
       - rsync
-      - btop
-      - fzf
-      - tree
-      - swaybg
-      - pipewire
-      - wireplumber
-      - swaync
-      - libnotify
       - man-db
       - man-pages
+    state: present
+
+- name: Install shell packages
+  become: true
+  community.general.pacman:
+    name:
       - zsh
       - direnv
+      - fzf
+      - starship
+    state: present
+
+- name: Install desktop packages
+  become: true
+  community.general.pacman:
+    name:
+      - niri
+      - waybar
+      - kanshi
+      - swaybg
+      - swaync
+      - libnotify
+      - greetd
       - brightnessctl
       - xdg-desktop-portal
       - xdg-desktop-portal-gnome
+    state: present
+
+- name: Install audio packages
+  become: true
+  community.general.pacman:
+    name:
+      - pipewire
+      - wireplumber
+    state: present
+
+- name: Install applications
+  become: true
+  community.general.pacman:
+    name:
+      - neovim
+      - btop
+      - foot
+      - zathura
+      - beets
     state: present

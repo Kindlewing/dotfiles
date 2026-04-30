@@ -1,0 +1,153 @@
+---
+# ============================================================
+# System configuration (greeter)
+# ============================================================
+- name: Create greeter user
+  become: true
+  ansible.builtin.user:
+    name: greeter
+    system: true
+    create_home: false
+    shell: /sbin/nologin
+    groups: video
+    append: true
+
+- name: Deploy greetd config
+  become: true
+  ansible.builtin.copy:
+    src: greetd/config.toml
+    dest: /etc/greetd/config.toml
+    mode: "0644"
+
+- name: Enable and start greetd service
+  become: true
+  ansible.builtin.systemd_service:
+    name: greetd.service
+    enabled: true
+    state: started
+
+# ============================================================
+# Stat existing config directories that will be dir-symlinked
+# ============================================================
+- name: Stat existing config directories
+  ansible.builtin.stat:
+    path: "{{ ansible_facts['user_dir'] }}/.config/{{ item }}"
+  register: config_stats
+  loop:
+    - foot
+    - kanshi
+    - niri
+    - waybar
+    - zathura
+
+- name: Remove existing config directories if not symlinks
+  ansible.builtin.file:
+    path: "{{ ansible_facts['user_dir'] }}/.config/{{ item.item }}"
+    state: absent
+  when: item.stat.exists and not item.stat.islnk
+  loop: "{{ config_stats.results }}"
+  loop_control:
+    label: "{{ item.item }}"
+
+# ============================================================
+# Symlink config directories
+# ============================================================
+- name: Symlink foot config directory
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/foot"
+    dest: "{{ ansible_facts['user_dir'] }}/.config/foot"
+    state: link
+    force: true
+    follow: false
+
+- name: Symlink kanshi config directory
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/kanshi"
+    dest: "{{ ansible_facts['user_dir'] }}/.config/kanshi"
+    state: link
+    force: true
+    follow: false
+
+- name: Symlink niri config directory
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/niri"
+    dest: "{{ ansible_facts['user_dir'] }}/.config/niri"
+    state: link
+    force: true
+    follow: false
+
+- name: Symlink waybar config directory
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/waybar"
+    dest: "{{ ansible_facts['user_dir'] }}/.config/waybar"
+    state: link
+    force: true
+    follow: false
+
+- name: Symlink zathura config directory
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/zathura"
+    dest: "{{ ansible_facts['user_dir'] }}/.config/zathura"
+    state: link
+    force: true
+    follow: false
+
+- name: Symlink starship config
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/starship.toml"
+    dest: "{{ ansible_facts['user_dir'] }}/.config/starship.toml"
+    state: link
+    force: true
+    follow: false
+
+# ============================================================
+# Neovim (directory symlink excluded — lazy-lock.json is
+# written at runtime and should not be tracked)
+# ============================================================
+- name: Ensure nvim config directory exists
+  ansible.builtin.file:
+    path: "{{ ansible_facts['user_dir'] }}/.config/nvim"
+    state: directory
+    mode: '0755'
+
+- name: Symlink nvim init.lua
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/nvim/init.lua"
+    dest: "{{ ansible_facts['user_dir'] }}/.config/nvim/init.lua"
+    state: link
+    force: true
+    follow: false
+
+- name: Symlink nvim lua directory
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/nvim/lua"
+    dest: "{{ ansible_facts['user_dir'] }}/.config/nvim/lua"
+    state: link
+    force: true
+    follow: false
+
+- name: Symlink nvim lsp directory
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/nvim/lsp"
+    dest: "{{ ansible_facts['user_dir'] }}/.config/nvim/lsp"
+    state: link
+    force: true
+    follow: false
+
+# ============================================================
+# Beets (directory symlink excluded — beets writes library.db
+# at runtime and should not be tracked)
+# ============================================================
+- name: Ensure beets config directory exists
+  ansible.builtin.file:
+    path: "{{ ansible_facts['user_dir'] }}/.config/beets"
+    state: directory
+    mode: '0755'
+
+- name: Symlink beets config
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/beets/config.yaml"
+    dest: "{{ ansible_facts['user_dir'] }}/.config/beets/config.yaml"
+    state: link
+    force: true
+    follow: false
