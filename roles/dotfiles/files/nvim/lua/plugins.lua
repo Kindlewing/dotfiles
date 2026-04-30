@@ -129,10 +129,10 @@ return {
 		"ibhagwan/fzf-lua",
 		opts = {
 			files = {
-				fd_opts = "--follow",
+				fd_opts = "--follow --type f --hidden --exclude .git",
 			},
 			grep = {
-				rg_opts = "--follow",
+				rg_opts = "--follow --hidden --exclude .git",
 			},
 		},
 	},
@@ -306,8 +306,24 @@ return {
 		opts = {
 			ensure_installed = {
 				"stylua",
+				"prettier",
+				"lua-language-server",
+				"html-lsp",
+				"ansible-language-server",
+				"ansible-lint",
+				"qmlls",
+				"pyright",
+				"clangd",
+				"clang-format",
+				"tinymist",
+				"glsl_analyzer",
+				"bash-language-server",
+				"css-lsp",
+				"intelephense",
 			},
 		},
+		auto_update = true,
+		start_delay = 500,
 	},
 
 	-- live server
