@@ -1,10 +1,8 @@
----
 - name: Update system
   become: true
   community.general.pacman:
     update_cache: true
     upgrade: true
-
 - name: Install base packages
   become: true
   community.general.pacman:
@@ -14,7 +12,6 @@
       - man-db
       - man-pages
     state: present
-
 - name: Install shell packages
   become: true
   community.general.pacman:
@@ -28,7 +25,6 @@
       - fzf
       - starship
     state: present
-
 - name: Install desktop packages
   become: true
   community.general.pacman:
@@ -44,7 +40,6 @@
       - xdg-desktop-portal
       - xdg-desktop-portal-gnome
     state: present
-
 - name: Install audio packages
   become: true
   community.general.pacman:
@@ -52,7 +47,6 @@
       - pipewire
       - wireplumber
     state: present
-
 - name: Install applications
   become: true
   community.general.pacman:
@@ -62,4 +56,5 @@
       - foot
       - zathura
       - beets
+      - unixodbc
     state: present

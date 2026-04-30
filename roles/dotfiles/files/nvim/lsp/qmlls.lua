@@ -1,6 +1,6 @@
 ---@type vim.lsp.Config
 return {
-  cmd = { 'qmlls6' },
+  cmd = { 'qmlls', '-I', '/usr/lib/qt6/qml' },
   filetypes = { 'qml', 'qmljs' },
   root_markers = { '.git' },
 }

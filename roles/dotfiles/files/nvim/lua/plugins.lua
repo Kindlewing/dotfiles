@@ -289,7 +289,20 @@ return {
 	},
 
 	-- LSP installer
-	{ "williamboman/mason.nvim", opts = {} },
+	{
+		"williamboman/mason.nvim",
+		config = function()
+			require("mason").setup()
+			local registry = require("mason-registry")
+			local ensure_installed = { "ansible-language-server", "qmlls" }
+			for _, name in ipairs(ensure_installed) do
+				local ok, pkg = pcall(registry.get_package, name)
+				if ok and not pkg:is_installed() then
+					pkg:install()
+				end
+			end
+		end,
+	},
 
 	-- live server
 	{
