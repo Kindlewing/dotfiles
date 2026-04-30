@@ -1,4 +1,7 @@
----
+- name: Debug role_path
+  ansible.builtin.debug:
+    msg: "{{ role_path }}"
+#
 # ============================================================
 # System configuration (greeter)
 # ============================================================
@@ -11,21 +14,18 @@
     shell: /sbin/nologin
     groups: video
     append: true
-
 - name: Deploy greetd config
   become: true
   ansible.builtin.copy:
     src: greetd/config.toml
     dest: /etc/greetd/config.toml
     mode: "0644"
-
 - name: Enable and start greetd service
   become: true
   ansible.builtin.systemd_service:
     name: greetd.service
     enabled: true
     state: started
-
 # ============================================================
 # Stat existing config directories that will be dir-symlinked
 # ============================================================
@@ -39,7 +39,6 @@
     - niri
     - waybar
     - zathura
-
 - name: Remove existing config directories if not symlinks
   ansible.builtin.file:
     path: "{{ ansible_facts['user_dir'] }}/.config/{{ item.item }}"
@@ -48,7 +47,6 @@
   loop: "{{ config_stats.results }}"
   loop_control:
     label: "{{ item.item }}"
-
 # ============================================================
 # Symlink config directories
 # ============================================================
@@ -59,7 +57,6 @@
     state: link
     force: true
     follow: false
-
 - name: Symlink kanshi config directory
   ansible.builtin.file:
     src: "{{ role_path }}/files/kanshi"
@@ -67,7 +64,6 @@
     state: link
     force: true
     follow: false
-
 - name: Symlink niri config directory
   ansible.builtin.file:
     src: "{{ role_path }}/files/niri"
@@ -75,7 +71,6 @@
     state: link
     force: true
     follow: false
-
 - name: Symlink waybar config directory
   ansible.builtin.file:
     src: "{{ role_path }}/files/waybar"
@@ -83,7 +78,6 @@
     state: link
     force: true
     follow: false
-
 - name: Symlink zathura config directory
   ansible.builtin.file:
     src: "{{ role_path }}/files/zathura"
@@ -91,8 +85,6 @@
     state: link
     force: true
     follow: false
-
-
 # ============================================================
 # Shell 
 # ============================================================
@@ -103,7 +95,6 @@
     state: link
     force: true
     follow: false
-
 - name: Symlink zsh
   ansible.builtin.file:
     src: "{{ role_path }}/files/.zshrc"
@@ -120,7 +111,6 @@
     path: "{{ ansible_facts['user_dir'] }}/.config/nvim"
     state: directory
     mode: '0755'
-
 - name: Symlink nvim init.lua
   ansible.builtin.file:
     src: "{{ role_path }}/files/nvim/init.lua"
@@ -128,7 +118,6 @@
     state: link
     force: true
     follow: false
-
 - name: Symlink nvim lua directory
   ansible.builtin.file:
     src: "{{ role_path }}/files/nvim/lua"
@@ -136,7 +125,6 @@
     state: link
     force: true
     follow: false
-
 - name: Symlink nvim lsp directory
   ansible.builtin.file:
     src: "{{ role_path }}/files/nvim/lsp"
@@ -144,7 +132,6 @@
     state: link
     force: true
     follow: false
-
 # ============================================================
 # Beets (directory symlink excluded — beets writes library.db
 # at runtime and should not be tracked)
@@ -154,7 +141,6 @@
     path: "{{ ansible_facts['user_dir'] }}/.config/beets"
     state: directory
     mode: '0755'
-
 - name: Symlink beets config
   ansible.builtin.file:
     src: "{{ role_path }}/files/beets/config.yaml"
@@ -162,4 +148,3 @@
     state: link
     force: true
     follow: false
-
