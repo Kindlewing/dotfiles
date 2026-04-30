@@ -1,21 +1,21 @@
-local neovim = require('core')
+local neovim = require("core")
 return {
 	-- colorscheme
 	{ "sainnhe/everforest", lazy = false, priority = 1000 },
 
-    {
-      'sainnhe/gruvbox-material',
-      lazy = false,
-      priority = 1000,
-      config = function()
-        -- Optionally configure and load the colorscheme
-        -- directly inside the plugin declaration.
-        vim.g.gruvbox_material_enable_italic = true
-		vim.g.gruvbox_material_transparent_background = 2
-        vim.cmd.colorscheme(neovim.config.theme)
-        vim.api.nvim_set_hl(0, "CursorLine", { bg = "#32302f", blend = 80 })
-      end
-    },
+	{
+		"sainnhe/gruvbox-material",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			-- Optionally configure and load the colorscheme
+			-- directly inside the plugin declaration.
+			vim.g.gruvbox_material_enable_italic = true
+			vim.g.gruvbox_material_transparent_background = 2
+			vim.cmd.colorscheme(neovim.config.theme)
+			vim.api.nvim_set_hl(0, "CursorLine", { bg = "#32302f", blend = 80 })
+		end,
+	},
 	-- statusline + tabline
 	{
 		"nvim-lualine/lualine.nvim",
@@ -125,8 +125,8 @@ return {
 	},
 
 	-- fuzzy search
-	{ 
-		"ibhagwan/fzf-lua", 
+	{
+		"ibhagwan/fzf-lua",
 		opts = {
 			files = {
 				fd_opts = "--follow",
@@ -288,20 +288,26 @@ return {
 		},
 	},
 
-	-- LSP installer
 	{
-		"williamboman/mason.nvim",
-		config = function()
-			require("mason").setup()
-			local registry = require("mason-registry")
-			local ensure_installed = { "ansible-language-server", "qmlls" }
-			for _, name in ipairs(ensure_installed) do
-				local ok, pkg = pcall(registry.get_package, name)
-				if ok and not pkg:is_installed() then
-					pkg:install()
-				end
-			end
-		end,
+		"mason-org/mason.nvim",
+		opts = {
+			ui = {
+				icons = {
+					package_installed = "✓",
+					package_pending = "➜",
+					package_uninstalled = "✗",
+				},
+			},
+		},
+	},
+
+	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		opts = {
+			ensure_installed = {
+				"stylua",
+			},
+		},
 	},
 
 	-- live server
