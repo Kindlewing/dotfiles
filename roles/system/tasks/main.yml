@@ -22,6 +22,8 @@
       - zsh
       - zsh-autosuggestions
       - zsh-syntax-highlighting
+      - quickshell
+      - yamlfmt
       - direnv
       - fzf
       - starship

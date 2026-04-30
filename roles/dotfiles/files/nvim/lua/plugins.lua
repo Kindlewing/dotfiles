@@ -125,7 +125,17 @@ return {
 	},
 
 	-- fuzzy search
-	{ "ibhagwan/fzf-lua", opts = {} },
+	{ 
+		"ibhagwan/fzf-lua", 
+		opts = {
+			files = {
+				fd_opts = "--follow",
+			},
+			grep = {
+				rg_opts = "--follow",
+			},
+		},
+	},
 
 	-- git
 	{ "lewis6991/gitsigns.nvim", opts = {} },

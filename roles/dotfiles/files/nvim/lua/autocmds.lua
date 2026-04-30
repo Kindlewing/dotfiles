@@ -48,3 +48,21 @@ vim.api.nvim_create_autocmd("FileType", {
 		map("n", "l", "<CR>", { buffer = true, remap = true })
 	end,
 })
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+    pattern = {
+        "*/playbooks/*.yml",
+        "*/playbooks/*.yaml",
+        "*/roles/*.yml",
+        "*/roles/*.yaml",
+        "*/tasks/*.yml",
+        "*/tasks/*.yaml",
+        "*/handlers/*.yml",
+        "*/handlers/*.yaml",
+        "site.yml",
+        "site.yaml",
+    },
+    callback = function()
+        vim.bo.filetype = "yaml.ansible"
+    end,
+})

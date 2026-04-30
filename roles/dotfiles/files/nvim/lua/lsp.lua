@@ -8,5 +8,5 @@ vim.lsp.enable({
 	"cssls",
 	"emmet_language_server",
 	"intelephense",
-	"ansiblels",
+	"ansible-language-server",
 })
