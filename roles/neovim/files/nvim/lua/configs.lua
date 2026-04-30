@@ -35,5 +35,3 @@ vim.diagnostic.config({
 		},
 	},
 })
-
-vim.cmd.colorscheme("gruvbox-material")

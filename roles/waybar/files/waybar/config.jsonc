@@ -5,7 +5,6 @@
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
-    "modules-left": ["niri/workspaces"],
     "modules-center": ["clock"],
     "modules-right": ["tray", "custom/vpn", "network", "battery", "pulseaudio#microphone", "pulseaudio", "backlight"],
     "niri/workspaces": {

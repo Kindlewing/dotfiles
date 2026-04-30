@@ -1,5 +1,6 @@
 local neovim = {}
 neovim.config = {
+	theme = "gruvbox-material",
 	icons = {
 		misc = {
 			dots = "󰇘",

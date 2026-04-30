@@ -1,3 +1,4 @@
+local neovim = require('core')
 return {
 	-- colorscheme
 	{ "sainnhe/everforest", lazy = false, priority = 1000 },
@@ -11,7 +12,7 @@ return {
         -- directly inside the plugin declaration.
         vim.g.gruvbox_material_enable_italic = true
 		vim.g.gruvbox_material_transparent_background = 2
-        vim.cmd.colorscheme('gruvbox-material')
+        vim.cmd.colorscheme(neovim.config.theme)
         vim.api.nvim_set_hl(0, "CursorLine", { bg = "#32302f", blend = 80 })
       end
     },
@@ -46,7 +47,7 @@ return {
 
 			require("lualine").setup({
 				options = {
-					theme = "everforest",
+					theme = neovim.config.theme,
 					globalstatus = true,
 					section_separators = { left = "", right = "" },
 					component_separators = { left = "", right = "" },

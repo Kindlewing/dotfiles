@@ -2,7 +2,9 @@
 - name: Install foot
   become: true
   community.general.pacman:
-    name: foot
+    name: 
+      - foot
+      - foot-terminfo
     state: present
 
 - name: Ensure foot config directory exists
