@@ -4,6 +4,5 @@ import Modules
 
 ShellRoot {
     id: shell_root
-
     Bar {}
 }

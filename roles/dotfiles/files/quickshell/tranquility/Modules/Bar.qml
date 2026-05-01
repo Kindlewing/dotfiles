@@ -1,8 +1,13 @@
-import QtQuick 2.15
-import QtQuick.Layouts 1.15
+import QtQuick
+import QtQuick.Layouts
+import Quickshell
 
-Rectangle {
-    width: Screen.width
+PanelWindow {
+    anchors {
+        top: true
+        left: true
+        right: true
+    }
     height: 32
     color: "#1e1e2e"
 
@@ -23,6 +28,7 @@ Rectangle {
 
         // Center: Clock
         Text {
+            id: clock
             text: Qt.formatDateTime(new Date(), "hh:mm")
             color: "#cdd6f4"
 
