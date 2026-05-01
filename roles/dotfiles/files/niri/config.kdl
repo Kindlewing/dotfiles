@@ -53,7 +53,7 @@ environment {
 // ─── Autostart ────────────────────────────────────────────────────────────────
 spawn-at-startup "nm-applet"
 spawn-at-startup "swaybg" "-i" "/home/hudson/.config/niri/wallpapers/gruvbox_dock.png"
-spawn-at-startup "waybar"
+spawn-at-startup "qs" "-c" "tranquility"
 spawn-at-startup "kanshi"
 spawn-at-startup "swaync"
 spawn-at-startup "hypridle"
