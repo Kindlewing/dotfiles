@@ -1,4 +1,9 @@
 module Modules
-singleton Theme 1.0 Theme.qml
-Bar 1.0 Bar.qml
-Clock 1.0 Clock.qml
+Bar         1.0 Bar.qml
+Clock       1.0 Clock.qml
+Battery     1.0 Battery.qml
+Networking  1.0 Networking.qml
+Volume      1.0 Volume.qml
+Microphone  1.0 Microphone.qml
+VPN         1.0 VPN.qml
+singleton Gruvbox 1.0 Themes/Gruvbox.qml

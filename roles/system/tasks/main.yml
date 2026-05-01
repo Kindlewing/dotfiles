@@ -19,7 +19,6 @@
       - zsh
       - zsh-autosuggestions
       - zsh-syntax-highlighting
-      - quickshell
       - yamlfmt
       - direnv
       - fzf
@@ -80,5 +79,6 @@
     name:
       - 1password
       - 1password-cli
+      - quickshell-git
   become: true
   become_user: aur_builder

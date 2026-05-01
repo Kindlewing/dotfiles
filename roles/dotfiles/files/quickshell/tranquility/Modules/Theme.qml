@@ -1,3 +1,4 @@
+// qmllint disable
 pragma Singleton
 import QtQuick
 import "Themes"

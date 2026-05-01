@@ -2,40 +2,57 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 
+// qmllint disable uncreatable-type
 PanelWindow {
+    id: bar
     anchors {
         top: true
         left: true
         right: true
     }
-    implicitHeight: Theme.barHeight
-    color: Theme.background
+
+    implicitHeight: Gruvbox.barHeight
+    exclusiveZone: Gruvbox.barHeight
+
+    color: Gruvbox.bg
+
+    // Bottom border — #1d2021, 2px
+    Rectangle {
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
+        height: 2
+        color: Gruvbox.bg_h
+    }
 
     RowLayout {
         anchors.fill: parent
-        anchors.leftMargin: 12
-        anchors.rightMargin: 12
+        spacing: 0
 
-        Text {
-            text: "  "
-            color: Theme.foreground
-            font.pixelSize: Theme.fontSize
-        }
-
+        // ── Left (empty for now) ──────────────────────
         Item {
             Layout.fillWidth: true
         }
 
-        Clock {}
+        // ── Center ───────────────────────────────────
+        Clock {
+            Layout.alignment: Qt.AlignVCenter
+        }
 
+        // ── Right ─────────────────────────────────────
         Item {
             Layout.fillWidth: true
         }
 
-        Text {
-            text: "100%"
-            color: Theme.foreground
-            font.pixelSize: Theme.fontSize
+        RowLayout {
+            spacing: 0
+            Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
+
+            VPN {}
+            Networking {}
+            Battery {}
+            Microphone {}
+            Volume {}
         }
     }
 }
