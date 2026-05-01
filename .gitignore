@@ -9,6 +9,7 @@ lazygit/state.yml
 *.txt
 *.sql
 database
+.qmlls.ini
 .config/mpd/playlists/Lofi.m3u
 .config/qutebrowser/__pycache__
 .local/share/claude/
