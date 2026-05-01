@@ -40,13 +40,90 @@ neovim.config = {
 }
 
 local lsp_kinds = {
-	"Array", "Boolean", "Class", "Color", "Constant", "Constructor",
-	"Enum", "EnumMember", "Event", "Field", "File", "Folder", "Function",
-	"Interface", "Key", "Keyword", "Method", "Module", "Namespace", "Null",
-	"Number", "Object", "Operator", "Package", "Property", "Reference",
-	"Snippet", "String", "Struct", "Text", "TypeParameter", "Unit", "Value",
+	"Array",
+	"Boolean",
+	"Class",
+	"Color",
+	"Constant",
+	"Constructor",
+	"Enum",
+	"EnumMember",
+	"Event",
+	"Field",
+	"File",
+	"Folder",
+	"Function",
+	"Interface",
+	"Key",
+	"Keyword",
+	"Method",
+	"Module",
+	"Namespace",
+	"Null",
+	"Number",
+	"Object",
+	"Operator",
+	"Package",
+	"Property",
+	"Reference",
+	"Snippet",
+	"String",
+	"Struct",
+	"Text",
+	"TypeParameter",
+	"Unit",
+	"Value",
 	"Variable",
 }
+
+function neovim.init_ansible()
+	if vim.filetype then
+		vim.filetype.add({
+			pattern = {
+				[".*/defaults/.*%.ya?ml"] = "yaml.ansible",
+				[".*/host_vars/.*%.ya?ml"] = "yaml.ansible",
+				[".*/group_vars/.*%.ya?ml"] = "yaml.ansible",
+				[".*/group_vars/.*/.*%.ya?ml"] = "yaml.ansible",
+				[".*/playbook.*%.ya?ml"] = "yaml.ansible",
+				[".*/playbooks/.*%.ya?ml"] = "yaml.ansible",
+				[".*/roles/.*/tasks/.*%.ya?ml"] = "yaml.ansible",
+				[".*/roles/.*/handlers/.*%.ya?ml"] = "yaml.ansible",
+				[".*/pre_tasks/.*%.ya?ml"] = "yaml.ansible",
+				[".*/pre_tasks/.*/.*%.ya?ml"] = "yaml.ansible",
+				[".*/tasks/.*%.ya?ml"] = "yaml.ansible",
+				[".*/molecule/.*%.ya?ml"] = "yaml.ansible",
+			},
+		})
+	else
+		vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+			pattern = {
+				"*/defaults/*.yml",
+				"*/defaults/*.yaml",
+				"*/host_vars/*.yml",
+				"*/host_vars/*.yaml",
+				"*/group_vars/*.yml",
+				"*/group_vars/*.yaml",
+				"*/group_vars/*/*.yml",
+				"*/group_vars/*/*.yaml",
+				"*/playbook*.yml",
+				"*/playbook*.yaml",
+				"*/playbooks/*.yml",
+				"*/playbooks/*.yaml",
+				"*/roles/*/tasks/*.yml",
+				"*/roles/*/tasks/*.yaml",
+				"*/roles/*/handlers/*.yml",
+				"*/roles/*/handlers/*.yaml",
+				"*/tasks/*.yml",
+				"*/tasks/*.yaml",
+				"*/molecule/*.yml",
+				"*/molecule/*.yaml",
+			},
+			callback = function()
+				vim.bo.filetype = "yaml.ansible"
+			end,
+		})
+	end
+end
 
 function neovim.configure_signs()
 	local icons = neovim.config.icons
