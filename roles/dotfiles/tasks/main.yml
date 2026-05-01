@@ -132,6 +132,13 @@
     state: link
     force: true
     follow: false
+- name: Symlink nvim ftdetect directory
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/nvim/ftdetect"
+    dest: "{{ ansible_facts['user_dir'] }}/.config/nvim/ftdetect"
+    state: link
+    force: true
+    follow: false
 # ============================================================
 # Beets (directory symlink excluded — beets writes library.db
 # at runtime and should not be tracked)
