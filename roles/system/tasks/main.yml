@@ -58,3 +58,26 @@
       - beets
       - unixodbc
     state: present
+- name: Create the `aur_builder` user
+  become: true
+  ansible.builtin.user:
+    name: aur_builder
+    create_home: true
+    group: wheel
+- name: Allow the `aur_builder` user to run `sudo pacman` without a password
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/sudoers.d/11-install-aur_builder
+    line: 'aur_builder ALL=(ALL) NOPASSWD: /usr/bin/pacman'
+    create: true
+    mode: "0644"
+    validate: 'visudo -cf %s'
+- name: Install AUR packages
+  kewlfft.aur.aur:
+    use: makepkg
+    update_cache: true
+    skip_pgp_check: true
+    name:
+      - 1password
+  become: true
+  become_user: aur_builder
