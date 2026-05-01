@@ -39,7 +39,7 @@ return {
 					lualine_a = { "mode" },
 					lualine_b = { "branch", "diff" },
 					lualine_c = { { "filename", path = 1, symbols = { modified = "  ", readonly = "  " } } },
-					lualine_x = { "diagnostics", fmt_status, lsp_client },
+					lualine_x = { "diagnostics", "fmt_status", fmt_status, lsp_client },
 					lualine_y = { "filetype" },
 					lualine_z = { "location" },
 				},
@@ -100,7 +100,6 @@ return {
 		"folke/snacks.nvim",
 		priority = 1000,
 		lazy = false,
-		---@type snacks.Config
 		opts = {
 			bigfile = { enabled = true },
 			indent = { enabled = true },
