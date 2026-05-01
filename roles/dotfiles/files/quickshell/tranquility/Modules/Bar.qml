@@ -22,11 +22,15 @@ PanelWindow {
             font.pixelSize: Theme.fontSize
         }
 
-        Item { Layout.fillWidth: true }
+        Item {
+            Layout.fillWidth: true
+        }
 
         Clock {}
 
-        Item { Layout.fillWidth: true }
+        Item {
+            Layout.fillWidth: true
+        }
 
         Text {
             text: "100%"
