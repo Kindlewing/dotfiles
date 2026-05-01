@@ -79,5 +79,6 @@
     skip_pgp_check: true
     name:
       - 1password
+      - 1password-cli
   become: true
   become_user: aur_builder

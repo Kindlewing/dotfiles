@@ -29,10 +29,12 @@ layout {
     active-color "#f2cdcd"    // flamingo
     inactive-color "#a6adc8"  // subtext0
   }
+
   focus-ring {
 	  off
   }
 }
+
 
 // ─── Animations ───────────────────────────────────────────────────────────────
 animations {
