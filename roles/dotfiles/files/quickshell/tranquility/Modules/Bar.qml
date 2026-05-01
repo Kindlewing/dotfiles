@@ -8,46 +8,30 @@ PanelWindow {
         left: true
         right: true
     }
-    height: 32
-    color: "#1e1e2e"
+    implicitHeight: Theme.barHeight
+    color: Theme.background
 
     RowLayout {
         anchors.fill: parent
         anchors.leftMargin: 12
         anchors.rightMargin: 12
 
-        // Left: Workspaces / launcher
         Text {
             text: "  "
-            color: "#cdd6f4"
+            color: Theme.foreground
+            font.pixelSize: Theme.fontSize
         }
 
-        Item {
-            Layout.fillWidth: true
-        }  // spacer
+        Item { Layout.fillWidth: true }
 
-        // Center: Clock
-        Text {
-            id: clock
-            text: Qt.formatDateTime(new Date(), "hh:mm")
-            color: "#cdd6f4"
+        Clock {}
 
-            Timer {
-                interval: 1000
-                running: true
-                repeat: true
-                onTriggered: parent.text = Qt.formatDateTime(new Date(), "hh:mm")
-            }
-        }
+        Item { Layout.fillWidth: true }
 
-        Item {
-            Layout.fillWidth: true
-        }
-
-        // Right: placeholder for system tray / stats
         Text {
             text: "100%"
-            color: "#cdd6f4"
+            color: Theme.foreground
+            font.pixelSize: Theme.fontSize
         }
     }
 }

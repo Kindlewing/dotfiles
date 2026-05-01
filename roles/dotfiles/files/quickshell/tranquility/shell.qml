@@ -1,6 +1,6 @@
 import QtQuick
 import Quickshell
-import Modules
+import "Modules"
 
 ShellRoot {
     id: shell_root
