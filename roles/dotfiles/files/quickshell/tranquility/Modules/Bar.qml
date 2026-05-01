@@ -10,7 +10,6 @@ PanelWindow {
         left: true
         right: true
     }
-
     implicitHeight: Gruvbox.barHeight
     exclusiveZone: Gruvbox.barHeight
 
