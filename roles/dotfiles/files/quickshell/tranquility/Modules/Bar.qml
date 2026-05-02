@@ -10,9 +10,8 @@ PanelWindow {
         left: true
         right: true
     }
-    implicitHeight: Gruvbox.barHeight
-    exclusiveZone: Gruvbox.barHeight
-
+    implicitHeight: Gruvbox.bar_height
+    exclusiveZone: Gruvbox.bar_height
     color: Gruvbox.bg
 
     // Bottom border — #1d2021, 2px
@@ -50,7 +49,6 @@ PanelWindow {
             VPN {}
             Networking {}
             Battery {}
-            Microphone {}
             Volume {}
         }
     }

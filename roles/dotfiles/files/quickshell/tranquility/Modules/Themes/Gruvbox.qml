@@ -26,8 +26,8 @@ QtObject {
     readonly property color orange: "#fe8019"
 
     // Bar
-    readonly property int barHeight: 34
-    readonly property int fontSize: 15
+    readonly property int bar_height: 34
+    readonly property int font_size: 15
     readonly property string font: "NotoSans Nerd Font"
     readonly property int padding: 8
 }

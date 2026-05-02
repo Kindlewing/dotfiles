@@ -20,6 +20,6 @@ QtObject {
     readonly property color red: _active.red
     readonly property color blue: _active.blue
 
-    readonly property int barHeight: 32
-    readonly property int fontSize: 13
+    readonly property int bar_height: 32
+    readonly property int font_size: 13
 }

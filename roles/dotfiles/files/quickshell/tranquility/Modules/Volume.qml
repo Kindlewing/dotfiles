@@ -4,20 +4,29 @@ import Quickshell.Services.Pipewire
 
 Item {
     id: root
-    implicitWidth: volText.implicitWidth + Gruvbox.padding * 2
-    implicitHeight: Gruvbox.barHeight
+    implicitWidth: vol_text.implicitWidth + Gruvbox.padding * 2
+    implicitHeight: Gruvbox.bar_height
+
+    readonly property real max_volume: 1.0
 
     PwObjectTracker {
-        id: sinkTracker
+        id: sink_tracker
         objects: Pipewire.defaultAudioSink ? [Pipewire.defaultAudioSink] : []
     }
 
-    property var sink: sinkTracker.objects[0] ?? null
+    property var sink: sink_tracker.objects[0] ?? null
     property bool muted: sink?.audio?.muted ?? false
     property real volume: sink?.audio?.volume ?? 0
 
+    function clamp_output_volume(vol: real): real {
+        if (vol === undefined || isNaN(vol)) {
+            return 0;
+        }
+        return Math.max(0, Math.min(root.max_volume, vol));
+    }
+
     Process {
-        id: mixerProc
+        id: mixer_proc
         command: ["kmix"]
     }
 
@@ -32,12 +41,12 @@ Item {
     }
 
     Text {
-        id: volText
+        id: vol_text
         anchors.centerIn: parent
         text: root.muted ? `${root.icon}  Muted` : `${root.icon}  ${Math.round(root.volume * 100)}%`
         color: root.muted ? Gruvbox.gray : Gruvbox.purple
         font.family: Gruvbox.font
-        font.pixelSize: Gruvbox.fontSize
+        font.pixelSize: Gruvbox.font_size
         font.bold: true
     }
 
@@ -48,7 +57,7 @@ Item {
             if (event.button === Qt.LeftButton && root.sink)
                 root.sink.audio.muted = !root.sink.audio.muted;
             else if (event.button === Qt.RightButton)
-                mixerProc.running = true;
+                mixer_proc.running = true;
         }
         onWheel: event => {
             if (!root.sink)

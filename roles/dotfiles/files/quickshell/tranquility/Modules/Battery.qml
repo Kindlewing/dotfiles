@@ -3,11 +3,11 @@ import Quickshell.Io
 
 Item {
     id: root
-    implicitWidth: batText.implicitWidth + Gruvbox.padding * 2
-    implicitHeight: Gruvbox.barHeight
+    implicitWidth: bat_text.implicitWidth + Gruvbox.padding * 2
+    implicitHeight: Gruvbox.bar_height
 
     Process {
-        id: capProc
+        id: cap_proc
         command: ["cat", "/sys/class/power_supply/BAT0/capacity"]
         running: true
         stdout: SplitParser {
@@ -16,7 +16,7 @@ Item {
     }
 
     Process {
-        id: statusProc
+        id: status_proc
         command: ["cat", "/sys/class/power_supply/BAT0/status"]
         running: true
         stdout: SplitParser {
@@ -29,8 +29,8 @@ Item {
         repeat: true
         running: true
         onTriggered: {
-            capProc.running = true;
-            statusProc.running = true;
+            cap_proc.running = true;
+            status_proc.running = true;
         }
     }
 
@@ -47,7 +47,7 @@ Item {
         return " ";
     }
 
-    property color textColor: {
+    property color text_color: {
         if (status === "Charging") return Gruvbox.green;
         if (capacity <= 20) return Gruvbox.red;
         if (capacity <= 40) return Gruvbox.orange;
@@ -56,12 +56,12 @@ Item {
     }
 
     Text {
-        id: batText
+        id: bat_text
         anchors.centerIn: parent
         text: `${root.capacity}%  ${root.icon}`
-        color: root.textColor
+        color: root.text_color
         font.family: Gruvbox.font
-        font.pixelSize: Gruvbox.fontSize
+        font.pixelSize: Gruvbox.font_size
         font.bold: true
     }
 }

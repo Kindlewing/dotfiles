@@ -3,26 +3,26 @@ import Quickshell.Services.Pipewire
 
 Item {
     id: root
-    implicitHeight: Gruvbox.barHeight
-    implicitWidth: muted ? 0 : micText.implicitWidth + Gruvbox.padding * 2
+    implicitHeight: Gruvbox.bar_height
+    implicitWidth: muted ? 0 : mic_text.implicitWidth + Gruvbox.padding * 2
     visible: !muted
 
     PwObjectTracker {
-        id: sourceTracker
+        id: source_tracker
         objects: Pipewire.defaultAudioSource ? [Pipewire.defaultAudioSource] : []
     }
 
-    property var source: sourceTracker.objects[0] ?? null
+    property var source: source_tracker.objects[0] ?? null
     property bool muted:  source?.audio?.muted  ?? false
     property real volume: source?.audio?.volume ?? 0
 
     Text {
-        id: micText
+        id: mic_text
         anchors.centerIn: parent
         text: `  ${Math.round(root.volume * 100)}%`
         color: Gruvbox.aqua
         font.family: Gruvbox.font
-        font.pixelSize: Gruvbox.fontSize
+        font.pixelSize: Gruvbox.font_size
         font.bold: true
     }
 
