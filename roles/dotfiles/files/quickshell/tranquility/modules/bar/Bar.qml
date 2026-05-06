@@ -17,7 +17,11 @@ Scope {
             required property ShellScreen modelData
             screen: modelData
 
-            anchors { top: true; left: true; right: true }
+            anchors {
+                top: true
+                left: true
+                right: true
+            }
             implicitHeight: 34
             color: Appearance.background
 
@@ -40,7 +44,9 @@ Scope {
                     Layout.rightMargin: 8
                 }
 
-                Item { Layout.fillWidth: true }
+                Item {
+                    Layout.fillWidth: true
+                }
 
                 // Clock
                 Text {
@@ -50,7 +56,7 @@ Scope {
                     font.family: "NotoSans Nerd Font"
 
                     function refresh() {
-                        text = Qt.formatDateTime(new Date(), "ddd, MMM d  hh:mm:ss")
+                        text = Qt.formatDateTime(new Date(), "ddd, MMM d  hh:mm");
                     }
                     Component.onCompleted: refresh()
 
@@ -62,7 +68,9 @@ Scope {
                     }
                 }
 
-                Item { Layout.fillWidth: true }
+                Item {
+                    Layout.fillWidth: true
+                }
 
                 // Volume
                 RowLayout {
@@ -71,15 +79,18 @@ Scope {
                     Layout.rightMargin: 10
 
                     readonly property PwNode sink: Pipewire.defaultAudioSink
-                    readonly property real vol:   sink?.audio?.volume ?? 0.0
-                    readonly property bool muted: sink?.audio?.muted  ?? false
+                    readonly property real vol: sink?.audio?.volume ?? 0.0
+                    readonly property bool muted: sink?.audio?.muted ?? false
 
                     Text {
                         text: {
-                            if (volumeRow.muted || volumeRow.vol === 0.0) return "󰖁"
-                            if (volumeRow.vol >= 0.67)                    return "󰕾"
-                            if (volumeRow.vol >= 0.33)                    return "󰖀"
-                            return "󰕿"
+                            if (volumeRow.muted || volumeRow.vol === 0.0)
+                                return "󰖁";
+                            if (volumeRow.vol >= 0.67)
+                                return "󰕾";
+                            if (volumeRow.vol >= 0.33)
+                                return "󰖀";
+                            return "󰕿";
                         }
                         color: volumeRow.muted ? Appearance.subtle : Appearance.green
                         font.pixelSize: 15
@@ -99,7 +110,6 @@ Scope {
                 // System tray
                 RowLayout {
                     spacing: 4
-
                     Repeater {
                         model: SystemTray.items
 
@@ -133,11 +143,13 @@ Scope {
                                 onClicked: mouse => {
                                     if (mouse.button === Qt.RightButton) {
                                         if (trayDelegate.modelData.hasMenu) {
-                                            if (trayMenu.visible) trayMenu.close()
-                                            else trayMenu.open()
+                                            if (trayMenu.visible)
+                                                trayMenu.close();
+                                            else
+                                                trayMenu.open();
                                         }
                                     } else {
-                                        trayDelegate.modelData.activate()
+                                        trayDelegate.modelData.activate();
                                     }
                                 }
                             }
