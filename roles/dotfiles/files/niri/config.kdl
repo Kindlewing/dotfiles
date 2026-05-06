@@ -68,7 +68,7 @@ binds {
   Mod+Return { spawn "foot"; }
 
   // Apps
-  Mod+B { spawn "zen-browser"; }
+  Mod+B { spawn "librewolf"; }
   Mod+M { spawn "psysonic"; }
   Mod+Shift+D { spawn "wofi" "--show" "drun" "--allow-images"; }
 

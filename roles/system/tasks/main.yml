@@ -29,7 +29,6 @@
   community.general.pacman:
     name:
       - niri
-      - waybar
       - kanshi
       - swaybg
       - swaync
@@ -79,6 +78,7 @@
     name:
       - 1password
       - 1password-cli
+      - librewolf-bin
       - quickshell-git
   become: true
   become_user: aur_builder
