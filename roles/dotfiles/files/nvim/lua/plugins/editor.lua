@@ -1,22 +1,7 @@
 return {
 	{
-		"nvim-treesitter/nvim-treesitter",
-		lazy = false,
-		build = ":TSUpdate",
-		dependencies = { "windwp/nvim-ts-autotag" },
-		config = function()
-			require("nvim-treesitter").setup({
-				ensure_installed = {
-					"go",
-					"c",
-					"html",
-					"css",
-				},
-			})
-			require("nvim-ts-autotag").setup({})
-		end,
+		"https://github.com/arborist-ts/arborist.nvim",
 	},
-
 	{
 		"echasnovski/mini.nvim",
 		version = "*",
